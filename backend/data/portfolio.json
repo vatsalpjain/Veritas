@@ -225,20 +225,20 @@
         "id": "btc",
         "label": "Bitcoin",
         "symbol": "BTC-USD",
-        "price": 66242.27,
-        "changePercent": -0.16,
-        "barFillPercent": 52.0
+        "price": 66254.39,
+        "changePercent": -0.15,
+        "barFillPercent": 54.0
       },
       {
         "id": "eth",
         "label": "Ethereum",
         "symbol": "ETH-USD",
-        "price": 1997.34,
-        "changePercent": 0.28,
-        "barFillPercent": 60.0
+        "price": 1997.95,
+        "changePercent": 0.31,
+        "barFillPercent": 63.0
       }
     ],
-    "indices_cached_at": "2026-03-28T15:27:23.222877",
+    "indices_cached_at": "2026-03-28T15:33:28.594923",
     "chart_QQQ": {
       "symbol": "QQQ",
       "name": "Invesco QQQ Trust",
@@ -1743,7 +1743,7 @@
         ]
       }
     },
-    "chart_QQQ_cached_at": "2026-03-28T15:27:24.103397",
+    "chart_QQQ_cached_at": "2026-03-28T15:33:29.863779",
     "sectors": [
       {
         "id": "xle",
