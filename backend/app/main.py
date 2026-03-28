@@ -20,6 +20,7 @@ from app.services import portfolio_analysis_service as portfolio_analysis_svc
 from app.services import chart_analysis_service as chart_analysis_svc
 from app.services import reports_service as reports_svc
 from app.services import reports_pdf_service as reports_pdf_svc
+from app.services import investor_mindset_service as mindset_svc
 from app.services.mail_config import is_mail_configured
 from app.services.mail_service import send_report_email
 
@@ -673,6 +674,12 @@ class AgentChatRequest(BaseModel):
     session_id: str = Field(default="default", description="Session ID for multi-turn")
 
 
+class MindsetChatRequest(BaseModel):
+    query: str = Field(..., description="User question for persona-guided mentoring")
+    persona_id: str = Field(..., description="Selected investor persona id")
+    extra_context: str | None = Field(default=None, description="Optional additional context")
+
+
 @app.post("/agent/chat")
 async def agent_chat(request: AgentChatRequest):
     """Stream Veritas agent response via SSE."""
@@ -774,3 +781,47 @@ async def clear_agent_session(session_id: str):
     """Clear a conversation session."""
     _agent_sessions.clear(session_id)
     return {"status": "cleared", "session_id": session_id}
+
+
+# ============== INVESTOR MINDSET ENDPOINTS ==============
+
+@app.get("/mindset/personas")
+async def get_investor_personas():
+    """Get curated investor personas for the Mindset page."""
+    return {"personas": mindset_svc.list_personas()}
+
+
+@app.post("/mindset/chat")
+async def mindset_chat(request: MindsetChatRequest):
+    """Stream persona-guided answer via SSE without using the LangGraph agent flow."""
+
+    async def event_generator():
+        start_time = time.time()
+
+        try:
+            yield {"data": json.dumps({"type": "thinking", "step": "Loading persona context...", "status": "running"})}
+
+            answer = await mindset_svc.generate_persona_answer(
+                query=request.query,
+                persona_id=request.persona_id,
+                extra_context=request.extra_context,
+            )
+
+            yield {"data": json.dumps({"type": "thinking", "step": "Generating mindset response...", "status": "done"})}
+            yield {"data": json.dumps({"type": "answer_start"})}
+
+            chunk_size = 60
+            for i in range(0, len(answer), chunk_size):
+                yield {"data": json.dumps({"type": "answer_chunk", "content": answer[i:i + chunk_size]})}
+
+            yield {"data": json.dumps({"type": "answer_end"})}
+
+            duration_ms = int((time.time() - start_time) * 1000)
+            yield {"data": json.dumps({"type": "done", "total_tokens": 0, "duration_ms": duration_ms})}
+        except ValueError as exc:
+            yield {"data": json.dumps({"type": "error", "message": str(exc)})}
+        except Exception as exc:
+            _log.exception("Mindset error: %s", exc)
+            yield {"data": json.dumps({"type": "error", "message": str(exc)})}
+
+    return EventSourceResponse(event_generator())
