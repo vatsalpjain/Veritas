@@ -1,4 +1,4 @@
-import type { OverviewData, AllocationItem } from '@/lib/types/overview';
+import type { OverviewData, AllocationItem, NewsArticle } from '@/lib/types/overview';
 import { apiFetch, REVALIDATE } from '@/lib/api/client';
 import type {
   RawPortfolioSummary,
@@ -89,6 +89,93 @@ export const mockOverviewData: OverviewData = {
   ],
 
   insightsUpdatedAt: new Date(Date.now() - 12 * 60 * 1000).toISOString(),
+
+  news: [
+    {
+      id: 'mock-n1',
+      headline: 'Fed Holds Rates Steady Amid Persistent Inflation Concerns',
+      summary: 'The Federal Reserve maintained its benchmark interest rate at 5.25–5.50%, citing sticky services inflation. Markets now price in two cuts before year-end.',
+      url: '#',
+      image: '',
+      source_name: 'Reuters',
+      category: 'macro',
+      sentiment: 'neutral',
+      tag: 'Macro · Policy',
+      tag_class: 'tag-blue',
+      related_tickers: [],
+      published_at: new Date(Date.now() - 2 * 3600 * 1000).toISOString(),
+    },
+    {
+      id: 'mock-n2',
+      headline: 'NVIDIA Surges 4% on Record Data Center Revenue',
+      summary: 'NVDA beat Q1 estimates with data center revenue up 427% YoY. Jensen Huang confirmed Blackwell GPU shipments ahead of schedule, fuelling bullish sentiment.',
+      url: '#',
+      image: '',
+      source_name: 'Bloomberg',
+      category: 'equity',
+      sentiment: 'bullish',
+      tag: 'NVDA · News',
+      tag_class: 'tag-green',
+      related_tickers: ['NVDA'],
+      published_at: new Date(Date.now() - 5 * 3600 * 1000).toISOString(),
+    },
+    {
+      id: 'mock-n3',
+      headline: 'Bitcoin Retreats 3% as Long-Term Holders Take Profits',
+      summary: 'BTC slipped to $66,200 as on-chain data shows long-term holders distributing near cycle highs. Analysts see strong support at the $63k range.',
+      url: '#',
+      image: '',
+      source_name: 'CoinDesk',
+      category: 'crypto',
+      sentiment: 'bearish',
+      tag: 'Crypto · Market',
+      tag_class: 'tag-amber',
+      related_tickers: ['BTC', 'ETH'],
+      published_at: new Date(Date.now() - 8 * 3600 * 1000).toISOString(),
+    },
+    {
+      id: 'mock-n4',
+      headline: 'Reliance Industries Posts Record Q4 Net Profit of ₹21,243 Cr',
+      summary: "RIL's retail and Jio segments drove a 7.3% YoY profit growth. The board approved a Rs.10/share dividend and a Rs.10,000 Cr buyback programme.",
+      url: '#',
+      image: '',
+      source_name: 'Economic Times',
+      category: 'equity',
+      sentiment: 'bullish',
+      tag: 'RELIANCE · News',
+      tag_class: 'tag-green',
+      related_tickers: ['RELIANCE.NS'],
+      published_at: new Date(Date.now() - 12 * 3600 * 1000).toISOString(),
+    },
+    {
+      id: 'mock-n5',
+      headline: 'Crude Oil Drops 2% on Demand Slowdown Fears From China',
+      summary: 'Brent crude fell to $81.40/bbl after weak Chinese manufacturing PMI data raised demand concerns. Goldman Sachs trimmed its year-end forecast to $87.',
+      url: '#',
+      image: '',
+      source_name: 'Financial Times',
+      category: 'commodity',
+      sentiment: 'bearish',
+      tag: 'Commodity',
+      tag_class: 'tag-red',
+      related_tickers: [],
+      published_at: new Date(Date.now() - 18 * 3600 * 1000).toISOString(),
+    },
+    {
+      id: 'mock-n6',
+      headline: 'RBI Keeps Repo Rate Unchanged, Shifts Stance to Neutral',
+      summary: 'The Reserve Bank of India held the repo rate at 6.5% for the seventh consecutive meeting, but shifted its policy stance from withdrawal to neutral — signalling rate cuts could begin in Q2.',
+      url: '#',
+      image: '',
+      source_name: 'Mint',
+      category: 'macro',
+      sentiment: 'bullish',
+      tag: 'Macro · Policy',
+      tag_class: 'tag-blue',
+      related_tickers: ['HDFCBANK.NS', 'SBIN.NS'],
+      published_at: new Date(Date.now() - 24 * 3600 * 1000).toISOString(),
+    },
+  ] as NewsArticle[],
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -155,6 +242,15 @@ export async function getOverviewData(): Promise<OverviewData> {
       apiFetch<RawRiskScore>('/insights/risk-score', { revalidate: REVALIDATE.SLOW }),
     ]);
 
+    // News fetched independently — never blocks other data, falls back to mock if empty
+    let rawNews: NewsArticle[] = [];
+    try {
+      const fetched = await apiFetch<NewsArticle[]>('/news?limit=6&refresh=false', { cache: 'no-store' });
+      rawNews = Array.isArray(fetched) && fetched.length > 0 ? fetched : mockOverviewData.news;
+    } catch {
+      rawNews = mockOverviewData.news;
+    }
+
     return {
       portfolio: {
         totalAUM:               summary.total_current_value,
@@ -196,6 +292,21 @@ export async function getOverviewData(): Promise<OverviewData> {
       })),
 
       insightsUpdatedAt: insights[0]?.timestamp ?? new Date().toISOString(),
+
+      news: (rawNews.length > 0 ? rawNews : mockOverviewData.news).map((n, i) => ({
+        id:              n.id ?? `news-${i}`,
+        headline:        n.headline,
+        summary:         n.summary,
+        url:             n.url ?? '#',
+        image:           n.image ?? '',
+        source_name:     n.source_name ?? '',
+        category:        n.category ?? 'equity',
+        sentiment:       n.sentiment ?? 'neutral',
+        tag:             n.tag ?? 'Markets',
+        tag_class:       n.tag_class ?? 'tag-gray',
+        related_tickers: n.related_tickers ?? [],
+        published_at:    n.published_at ?? new Date().toISOString(),
+      })),
     };
   } catch (err) {
     console.warn('[Overview] Backend unavailable, using mock data:', (err as Error).message);

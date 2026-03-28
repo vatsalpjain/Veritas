@@ -55,8 +55,28 @@ export interface AIInsight {
   analystCount?: number;      // e.g. 9
 }
 
+// ─── News Article ─────────────────────────────────────────────────────────────
+// Aligned with GET /news response shape from news_service.py
+
+export type NewsSentiment = 'bullish' | 'bearish' | 'neutral';
+export type NewsCategory  = 'macro' | 'equity' | 'crypto' | 'commodity';
+
+export interface NewsArticle {
+  id: string;                   // md5 hash of headline+source
+  headline: string;
+  summary: string;
+  url: string;
+  image: string;
+  source_name: string;
+  category: NewsCategory;
+  sentiment: NewsSentiment;
+  tag: string;                  // e.g. "Macro · Policy"
+  tag_class: string;            // e.g. "tag-blue"
+  related_tickers: string[];
+  published_at: string;         // ISO date string
+}
+
 // ─── Full Overview Payload ─────────────────────────────────────────────────────
-// This is the shape your API endpoint should return at GET /api/overview
 
 export interface OverviewData {
   portfolio: PortfolioSummary;
@@ -64,5 +84,6 @@ export interface OverviewData {
   holdings: Holding[];
   activity: ActivityItem[];
   insights: AIInsight[];
-  insightsUpdatedAt: string;  // ISO date string, e.g. "2024-03-28T12:00:00Z"
+  insightsUpdatedAt: string;
+  news: NewsArticle[];
 }

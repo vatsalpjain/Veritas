@@ -3,12 +3,7 @@ import PortfolioHero from './components/PortfolioHero';
 import AssetAllocation from './components/AssetAllocation';
 import TopHoldings from './components/TopHoldings';
 import RecentActivity from './components/RecentActivity';
-import AIInsights from './components/AIInsights';
-
-// This page is a React Server Component.
-// When the backend is ready, getOverviewData() already contains the swap point.
-// Simply replace the mock implementation in src/lib/data/mockOverview.ts
-// with a real fetch() call — no changes needed here.
+import NewsSection from './components/NewsSection';
 
 export default async function OverviewPage() {
   const data = await getOverviewData();
@@ -27,8 +22,8 @@ export default async function OverviewPage() {
         <RecentActivity data={data.activity} />
       </section>
 
-      {/* ── Section 3: AI-Driven Insights ── */}
-      <AIInsights data={data.insights} updatedAt={data.insightsUpdatedAt} />
+      {/* ── Section 3: Real-time Market News (from GET /news via Finnhub) ── */}
+      <NewsSection data={data.news} />
     </>
   );
 }
