@@ -10,7 +10,6 @@ const navLinks = [
   { label: 'Insights',    href: '/insights',    icon: 'lightbulb' },
   { label: 'Portfolio',   href: '/portfolio',   icon: 'donut_large' },
   { label: 'Reports',     href: '/reports',     icon: 'description' },
-  { label: 'Settings',    href: '/settings',    icon: 'settings' },
 ];
 
 export default function Sidebar() {
@@ -27,7 +26,7 @@ export default function Sidebar() {
           className="text-lg font-extrabold tracking-tight"
           style={{ color: '#0f172a', fontFamily: 'Manrope, sans-serif' }}
         >
-          Equitas
+          Veritas
         </h1>
         <p
           className="text-[11px] uppercase tracking-wider font-medium mt-0.5"

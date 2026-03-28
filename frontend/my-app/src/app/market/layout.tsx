@@ -3,7 +3,7 @@ import Sidebar from '@/app/overview/components/Sidebar';
 import SharedTopNav from '@/app/components/SharedTopNav';
 
 export const metadata: Metadata = {
-  title: 'Markets | Equitas Ledger',
+  title: 'Markets | Veritas Ledger',
   description: 'Global market indices, candle charts, sector heatmap, algorithmic signals, and asset explorer',
 };
 

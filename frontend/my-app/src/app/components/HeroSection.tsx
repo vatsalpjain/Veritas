@@ -124,12 +124,16 @@ export default function HeroSection() {
           className="tracking-tighter leading-none mb-6"
           style={{ fontFamily: 'var(--font-bebas-neue)', fontSize: 'clamp(4rem, 12vw, 9rem)' }}
         >
-          <span className="char-split">O</span>
-          <span className="char-split">P</span>
-          <span className="char-split">T</span>
           <span className="char-split">I</span>
-          <span className="char-split">O</span>
           <span className="char-split">N</span>
+          <span className="char-split">V</span>
+          <span className="char-split">E</span>
+          <span className="char-split">S</span>
+          <span className="char-split">T</span>
+          <span className="char-split">M</span>
+          <span className="char-split">E</span>
+          <span className="char-split">N</span>
+          <span className="char-split">T</span>
           <span className="char-split">S</span>
           <br />
           <span className="char-split" style={{ color: '#00e5cc' }}>R</span>
@@ -167,7 +171,7 @@ export default function HeroSection() {
             (e.currentTarget as HTMLButtonElement).style.boxShadow = '0 0 20px rgba(0,229,204,0.3)';
           }}
         >
-          <span className="relative z-10">INITIALIZE FORGE</span>
+          <span className="relative z-10">INITIALIZE VERITAS</span>
           <div className="absolute inset-0 bg-white/20 transform -translate-x-full group-hover:translate-x-full transition-transform duration-500"></div>
         </button>
       </div>

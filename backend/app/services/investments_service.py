@@ -82,58 +82,111 @@ def get_holdings_table() -> list[dict[str, Any]]:
 
 
 def get_performance_history(period: str = "1M") -> dict[str, Any]:
-    """Get portfolio performance history for chart.
+    """Get portfolio performance history from transaction data.
     
-    Generates historical portfolio value based on holdings' price history.
+    Calculates actual portfolio value over time based on transaction history.
     """
-    holdings = portfolio_svc.get_holdings()
+    portfolio = portfolio_svc._load_portfolio()
+    transactions = portfolio.get("transactions", [])
+    holdings = portfolio.get("holdings", [])
+    cash_balance = portfolio.get("cash_balance", 0)
     
-    # Map period to yfinance params
-    period_map = {
-        "1M": ("1mo", "1d"),
-        "3M": ("3mo", "1d"),
-        "1Y": ("1y", "1wk"),
-        "ALL": ("5y", "1mo"),
-    }
+    if not transactions:
+        return {
+            "period": period,
+            "data_points": [],
+            "peak": {"value": 0, "date": ""},
+            "growth": 0,
+            "growth_percent": 0,
+        }
     
-    yf_period, yf_interval = period_map.get(period, ("1mo", "1d"))
+    # Sort transactions by date
+    sorted_txns = sorted(
+        transactions,
+        key=lambda x: datetime.fromisoformat(x.get("timestamp", x.get("date", "2024-01-01")))
+    )
     
-    # Get price history for each holding
-    all_histories = {}
-    for h in holdings:
-        try:
-            history = yf_svc.get_stock_history(h["symbol"], period=yf_period, interval=yf_interval)
-            for point in history:
-                date = point["date"][:10]  # Get just the date part
-                if date not in all_histories:
-                    all_histories[date] = 0
-                all_histories[date] += (point["close"] or 0) * h["quantity"]
-        except Exception:
-            pass
+    # Determine date range based on period
+    now = datetime.now()
+    if period == "1M":
+        start_date = now - timedelta(days=30)
+    elif period == "3M":
+        start_date = now - timedelta(days=90)
+    elif period == "1Y":
+        start_date = now - timedelta(days=365)
+    else:  # ALL
+        start_date = datetime.fromisoformat(sorted_txns[0].get("timestamp", sorted_txns[0].get("date", "2024-01-01")))
     
-    # Sort by date and format
-    sorted_dates = sorted(all_histories.keys())
+    # Calculate portfolio value at each transaction point
     data_points = []
-    peak_value = 0
-    peak_date = ""
+    running_cash = 0
+    holdings_qty = {}  # Track quantity of each holding
+    holdings_avg_price = {}  # Track average buy price
     
-    for date in sorted_dates:
-        value = round(all_histories[date], 2)
+    for txn in sorted_txns:
+        txn_date = datetime.fromisoformat(txn.get("timestamp", txn.get("date", "2024-01-01")))
+        
+        # Process transaction to update running totals
+        if txn["type"] == "buy":
+            symbol = txn["symbol"]
+            qty = txn.get("quantity", 0)
+            price = txn.get("price", 0)
+            total = txn.get("total_amount", qty * price)
+            
+            holdings_qty[symbol] = holdings_qty.get(symbol, 0) + qty
+            # Update average price
+            old_qty = holdings_qty[symbol] - qty
+            old_avg = holdings_avg_price.get(symbol, 0)
+            holdings_avg_price[symbol] = ((old_qty * old_avg) + total) / holdings_qty[symbol] if holdings_qty[symbol] > 0 else price
+            
+            running_cash -= total
+        elif txn["type"] == "sell":
+            symbol = txn["symbol"]
+            qty = txn.get("quantity", 0)
+            total = txn.get("total_amount", 0)
+            
+            holdings_qty[symbol] = holdings_qty.get(symbol, 0) - qty
+            running_cash += total
+        elif txn["type"] == "dividend":
+            running_cash += txn.get("amount", 0)
+        
+        # Only add data points after start_date
+        if txn_date >= start_date:
+            # Calculate total portfolio value (cash + holdings at average buy price)
+            holdings_value = sum(
+                holdings_qty.get(symbol, 0) * holdings_avg_price.get(symbol, 0)
+                for symbol in holdings_qty.keys()
+                if holdings_qty.get(symbol, 0) > 0
+            )
+            
+            total_value = running_cash + holdings_value
+            
+            data_points.append({
+                "date": txn_date.strftime("%Y-%m-%d"),
+                "value": round(total_value, 2)
+            })
+    
+    # Add current value as final data point
+    current_holdings_value = sum(h["quantity"] * h["avg_buy_price"] for h in holdings)
+    current_total = cash_balance + current_holdings_value
+    
+    if not data_points or data_points[-1]["date"] != now.strftime("%Y-%m-%d"):
         data_points.append({
-            "date": date,
-            "value": value,
+            "date": now.strftime("%Y-%m-%d"),
+            "value": round(current_total, 2)
         })
-        if value > peak_value:
-            peak_value = value
-            peak_date = date
     
-    # Calculate growth
-    if len(data_points) >= 2:
+    # Calculate metadata
+    if data_points:
+        peak_value = max(dp["value"] for dp in data_points)
+        peak_date = next(dp["date"] for dp in data_points if dp["value"] == peak_value)
         start_value = data_points[0]["value"]
         end_value = data_points[-1]["value"]
         growth = end_value - start_value
-        growth_percent = (growth / start_value * 100) if start_value else 0
+        growth_percent = (growth / start_value * 100) if start_value > 0 else 0
     else:
+        peak_value = 0
+        peak_date = ""
         growth = 0
         growth_percent = 0
     
@@ -141,7 +194,7 @@ def get_performance_history(period: str = "1M") -> dict[str, Any]:
         "period": period,
         "data_points": data_points,
         "peak": {
-            "value": peak_value,
+            "value": round(peak_value, 2),
             "date": peak_date,
         },
         "growth": round(growth, 2),

@@ -4,7 +4,7 @@ import SharedTopNav from '@/app/components/SharedTopNav';
 import InvestmentFooter from './components/InvestmentFooter';
 
 export const metadata: Metadata = {
-  title: 'Investments | Equitas Ledger',
+  title: 'Investments | Veritas Ledger',
   description: 'Active holdings, performance history, and investment opportunities',
 };
 

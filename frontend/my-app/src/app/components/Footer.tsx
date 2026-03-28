@@ -9,16 +9,16 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
         <div
           className="text-2xl tracking-widest"
-          style={{ fontFamily: 'var(--font-bebas-neue)' }}
+          style={{ fontFamily: 'var(--font-bebas-neue)', color: '#00e5cc' }}
         >
-          CODE<span style={{ color: '#00e5cc' }}>FORGE</span>
+          VERITAS
         </div>
 
         <div
           className="text-[10px] text-gray-600 uppercase tracking-widest"
           style={{ fontFamily: 'var(--font-dm-mono)' }}
         >
-          © 2024 CodeForge Analytics Corp. All rights reserved. Terminal protocols engaged.
+          © 2024 Veritas Analytics Corp. All rights reserved. Terminal protocols engaged.
         </div>
 
         <div className="flex gap-6">

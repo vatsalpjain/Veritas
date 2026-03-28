@@ -10,7 +10,7 @@ export default function InvestmentFooter() {
         fontFamily: 'Inter, sans-serif',
       }}
     >
-      <div>Equitas Ledger Institutional Terminal v4.2.0</div>
+      <div>Veritas Ledger Institutional Terminal v4.2.0</div>
       <div className="flex gap-4">
         {['Privacy', 'Terms', 'Regulatory Disclosures'].map(l => (
           <a

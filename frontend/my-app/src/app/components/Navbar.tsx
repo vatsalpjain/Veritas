@@ -5,16 +5,10 @@ export default function Navbar() {
     <nav className="fixed top-0 w-full z-50 glass-nav h-20 flex items-center justify-between px-8 md:px-16">
       <div className="logo group flex cursor-pointer" id="main-logo">
         <span
-          className="font-bebas text-3xl tracking-tighter transition-all duration-300 group-hover:mr-2"
-          style={{ fontFamily: 'var(--font-bebas-neue)' }}
-        >
-          CODE
-        </span>
-        <span
-          className="font-bebas text-3xl tracking-tighter transition-all duration-300 group-hover:ml-2"
+          className="font-bebas text-3xl tracking-tighter transition-all duration-300"
           style={{ fontFamily: 'var(--font-bebas-neue)', color: '#00e5cc' }}
         >
-          FORGE
+          VERITAS
         </span>
       </div>
 

@@ -178,19 +178,18 @@ function breakdownColor(type: string): string {
 
 export async function getInvestmentData(): Promise<InvestmentData> {
   try {
-    // Fetch all periods in parallel alongside other endpoints
-    const [stats, perf1M, perf3M, perf1Y, perfALL, breakdown, holdings, opportunities, alerts] =
-      await Promise.all([
-        apiFetch<RawInvestmentStats>('/investments/stats',                        { revalidate: REVALIDATE.LIVE }),
-        apiFetch<RawPerformance>('/investments/performance?period=1M',            { revalidate: REVALIDATE.HISTORY }),
-        apiFetch<RawPerformance>('/investments/performance?period=3M',            { revalidate: REVALIDATE.HISTORY }),
-        apiFetch<RawPerformance>('/investments/performance?period=1Y',            { revalidate: REVALIDATE.HISTORY }),
-        apiFetch<RawPerformance>('/investments/performance?period=ALL',           { revalidate: REVALIDATE.HISTORY }),
-        apiFetch<RawBreakdown>('/investments/breakdown',                          { revalidate: REVALIDATE.LIVE }),
-        apiFetch<RawHolding[]>('/investments/holdings',                           { revalidate: REVALIDATE.LIVE }),
-        apiFetch<RawOpportunity[]>('/investments/opportunities',                  { revalidate: REVALIDATE.SLOW }),
-        apiFetch<RawAlert[]>('/investments/alerts',                               { revalidate: REVALIDATE.SLOW }),
-      ]);
+    // Parallel fetch all investment endpoints including performance history for all periods
+    const [stats, holdings, breakdown, opportunities, alerts, perf1M, perf3M, perf1Y, perfALL] = await Promise.all([
+      apiFetch<RawInvestmentStats>('/investments/stats',         { revalidate: REVALIDATE.LIVE }),
+      apiFetch<RawHolding[]>('/investments/holdings',            { revalidate: REVALIDATE.HISTORY }),
+      apiFetch<RawBreakdown>('/investments/breakdown',           { revalidate: REVALIDATE.SLOW }),
+      apiFetch<RawOpportunity[]>('/investments/opportunities',   { revalidate: REVALIDATE.SLOW }),
+      apiFetch<RawAlert[]>('/investments/alerts',                { revalidate: REVALIDATE.SLOW }),
+      apiFetch<RawPerformance>('/investments/performance?period=1M',  { revalidate: REVALIDATE.HISTORY }),
+      apiFetch<RawPerformance>('/investments/performance?period=3M',  { revalidate: REVALIDATE.HISTORY }),
+      apiFetch<RawPerformance>('/investments/performance?period=1Y',  { revalidate: REVALIDATE.HISTORY }),
+      apiFetch<RawPerformance>('/investments/performance?period=ALL', { revalidate: REVALIDATE.HISTORY }),
+    ]);
 
     return {
       summary: {

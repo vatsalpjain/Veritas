@@ -17,7 +17,7 @@ export default function TopNav() {
           className="text-xl font-bold tracking-tight"
           style={{ color: '#0f172a', fontFamily: 'Manrope, sans-serif' }}
         >
-          Equitas Ledger
+          Veritas Ledger
         </span>
 
         <div className="relative w-full max-w-md">

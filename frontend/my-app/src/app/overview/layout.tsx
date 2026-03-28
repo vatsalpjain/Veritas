@@ -3,7 +3,7 @@ import Sidebar from './components/Sidebar';
 import SharedTopNav from '@/app/components/SharedTopNav';
 
 export const metadata: Metadata = {
-  title: 'Overview | Equitas Ledger',
+  title: 'Overview | Veritas Ledger',
   description: 'Portfolio overview dashboard',
 };
 

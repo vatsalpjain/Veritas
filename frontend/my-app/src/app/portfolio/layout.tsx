@@ -3,7 +3,7 @@ import Sidebar from '@/app/overview/components/Sidebar';
 import SharedTopNav from '@/app/components/SharedTopNav';
 
 export const metadata: Metadata = {
-  title: 'Portfolio | Equitas Ledger',
+  title: 'Portfolio | Veritas Ledger',
   description: 'Diversification score, allocation ratios, rebalancing recommendations, and goal trackers',
 };
 
