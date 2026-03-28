@@ -217,6 +217,34 @@ backend/
 
 ---
 
+### Reports Page Endpoints (`/reports/...`)
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/reports?period=1M&year=2026&month=3` | Full reports payload in one call (summary, calendar, holdings, allocation, sector, tax, dividends, closed positions, doctor, transactions) |
+| GET | `/reports/summary?period=1M` | Reports KPI summary (portfolio value, realized/unrealized P&L, dividends, XIRR) |
+| GET | `/reports/pl-calendar?year=2026&month=3` | Daily realized P&L calendar for selected month |
+| GET | `/reports/active-holdings` | Active holdings report table with buy/current/invested/market/P&L |
+| GET | `/reports/asset-allocation` | Asset class distribution for reports page |
+| GET | `/reports/sector-exposure` | Sector concentration breakdown by current market value |
+| GET | `/reports/tax-summary?fy=2025-26` | Tax liability estimate from realized STCG/LTCG and loss offsets |
+| GET | `/reports/dividend-history?limit=20` | Dividend and interest payout history with YTD total |
+| GET | `/reports/closed-positions?limit=50` | Closed position trades with realized P&L and annualized return |
+| GET | `/reports/portfolio-doctor` | Portfolio doctor insights derived from diversification and allocation analytics |
+| GET | `/reports/pdf?period=1M&year=2026&month=3` | Download portfolio report as PDF |
+| POST | `/reports/send-email` | Generate PDF and send report to an email address |
+
+**Source:** These endpoints are computed from the user's `data/portfolio.json` holdings and transaction ledger.
+
+**Email env variables required for `/reports/send-email`:**
+- `MAIL_USERNAME`
+- `MAIL_PASSWORD` (Gmail App Password recommended)
+- `MAIL_FROM`
+- `MAIL_SERVER` (for Gmail: `smtp.gmail.com`)
+- `MAIL_PORT` (for Gmail STARTTLS: `587`)
+
+---
+
 ## Response Examples
 
 ### `/yf/quote/RELIANCE.NS`

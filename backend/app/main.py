@@ -1,10 +1,12 @@
 import json
 import logging
 import time
+from datetime import datetime
 
-from fastapi import FastAPI, Query
+from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
+from starlette.responses import Response
 from sse_starlette.sse import EventSourceResponse
 
 from app.services import yfinance_service as yf_svc
@@ -16,6 +18,13 @@ from app.services import news_service as news_svc
 from app.services import markets_service as markets_svc
 from app.services import portfolio_analysis_service as portfolio_analysis_svc
 from app.services import chart_analysis_service as chart_analysis_svc
+from app.services import reports_service as reports_svc
+from app.services import reports_pdf_service as reports_pdf_svc
+from app.services.mail_config import is_mail_configured
+from app.services.mail_service import send_report_email
+
+
+REPORT_EMAIL_RECIPIENT = "architvarma25@gmail.com"
 
 
 # Pydantic models for request bodies
@@ -41,6 +50,15 @@ class TransactionCreate(BaseModel):
 
 class CashUpdate(BaseModel):
     amount: float
+
+
+class ReportEmailRequest(BaseModel):
+    to_email: str | None = None
+    period: str = "1M"
+    year: int | None = None
+    month: int | None = None
+    subject: str | None = None
+    message: str | None = None
 
 app = FastAPI(title="CodeCrafters API", version="0.1.0")
 
@@ -499,6 +517,128 @@ class GoalUpdate(BaseModel):
 async def update_goals(goals: list[GoalUpdate]):
     """Update investment goals."""
     return portfolio_analysis_svc.update_goals([g.model_dump() for g in goals])
+
+
+# ============== REPORTS PAGE ENDPOINTS ==============
+
+@app.get("/reports")
+async def get_reports(period: str = Query("1M", description="1M, 3M, 6M, 1Y, ALL"), year: int | None = None, month: int | None = None):
+    """Get full reports-page payload derived from user portfolio data."""
+    return reports_svc.get_full_report(period=period, year=year, month=month)
+
+
+@app.get("/reports/summary")
+async def get_reports_summary(period: str = Query("1M", description="1M, 3M, 6M, 1Y, ALL")):
+    """Get reports KPIs summary (portfolio value, realized/unrealized P&L, dividends, XIRR)."""
+    return reports_svc.get_reports_summary(period=period)
+
+
+@app.get("/reports/pl-calendar")
+async def get_reports_pl_calendar(year: int = Query(datetime.now().year), month: int = Query(datetime.now().month, ge=1, le=12)):
+    """Get daily realized P&L calendar for a month."""
+    return reports_svc.get_pl_calendar(year=year, month=month)
+
+
+@app.get("/reports/active-holdings")
+async def get_reports_active_holdings():
+    """Get active holdings report table data."""
+    return reports_svc.get_active_holdings()
+
+
+@app.get("/reports/asset-allocation")
+async def get_reports_asset_allocation():
+    """Get asset allocation distribution for reports page."""
+    return reports_svc.get_asset_allocation()
+
+
+@app.get("/reports/sector-exposure")
+async def get_reports_sector_exposure():
+    """Get sector exposure distribution for reports page."""
+    return reports_svc.get_sector_exposure()
+
+
+@app.get("/reports/tax-summary")
+async def get_reports_tax_summary(fy: str | None = Query(None, description="Financial year like 2025-26")):
+    """Get realized gains/losses based tax summary for selected financial year."""
+    return reports_svc.get_tax_summary(fy=fy)
+
+
+@app.get("/reports/dividend-history")
+async def get_reports_dividend_history(limit: int = Query(20, ge=1, le=200)):
+    """Get dividend and interest payout history."""
+    return reports_svc.get_dividend_history(limit=limit)
+
+
+@app.get("/reports/closed-positions")
+async def get_reports_closed_positions(limit: int = Query(50, ge=1, le=500)):
+    """Get closed positions with realized P&L and annualized return."""
+    return reports_svc.get_closed_positions(limit=limit)
+
+
+@app.get("/reports/portfolio-doctor")
+async def get_reports_portfolio_doctor():
+    """Get AI portfolio doctor insights derived from allocation/diversification analysis."""
+    return reports_svc.get_ai_portfolio_doctor()
+
+
+@app.get("/reports/pdf")
+async def download_reports_pdf(
+    period: str = Query("1M", description="1M, 3M, 6M, 1Y, ALL"),
+    year: int | None = None,
+    month: int | None = None,
+):
+    """Generate and download the portfolio report PDF."""
+    payload = reports_svc.get_full_report(period=period, year=year, month=month)
+    pdf_bytes = reports_pdf_svc.build_portfolio_report_pdf(payload, period=period)
+    stamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    filename = f"portfolio_report_{period}_{stamp}.pdf"
+
+    return Response(
+        content=pdf_bytes,
+        media_type="application/pdf",
+        headers={"Content-Disposition": f'attachment; filename="{filename}"'},
+    )
+
+
+@app.post("/reports/send-email")
+async def send_reports_email(request: ReportEmailRequest):
+    """Generate report PDF and send it to an email recipient as attachment."""
+    if not is_mail_configured():
+        raise HTTPException(status_code=400, detail="Email settings are missing. Configure MAIL_* values in .env")
+
+    if request.to_email and request.to_email.lower() != REPORT_EMAIL_RECIPIENT:
+        raise HTTPException(status_code=400, detail=f"Recipient is locked to {REPORT_EMAIL_RECIPIENT}")
+
+    recipient = REPORT_EMAIL_RECIPIENT
+
+    payload = reports_svc.get_full_report(period=request.period, year=request.year, month=request.month)
+    pdf_bytes = reports_pdf_svc.build_portfolio_report_pdf(payload, period=request.period)
+
+    stamp = datetime.now().strftime("%Y%m%d")
+    filename = f"portfolio_report_{request.period}_{stamp}.pdf"
+    subject = request.subject or f"Your Portfolio Report ({request.period})"
+
+    custom_message = request.message or "Your latest portfolio report is attached."
+    body = (
+        "<h3>Portfolio Report</h3>"
+        f"<p>{custom_message}</p>"
+        "<p>This report is generated from your current holdings and transaction history.</p>"
+    )
+
+    await send_report_email(
+        to_email=recipient,
+        subject=subject,
+        html_body=body,
+        pdf_bytes=pdf_bytes,
+        filename=filename,
+    )
+
+    return {
+        "status": "sent",
+        "to": recipient,
+        "subject": subject,
+        "filename": filename,
+    }
 
 
 # ============== VERITAS AGENT ENDPOINTS ==============
