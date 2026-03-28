@@ -57,6 +57,7 @@ const PAGE_SUGGESTIONS = [
   { label: 'Investments',             href: '/investment', tag: 'Page' },
   { label: 'Portfolio Analysis',      href: '/portfolio', tag: 'Page' },
   { label: 'Markets',                 href: '/market', tag: 'Page' },
+  { label: 'Learners',                href: '/learners', tag: 'Page' },
   { label: 'Reports',                 href: '/reports', tag: 'Page' },
   { label: 'Insights',                href: '/insights', tag: 'Page' },
 ];

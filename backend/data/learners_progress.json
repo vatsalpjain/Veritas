@@ -1,0 +1,19 @@
+{
+  "user_id": "default",
+  "xp": 403,
+  "streak_days": 16,
+  "level": "Master",
+  "lessons_completed": 6,
+  "quizzes_taken": 20,
+  "correct_answers": 17,
+  "completed_resource_ids": [
+    "res_002",
+    "res_001"
+  ],
+  "in_progress_resource_ids": [
+    "res_007",
+    "res_004",
+    "res_006"
+  ],
+  "last_active": "2026-03-28T20:37:10.588249+00:00"
+}

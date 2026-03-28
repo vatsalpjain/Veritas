@@ -21,6 +21,7 @@ from app.services import chart_analysis_service as chart_analysis_svc
 from app.services import reports_service as reports_svc
 from app.services import reports_pdf_service as reports_pdf_svc
 from app.services import investor_mindset_service as mindset_svc
+from app.services import learners_service as learners_svc
 from app.services.mail_config import is_mail_configured
 from app.services.mail_service import send_report_email
 
@@ -680,6 +681,16 @@ class MindsetChatRequest(BaseModel):
     extra_context: str | None = Field(default=None, description="Optional additional context")
 
 
+class LearnersQuizSubmitRequest(BaseModel):
+    card_id: str = Field(..., description="Quiz card identifier")
+    selected_index: int = Field(..., ge=0, description="User selected option index")
+
+
+class LearnersProgressUpdateRequest(BaseModel):
+    action: str = Field(..., description="Supported actions: lesson_started, lesson_completed, daily_visit")
+    resource_id: str | None = Field(default=None, description="Resource id for completion action")
+
+
 @app.post("/agent/chat")
 async def agent_chat(request: AgentChatRequest):
     """Stream Veritas agent response via SSE."""
@@ -825,3 +836,48 @@ async def mindset_chat(request: MindsetChatRequest):
             yield {"data": json.dumps({"type": "error", "message": str(exc)})}
 
     return EventSourceResponse(event_generator())
+
+
+# ============== LEARNERS ENDPOINTS ==============
+
+@app.get("/learners/overview")
+async def get_learners_overview(
+    query: str | None = Query(None, description="Topic search query"),
+    resource_type: str = Query("all", description="all, video, book, podcast, story"),
+    investor_id: str = Query("all", description="Investor filter id"),
+    limit: int = Query(24, ge=1, le=100, description="Maximum resources to return"),
+):
+    """Get Learners page payload: progress, investor list, filtered resources, and quiz stats."""
+    return learners_svc.get_overview(
+        query=query,
+        resource_type=resource_type,
+        investor_id=investor_id,
+        limit=limit,
+    )
+
+
+@app.get("/learners/quiz/cards")
+async def get_learners_quiz_cards(limit: int = Query(5, ge=1, le=25)):
+    """Get static concept quiz cards for the Learners page."""
+    return {"cards": learners_svc.get_quiz_cards(limit=limit)}
+
+
+@app.post("/learners/quiz/submit")
+async def submit_learners_quiz_answer(request: LearnersQuizSubmitRequest):
+    """Submit answer for one quiz card and update static progress data."""
+    try:
+        return learners_svc.submit_quiz_answer(request.card_id, request.selected_index)
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=str(exc)) from exc
+
+
+@app.get("/learners/progress")
+async def get_learners_progress():
+    """Get static progress state for the Learners page."""
+    return learners_svc.get_progress()
+
+
+@app.post("/learners/progress")
+async def update_learners_progress(request: LearnersProgressUpdateRequest):
+    """Update Learners progress with lightweight gamification actions."""
+    return learners_svc.update_progress(action=request.action, resource_id=request.resource_id)

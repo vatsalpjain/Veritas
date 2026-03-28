@@ -7,6 +7,7 @@ const navLinks = [
   { label: 'Overview',    href: '/overview',    icon: 'dashboard' },
   { label: 'Investments', href: '/investment',  icon: 'account_balance_wallet' },
   { label: 'Markets',     href: '/market',      icon: 'monitoring' },
+  { label: 'Learners',    href: '/learners',    icon: 'school' },
   { label: 'Insights',    href: '/insights',    icon: 'lightbulb' },
   { label: 'Mindset',     href: '/mindset',     icon: 'psychology' },
   { label: 'Portfolio',   href: '/portfolio',   icon: 'donut_large' },
