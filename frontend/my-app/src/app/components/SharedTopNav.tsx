@@ -52,17 +52,21 @@ const MOCK_NOTIFICATIONS: Notification[] = [
   },
 ];
 
-const SEARCH_SUGGESTIONS = [
-  { label: 'AAPL — Apple Inc.',       href: '/market', tag: 'Stock' },
-  { label: 'NVDA — NVIDIA Corp',      href: '/market', tag: 'Stock' },
-  { label: 'BTC — Bitcoin',           href: '/market', tag: 'Crypto' },
+const PAGE_SUGGESTIONS = [
   { label: 'Overview Dashboard',      href: '/overview', tag: 'Page' },
   { label: 'Investments',             href: '/investment', tag: 'Page' },
   { label: 'Portfolio Analysis',      href: '/portfolio', tag: 'Page' },
   { label: 'Markets',                 href: '/market', tag: 'Page' },
-  { label: 'QQQ — Invesco QQQ Trust', href: '/market', tag: 'ETF' },
-  { label: 'TSLA — Tesla, Inc.',      href: '/market', tag: 'Stock' },
+  { label: 'Reports',                 href: '/reports', tag: 'Page' },
+  { label: 'Insights',                href: '/insights', tag: 'Page' },
 ];
+
+interface StockResult {
+  symbol: string;
+  name: string;
+  type: string;
+  exchange: string;
+}
 
 export default function SharedTopNav() {
   const router = useRouter();
@@ -70,6 +74,8 @@ export default function SharedTopNav() {
   // Search state
   const [searchQuery, setSearchQuery] = useState('');
   const [searchOpen, setSearchOpen] = useState(false);
+  const [stockResults, setStockResults] = useState<StockResult[]>([]);
+  const [searchingStocks, setSearchingStocks] = useState(false);
   const searchRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -100,16 +106,50 @@ export default function SharedTopNav() {
     return () => document.removeEventListener('mousedown', handleClick);
   }, []);
 
-  const filteredSuggestions = searchQuery.trim()
-    ? SEARCH_SUGGESTIONS.filter(s =>
+  // Search for stocks when query changes
+  useEffect(() => {
+    const searchStocks = async () => {
+      if (searchQuery.length < 1) {
+        setStockResults([]);
+        return;
+      }
+
+      setSearchingStocks(true);
+      try {
+        const response = await fetch(`http://localhost:8000/yf/search?q=${encodeURIComponent(searchQuery)}`);
+        if (response.ok) {
+          const data = await response.json();
+          setStockResults(data.slice(0, 6)); // Limit to 6 results
+        }
+      } catch (error) {
+        console.error('Stock search failed:', error);
+        setStockResults([]);
+      } finally {
+        setSearchingStocks(false);
+      }
+    };
+
+    const timeoutId = setTimeout(searchStocks, 300); // Debounce
+    return () => clearTimeout(timeoutId);
+  }, [searchQuery]);
+
+  const filteredPages = searchQuery.trim()
+    ? PAGE_SUGGESTIONS.filter(s =>
         s.label.toLowerCase().includes(searchQuery.toLowerCase())
       )
-    : SEARCH_SUGGESTIONS;
+    : PAGE_SUGGESTIONS;
 
-  function handleSuggestionClick(href: string) {
+  function handlePageClick(href: string) {
     setSearchOpen(false);
     setSearchQuery('');
     router.push(href);
+  }
+
+  function handleStockClick(ticker: string) {
+    setSearchOpen(false);
+    setSearchQuery('');
+    // Navigate to market page with stock ticker as query param
+    router.push(`/market?stock=${ticker}`);
   }
 
   function markAllRead() {
@@ -150,12 +190,20 @@ export default function SharedTopNav() {
               placeholder="Search assets, pages..."
               className="flex-1 bg-transparent outline-none text-sm placeholder-slate-400"
               style={{ color: '#0b1c30', fontFamily: 'Inter, sans-serif' }}
-              onFocus={() => setSearchOpen(true)}
-              onChange={e => { setSearchQuery(e.target.value); setSearchOpen(true); }}
+              onFocus={() => { if (searchQuery.length > 0) setSearchOpen(true); }}
+              onChange={e => { 
+                const value = e.target.value;
+                setSearchQuery(value); 
+                setSearchOpen(value.length > 0);
+              }}
               onKeyDown={e => {
                 if (e.key === 'Escape') { setSearchOpen(false); setSearchQuery(''); inputRef.current?.blur(); }
-                if (e.key === 'Enter' && filteredSuggestions.length > 0) {
-                  handleSuggestionClick(filteredSuggestions[0].href);
+                if (e.key === 'Enter') {
+                  if (stockResults.length > 0) {
+                    handleStockClick(stockResults[0].symbol);
+                  } else if (filteredPages.length > 0) {
+                    handlePageClick(filteredPages[0].href);
+                  }
                 }
               }}
             />
@@ -180,37 +228,85 @@ export default function SharedTopNav() {
                 zIndex: 100,
               }}
             >
-              <div className="px-4 py-2 border-b" style={{ borderColor: 'rgba(226,232,240,0.5)' }}>
-                <span
-                  className="text-[10px] font-bold uppercase tracking-widest"
-                  style={{ color: '#94a3b8', fontFamily: 'Inter, sans-serif' }}
-                >
-                  {searchQuery ? 'Results' : 'Quick access'}
-                </span>
-              </div>
-              {filteredSuggestions.length === 0 ? (
+              {/* Stock Results Section */}
+              {searchQuery && stockResults.length > 0 && (
+                <>
+                  <div className="px-4 py-2 border-b" style={{ borderColor: 'rgba(226,232,240,0.5)' }}>
+                    <span
+                      className="text-[10px] font-bold uppercase tracking-widest"
+                      style={{ color: '#94a3b8', fontFamily: 'Inter, sans-serif' }}
+                    >
+                      Stocks
+                    </span>
+                  </div>
+                  {stockResults.map(stock => (
+                    <button
+                      key={stock.symbol}
+                      onClick={() => handleStockClick(stock.symbol)}
+                      className="w-full flex items-center justify-between px-4 py-3 text-left transition-colors"
+                      style={{ fontFamily: 'Inter, sans-serif' }}
+                      onMouseEnter={e => { (e.currentTarget as HTMLElement).style.backgroundColor = '#f8f9ff'; }}
+                      onMouseLeave={e => { (e.currentTarget as HTMLElement).style.backgroundColor = 'transparent'; }}
+                    >
+                      <div>
+                        <div className="text-sm font-bold" style={{ color: '#0f172a' }}>{stock.symbol}</div>
+                        <div className="text-xs" style={{ color: '#64748b' }}>{stock.name}</div>
+                      </div>
+                      <span
+                        className="text-[10px] font-bold px-2 py-0.5 rounded"
+                        style={{ backgroundColor: '#e5eeff', color: '#006591' }}
+                      >
+                        {stock.exchange}
+                      </span>
+                    </button>
+                  ))}
+                </>
+              )}
+
+              {/* Page Suggestions Section */}
+              {filteredPages.length > 0 && (
+                <>
+                  <div className="px-4 py-2 border-b" style={{ borderColor: 'rgba(226,232,240,0.5)' }}>
+                    <span
+                      className="text-[10px] font-bold uppercase tracking-widest"
+                      style={{ color: '#94a3b8', fontFamily: 'Inter, sans-serif' }}
+                    >
+                      {searchQuery ? 'Pages' : 'Quick access'}
+                    </span>
+                  </div>
+                  {filteredPages.map(page => (
+                    <button
+                      key={page.label}
+                      onClick={() => handlePageClick(page.href)}
+                      className="w-full flex items-center justify-between px-4 py-3 text-left transition-colors"
+                      style={{ fontFamily: 'Inter, sans-serif' }}
+                      onMouseEnter={e => { (e.currentTarget as HTMLElement).style.backgroundColor = '#f8f9ff'; }}
+                      onMouseLeave={e => { (e.currentTarget as HTMLElement).style.backgroundColor = 'transparent'; }}
+                    >
+                      <span className="text-sm font-medium" style={{ color: '#0f172a' }}>{page.label}</span>
+                      <span
+                        className="text-[10px] font-bold px-2 py-0.5 rounded"
+                        style={{ backgroundColor: '#e5eeff', color: '#006591' }}
+                      >
+                        {page.tag}
+                      </span>
+                    </button>
+                  ))}
+                </>
+              )}
+
+              {/* No Results */}
+              {searchQuery && stockResults.length === 0 && filteredPages.length === 0 && !searchingStocks && (
                 <div className="px-4 py-6 text-sm text-center" style={{ color: '#94a3b8' }}>
                   No results for &ldquo;{searchQuery}&rdquo;
                 </div>
-              ) : (
-                filteredSuggestions.map(s => (
-                  <button
-                    key={s.label}
-                    onClick={() => handleSuggestionClick(s.href)}
-                    className="w-full flex items-center justify-between px-4 py-3 text-left transition-colors"
-                    style={{ fontFamily: 'Inter, sans-serif' }}
-                    onMouseEnter={e => { (e.currentTarget as HTMLElement).style.backgroundColor = '#f8f9ff'; }}
-                    onMouseLeave={e => { (e.currentTarget as HTMLElement).style.backgroundColor = 'transparent'; }}
-                  >
-                    <span className="text-sm font-medium" style={{ color: '#0f172a' }}>{s.label}</span>
-                    <span
-                      className="text-[10px] font-bold px-2 py-0.5 rounded"
-                      style={{ backgroundColor: '#e5eeff', color: '#006591' }}
-                    >
-                      {s.tag}
-                    </span>
-                  </button>
-                ))
+              )}
+
+              {/* Loading */}
+              {searchingStocks && (
+                <div className="px-4 py-6 text-sm text-center" style={{ color: '#94a3b8' }}>
+                  Searching...
+                </div>
               )}
             </div>
           )}

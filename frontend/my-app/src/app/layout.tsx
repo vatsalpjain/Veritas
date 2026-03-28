@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Bebas_Neue, DM_Mono, Inter, Manrope } from "next/font/google";
 import "./globals.css";
+import ToastProvider from "@/components/ToastProvider";
 
 const bebasNeue = Bebas_Neue({
   variable: "--font-bebas-neue",
@@ -47,7 +48,10 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap"
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <ToastProvider />
+        {children}
+      </body>
     </html>
   );
 }

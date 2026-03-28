@@ -258,3 +258,132 @@ def update_cash_balance(amount: float) -> dict[str, Any]:
     portfolio["cash_balance"] = amount
     _save_portfolio(portfolio)
     return {"message": "Cash balance updated", "cash_balance": amount}
+
+
+def buy_stock(symbol: str, amount: float) -> dict[str, Any]:
+    """Buy stock with specified dollar amount."""
+    try:
+        # Get current price
+        quote = yf_svc.get_stock_quote(symbol)
+        current_price = quote.get("price")
+        
+        if not current_price:
+            return {"error": f"Could not fetch price for {symbol}"}
+        
+        # Calculate quantity
+        quantity = amount / current_price
+        
+        # Update portfolio
+        portfolio = _load_portfolio()
+        holdings = portfolio.get("holdings", [])
+        
+        # Check if holding exists
+        holding_found = False
+        for h in holdings:
+            if h["symbol"] == symbol:
+                # Update existing holding
+                total_qty = h["quantity"] + quantity
+                total_cost = (h["quantity"] * h["avg_buy_price"]) + amount
+                h["quantity"] = round(total_qty, 4)
+                h["avg_buy_price"] = round(total_cost / total_qty, 2)
+                holding_found = True
+                break
+        
+        if not holding_found:
+            # Add new holding
+            holdings.append({
+                "symbol": symbol,
+                "quantity": round(quantity, 4),
+                "avg_buy_price": round(current_price, 2),
+                "asset_type": "equity",
+            })
+        
+        # Update cash balance
+        cash = portfolio.get("cash_balance", 0)
+        portfolio["cash_balance"] = round(cash - amount, 2)
+        
+        # Add transaction
+        transactions = portfolio.get("transactions", [])
+        transactions.append({
+            "id": f"txn-{len(transactions) + 1}",
+            "type": "buy",
+            "symbol": symbol,
+            "name": symbol,
+            "quantity": round(quantity, 4),
+            "price": round(current_price, 2),
+            "total_amount": round(amount, 2),
+            "timestamp": datetime.now().isoformat(),
+        })
+        
+        portfolio["holdings"] = holdings
+        portfolio["transactions"] = transactions
+        _save_portfolio(portfolio)
+        
+        return {
+            "success": True,
+            "message": f"Bought {quantity:.4f} shares of {symbol} for ${amount:,.2f}",
+            "symbol": symbol,
+            "quantity": round(quantity, 4),
+            "price": round(current_price, 2),
+            "total_amount": round(amount, 2),
+        }
+    except Exception as e:
+        return {"error": str(e)}
+
+
+def sell_stock(symbol: str, amount: float) -> dict[str, Any]:
+    """Sell stock worth specified dollar amount."""
+    try:
+        # Get current price
+        quote = yf_svc.get_stock_quote(symbol)
+        current_price = quote.get("price")
+        
+        if not current_price:
+            return {"error": f"Could not fetch price for {symbol}"}
+        
+        # Calculate quantity to sell
+        quantity_to_sell = amount / current_price
+        
+        # Update portfolio
+        portfolio = _load_portfolio()
+        holdings = portfolio.get("holdings", [])
+        
+        # Try to reduce existing holding if present
+        for i, h in enumerate(holdings):
+            if h["symbol"] == symbol:
+                h["quantity"] = round(max(h["quantity"] - quantity_to_sell, 0), 4)
+                if h["quantity"] < 0.0001:
+                    holdings.pop(i)
+                break
+        
+        # Update cash balance (always add proceeds)
+        cash = portfolio.get("cash_balance", 0)
+        portfolio["cash_balance"] = round(cash + amount, 2)
+        
+        # Add transaction
+        transactions = portfolio.get("transactions", [])
+        transactions.append({
+            "id": f"txn-{len(transactions) + 1}",
+            "type": "sell",
+            "symbol": symbol,
+            "name": symbol,
+            "quantity": round(quantity_to_sell, 4),
+            "price": round(current_price, 2),
+            "total_amount": round(amount, 2),
+            "timestamp": datetime.now().isoformat(),
+        })
+        
+        portfolio["holdings"] = holdings
+        portfolio["transactions"] = transactions
+        _save_portfolio(portfolio)
+        
+        return {
+            "success": True,
+            "message": f"Sold {quantity_to_sell:.2f} shares of {symbol} at ${current_price:.2f} for ${amount:,.2f}",
+            "symbol": symbol,
+            "quantity": round(quantity_to_sell, 4),
+            "price": round(current_price, 2),
+            "total_amount": round(amount, 2),
+        }
+    except Exception as e:
+        return {"error": str(e)}

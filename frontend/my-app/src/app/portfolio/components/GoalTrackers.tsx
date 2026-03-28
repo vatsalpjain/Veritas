@@ -1,6 +1,8 @@
 'use client';
 
+import { useState } from 'react';
 import type { GoalTracker } from '@/lib/types/portfolio';
+import GoalSettingModal from './GoalSettingModal';
 
 interface Props {
   data: GoalTracker[];
@@ -13,17 +15,108 @@ function formatValue(n: number): string {
 }
 
 export default function GoalTrackers({ data }: Props) {
-  return (
-    <section className="space-y-6">
-      <h3
-        className="text-xl font-extrabold tracking-tight"
-        style={{ color: '#0f172a', fontFamily: 'Manrope, sans-serif' }}
-      >
-        Goal Trackers
-      </h3>
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [goals, setGoals] = useState<GoalTracker[]>(data);
+  const [showPlaceholder, setShowPlaceholder] = useState(data.length === 0);
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {data.map(goal => (
+  const handleAddGoal = (newGoal: { id: string; label: string; icon: string; iconColor: string; iconBg: string; targetValue: number; currentValue: number }) => {
+    const goalTracker: GoalTracker = {
+      id: newGoal.id,
+      label: newGoal.label,
+      icon: newGoal.icon,
+      iconColor: newGoal.iconColor,
+      iconBg: newGoal.iconBg,
+      currentValue: newGoal.currentValue,
+      targetValue: newGoal.targetValue,
+      progressPercent: 0,
+      progressBarColor: newGoal.iconColor,
+      status: 'Early stage' as const,
+      statusColor: '#94a3b8',
+      ctaLabel: 'Increase contributions',
+    };
+    
+    setGoals(prev => [...prev, goalTracker]);
+    setShowPlaceholder(false);
+  };
+
+  const displayGoals: GoalTracker[] = showPlaceholder ? [
+    {
+      id: 'example-1',
+      label: 'RETIREMENT 2065 (Example)',
+      icon: 'savings',
+      iconColor: '#006591',
+      iconBg: '#e5eeff',
+      currentValue: 303000,
+      targetValue: 3500000,
+      progressPercent: 8.7,
+      progressBarColor: '#006591',
+      status: 'Early stage' as const,
+      statusColor: '#94a3b8',
+    },
+    {
+      id: 'example-2',
+      label: 'EDUCATION FUND (Example)',
+      icon: 'school',
+      iconColor: '#0891b2',
+      iconBg: '#cffafe',
+      currentValue: 101000,
+      targetValue: 250000,
+      progressPercent: 40.4,
+      progressBarColor: '#0891b2',
+      status: 'On Track' as const,
+      statusColor: '#009668',
+      ctaLabel: 'Increase contributions',
+    },
+    {
+      id: 'example-3',
+      label: 'VACATION HOME (Example)',
+      icon: 'home',
+      iconColor: '#009668',
+      iconBg: '#d7f4e8',
+      currentValue: 101000,
+      targetValue: 150000,
+      progressPercent: 67.4,
+      progressBarColor: '#009668',
+      status: 'On Track' as const,
+      statusColor: '#009668',
+    },
+  ] : goals;
+
+  return (
+    <>
+      <section className="space-y-6">
+        <div className="flex items-center justify-between">
+          <h3
+            className="text-xl font-extrabold tracking-tight"
+            style={{ color: '#0f172a', fontFamily: 'Manrope, sans-serif' }}
+          >
+            Goal Trackers
+          </h3>
+          <button
+            onClick={() => setIsModalOpen(true)}
+            className="px-4 py-2 rounded-lg text-sm font-bold text-white transition-opacity hover:opacity-90"
+            style={{ backgroundColor: '#006591', fontFamily: 'Inter, sans-serif' }}
+          >
+            Set Your Goals
+          </button>
+        </div>
+
+        {showPlaceholder && (
+          <div
+            className="px-4 py-2 rounded-lg"
+            style={{ backgroundColor: '#fef3c7', borderLeft: '4px solid #C9A84C' }}
+          >
+            <p
+              className="text-xs font-semibold"
+              style={{ color: '#92400e', fontFamily: 'Inter, sans-serif' }}
+            >
+              📌 These are example goals. Click "Set Your Goals" to create your own!
+            </p>
+          </div>
+        )}
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {displayGoals.map(goal => (
           <div
             key={goal.id}
             className="p-8 rounded-xl flex flex-col gap-5"
@@ -56,20 +149,39 @@ export default function GoalTrackers({ data }: Props) {
 
             {/* Value display */}
             <div>
-              <div className="flex items-baseline gap-1.5">
-                <span
-                  className="text-2xl font-extrabold"
-                  style={{ color: '#0f172a', fontFamily: 'Manrope, sans-serif' }}
-                >
-                  {formatValue(goal.currentValue)}
-                </span>
-                <span
-                  className="text-sm font-medium"
-                  style={{ color: '#94a3b8', fontFamily: 'Inter, sans-serif' }}
-                >
-                  / {formatValue(goal.targetValue)}
-                </span>
-              </div>
+              {goal.currentValue > 0 ? (
+                <div className="flex items-baseline gap-1.5">
+                  <span
+                    className="text-2xl font-extrabold"
+                    style={{ color: '#0f172a', fontFamily: 'Manrope, sans-serif' }}
+                  >
+                    {formatValue(goal.currentValue)}
+                  </span>
+                  <span
+                    className="text-sm font-medium"
+                    style={{ color: '#94a3b8', fontFamily: 'Inter, sans-serif' }}
+                  >
+                    / {formatValue(goal.targetValue)}
+                  </span>
+                </div>
+              ) : (
+                <div>
+                  <div className="flex items-baseline gap-1.5">
+                    <span
+                      className="text-2xl font-extrabold"
+                      style={{ color: '#006591', fontFamily: 'Manrope, sans-serif' }}
+                    >
+                      {formatValue(goal.targetValue)}
+                    </span>
+                  </div>
+                  <span
+                    className="text-[10px] font-bold uppercase tracking-widest"
+                    style={{ color: '#94a3b8', fontFamily: 'Inter, sans-serif' }}
+                  >
+                    Target Amount
+                  </span>
+                </div>
+              )}
             </div>
 
             {/* Progress bar */}
@@ -112,9 +224,17 @@ export default function GoalTrackers({ data }: Props) {
                 )}
               </div>
             </div>
-          </div>
-        ))}
-      </div>
-    </section>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Goal Setting Modal */}
+      <GoalSettingModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        onAddGoal={handleAddGoal}
+      />
+    </>
   );
 }

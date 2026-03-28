@@ -2,20 +2,72 @@ import yfinance as yf
 from typing import Any
 
 
+def search_stocks(query: str) -> list[dict[str, Any]]:
+    """Search for stocks by ticker or name."""
+    try:
+        # Use yfinance's search functionality
+        ticker = yf.Ticker(query)
+        info = ticker.info
+        
+        # If we got valid info, return it as a search result
+        if info and info.get('symbol'):
+            return [{
+                "symbol": info.get('symbol', query.upper()),
+                "name": info.get('longName', info.get('shortName', query)),
+                "type": info.get('quoteType', 'EQUITY'),
+                "exchange": info.get('exchange', 'Unknown'),
+            }]
+        
+        # Fallback: return the query as uppercase ticker
+        return [{
+            "symbol": query.upper(),
+            "name": query.upper(),
+            "type": "EQUITY",
+            "exchange": "Unknown",
+        }]
+    except Exception:
+        # If search fails, still return the query as a potential ticker
+        return [{
+            "symbol": query.upper(),
+            "name": query.upper(),
+            "type": "EQUITY",
+            "exchange": "Unknown",
+        }]
+
+
 def get_stock_quote(symbol: str) -> dict[str, Any]:
     """Get live quote for a stock."""
-    ticker = yf.Ticker(symbol)
-    info = ticker.fast_info
-    return {
-        "symbol": symbol,
-        "price": info.get("lastPrice"),
-        "previous_close": info.get("previousClose"),
-        "open": info.get("open"),
-        "day_high": info.get("dayHigh"),
-        "day_low": info.get("dayLow"),
-        "volume": info.get("lastVolume"),
-        "market_cap": info.get("marketCap"),
-    }
+    try:
+        ticker = yf.Ticker(symbol)
+        info = ticker.fast_info
+        return {
+            "symbol": symbol,
+            "price": info.get("lastPrice"),
+            "previous_close": info.get("previousClose"),
+            "open": info.get("open"),
+            "day_high": info.get("dayHigh"),
+            "day_low": info.get("dayLow"),
+            "volume": info.get("lastVolume"),
+            "market_cap": info.get("marketCap"),
+        }
+    except Exception:
+        # Fallback: try using .info instead of .fast_info
+        try:
+            ticker = yf.Ticker(symbol)
+            info = ticker.info
+            price = info.get("currentPrice") or info.get("regularMarketPrice") or info.get("previousClose")
+            return {
+                "symbol": symbol,
+                "price": price,
+                "previous_close": info.get("previousClose") or info.get("regularMarketPreviousClose"),
+                "open": info.get("open") or info.get("regularMarketOpen"),
+                "day_high": info.get("dayHigh") or info.get("regularMarketDayHigh"),
+                "day_low": info.get("dayLow") or info.get("regularMarketDayLow"),
+                "volume": info.get("volume") or info.get("regularMarketVolume"),
+                "market_cap": info.get("marketCap"),
+            }
+        except Exception:
+            return {"symbol": symbol, "price": None}
 
 
 def get_stock_fundamentals(symbol: str) -> dict[str, Any]:

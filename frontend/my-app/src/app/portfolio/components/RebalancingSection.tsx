@@ -1,5 +1,8 @@
 'use client';
 
+import { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { toast } from 'react-toastify';
 import type { RebalanceRecommendation, RebalanceAction, StrategyAdvisorRecommendation } from '@/lib/types/portfolio';
 
 interface Props {
@@ -14,6 +17,50 @@ const actionConfig: Record<RebalanceAction, { icon: string; iconColor: string; i
 };
 
 export default function RebalancingSection({ recommendations, advisor }: Props) {
+  const router = useRouter();
+  const [loading, setLoading] = useState<string | null>(null);
+
+  const handleBuySell = async (rec: RebalanceRecommendation) => {
+    if (loading) return;
+    
+    setLoading(rec.id);
+    
+    try {
+      const endpoint = rec.action === 'BUY' ? '/portfolio/buy' : '/portfolio/sell';
+      const symbol = extractSymbol(rec.title);
+      
+      const response = await fetch(`http://localhost:8000${endpoint}?symbol=${symbol}&amount=${rec.amount}`, {
+        method: 'POST',
+      });
+      
+      const data = await response.json();
+      
+      if (data.success) {
+        toast.success(data.message, { position: 'top-right' });
+        setTimeout(() => window.location.reload(), 2000);
+      } else if (data.error) {
+        toast.error(data.error, { position: 'top-right' });
+      }
+    } catch (error) {
+      toast.error('Transaction failed. Please check if backend is running.', { position: 'top-right' });
+      console.error('Transaction error:', error);
+    } finally {
+      setLoading(null);
+    }
+  };
+
+  const extractSymbol = (title: string): string => {
+    // Map recommendation titles to real US ETF tickers
+    if (title.includes('Domestic')) return 'SPY';
+    if (title.includes('International')) return 'VXUS';
+    if (title.includes('Cash')) return 'BIL';
+    return 'SPY';
+  };
+
+  const handleApplyStrategy = () => {
+    router.push('/insights');
+  };
+
   return (
     <section className="grid grid-cols-1 lg:grid-cols-3 gap-8">
       {/* Left: Rebalancing Recommendations (2 cols) */}
@@ -72,19 +119,25 @@ export default function RebalancingSection({ recommendations, advisor }: Props) 
                 </div>
 
                 {/* Amount + CTA */}
-                <div className="text-right shrink-0">
-                  <p
-                    className="text-sm font-bold"
-                    style={{ color: cfg.amountColor, fontFamily: 'Inter, sans-serif' }}
-                  >
-                    {cfg.amountPrefix}{rec.amount.toLocaleString()}
-                  </p>
+                <div className="text-right shrink-0 flex flex-col items-end gap-1">
                   <button
-                    className="text-[10px] font-bold uppercase tracking-widest mt-1 transition-opacity hover:opacity-70"
+                    onClick={() => handleBuySell(rec)}
+                    disabled={loading === rec.id}
+                    className="px-4 py-2 rounded-lg text-sm font-bold transition-all hover:opacity-80 disabled:opacity-50 cursor-pointer"
+                    style={{
+                      color: '#ffffff',
+                      backgroundColor: cfg.amountColor,
+                      fontFamily: 'Inter, sans-serif',
+                    }}
+                  >
+                    {loading === rec.id ? 'Processing...' : `${cfg.amountPrefix}${rec.amount.toLocaleString()}`}
+                  </button>
+                  <span
+                    className="text-[10px] font-bold uppercase tracking-widest"
                     style={{ color: '#006591', fontFamily: 'Inter, sans-serif' }}
                   >
                     {rec.ctaLabel}
-                  </button>
+                  </span>
                 </div>
               </div>
             );
@@ -155,6 +208,7 @@ export default function RebalancingSection({ recommendations, advisor }: Props) 
           </div>
 
           <button
+            onClick={handleApplyStrategy}
             className="w-full py-3 rounded-lg text-sm font-bold text-white transition-opacity hover:opacity-90"
             style={{ backgroundColor: '#0f172a', fontFamily: 'Inter, sans-serif' }}
           >

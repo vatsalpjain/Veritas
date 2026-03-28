@@ -244,11 +244,11 @@ function mapInsightVariant(type: string): 'report' | 'signal' | 'risk' {
 
 export async function getOverviewData(): Promise<OverviewData> {
   try {
-    // Parallel fetch all required endpoints
+    // Parallel fetch all required endpoints (no-store for portfolio data so buy/sell changes reflect immediately)
     const [summary, performers, activity, insights, riskScore] = await Promise.all([
-      apiFetch<RawPortfolioSummary>('/portfolio/summary', { revalidate: REVALIDATE.LIVE }),
-      apiFetch<RawTopPerformer[]>('/portfolio/top-performers?limit=5', { revalidate: REVALIDATE.LIVE }),
-      apiFetch<RawActivity[]>('/portfolio/activity?limit=10', { revalidate: REVALIDATE.LIVE }),
+      apiFetch<RawPortfolioSummary>('/portfolio/summary', { cache: 'no-store' }),
+      apiFetch<RawTopPerformer[]>('/portfolio/top-performers?limit=5', { cache: 'no-store' }),
+      apiFetch<RawActivity[]>('/portfolio/activity?limit=10', { cache: 'no-store' }),
       apiFetch<RawInsight[]>('/insights', { revalidate: REVALIDATE.SLOW }),
       apiFetch<RawRiskScore>('/insights/risk-score', { revalidate: REVALIDATE.SLOW }),
     ]);

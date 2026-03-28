@@ -78,6 +78,12 @@ async def health():
 
 # ============== YFINANCE ENDPOINTS ==============
 
+@app.get("/yf/search")
+async def yf_search(q: str = Query(..., description="Search query for stocks")):
+    """Search for stocks by ticker or name."""
+    return yf_svc.search_stocks(q)
+
+
 @app.get("/yf/quote/{symbol}")
 async def yf_quote(symbol: str):
     """Get live quote via yfinance."""
@@ -288,6 +294,18 @@ async def add_transaction(txn: TransactionCreate):
 async def update_cash(cash: CashUpdate):
     """Update cash balance."""
     return portfolio_svc.update_cash_balance(cash.amount)
+
+
+@app.post("/portfolio/buy")
+async def buy_stock(symbol: str, amount: float):
+    """Buy stock with specified dollar amount."""
+    return portfolio_svc.buy_stock(symbol, amount)
+
+
+@app.post("/portfolio/sell")
+async def sell_stock(symbol: str, amount: float):
+    """Sell stock worth specified dollar amount."""
+    return portfolio_svc.sell_stock(symbol, amount)
 
 
 # ============== INSIGHTS ENDPOINTS ==============
