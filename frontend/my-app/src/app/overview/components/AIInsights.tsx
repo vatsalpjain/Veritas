@@ -39,10 +39,11 @@ export default function AIInsights({ data, updatedAt }: Props) {
 
       {/* Bento grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {data.map(insight => {
-          if (insight.variant === 'report') return <ReportCard key={insight.id} insight={insight} />;
-          if (insight.variant === 'signal') return <SignalCard key={insight.id} insight={insight} />;
-          if (insight.variant === 'risk') return <RiskCard key={insight.id} insight={insight} />;
+        {data.map((insight, i) => {
+          const key = insight.id ?? i;
+          if (insight.variant === 'report') return <ReportCard key={key} insight={insight} />;
+          if (insight.variant === 'signal') return <SignalCard key={key} insight={insight} />;
+          if (insight.variant === 'risk') return <RiskCard key={key} insight={insight} />;
           return null;
         })}
       </div>

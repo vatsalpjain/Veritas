@@ -38,7 +38,7 @@ export default function RecentActivity({ data }: Props) {
           const meta = iconMap[item.type] ?? iconMap.trade;
           const isLast = i === data.length - 1;
           return (
-            <div key={item.id} className="flex gap-4">
+            <div key={item.id ?? i} className="flex gap-4">
               {/* Icon */}
               <div
                 className="h-10 w-10 shrink-0 rounded-lg flex items-center justify-center"

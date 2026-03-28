@@ -54,7 +54,7 @@ export default function TopHoldings({ data }: Props) {
               const isAlt = i % 2 !== 0;
               return (
                 <tr
-                  key={holding.id}
+                  key={holding.id ?? i}
                   style={{
                     backgroundColor: isAlt ? 'rgba(239,244,255,0.3)' : 'transparent',
                     transition: 'background-color 0.15s ease',

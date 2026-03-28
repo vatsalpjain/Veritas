@@ -1,28 +1,13 @@
-import type { InvestmentData, HistoryPeriod } from '@/lib/types/investment';
-
-// ─────────────────────────────────────────────────────────────────────────────
-// MOCK DATA — Backend integration swap points are documented inline.
-//
-// When backend is ready, replace getInvestmentData() body with parallel fetches:
-//
-//   const BASE = process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:8000';
-//
-//   const [aapl, voo, tsla, nvda, nee] = await Promise.all([
-//     fetch(`${BASE}/yf/quote/AAPL`).then(r => r.json()),
-//     fetch(`${BASE}/yf/quote/VOO`).then(r => r.json()),
-//     fetch(`${BASE}/yf/quote/TSLA`).then(r => r.json()),
-//     fetch(`${BASE}/yf/quote/NVDA`).then(r => r.json()),
-//     fetch(`${BASE}/yf/quote/NEE`).then(r => r.json()),
-//   ]);
-//
-//   const [aaplHist, vooHist, tslaHist] = await Promise.all([
-//     fetch(`${BASE}/yf/history/AAPL?period=1mo&interval=1d`).then(r => r.json()),
-//     fetch(`${BASE}/yf/history/VOO?period=1mo&interval=1d`).then(r => r.json()),
-//     fetch(`${BASE}/yf/history/TSLA?period=1mo&interval=1d`).then(r => r.json()),
-//   ]);
-//
-//   Then map the yfinance response shape to InvestmentData.
-// ─────────────────────────────────────────────────────────────────────────────
+import type { InvestmentData, HistoryPeriod, OHLCVPoint } from '@/lib/types/investment';
+import { apiFetch, REVALIDATE } from '@/lib/api/client';
+import type {
+  RawInvestmentStats,
+  RawPerformance,
+  RawBreakdown,
+  RawHolding,
+  RawOpportunity,
+  RawAlert,
+} from '@/lib/api/types';
 
 // Sparklines: normalized Y values (0–20 scale, lower = higher on chart)
 const SPARKLINE_UP    = [15, 12, 14, 10, 12, 8, 10, 5, 7, 2, 5];
@@ -141,33 +126,138 @@ export const mockInvestmentData: InvestmentData = {
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
-// Data-fetching function — swap body here when backend is live
+// Mapper helpers
+// ─────────────────────────────────────────────────────────────────────────────
+
+// Map backend performance data points → OHLCVPoint array the chart expects
+function mapPerformanceToOHLCV(raw: RawPerformance): OHLCVPoint[] {
+  return raw.data_points.map(pt => ({
+    date:   pt.date,
+    open:   pt.value * 0.998,
+    high:   pt.value * 1.002,
+    low:    pt.value * 0.996,
+    close:  pt.value,
+    volume: 0,
+  }));
+}
+
+// Map backend trend data (close prices) → normalized sparkline (0–20 scale)
+// Lower number = higher on chart (SVG inverted Y axis)
+function mapTrendToSparkline(trend: { date: string; close: number }[]): number[] {
+  if (!trend || trend.length === 0) return [10, 10, 10];
+  const closes = trend.map(t => t.close);
+  const min = Math.min(...closes);
+  const max = Math.max(...closes);
+  const range = max - min || 1;
+  return closes.map(c => 20 - Math.round(((c - min) / range) * 18));
+}
+
+// Choose a consistent color for breakdown items based on type
+function breakdownColor(type: string): string {
+  const colors: Record<string, string> = {
+    equity: '#000000',
+    cash:   '#39b8fd',
+    bonds:  '#006591',
+    mutual_fund: '#4edea3',
+  };
+  return colors[type] ?? '#94a3b8';
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Data-fetching function — calls real backend, falls back to mock on error
 // ─────────────────────────────────────────────────────────────────────────────
 
 export async function getInvestmentData(): Promise<InvestmentData> {
-  // TODO: replace with real parallel API calls to http://localhost:8000
-  // See comments at the top of this file for the exact fetch pattern.
-  return mockInvestmentData;
+  try {
+    // Fetch all periods in parallel alongside other endpoints
+    const [stats, perf1M, perf3M, perf1Y, perfALL, breakdown, holdings, opportunities, alerts] =
+      await Promise.all([
+        apiFetch<RawInvestmentStats>('/investments/stats',                        { revalidate: REVALIDATE.LIVE }),
+        apiFetch<RawPerformance>('/investments/performance?period=1M',            { revalidate: REVALIDATE.HISTORY }),
+        apiFetch<RawPerformance>('/investments/performance?period=3M',            { revalidate: REVALIDATE.HISTORY }),
+        apiFetch<RawPerformance>('/investments/performance?period=1Y',            { revalidate: REVALIDATE.HISTORY }),
+        apiFetch<RawPerformance>('/investments/performance?period=ALL',           { revalidate: REVALIDATE.HISTORY }),
+        apiFetch<RawBreakdown>('/investments/breakdown',                          { revalidate: REVALIDATE.LIVE }),
+        apiFetch<RawHolding[]>('/investments/holdings',                           { revalidate: REVALIDATE.LIVE }),
+        apiFetch<RawOpportunity[]>('/investments/opportunities',                  { revalidate: REVALIDATE.SLOW }),
+        apiFetch<RawAlert[]>('/investments/alerts',                               { revalidate: REVALIDATE.SLOW }),
+      ]);
+
+    return {
+      summary: {
+        totalValue:           stats.total_investment_value,
+        allTimeProfitAbs:     stats.all_time_profit,
+        allTimeProfitPercent: stats.all_time_profit_percent,
+        dayChangeAbs:         stats.days_change,
+        dayChangePercent:     stats.days_change_percent,
+        buyingPower:          stats.buying_power,
+      },
+
+      history: {
+        '1M':  { period: '1M',  points: mapPerformanceToOHLCV(perf1M),   peakValue: perf1M.peak.value  },
+        '3M':  { period: '3M',  points: mapPerformanceToOHLCV(perf3M),   peakValue: perf3M.peak.value  },
+        '1Y':  { period: '1Y',  points: mapPerformanceToOHLCV(perf1Y),   peakValue: perf1Y.peak.value  },
+        'ALL': { period: 'ALL', points: mapPerformanceToOHLCV(perfALL),  peakValue: perfALL.peak.value },
+      },
+
+      breakdown: {
+        targetPercent: breakdown.target_achievement,
+        items: breakdown.allocation.map(item => ({
+          label:      item.name,
+          percentage: item.percentage,
+          color:      breakdownColor(item.type),
+        })),
+      },
+
+      holdings: holdings.map(h => ({
+        id:           h.symbol,
+        ticker:       h.ticker,
+        name:         h.name,
+        sector:       h.sector,
+        shares:       h.shares,
+        costBasis:    h.cost_basis,
+        currentPrice: h.current_price,
+        marketValue:  h.market_value,
+        returnPercent: h.return_percent,
+        sparkline:    mapTrendToSparkline(h.trend),
+      })),
+
+      opportunities: opportunities.map(opp => ({
+        id:             opp.id,
+        ticker:         opp.ticker,
+        name:           opp.name,
+        signal:         opp.action,
+        description:    opp.reason,
+        currentPrice:   opp.current_price,
+        dayChangePercent: opp.daily_change,
+      })),
+
+      riskAlert: alerts.length > 0 ? {
+        title:       alerts[0].title,
+        description: alerts[0].message,
+        ctaLabel:    alerts[0].action,
+      } : mockInvestmentData.riskAlert,
+    };
+  } catch (err) {
+    console.warn('[Investment] Backend unavailable, using mock data:', (err as Error).message);
+    return mockInvestmentData;
+  }
 }
 
-// Helper: fetch live quote for a single symbol (ready to use when backend is up)
+// ─────────────────────────────────────────────────────────────────────────────
+// Low-level helpers (still usable directly if needed)
+// ─────────────────────────────────────────────────────────────────────────────
+
 export async function getLiveQuote(symbol: string) {
-  const BASE = process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:8000';
-  const res = await fetch(`${BASE}/yf/quote/${symbol}`, { next: { revalidate: 30 } });
-  if (!res.ok) throw new Error(`Failed to fetch quote for ${symbol}`);
-  return res.json();
+  return apiFetch(`/yf/quote/${symbol}`, { revalidate: REVALIDATE.LIVE });
 }
 
-// Helper: fetch history for a symbol
 export async function getHistory(symbol: string, period: HistoryPeriod = '1M') {
   const periodMap: Record<HistoryPeriod, string> = {
     '1M': '1mo', '3M': '3mo', '1Y': '1y', 'ALL': 'max',
   };
-  const BASE = process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:8000';
-  const res = await fetch(
-    `${BASE}/yf/history/${symbol}?period=${periodMap[period]}&interval=1d`,
-    { next: { revalidate: 60 } },
+  return apiFetch(
+    `/yf/history/${symbol}?period=${periodMap[period]}&interval=1d`,
+    { revalidate: REVALIDATE.HISTORY },
   );
-  if (!res.ok) throw new Error(`Failed to fetch history for ${symbol}`);
-  return res.json();
 }
