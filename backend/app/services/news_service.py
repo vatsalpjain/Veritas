@@ -415,3 +415,96 @@ def get_ticker_news(ticker: str, limit: int = 10) -> list[dict]:
         fetch_and_store()
     by_ticker: dict = _load_json(FILE_BY_TICKER) if FILE_BY_TICKER.exists() else {}
     return by_ticker.get(ticker.upper(), [])[:limit]
+
+
+def get_market_intelligence_feed(domain: str = "all", limit: int = 10) -> dict:
+    """
+    Get news for the Market Intelligence Feed on Overview page.
+    Supports domain filtering: all, macro, equity, commodity, crypto.
+    Returns formatted data for the UI component.
+    """
+    if not _is_cache_fresh():
+        fetch_and_store()
+    
+    # Get articles based on domain
+    if domain == "all" or not domain:
+        articles = _load_json(FILE_UNIFIED) if FILE_UNIFIED.exists() else []
+    else:
+        by_cat: dict = _load_json(FILE_BY_CAT) if FILE_BY_CAT.exists() else {}
+        articles = by_cat.get(domain, [])
+    
+    articles = articles[:limit]
+    
+    # Format for Market Intelligence Feed UI
+    feed_items = []
+    for a in articles:
+        # Calculate relative time
+        published = a.get("published_at", "")
+        time_label = _relative_time(published)
+        
+        # Map sentiment to impact level (1-5 dots)
+        sentiment = a.get("sentiment", "neutral")
+        if sentiment == "bullish":
+            impact_level = 4
+        elif sentiment == "bearish":
+            impact_level = 2
+        else:
+            impact_level = 3
+        
+        feed_items.append({
+            "id": a.get("id", ""),
+            "headline": a.get("headline", ""),
+            "summary": (a.get("summary") or "")[:200],
+            "source": a.get("source_name", a.get("source", "Unknown")),
+            "category": a.get("category", "equity"),
+            "tag": a.get("tag", "Markets"),
+            "tagClass": a.get("tag_class", "tag-gray"),
+            "timeLabel": time_label,
+            "impactLevel": impact_level,
+            "url": a.get("url", ""),
+        })
+    
+    # Get counts per domain for the filter buttons
+    by_cat: dict = _load_json(FILE_BY_CAT) if FILE_BY_CAT.exists() else {}
+    unified: list = _load_json(FILE_UNIFIED) if FILE_UNIFIED.exists() else []
+    
+    return {
+        "domain": domain,
+        "items": feed_items,
+        "counts": {
+            "all": len(unified),
+            "macro": len(by_cat.get("macro", [])),
+            "equity": len(by_cat.get("equity", [])),
+            "commodity": len(by_cat.get("commodity", [])),
+            "crypto": len(by_cat.get("crypto", [])),
+        },
+    }
+
+
+def _relative_time(iso_timestamp: str) -> str:
+    """Convert ISO timestamp to relative time string (e.g., '5h ago')."""
+    if not iso_timestamp:
+        return "Recently"
+    
+    try:
+        published = datetime.fromisoformat(iso_timestamp.replace("Z", "+00:00"))
+        now = datetime.now(timezone.utc)
+        diff = now - published
+        
+        seconds = diff.total_seconds()
+        if seconds < 60:
+            return "Just now"
+        elif seconds < 3600:
+            mins = int(seconds / 60)
+            return f"{mins}m ago"
+        elif seconds < 86400:
+            hours = int(seconds / 3600)
+            return f"{hours}h ago"
+        elif seconds < 604800:
+            days = int(seconds / 86400)
+            return f"{days}d ago"
+        else:
+            weeks = int(seconds / 604800)
+            return f"{weeks}w ago"
+    except Exception:
+        return "Recently"

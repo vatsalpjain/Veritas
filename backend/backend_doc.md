@@ -164,12 +164,17 @@ backend/
 | GET | `/news/flashcards` | Lightweight news cards for UI ticker |
 | GET | `/news/sentiment` | Aggregated sentiment by category and ticker |
 | GET | `/news/ticker/{ticker}` | News for a specific stock ticker |
+| GET | `/news/market-intelligence?domain=all` | Market Intelligence Feed for Overview page |
 
 **Query params for `/news`:**
 - `category`: macro, equity, commodity, crypto
 - `ticker`: Filter by stock symbol
 - `limit`: Max articles (default 20)
 - `refresh`: Force API refresh (default false)
+
+**Query params for `/news/market-intelligence`:**
+- `domain`: all, macro, equity, commodity, crypto (default: all)
+- `limit`: Max articles (default 10)
 
 **Requires:** `FINNHUB_API_KEY` in `.env`
 
@@ -652,6 +657,34 @@ Or for dividend:
     "icon": "logout"
   }
 ]
+```
+
+### `/news/market-intelligence?domain=equity`
+```json
+{
+  "domain": "equity",
+  "items": [
+    {
+      "id": "a1b2c3d4e5f6",
+      "headline": "Yemen's Houthis strike at Israel as attacks on Iran continue",
+      "summary": "Yemen's Houthis strike at Israel as attacks on Iran continue Reuters",
+      "source": "Reuters",
+      "category": "equity",
+      "tag": "EQUITY · MARKETS",
+      "tagClass": "tag-green",
+      "timeLabel": "5h ago",
+      "impactLevel": 3,
+      "url": "https://..."
+    }
+  ],
+  "counts": {
+    "all": 50,
+    "macro": 8,
+    "equity": 25,
+    "commodity": 7,
+    "crypto": 10
+  }
+}
 ```
 
 ---

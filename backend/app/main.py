@@ -343,6 +343,15 @@ async def get_ticker_news(ticker: str, limit: int = Query(10)):
     return news_svc.get_ticker_news(ticker=ticker, limit=limit)
 
 
+@app.get("/news/market-intelligence")
+async def get_market_intelligence_feed(
+    domain: str = Query("all", description="Filter by domain: all, macro, equity, commodity, crypto"),
+    limit: int = Query(10, description="Max articles to return"),
+):
+    """Get Market Intelligence Feed for Overview page with domain filtering."""
+    return news_svc.get_market_intelligence_feed(domain=domain, limit=limit)
+
+
 # ============== MARKETS PAGE ENDPOINTS ==============
 
 @app.get("/markets")
