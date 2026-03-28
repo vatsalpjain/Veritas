@@ -87,7 +87,7 @@
     "sectorCount": 4,
     "assetClassCount": 1
   },
-  "diversification_computed_at": "2026-03-28T15:17:08.742235",
+  "diversification_computed_at": "2026-03-28T15:29:17.530907",
   "allocation": [
     {
       "id": "domestic-equity",
@@ -122,7 +122,7 @@
       "status": "OVERWEIGHT"
     }
   ],
-  "allocation_computed_at": "2026-03-28T15:17:12.231967",
+  "allocation_computed_at": "2026-03-28T15:29:19.675023",
   "rebalancing": [
     {
       "id": "reb-sell-domestic-equity",
@@ -149,7 +149,7 @@
       "ctaLabel": "EXPLORE OPTIONS"
     }
   ],
-  "rebalancing_computed_at": "2026-03-28T15:17:17.400163",
+  "rebalancing_computed_at": "2026-03-28T15:29:24.703042",
   "strategy_advisor": {
     "label": "Conservative Income",
     "rationale": "Your portfolio beta of 0.14 indicates conservative positioning. Focus on income and capital preservation.",
@@ -159,7 +159,7 @@
     "equitySplit": 50,
     "bondSplit": 50
   },
-  "strategy_advisor_computed_at": "2026-03-28T15:17:19.943372",
+  "strategy_advisor_computed_at": "2026-03-28T15:29:27.469646",
   "goals_computed": [
     {
       "id": "retirement",
@@ -202,7 +202,7 @@
       "progressBarColor": "#39b8fd"
     }
   ],
-  "goals_computed_at": "2026-03-28T15:17:21.552749",
+  "goals_computed_at": "2026-03-28T15:29:28.048223",
   "markets_cache": {
     "indices": [
       {
