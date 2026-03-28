@@ -1,6 +1,9 @@
 'use client';
 
+import { useState } from 'react';
+import Link from 'next/link';
 import type { Opportunity, PortfolioRiskAlert } from '@/lib/types/investment';
+import HoldingDetailModal from './HoldingDetailModal';
 
 interface Props {
   opportunities: Opportunity[];
@@ -20,36 +23,65 @@ const signalIcons: Record<string, string> = {
 };
 
 export default function Opportunities({ opportunities, riskAlert }: Props) {
-  return (
-    <section className="space-y-6">
-      <h3
-        className="text-xl font-extrabold tracking-tight"
-        style={{ color: '#0f172a', fontFamily: 'Manrope, sans-serif' }}
-      >
-        Opportunities for You
-      </h3>
+  const [selectedStock, setSelectedStock] = useState<any | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {/* Opportunity cards */}
-        {opportunities.map(opp => {
-          const isPositive = opp.dayChangePercent >= 0;
-          const style = signalStyles[opp.signal] ?? signalStyles.BUY;
-          return (
-            <div
-              key={opp.id}
-              className="p-6 rounded-xl flex flex-col justify-between group cursor-pointer transition-all"
-              style={{ backgroundColor: '#eff4ff' }}
-              onMouseEnter={e => {
-                const el = e.currentTarget as HTMLDivElement;
-                el.style.backgroundColor = '#ffffff';
-                el.style.boxShadow = '0 20px 40px rgba(11,28,48,0.10)';
-              }}
-              onMouseLeave={e => {
-                const el = e.currentTarget as HTMLDivElement;
-                el.style.backgroundColor = '#eff4ff';
-                el.style.boxShadow = 'none';
-              }}
-            >
+  const handleStockClick = async (opp: Opportunity) => {
+    setIsLoading(true);
+    
+    // Open modal immediately with basic data, then fetch live data
+    const basicHoldingData = {
+      id: opp.ticker,
+      ticker: opp.ticker,
+      name: opp.name,
+      shares: 0,
+      costBasis: opp.currentPrice,
+      currentPrice: opp.currentPrice,
+      marketValue: 0,
+      returnPercent: opp.dayChangePercent,
+      trend: Array(7).fill(0).map(() => Math.random() * 100 + 50),
+    };
+    
+    // Open modal immediately
+    setSelectedStock(basicHoldingData);
+    setIsLoading(false);
+    
+    // Note: The HoldingDetailModal will fetch its own data using the ticker
+    // We don't need to fetch here since the modal handles all data fetching internally
+  };
+
+  return (
+    <>
+      <section className="space-y-6">
+        <h3
+          className="text-xl font-extrabold tracking-tight"
+          style={{ color: '#0f172a', fontFamily: 'Manrope, sans-serif' }}
+        >
+          Opportunities for You
+        </h3>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* Opportunity cards */}
+          {opportunities.map(opp => {
+            const isPositive = opp.dayChangePercent >= 0;
+            const style = signalStyles[opp.signal] ?? signalStyles.BUY;
+            return (
+              <div
+                key={opp.id}
+                className="p-6 rounded-xl flex flex-col justify-between group cursor-pointer transition-all"
+                style={{ backgroundColor: '#eff4ff' }}
+                onClick={() => handleStockClick(opp)}
+                onMouseEnter={e => {
+                  const el = e.currentTarget as HTMLDivElement;
+                  el.style.backgroundColor = '#ffffff';
+                  el.style.boxShadow = '0 20px 40px rgba(11,28,48,0.10)';
+                }}
+                onMouseLeave={e => {
+                  const el = e.currentTarget as HTMLDivElement;
+                  el.style.backgroundColor = '#eff4ff';
+                  el.style.boxShadow = 'none';
+                }}
+              >
               <div className="flex justify-between items-start">
                 <span
                   className="px-2 py-0.5 text-[10px] font-bold rounded"
@@ -132,8 +164,9 @@ export default function Opportunities({ opportunities, riskAlert }: Props) {
           </div>
 
           <div className="mt-8 relative z-10">
-            <button
-              className="px-4 py-2 text-xs font-bold rounded transition-opacity hover:opacity-90"
+            <Link
+              href="/portfolio"
+              className="inline-block px-4 py-2 text-xs font-bold rounded transition-opacity hover:opacity-90"
               style={{
                 backgroundColor: '#ffffff',
                 color: '#000000',
@@ -141,7 +174,7 @@ export default function Opportunities({ opportunities, riskAlert }: Props) {
               }}
             >
               {riskAlert.ctaLabel}
-            </button>
+            </Link>
           </div>
 
           {/* Decorative background icon */}
@@ -156,5 +189,14 @@ export default function Opportunities({ opportunities, riskAlert }: Props) {
         </div>
       </div>
     </section>
+
+    {/* Stock Detail Modal */}
+    {selectedStock && (
+      <HoldingDetailModal
+        holding={selectedStock}
+        onClose={() => setSelectedStock(null)}
+      />
+    )}
+    </>
   );
 }

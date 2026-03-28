@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import type { ActivityItem, ActivityType } from '@/lib/types/overview';
 
 interface Props {
@@ -61,12 +62,25 @@ export default function RecentActivity({ data }: Props) {
                     : undefined
                 }
               >
-                <p
-                  className="text-sm font-semibold"
-                  style={{ color: '#000000', fontFamily: 'Inter, sans-serif' }}
-                >
-                  {item.title}
-                </p>
+                <div className="flex items-start justify-between gap-2">
+                  <p
+                    className="text-sm font-semibold flex-1"
+                    style={{ color: '#000000', fontFamily: 'Inter, sans-serif' }}
+                  >
+                    {item.title}
+                  </p>
+                  {item.type === 'trade' && (item as any).amount && (
+                    <span
+                      className="text-sm font-bold shrink-0"
+                      style={{ 
+                        color: (item as any).amount > 0 ? '#009668' : '#ba1a1a',
+                        fontFamily: 'Manrope, sans-serif' 
+                      }}
+                    >
+                      {(item as any).amount > 0 ? '+' : ''}₹{Math.abs((item as any).amount).toLocaleString('en-IN')}
+                    </span>
+                  )}
+                </div>
                 <p
                   className="text-xs mt-1 line-clamp-2"
                   style={{ color: '#45464d', fontFamily: 'Inter, sans-serif' }}
@@ -87,22 +101,23 @@ export default function RecentActivity({ data }: Props) {
 
       {/* Footer CTA */}
       <div className="p-6 pt-0">
-        <button
-          className="w-full py-3 text-[11px] font-bold uppercase tracking-widest rounded-lg transition-colors"
+        <Link
+          href="/reports"
+          className="w-full py-3 text-[11px] font-bold uppercase tracking-widest rounded-lg transition-colors block text-center"
           style={{
             backgroundColor: '#eff4ff',
             color: '#000000',
             fontFamily: 'Inter, sans-serif',
           }}
           onMouseEnter={e => {
-            (e.currentTarget as HTMLButtonElement).style.backgroundColor = '#e5eeff';
+            (e.currentTarget as HTMLAnchorElement).style.backgroundColor = '#e5eeff';
           }}
           onMouseLeave={e => {
-            (e.currentTarget as HTMLButtonElement).style.backgroundColor = '#eff4ff';
+            (e.currentTarget as HTMLAnchorElement).style.backgroundColor = '#eff4ff';
           }}
         >
           History &amp; Archives
-        </button>
+        </Link>
       </div>
     </div>
   );

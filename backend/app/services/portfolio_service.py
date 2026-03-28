@@ -114,11 +114,49 @@ def get_top_performers(limit: int = 5) -> list[dict[str, Any]]:
 
 
 def get_activity(limit: int = 10) -> list[dict[str, Any]]:
-    """Get recent transactions."""
+    """Get recent transactions formatted for frontend."""
     portfolio = _load_portfolio()
     transactions = portfolio.get("transactions", [])
     sorted_txns = sorted(transactions, key=lambda x: x.get("timestamp", ""), reverse=True)
-    return sorted_txns[:limit]
+    
+    # Format for frontend
+    formatted = []
+    for txn in sorted_txns[:limit]:
+        txn_type = txn.get("type", "trade")
+        symbol = txn.get("symbol", "")
+        name = txn.get("name", symbol.replace(".NS", ""))
+        timestamp = txn.get("timestamp", "")
+        
+        # Create formatted transaction
+        formatted_txn = {
+            "id": txn.get("id", f"txn-{len(formatted)}"),
+            "type": txn_type,
+            "symbol": symbol,
+            "timestamp": timestamp,
+        }
+        
+        # Build title and description based on type
+        if txn_type == "buy":
+            qty = txn.get("quantity", 0)
+            price = txn.get("price", 0)
+            formatted_txn["title"] = f"Bought {int(qty)} shares of {name}"
+            formatted_txn["description"] = f"Executed at market price ₹{price:.2f}"
+            formatted_txn["amount"] = txn.get("total_amount", qty * price)
+        elif txn_type == "sell":
+            qty = txn.get("quantity", 0)
+            price = txn.get("price", 0)
+            formatted_txn["title"] = f"Sold {int(qty)} shares of {name}"
+            formatted_txn["description"] = f"Executed at limit price ₹{price:.2f}"
+            formatted_txn["amount"] = -txn.get("total_amount", qty * price)
+        elif txn_type == "dividend":
+            amount = txn.get("amount", 0)
+            formatted_txn["title"] = f"Dividend Received: {name}"
+            formatted_txn["description"] = "Quarterly dividend payment"
+            formatted_txn["amount"] = amount
+        
+        formatted.append(formatted_txn)
+    
+    return formatted
 
 
 def add_holding(symbol: str, quantity: float, avg_buy_price: float, asset_type: str = "equity") -> dict[str, Any]:

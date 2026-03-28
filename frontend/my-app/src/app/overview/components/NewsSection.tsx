@@ -62,17 +62,13 @@ function NewsCard({ article }: { article: NewsArticle }) {
   const tagStyle  = TAG_COLOR[article.tag_class] ?? TAG_COLOR['tag-gray'];
 
   return (
-    <a
-      href={article.url !== '#' ? article.url : undefined}
-      target="_blank"
-      rel="noopener noreferrer"
+    <div
       className="group flex-shrink-0 flex flex-col no-underline rounded-xl p-5 transition-all duration-200"
       style={{
         width: '300px',
         backgroundColor: '#131b2e',
         border: `1px solid rgba(255,255,255,0.07)`,
         textDecoration: 'none',
-        cursor: article.url !== '#' ? 'pointer' : 'default',
       }}
       onMouseEnter={e => {
         (e.currentTarget as HTMLElement).style.borderColor = `${sentiment.border}40`;
@@ -119,7 +115,7 @@ function NewsCard({ article }: { article: NewsArticle }) {
       </p>
 
       {/* Footer: IMPACT bars + source + tickers */}
-      <div className="flex items-center gap-3 mt-auto">
+      <div className="flex items-center gap-3 mt-auto mb-3">
         <div className="flex items-center gap-1.5">
           <span
             className="text-[9px] font-bold uppercase tracking-widest"
@@ -155,7 +151,37 @@ function NewsCard({ article }: { article: NewsArticle }) {
           ))}
         </div>
       </div>
-    </a>
+
+      {/* Read More Button */}
+      {article.url && article.url !== '#' && (
+        <a
+          href={article.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-full py-2 px-4 rounded-lg text-[11px] font-bold uppercase tracking-wider text-center transition-all flex items-center justify-center gap-1"
+          style={{
+            backgroundColor: 'rgba(0,229,204,0.1)',
+            color: '#00e5cc',
+            border: '1px solid rgba(0,229,204,0.2)',
+            fontFamily: 'Inter, sans-serif',
+          }}
+          onMouseEnter={e => {
+            (e.currentTarget as HTMLElement).style.backgroundColor = 'rgba(0,229,204,0.15)';
+            (e.currentTarget as HTMLElement).style.borderColor = 'rgba(0,229,204,0.4)';
+          }}
+          onMouseLeave={e => {
+            (e.currentTarget as HTMLElement).style.backgroundColor = 'rgba(0,229,204,0.1)';
+            (e.currentTarget as HTMLElement).style.borderColor = 'rgba(0,229,204,0.2)';
+          }}
+          onClick={e => e.stopPropagation()}
+        >
+          Read More
+          <span className="material-symbols-outlined" style={{ fontSize: '14px' }}>
+            open_in_new
+          </span>
+        </a>
+      )}
+    </div>
   );
 }
 

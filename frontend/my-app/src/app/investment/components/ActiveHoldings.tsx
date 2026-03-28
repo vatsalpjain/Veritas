@@ -1,6 +1,9 @@
 'use client';
 
+import { useState } from 'react';
+import Link from 'next/link';
 import type { Holding } from '@/lib/types/investment';
+import HoldingDetailModal from './HoldingDetailModal';
 
 interface Props {
   data: Holding[];
@@ -31,8 +34,11 @@ function Sparkline({ points, positive }: { points: number[]; positive: boolean }
 }
 
 export default function ActiveHoldings({ data }: Props) {
+  const [selected, setSelected] = useState<Holding | null>(null);
+
   return (
-    <section className="space-y-6">
+    <>
+      <section className="space-y-6">
       <div className="flex justify-between items-center">
         <h3
           className="text-xl font-extrabold tracking-tight"
@@ -40,7 +46,8 @@ export default function ActiveHoldings({ data }: Props) {
         >
           Active Holdings
         </h3>
-        <button
+        <Link
+          href="/portfolio"
           className="text-sm font-bold flex items-center gap-1 transition-all hover:underline"
           style={{ color: '#006591', fontFamily: 'Manrope, sans-serif' }}
         >
@@ -51,7 +58,7 @@ export default function ActiveHoldings({ data }: Props) {
           >
             arrow_forward
           </span>
-        </button>
+        </Link>
       </div>
 
       <div
@@ -83,9 +90,10 @@ export default function ActiveHoldings({ data }: Props) {
                 <tr
                   key={h.id}
                   className="transition-colors"
-                  style={{ borderTop: i > 0 ? '1px solid #f1f5f9' : 'none' }}
+                  style={{ borderTop: i > 0 ? '1px solid #f1f5f9' : 'none', cursor: 'pointer' }}
+                  onClick={() => setSelected(h)}
                   onMouseEnter={e =>
-                    ((e.currentTarget as HTMLTableRowElement).style.backgroundColor = 'rgba(239,244,255,0.4)')
+                    ((e.currentTarget as HTMLTableRowElement).style.backgroundColor = 'rgba(239,244,255,0.6)')
                   }
                   onMouseLeave={e =>
                     ((e.currentTarget as HTMLTableRowElement).style.backgroundColor = 'transparent')
@@ -174,5 +182,13 @@ export default function ActiveHoldings({ data }: Props) {
         </table>
       </div>
     </section>
+
+      {selected && (
+        <HoldingDetailModal
+          holding={selected}
+          onClose={() => setSelected(null)}
+        />
+      )}
+    </>
   );
 }

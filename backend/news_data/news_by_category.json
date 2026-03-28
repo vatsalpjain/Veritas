@@ -1,6 +1,40 @@
 {
   "all": [
     {
+      "id": "1beb24c9b2c3",
+      "source": "Finnhub",
+      "source_name": "Reuters",
+      "headline": "Pakistan to host talks with Saudi Arabia, Turkey, Egypt amid Iran war diplomacy - Reuters",
+      "summary": "Pakistan to host talks with Saudi Arabia, Turkey, Egypt amid Iran war diplomacy  Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNaC1yVzNjb09FMzkyS2JnX0FUblA3LUU4U2pEdWdZNXpRaTVKazVMRE1xcG81RUF1WGN3YUhaY2Q5NG9sQ3Z0UXdLVXkxeXhUSFpVaHA1UTZqcXJKTktobTZhRmo0bW1uUGlxZVhhV0t6eGd2VkVBRl9JZW5jUXdmTGx5c0pUdWtHaFJqSzBYdlhKbDVWSWljSHpVZXJWOGlhRm5ySFZMVlkwWF9rbFFuVE1VQ2gyVzRoejhpUktKQUxnSXQzTWdETQ?oc=5",
+      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
+      "category": "equity",
+      "sentiment": "neutral",
+      "sentiment_score": null,
+      "related_tickers": [],
+      "tag": "Equity · Markets",
+      "tag_class": "tag-green",
+      "published_at": "2026-03-28T12:06:09+00:00",
+      "fetched_at": "2026-03-28T12:55:54.312208+00:00"
+    },
+    {
+      "id": "75af4b129a7f",
+      "source": "Finnhub",
+      "source_name": "CNBC",
+      "headline": "Pricy airfare, airport chaos test travelers' willingness to fly this year",
+      "summary": "Travelers are weighing whether they'll fly later this year, considering higher airfares and airport chaos",
+      "url": "https://www.cnbc.com/2026/03/28/tsa-security-airfare-airports.html",
+      "image": "https://image.cnbcfm.com/api/v1/image/108283460-1774533646077-gettyimages-2267883898-TSA_DHS_FUNDING.jpeg?v=1774533698&w=1920&h=1080",
+      "category": "crypto",
+      "sentiment": "neutral",
+      "sentiment_score": null,
+      "related_tickers": [],
+      "tag": "Crypto · Market",
+      "tag_class": "tag-amber",
+      "published_at": "2026-03-28T12:00:01+00:00",
+      "fetched_at": "2026-03-28T12:55:54.312258+00:00"
+    },
+    {
       "id": "1e447ba21231",
       "source": "Finnhub",
       "source_name": "CNBC",
@@ -15,7 +49,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-28T11:40:29+00:00",
-      "fetched_at": "2026-03-28T12:05:19.659623+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312301+00:00"
     },
     {
       "id": "db00fe04d5e3",
@@ -32,7 +66,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-28T11:20:44+00:00",
-      "fetched_at": "2026-03-28T12:05:19.659695+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312340+00:00"
     },
     {
       "id": "a2fe5e7fa997",
@@ -49,7 +83,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-28T11:09:40+00:00",
-      "fetched_at": "2026-03-28T12:05:19.659751+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312377+00:00"
     },
     {
       "id": "fb58b74a8047",
@@ -66,7 +100,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-28T11:00:01+00:00",
-      "fetched_at": "2026-03-28T12:05:19.659798+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312422+00:00"
     },
     {
       "id": "f674df189a70",
@@ -83,24 +117,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-28T09:46:09+00:00",
-      "fetched_at": "2026-03-28T12:05:19.659843+00:00"
-    },
-    {
-      "id": "1beb24c9b2c3",
-      "source": "Finnhub",
-      "source_name": "Reuters",
-      "headline": "Pakistan to host talks with Saudi Arabia, Turkey, Egypt amid Iran war diplomacy - Reuters",
-      "summary": "Pakistan to host talks with Saudi Arabia, Turkey, Egypt amid Iran war diplomacy  Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNaC1yVzNjb09FMzkyS2JnX0FUblA3LUU4U2pEdWdZNXpRaTVKazVMRE1xcG81RUF1WGN3YUhaY2Q5NG9sQ3Z0UXdLVXkxeXhUSFpVaHA1UTZqcXJKTktobTZhRmo0bW1uUGlxZVhhV0t6eGd2VkVBRl9JZW5jUXdmTGx5c0pUdWtHaFJqSzBYdlhKbDVWSWljSHpVZXJWOGlhRm5ySFZMVlkwWF9rbFFuVE1VQ2gyVzRoejhpUktKQUxnSXQzTWdETQ?oc=5",
-      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
-      "category": "equity",
-      "sentiment": "neutral",
-      "sentiment_score": null,
-      "related_tickers": [],
-      "tag": "Equity · Markets",
-      "tag_class": "tag-green",
-      "published_at": "2026-03-28T09:05:43+00:00",
-      "fetched_at": "2026-03-28T12:05:19.659885+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312459+00:00"
     },
     {
       "id": "71530ef60343",
@@ -117,7 +134,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-28T07:34:09+00:00",
-      "fetched_at": "2026-03-28T12:05:19.659927+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312493+00:00"
     },
     {
       "id": "c318e56aff2e",
@@ -134,7 +151,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-28T05:04:00+00:00",
-      "fetched_at": "2026-03-28T12:05:19.659966+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312526+00:00"
     },
     {
       "id": "59c35b483fdc",
@@ -151,7 +168,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-28T04:27:00+00:00",
-      "fetched_at": "2026-03-28T12:05:19.660017+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312551+00:00"
     },
     {
       "id": "c453eea941a0",
@@ -168,7 +185,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T23:59:58+00:00",
-      "fetched_at": "2026-03-28T12:05:19.660060+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312565+00:00"
     },
     {
       "id": "c6ddd154f429",
@@ -185,7 +202,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T22:47:36+00:00",
-      "fetched_at": "2026-03-28T12:05:19.660097+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312578+00:00"
     },
     {
       "id": "1c8727252ee8",
@@ -202,7 +219,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T22:39:20+00:00",
-      "fetched_at": "2026-03-28T12:05:19.660139+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312591+00:00"
     },
     {
       "id": "e56f19125afb",
@@ -219,7 +236,7 @@
       "tag": "Commodity",
       "tag_class": "tag-red",
       "published_at": "2026-03-27T22:32:09+00:00",
-      "fetched_at": "2026-03-28T12:05:19.660191+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312609+00:00"
     },
     {
       "id": "3e47a70a7e44",
@@ -236,7 +253,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T22:14:34+00:00",
-      "fetched_at": "2026-03-28T12:05:19.660233+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312625+00:00"
     },
     {
       "id": "b193821b4d57",
@@ -253,7 +270,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T21:55:44+00:00",
-      "fetched_at": "2026-03-28T12:05:19.660272+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312639+00:00"
     },
     {
       "id": "8aa37b7777d3",
@@ -270,7 +287,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T21:46:44+00:00",
-      "fetched_at": "2026-03-28T12:05:19.660310+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312654+00:00"
     },
     {
       "id": "d03260b75e6e",
@@ -287,7 +304,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T21:42:07+00:00",
-      "fetched_at": "2026-03-28T12:05:19.660348+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312667+00:00"
     },
     {
       "id": "b37e5ff7b53f",
@@ -304,7 +321,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T21:12:26+00:00",
-      "fetched_at": "2026-03-28T12:05:19.660383+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312680+00:00"
     },
     {
       "id": "d9c127533fe4",
@@ -321,7 +338,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T20:35:25+00:00",
-      "fetched_at": "2026-03-28T12:05:19.660421+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312694+00:00"
     },
     {
       "id": "8545a3bacea7",
@@ -338,7 +355,7 @@
       "tag": "Commodity",
       "tag_class": "tag-red",
       "published_at": "2026-03-27T20:24:53+00:00",
-      "fetched_at": "2026-03-28T12:05:19.660457+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312707+00:00"
     },
     {
       "id": "97cb143d4b06",
@@ -355,7 +372,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T19:56:24+00:00",
-      "fetched_at": "2026-03-28T12:05:19.660493+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312721+00:00"
     },
     {
       "id": "5cd700159496",
@@ -372,7 +389,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T19:18:55+00:00",
-      "fetched_at": "2026-03-28T12:05:19.660535+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312736+00:00"
     },
     {
       "id": "23b85e3c339d",
@@ -389,7 +406,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T19:16:04+00:00",
-      "fetched_at": "2026-03-28T12:05:19.660572+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312749+00:00"
     },
     {
       "id": "746314e8f5b8",
@@ -406,7 +423,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T19:06:44+00:00",
-      "fetched_at": "2026-03-28T12:05:19.660612+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312761+00:00"
     },
     {
       "id": "38809dff52d5",
@@ -423,7 +440,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T19:04:46+00:00",
-      "fetched_at": "2026-03-28T12:05:19.660651+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312775+00:00"
     },
     {
       "id": "c9b164f857b4",
@@ -440,7 +457,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T18:58:52+00:00",
-      "fetched_at": "2026-03-28T12:05:19.660688+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312788+00:00"
     },
     {
       "id": "4fcc05e03c43",
@@ -457,7 +474,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T18:53:52+00:00",
-      "fetched_at": "2026-03-28T12:05:19.660723+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312802+00:00"
     },
     {
       "id": "87737e8023d6",
@@ -474,7 +491,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T18:04:35+00:00",
-      "fetched_at": "2026-03-28T12:05:19.660760+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312815+00:00"
     },
     {
       "id": "e1dc48fa55a5",
@@ -491,7 +508,7 @@
       "tag": "Commodity",
       "tag_class": "tag-red",
       "published_at": "2026-03-27T18:04:20+00:00",
-      "fetched_at": "2026-03-28T12:05:19.660803+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312829+00:00"
     },
     {
       "id": "51755c6dad0d",
@@ -508,7 +525,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T17:50:46+00:00",
-      "fetched_at": "2026-03-28T12:05:19.660839+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312841+00:00"
     },
     {
       "id": "638dc50db730",
@@ -525,7 +542,7 @@
       "tag": "Macro · Policy",
       "tag_class": "tag-blue",
       "published_at": "2026-03-27T17:27:09+00:00",
-      "fetched_at": "2026-03-28T12:05:19.660864+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312850+00:00"
     },
     {
       "id": "b96a1b26b4d2",
@@ -542,7 +559,7 @@
       "tag": "Commodity",
       "tag_class": "tag-red",
       "published_at": "2026-03-27T17:08:22+00:00",
-      "fetched_at": "2026-03-28T12:05:19.660902+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312861+00:00"
     },
     {
       "id": "a408f439de92",
@@ -559,7 +576,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T17:01:48+00:00",
-      "fetched_at": "2026-03-28T12:05:19.660937+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312873+00:00"
     },
     {
       "id": "0b0bbb15facc",
@@ -576,7 +593,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T16:49:31+00:00",
-      "fetched_at": "2026-03-28T12:05:19.660974+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312888+00:00"
     },
     {
       "id": "bfc3b6ca3d6b",
@@ -593,7 +610,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T16:39:05+00:00",
-      "fetched_at": "2026-03-28T12:05:19.661011+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312902+00:00"
     },
     {
       "id": "f9baa04a93c0",
@@ -610,7 +627,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T15:33:12+00:00",
-      "fetched_at": "2026-03-28T12:05:19.661043+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312914+00:00"
     },
     {
       "id": "0daad7ec71dc",
@@ -627,7 +644,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T15:32:12+00:00",
-      "fetched_at": "2026-03-28T12:05:19.661078+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312929+00:00"
     },
     {
       "id": "5664e1722456",
@@ -644,7 +661,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T15:14:51+00:00",
-      "fetched_at": "2026-03-28T12:05:19.661130+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312951+00:00"
     },
     {
       "id": "70fbb87ac60a",
@@ -661,7 +678,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T14:54:37+00:00",
-      "fetched_at": "2026-03-28T12:05:19.661170+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312964+00:00"
     },
     {
       "id": "6897ef604043",
@@ -678,7 +695,7 @@
       "tag": "Commodity",
       "tag_class": "tag-red",
       "published_at": "2026-03-27T14:49:18+00:00",
-      "fetched_at": "2026-03-28T12:05:19.661199+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312975+00:00"
     },
     {
       "id": "045c6b61cf3f",
@@ -695,7 +712,7 @@
       "tag": "Macro · Policy",
       "tag_class": "tag-blue",
       "published_at": "2026-03-27T14:40:00+00:00",
-      "fetched_at": "2026-03-28T12:05:19.661234+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312987+00:00"
     },
     {
       "id": "31814ae0f599",
@@ -712,7 +729,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T14:32:00+00:00",
-      "fetched_at": "2026-03-28T12:05:19.661264+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312998+00:00"
     },
     {
       "id": "7c2b8dded27b",
@@ -729,7 +746,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T14:07:36+00:00",
-      "fetched_at": "2026-03-28T12:05:19.661297+00:00"
+      "fetched_at": "2026-03-28T12:55:54.313010+00:00"
     },
     {
       "id": "b6f2e8a1bc17",
@@ -746,7 +763,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T14:01:43+00:00",
-      "fetched_at": "2026-03-28T12:05:19.661343+00:00"
+      "fetched_at": "2026-03-28T12:55:54.313027+00:00"
     },
     {
       "id": "75c43910e138",
@@ -763,7 +780,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T13:35:17+00:00",
-      "fetched_at": "2026-03-28T12:05:19.661378+00:00"
+      "fetched_at": "2026-03-28T12:55:54.313043+00:00"
     },
     {
       "id": "dae060098168",
@@ -780,7 +797,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T13:32:09+00:00",
-      "fetched_at": "2026-03-28T12:05:19.661703+00:00"
+      "fetched_at": "2026-03-28T12:55:54.313057+00:00"
     },
     {
       "id": "791312d37f46",
@@ -797,7 +814,7 @@
       "tag": "Commodity",
       "tag_class": "tag-red",
       "published_at": "2026-03-27T13:31:12+00:00",
-      "fetched_at": "2026-03-28T12:05:19.661758+00:00"
+      "fetched_at": "2026-03-28T12:55:54.313071+00:00"
     },
     {
       "id": "a173351c04d5",
@@ -814,7 +831,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T13:00:01+00:00",
-      "fetched_at": "2026-03-28T12:05:19.661796+00:00"
+      "fetched_at": "2026-03-28T12:55:54.313086+00:00"
     },
     {
       "id": "39ea223e332f",
@@ -831,24 +848,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T12:43:18+00:00",
-      "fetched_at": "2026-03-28T12:05:19.661843+00:00"
-    },
-    {
-      "id": "78c19930e62c",
-      "source": "Finnhub",
-      "source_name": "Reuters",
-      "headline": "UK economy shows first hits from Iran war, putting policymakers to the test - reuters.com",
-      "summary": "UK economy shows first hits from Iran war, putting policymakers to the test  reuters.com",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPcjhxTU1ubU5ZSWt1dVdNZnRpbWZzRVI0U3dGVFdLMGNrLU1YekJ4d2MtUWV1VERfVW5yZ0RXTGJhdUV4UUU1R21TRGJyb0o2N3VsOURuUmxSVFAyOWltVm1fYzVTeVNqY2lTaEY4NWU0cDBZbFAtM0JEOGZwSHkxbWJwR2dHZi12OFRMUkVkcFRjV3lGWk5SVUROZ2xtVVhudW81S1hsQWRrMm5Sa1NlRWlBUnA?oc=5",
-      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
-      "category": "macro",
-      "sentiment": "neutral",
-      "sentiment_score": null,
-      "related_tickers": [],
-      "tag": "Macro · Policy",
-      "tag_class": "tag-blue",
-      "published_at": "2026-03-27T12:35:44+00:00",
-      "fetched_at": "2026-03-28T12:05:19.661873+00:00"
+      "fetched_at": "2026-03-28T12:55:54.313099+00:00"
     }
   ],
   "macro": [
@@ -867,7 +867,7 @@
       "tag": "Macro · Policy",
       "tag_class": "tag-blue",
       "published_at": "2026-03-27T17:27:09+00:00",
-      "fetched_at": "2026-03-28T12:05:19.660864+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312850+00:00"
     },
     {
       "id": "045c6b61cf3f",
@@ -884,27 +884,27 @@
       "tag": "Macro · Policy",
       "tag_class": "tag-blue",
       "published_at": "2026-03-27T14:40:00+00:00",
-      "fetched_at": "2026-03-28T12:05:19.661234+00:00"
-    },
-    {
-      "id": "78c19930e62c",
-      "source": "Finnhub",
-      "source_name": "Reuters",
-      "headline": "UK economy shows first hits from Iran war, putting policymakers to the test - reuters.com",
-      "summary": "UK economy shows first hits from Iran war, putting policymakers to the test  reuters.com",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPcjhxTU1ubU5ZSWt1dVdNZnRpbWZzRVI0U3dGVFdLMGNrLU1YekJ4d2MtUWV1VERfVW5yZ0RXTGJhdUV4UUU1R21TRGJyb0o2N3VsOURuUmxSVFAyOWltVm1fYzVTeVNqY2lTaEY4NWU0cDBZbFAtM0JEOGZwSHkxbWJwR2dHZi12OFRMUkVkcFRjV3lGWk5SVUROZ2xtVVhudW81S1hsQWRrMm5Sa1NlRWlBUnA?oc=5",
-      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
-      "category": "macro",
-      "sentiment": "neutral",
-      "sentiment_score": null,
-      "related_tickers": [],
-      "tag": "Macro · Policy",
-      "tag_class": "tag-blue",
-      "published_at": "2026-03-27T12:35:44+00:00",
-      "fetched_at": "2026-03-28T12:05:19.661873+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312987+00:00"
     }
   ],
   "equity": [
+    {
+      "id": "1beb24c9b2c3",
+      "source": "Finnhub",
+      "source_name": "Reuters",
+      "headline": "Pakistan to host talks with Saudi Arabia, Turkey, Egypt amid Iran war diplomacy - Reuters",
+      "summary": "Pakistan to host talks with Saudi Arabia, Turkey, Egypt amid Iran war diplomacy  Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNaC1yVzNjb09FMzkyS2JnX0FUblA3LUU4U2pEdWdZNXpRaTVKazVMRE1xcG81RUF1WGN3YUhaY2Q5NG9sQ3Z0UXdLVXkxeXhUSFpVaHA1UTZqcXJKTktobTZhRmo0bW1uUGlxZVhhV0t6eGd2VkVBRl9JZW5jUXdmTGx5c0pUdWtHaFJqSzBYdlhKbDVWSWljSHpVZXJWOGlhRm5ySFZMVlkwWF9rbFFuVE1VQ2gyVzRoejhpUktKQUxnSXQzTWdETQ?oc=5",
+      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
+      "category": "equity",
+      "sentiment": "neutral",
+      "sentiment_score": null,
+      "related_tickers": [],
+      "tag": "Equity · Markets",
+      "tag_class": "tag-green",
+      "published_at": "2026-03-28T12:06:09+00:00",
+      "fetched_at": "2026-03-28T12:55:54.312208+00:00"
+    },
     {
       "id": "1e447ba21231",
       "source": "Finnhub",
@@ -920,7 +920,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-28T11:40:29+00:00",
-      "fetched_at": "2026-03-28T12:05:19.659623+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312301+00:00"
     },
     {
       "id": "db00fe04d5e3",
@@ -937,7 +937,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-28T11:20:44+00:00",
-      "fetched_at": "2026-03-28T12:05:19.659695+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312340+00:00"
     },
     {
       "id": "a2fe5e7fa997",
@@ -954,7 +954,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-28T11:09:40+00:00",
-      "fetched_at": "2026-03-28T12:05:19.659751+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312377+00:00"
     },
     {
       "id": "fb58b74a8047",
@@ -971,7 +971,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-28T11:00:01+00:00",
-      "fetched_at": "2026-03-28T12:05:19.659798+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312422+00:00"
     },
     {
       "id": "f674df189a70",
@@ -988,24 +988,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-28T09:46:09+00:00",
-      "fetched_at": "2026-03-28T12:05:19.659843+00:00"
-    },
-    {
-      "id": "1beb24c9b2c3",
-      "source": "Finnhub",
-      "source_name": "Reuters",
-      "headline": "Pakistan to host talks with Saudi Arabia, Turkey, Egypt amid Iran war diplomacy - Reuters",
-      "summary": "Pakistan to host talks with Saudi Arabia, Turkey, Egypt amid Iran war diplomacy  Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNaC1yVzNjb09FMzkyS2JnX0FUblA3LUU4U2pEdWdZNXpRaTVKazVMRE1xcG81RUF1WGN3YUhaY2Q5NG9sQ3Z0UXdLVXkxeXhUSFpVaHA1UTZqcXJKTktobTZhRmo0bW1uUGlxZVhhV0t6eGd2VkVBRl9JZW5jUXdmTGx5c0pUdWtHaFJqSzBYdlhKbDVWSWljSHpVZXJWOGlhRm5ySFZMVlkwWF9rbFFuVE1VQ2gyVzRoejhpUktKQUxnSXQzTWdETQ?oc=5",
-      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
-      "category": "equity",
-      "sentiment": "neutral",
-      "sentiment_score": null,
-      "related_tickers": [],
-      "tag": "Equity · Markets",
-      "tag_class": "tag-green",
-      "published_at": "2026-03-28T09:05:43+00:00",
-      "fetched_at": "2026-03-28T12:05:19.659885+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312459+00:00"
     },
     {
       "id": "71530ef60343",
@@ -1022,7 +1005,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-28T07:34:09+00:00",
-      "fetched_at": "2026-03-28T12:05:19.659927+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312493+00:00"
     },
     {
       "id": "c318e56aff2e",
@@ -1039,7 +1022,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-28T05:04:00+00:00",
-      "fetched_at": "2026-03-28T12:05:19.659966+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312526+00:00"
     },
     {
       "id": "59c35b483fdc",
@@ -1056,7 +1039,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-28T04:27:00+00:00",
-      "fetched_at": "2026-03-28T12:05:19.660017+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312551+00:00"
     },
     {
       "id": "c453eea941a0",
@@ -1073,7 +1056,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T23:59:58+00:00",
-      "fetched_at": "2026-03-28T12:05:19.660060+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312565+00:00"
     },
     {
       "id": "c6ddd154f429",
@@ -1090,7 +1073,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T22:47:36+00:00",
-      "fetched_at": "2026-03-28T12:05:19.660097+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312578+00:00"
     },
     {
       "id": "1c8727252ee8",
@@ -1107,7 +1090,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T22:39:20+00:00",
-      "fetched_at": "2026-03-28T12:05:19.660139+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312591+00:00"
     },
     {
       "id": "3e47a70a7e44",
@@ -1124,7 +1107,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T22:14:34+00:00",
-      "fetched_at": "2026-03-28T12:05:19.660233+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312625+00:00"
     },
     {
       "id": "b193821b4d57",
@@ -1141,7 +1124,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T21:55:44+00:00",
-      "fetched_at": "2026-03-28T12:05:19.660272+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312639+00:00"
     },
     {
       "id": "8aa37b7777d3",
@@ -1158,7 +1141,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T21:46:44+00:00",
-      "fetched_at": "2026-03-28T12:05:19.660310+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312654+00:00"
     },
     {
       "id": "d03260b75e6e",
@@ -1175,7 +1158,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T21:42:07+00:00",
-      "fetched_at": "2026-03-28T12:05:19.660348+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312667+00:00"
     },
     {
       "id": "b37e5ff7b53f",
@@ -1192,7 +1175,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T21:12:26+00:00",
-      "fetched_at": "2026-03-28T12:05:19.660383+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312680+00:00"
     },
     {
       "id": "d9c127533fe4",
@@ -1209,7 +1192,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T20:35:25+00:00",
-      "fetched_at": "2026-03-28T12:05:19.660421+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312694+00:00"
     },
     {
       "id": "97cb143d4b06",
@@ -1226,7 +1209,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T19:56:24+00:00",
-      "fetched_at": "2026-03-28T12:05:19.660493+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312721+00:00"
     },
     {
       "id": "5cd700159496",
@@ -1243,7 +1226,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T19:18:55+00:00",
-      "fetched_at": "2026-03-28T12:05:19.660535+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312736+00:00"
     },
     {
       "id": "23b85e3c339d",
@@ -1260,7 +1243,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T19:16:04+00:00",
-      "fetched_at": "2026-03-28T12:05:19.660572+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312749+00:00"
     },
     {
       "id": "746314e8f5b8",
@@ -1277,7 +1260,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T19:06:44+00:00",
-      "fetched_at": "2026-03-28T12:05:19.660612+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312761+00:00"
     },
     {
       "id": "38809dff52d5",
@@ -1294,7 +1277,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T19:04:46+00:00",
-      "fetched_at": "2026-03-28T12:05:19.660651+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312775+00:00"
     },
     {
       "id": "c9b164f857b4",
@@ -1311,7 +1294,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T18:58:52+00:00",
-      "fetched_at": "2026-03-28T12:05:19.660688+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312788+00:00"
     },
     {
       "id": "4fcc05e03c43",
@@ -1328,7 +1311,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T18:53:52+00:00",
-      "fetched_at": "2026-03-28T12:05:19.660723+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312802+00:00"
     },
     {
       "id": "87737e8023d6",
@@ -1345,7 +1328,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T18:04:35+00:00",
-      "fetched_at": "2026-03-28T12:05:19.660760+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312815+00:00"
     },
     {
       "id": "51755c6dad0d",
@@ -1362,7 +1345,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T17:50:46+00:00",
-      "fetched_at": "2026-03-28T12:05:19.660839+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312841+00:00"
     },
     {
       "id": "a408f439de92",
@@ -1379,7 +1362,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T17:01:48+00:00",
-      "fetched_at": "2026-03-28T12:05:19.660937+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312873+00:00"
     },
     {
       "id": "0b0bbb15facc",
@@ -1396,7 +1379,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T16:49:31+00:00",
-      "fetched_at": "2026-03-28T12:05:19.660974+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312888+00:00"
     },
     {
       "id": "bfc3b6ca3d6b",
@@ -1413,7 +1396,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T16:39:05+00:00",
-      "fetched_at": "2026-03-28T12:05:19.661011+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312902+00:00"
     },
     {
       "id": "f9baa04a93c0",
@@ -1430,7 +1413,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T15:33:12+00:00",
-      "fetched_at": "2026-03-28T12:05:19.661043+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312914+00:00"
     },
     {
       "id": "0daad7ec71dc",
@@ -1447,7 +1430,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T15:32:12+00:00",
-      "fetched_at": "2026-03-28T12:05:19.661078+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312929+00:00"
     },
     {
       "id": "5664e1722456",
@@ -1464,7 +1447,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T15:14:51+00:00",
-      "fetched_at": "2026-03-28T12:05:19.661130+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312951+00:00"
     },
     {
       "id": "70fbb87ac60a",
@@ -1481,7 +1464,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T14:54:37+00:00",
-      "fetched_at": "2026-03-28T12:05:19.661170+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312964+00:00"
     },
     {
       "id": "31814ae0f599",
@@ -1498,7 +1481,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T14:32:00+00:00",
-      "fetched_at": "2026-03-28T12:05:19.661264+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312998+00:00"
     },
     {
       "id": "7c2b8dded27b",
@@ -1515,7 +1498,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T14:07:36+00:00",
-      "fetched_at": "2026-03-28T12:05:19.661297+00:00"
+      "fetched_at": "2026-03-28T12:55:54.313010+00:00"
     },
     {
       "id": "b6f2e8a1bc17",
@@ -1532,7 +1515,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T14:01:43+00:00",
-      "fetched_at": "2026-03-28T12:05:19.661343+00:00"
+      "fetched_at": "2026-03-28T12:55:54.313027+00:00"
     },
     {
       "id": "75c43910e138",
@@ -1549,7 +1532,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T13:35:17+00:00",
-      "fetched_at": "2026-03-28T12:05:19.661378+00:00"
+      "fetched_at": "2026-03-28T12:55:54.313043+00:00"
     },
     {
       "id": "dae060098168",
@@ -1566,7 +1549,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T13:32:09+00:00",
-      "fetched_at": "2026-03-28T12:05:19.661703+00:00"
+      "fetched_at": "2026-03-28T12:55:54.313057+00:00"
     },
     {
       "id": "a173351c04d5",
@@ -1583,7 +1566,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T13:00:01+00:00",
-      "fetched_at": "2026-03-28T12:05:19.661796+00:00"
+      "fetched_at": "2026-03-28T12:55:54.313086+00:00"
     },
     {
       "id": "39ea223e332f",
@@ -1600,7 +1583,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T12:43:18+00:00",
-      "fetched_at": "2026-03-28T12:05:19.661843+00:00"
+      "fetched_at": "2026-03-28T12:55:54.313099+00:00"
     }
   ],
   "commodity": [
@@ -1619,7 +1602,7 @@
       "tag": "Commodity",
       "tag_class": "tag-red",
       "published_at": "2026-03-27T22:32:09+00:00",
-      "fetched_at": "2026-03-28T12:05:19.660191+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312609+00:00"
     },
     {
       "id": "8545a3bacea7",
@@ -1636,7 +1619,7 @@
       "tag": "Commodity",
       "tag_class": "tag-red",
       "published_at": "2026-03-27T20:24:53+00:00",
-      "fetched_at": "2026-03-28T12:05:19.660457+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312707+00:00"
     },
     {
       "id": "e1dc48fa55a5",
@@ -1653,7 +1636,7 @@
       "tag": "Commodity",
       "tag_class": "tag-red",
       "published_at": "2026-03-27T18:04:20+00:00",
-      "fetched_at": "2026-03-28T12:05:19.660803+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312829+00:00"
     },
     {
       "id": "b96a1b26b4d2",
@@ -1670,7 +1653,7 @@
       "tag": "Commodity",
       "tag_class": "tag-red",
       "published_at": "2026-03-27T17:08:22+00:00",
-      "fetched_at": "2026-03-28T12:05:19.660902+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312861+00:00"
     },
     {
       "id": "6897ef604043",
@@ -1687,7 +1670,7 @@
       "tag": "Commodity",
       "tag_class": "tag-red",
       "published_at": "2026-03-27T14:49:18+00:00",
-      "fetched_at": "2026-03-28T12:05:19.661199+00:00"
+      "fetched_at": "2026-03-28T12:55:54.312975+00:00"
     },
     {
       "id": "791312d37f46",
@@ -1704,8 +1687,26 @@
       "tag": "Commodity",
       "tag_class": "tag-red",
       "published_at": "2026-03-27T13:31:12+00:00",
-      "fetched_at": "2026-03-28T12:05:19.661758+00:00"
+      "fetched_at": "2026-03-28T12:55:54.313071+00:00"
     }
   ],
-  "crypto": []
+  "crypto": [
+    {
+      "id": "75af4b129a7f",
+      "source": "Finnhub",
+      "source_name": "CNBC",
+      "headline": "Pricy airfare, airport chaos test travelers' willingness to fly this year",
+      "summary": "Travelers are weighing whether they'll fly later this year, considering higher airfares and airport chaos",
+      "url": "https://www.cnbc.com/2026/03/28/tsa-security-airfare-airports.html",
+      "image": "https://image.cnbcfm.com/api/v1/image/108283460-1774533646077-gettyimages-2267883898-TSA_DHS_FUNDING.jpeg?v=1774533698&w=1920&h=1080",
+      "category": "crypto",
+      "sentiment": "neutral",
+      "sentiment_score": null,
+      "related_tickers": [],
+      "tag": "Crypto · Market",
+      "tag_class": "tag-amber",
+      "published_at": "2026-03-28T12:00:01+00:00",
+      "fetched_at": "2026-03-28T12:55:54.312258+00:00"
+    }
+  ]
 }

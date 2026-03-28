@@ -1,5 +1,31 @@
 [
   {
+    "id": "1beb24c9b2c3",
+    "headline": "Pakistan to host talks with Saudi Arabia, Turkey, Egypt amid Iran war diplomacy - Reuters",
+    "summary": "Pakistan to host talks with Saudi Arabia, Turkey, Egypt amid Iran war diplomacy  Reuters",
+    "source": "Reuters",
+    "category": "equity",
+    "sentiment": "neutral",
+    "tag": "Equity · Markets",
+    "tag_class": "tag-green",
+    "tickers": [],
+    "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNaC1yVzNjb09FMzkyS2JnX0FUblA3LUU4U2pEdWdZNXpRaTVKazVMRE1xcG81RUF1WGN3YUhaY2Q5NG9sQ3Z0UXdLVXkxeXhUSFpVaHA1UTZqcXJKTktobTZhRmo0bW1uUGlxZVhhV0t6eGd2VkVBRl9JZW5jUXdmTGx5c0pUdWtHaFJqSzBYdlhKbDVWSWljSHpVZXJWOGlhRm5ySFZMVlkwWF9rbFFuVE1VQ2gyVzRoejhpUktKQUxnSXQzTWdETQ?oc=5",
+    "published_at": "2026-03-28T12:06:09+00:00"
+  },
+  {
+    "id": "75af4b129a7f",
+    "headline": "Pricy airfare, airport chaos test travelers' willingness to fly this year",
+    "summary": "Travelers are weighing whether they'll fly later this year, considering higher airfares and airport chaos",
+    "source": "CNBC",
+    "category": "crypto",
+    "sentiment": "neutral",
+    "tag": "Crypto · Market",
+    "tag_class": "tag-amber",
+    "tickers": [],
+    "url": "https://www.cnbc.com/2026/03/28/tsa-security-airfare-airports.html",
+    "published_at": "2026-03-28T12:00:01+00:00"
+  },
+  {
     "id": "1e447ba21231",
     "headline": "Yemen's Houthis launch Israel strike, the first time since the U.S.-Israel war began",
     "summary": "The entry of the Houthis in the war marks a significant escalation in the conflict as it enters its second month.",
@@ -63,19 +89,6 @@
     "tickers": [],
     "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOUUllOWc3VlJtRkRDM3BaRjVCNnN4eU1mOU1zVzJqMzZ0MTJ3MEhULWJnWVhoenUtdWFObzRpX0RXakhyZ0VpQi1lZDEtQ2lmcUlYdGM3cF9xZDVYNk43bDNwdk4xQm4yNHRfZ2Vkd1REeFdUUW1ieGR3UndnTUlVT2JIek5DczA1N0hrOVVEYndKWXloQXBrc18tZ0t4OWRTTE1RMmhtbjdMM2RYcWc0Y2I2emF4dEQ4ZVNnY0NEX25GMkJ5alJieDZNaw?oc=5",
     "published_at": "2026-03-28T09:46:09+00:00"
-  },
-  {
-    "id": "1beb24c9b2c3",
-    "headline": "Pakistan to host talks with Saudi Arabia, Turkey, Egypt amid Iran war diplomacy - Reuters",
-    "summary": "Pakistan to host talks with Saudi Arabia, Turkey, Egypt amid Iran war diplomacy  Reuters",
-    "source": "Reuters",
-    "category": "equity",
-    "sentiment": "neutral",
-    "tag": "Equity · Markets",
-    "tag_class": "tag-green",
-    "tickers": [],
-    "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNaC1yVzNjb09FMzkyS2JnX0FUblA3LUU4U2pEdWdZNXpRaTVKazVMRE1xcG81RUF1WGN3YUhaY2Q5NG9sQ3Z0UXdLVXkxeXhUSFpVaHA1UTZqcXJKTktobTZhRmo0bW1uUGlxZVhhV0t6eGd2VkVBRl9JZW5jUXdmTGx5c0pUdWtHaFJqSzBYdlhKbDVWSWljSHpVZXJWOGlhRm5ySFZMVlkwWF9rbFFuVE1VQ2gyVzRoejhpUktKQUxnSXQzTWdETQ?oc=5",
-    "published_at": "2026-03-28T09:05:43+00:00"
   },
   {
     "id": "71530ef60343",
@@ -245,18 +258,5 @@
     "tickers": [],
     "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOM0o4X2hWY0MtV2pXMHZXWkltUEtaV3BUYUFydkpSTzZfQU83WW4yUndYc0pqOUZRTF9JVjRxTm1KckdLakhyMVpPM3VOYTJyT19ydU45VlJvUVNVdE9jR3RVb3ZkSjk1X3Brd0xJZGNUYmkyMkZRRjREZlFHVFNsY29kbjgxMUtkRVFvTlNzcXdYUEN1aTJhOTllb0VQV2pWNzU0dG9idFFSa2dENldTenFKRnVsUkpwQ04zdGxfR0NmM2lQQ2k3OVczQTY?oc=5",
     "published_at": "2026-03-27T20:35:25+00:00"
-  },
-  {
-    "id": "8545a3bacea7",
-    "headline": "Tech stocks suffer worst week in nearly a year, driven down by war worries, Meta legal woes",
-    "summary": "Meta's twin legal defeats this week and a big selloff in Micron spurred a drop in technology stocks, which were broadly hit by rising oil prices.",
-    "source": "CNBC",
-    "category": "commodity",
-    "sentiment": "neutral",
-    "tag": "Commodity",
-    "tag_class": "tag-red",
-    "tickers": [],
-    "url": "https://www.cnbc.com/2026/03/27/tech-stocks-iran-war-meta-verdict.html",
-    "published_at": "2026-03-27T20:24:53+00:00"
   }
 ]

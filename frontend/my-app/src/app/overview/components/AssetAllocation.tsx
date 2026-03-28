@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import type { AllocationItem } from '@/lib/types/overview';
 
 interface Props {
@@ -42,7 +43,8 @@ export default function AssetAllocation({ data }: Props) {
         ))}
       </div>
 
-      <button
+      <Link
+        href="/reports"
         className="mt-auto pt-6 text-sm font-semibold flex items-center gap-1 hover:underline transition-all"
         style={{ color: '#006591', fontFamily: 'Inter, sans-serif' }}
       >
@@ -53,7 +55,7 @@ export default function AssetAllocation({ data }: Props) {
         >
           chevron_right
         </span>
-      </button>
+      </Link>
     </div>
   );
 }

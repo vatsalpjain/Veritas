@@ -15,6 +15,7 @@ from app.services import investments_service as investments_svc
 from app.services import news_service as news_svc
 from app.services import markets_service as markets_svc
 from app.services import portfolio_analysis_service as portfolio_analysis_svc
+from app.services import chart_analysis_service as chart_analysis_svc
 
 
 # Pydantic models for request bodies
@@ -137,6 +138,27 @@ async def yf_option_expiries(symbol: str):
 async def yf_iv_surface(symbol: str):
     """Get IV surface via yfinance."""
     return yf_svc.get_iv_surface(symbol)
+
+
+@app.post("/yf/analyze-chart")
+async def yf_analyze_chart(payload: dict):
+    """
+    AI-powered chart pattern analysis and reasoning.
+    
+    Payload:
+        {
+            "symbol": "AAPL",
+            "bars": [{"date": "...", "open": ..., "high": ..., "low": ..., "close": ..., "volume": ...}, ...],
+            "rsi": 45.2,
+            "macd": 0.15
+        }
+    """
+    symbol = payload.get("symbol", "UNKNOWN")
+    bars = payload.get("bars", [])
+    rsi = payload.get("rsi")
+    macd = payload.get("macd")
+    
+    return chart_analysis_svc.analyze_chart_pattern(symbol, bars, rsi, macd)
 
 
 # ============== NSE INDIA ENDPOINTS ==============

@@ -39,6 +39,9 @@ export interface ActivityItem {
   title: string;
   description: string;
   timeLabel: string;          // e.g. "2 hours ago"
+  amount?: number;            // Transaction amount (for trade type)
+  date?: string;              // Transaction date
+  time?: string;              // Transaction time
 }
 
 // ─── AI Insights ─────────────────────────────────────────────────────────────

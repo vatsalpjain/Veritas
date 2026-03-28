@@ -34,45 +34,210 @@
   "cash_balance": 150000.0,
   "transactions": [
     {
+      "id": "txn-001",
       "type": "buy",
       "symbol": "RELIANCE.NS",
+      "name": "Reliance Industries",
       "quantity": 50,
       "price": 2400.0,
-      "timestamp": "2024-01-15T10:30:00"
+      "total_amount": 120000.0,
+      "timestamp": "2024-01-15T10:30:00",
+      "date": "2024-01-15",
+      "time": "10:30:00"
     },
     {
+      "id": "txn-002",
       "type": "buy",
       "symbol": "TCS.NS",
+      "name": "Tata Consultancy Services",
       "quantity": 30,
       "price": 3500.0,
-      "timestamp": "2024-02-10T11:00:00"
+      "total_amount": 105000.0,
+      "timestamp": "2024-02-10T11:00:00",
+      "date": "2024-02-10",
+      "time": "11:00:00"
     },
     {
+      "id": "txn-003",
       "type": "buy",
       "symbol": "INFY.NS",
+      "name": "Infosys Limited",
       "quantity": 100,
       "price": 1450.0,
-      "timestamp": "2024-02-20T09:45:00"
+      "total_amount": 145000.0,
+      "timestamp": "2024-02-20T09:45:00",
+      "date": "2024-02-20",
+      "time": "09:45:00"
     },
     {
+      "id": "txn-004",
       "type": "dividend",
       "symbol": "ITC.NS",
+      "name": "ITC Limited",
       "amount": 1200.0,
-      "timestamp": "2024-03-01T00:00:00"
+      "timestamp": "2024-03-01T00:00:00",
+      "date": "2024-03-01",
+      "time": "00:00:00"
     },
     {
+      "id": "txn-005",
       "type": "buy",
       "symbol": "HDFCBANK.NS",
+      "name": "HDFC Bank",
       "quantity": 40,
       "price": 1600.0,
-      "timestamp": "2024-03-10T14:20:00"
+      "total_amount": 64000.0,
+      "timestamp": "2024-03-10T14:20:00",
+      "date": "2024-03-10",
+      "time": "14:20:00"
     },
     {
+      "id": "txn-006",
       "type": "buy",
       "symbol": "ITC.NS",
+      "name": "ITC Limited",
       "quantity": 200,
       "price": 420.0,
-      "timestamp": "2024-03-15T10:00:00"
+      "total_amount": 84000.0,
+      "timestamp": "2024-03-15T10:00:00",
+      "date": "2024-03-15",
+      "time": "10:00:00"
+    },
+    {
+      "id": "txn-007",
+      "type": "sell",
+      "symbol": "RELIANCE.NS",
+      "name": "Reliance Industries",
+      "quantity": 10,
+      "price": 2580.0,
+      "total_amount": 25800.0,
+      "timestamp": "2024-05-20T13:15:00",
+      "date": "2024-05-20",
+      "time": "13:15:00"
+    },
+    {
+      "id": "txn-008",
+      "type": "buy",
+      "symbol": "TCS.NS",
+      "name": "Tata Consultancy Services",
+      "quantity": 15,
+      "price": 3620.0,
+      "total_amount": 54300.0,
+      "timestamp": "2024-06-12T10:45:00",
+      "date": "2024-06-12",
+      "time": "10:45:00"
+    },
+    {
+      "id": "txn-009",
+      "type": "dividend",
+      "symbol": "RELIANCE.NS",
+      "name": "Reliance Industries",
+      "amount": 2400.0,
+      "timestamp": "2024-07-05T00:00:00",
+      "date": "2024-07-05",
+      "time": "00:00:00"
+    },
+    {
+      "id": "txn-010",
+      "type": "buy",
+      "symbol": "INFY.NS",
+      "name": "Infosys Limited",
+      "quantity": 50,
+      "price": 1520.0,
+      "total_amount": 76000.0,
+      "timestamp": "2024-08-18T11:30:00",
+      "date": "2024-08-18",
+      "time": "11:30:00"
+    },
+    {
+      "id": "txn-011",
+      "type": "sell",
+      "symbol": "ITC.NS",
+      "name": "ITC Limited",
+      "quantity": 50,
+      "price": 445.0,
+      "total_amount": 22250.0,
+      "timestamp": "2024-09-10T14:00:00",
+      "date": "2024-09-10",
+      "time": "14:00:00"
+    },
+    {
+      "id": "txn-012",
+      "type": "dividend",
+      "symbol": "HDFCBANK.NS",
+      "name": "HDFC Bank",
+      "amount": 1800.0,
+      "timestamp": "2024-10-01T00:00:00",
+      "date": "2024-10-01",
+      "time": "00:00:00"
+    },
+    {
+      "id": "txn-013",
+      "type": "buy",
+      "symbol": "HDFCBANK.NS",
+      "name": "HDFC Bank",
+      "quantity": 25,
+      "price": 1650.0,
+      "total_amount": 41250.0,
+      "timestamp": "2024-11-05T09:20:00",
+      "date": "2024-11-05",
+      "time": "09:20:00"
+    },
+    {
+      "id": "txn-014",
+      "type": "sell",
+      "symbol": "TCS.NS",
+      "name": "Tata Consultancy Services",
+      "quantity": 10,
+      "price": 3750.0,
+      "total_amount": 37500.0,
+      "timestamp": "2024-12-15T15:30:00",
+      "date": "2024-12-15",
+      "time": "15:30:00"
+    },
+    {
+      "id": "txn-015",
+      "type": "dividend",
+      "symbol": "ITC.NS",
+      "name": "ITC Limited",
+      "amount": 1500.0,
+      "timestamp": "2025-01-10T00:00:00",
+      "date": "2025-01-10",
+      "time": "00:00:00"
+    },
+    {
+      "id": "txn-016",
+      "type": "buy",
+      "symbol": "RELIANCE.NS",
+      "name": "Reliance Industries",
+      "quantity": 10,
+      "price": 2450.0,
+      "total_amount": 24500.0,
+      "timestamp": "2025-02-08T10:15:00",
+      "date": "2025-02-08",
+      "time": "10:15:00"
+    },
+    {
+      "id": "txn-017",
+      "type": "buy",
+      "symbol": "INFY.NS",
+      "name": "Infosys Limited",
+      "quantity": 30,
+      "price": 1480.0,
+      "total_amount": 44400.0,
+      "timestamp": "2025-03-12T13:45:00",
+      "date": "2025-03-12",
+      "time": "13:45:00"
+    },
+    {
+      "id": "txn-018",
+      "type": "dividend",
+      "symbol": "RELIANCE.NS",
+      "name": "Reliance Industries",
+      "amount": 2600.0,
+      "timestamp": "2025-03-20T00:00:00",
+      "date": "2025-03-20",
+      "time": "00:00:00"
     }
   ],
   "diversification": {
@@ -87,6 +252,7 @@
     "sectorCount": 4,
     "assetClassCount": 1
   },
+  "diversification_computed_at": "2026-03-28T18:11:26.311479",
   "diversification_computed_at": "2026-03-28T17:47:59.344849",
   "allocation": [
     {
@@ -149,7 +315,7 @@
       "ctaLabel": "EXPLORE OPTIONS"
     }
   ],
-  "rebalancing_computed_at": "2026-03-28T15:29:24.703042",
+  "rebalancing_computed_at": "2026-03-28T18:12:06.527502",
   "strategy_advisor": {
     "label": "Conservative Income",
     "rationale": "Your portfolio beta of 0.14 indicates conservative positioning. Focus on income and capital preservation.",
@@ -159,7 +325,7 @@
     "equitySplit": 50,
     "bondSplit": 50
   },
-  "strategy_advisor_computed_at": "2026-03-28T15:29:27.469646",
+  "strategy_advisor_computed_at": "2026-03-28T18:12:17.700894",
   "goals_computed": [
     {
       "id": "retirement",
@@ -202,7 +368,7 @@
       "progressBarColor": "#39b8fd"
     }
   ],
-  "goals_computed_at": "2026-03-28T15:29:28.048223",
+  "goals_computed_at": "2026-03-28T18:12:22.140137",
   "markets_cache": {
     "indices": [
       {
