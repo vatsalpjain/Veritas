@@ -4,12 +4,13 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 const navLinks = [
-  { label: 'Overview',    href: '/overview',     icon: 'dashboard' },
-  { label: 'Investments', href: '/investments',  icon: 'account_balance_wallet' },
-  { label: 'Markets',     href: '/markets',      icon: 'show_chart' },
-  { label: 'Insights',    href: '/insights',     icon: 'lightbulb' },
-  { label: 'Reports',     href: '/reports',      icon: 'description' },
-  { label: 'Settings',    href: '/settings',     icon: 'settings' },
+  { label: 'Overview',    href: '/overview',    icon: 'dashboard' },
+  { label: 'Investments', href: '/investment',  icon: 'account_balance_wallet' },
+  { label: 'Markets',     href: '/market',      icon: 'monitoring' },
+  { label: 'Insights',    href: '/insights',    icon: 'lightbulb' },
+  { label: 'Portfolio',   href: '/portfolio',   icon: 'donut_large' },
+  { label: 'Reports',     href: '/reports',     icon: 'description' },
+  { label: 'Settings',    href: '/settings',    icon: 'settings' },
 ];
 
 export default function Sidebar() {
