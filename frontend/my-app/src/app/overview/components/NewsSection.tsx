@@ -214,7 +214,7 @@ export default function NewsSection({ data }: Props) {
   if (safeData.length === 0) return null;
 
   return (
-    <section className="space-y-4">
+    <section className="space-y-4 min-w-0 w-full">
       {/* Header */}
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
@@ -259,15 +259,15 @@ export default function NewsSection({ data }: Props) {
 
       {/* Carousel */}
       <div
-        className="relative overflow-hidden rounded-xl"
-        style={{ maskImage: 'linear-gradient(to right, transparent, black 5%, black 95%, transparent)' }}
+        className="relative w-full"
+        style={{ overflow: 'hidden', WebkitMaskImage: 'linear-gradient(to right, transparent, black 6%, black 94%, transparent)', maskImage: 'linear-gradient(to right, transparent, black 6%, black 94%, transparent)' }}
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
       >
         <div
           ref={trackRef}
           className="flex gap-4"
-          style={{ willChange: 'transform', width: 'max-content' }}
+          style={{ willChange: 'transform', width: 'max-content', paddingBottom: '4px' }}
         >
           {items.map((article, i) => (
             <NewsCard key={`${article.id ?? i}-${i}`} article={article} />

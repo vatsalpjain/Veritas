@@ -16,8 +16,10 @@ export default function OverviewLayout({ children }: { children: React.ReactNode
       <Sidebar />
       <div className="flex-1 ml-64 flex flex-col min-h-screen">
         <SharedTopNav />
-        <main className="p-8 space-y-12 max-w-7xl mx-auto w-full">
-          {children}
+        <main className="p-8 w-full overflow-x-hidden">
+          <div className="space-y-12 max-w-[1400px]">
+            {children}
+          </div>
         </main>
       </div>
     </div>
