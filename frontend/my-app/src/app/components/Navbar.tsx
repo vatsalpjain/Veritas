@@ -13,16 +13,16 @@ export default function Navbar() {
       </div>
 
       <div className="hidden md:flex gap-12 text-sm uppercase tracking-widest relative" style={{ fontFamily: 'var(--font-dm-mono)' }}>
-        <a className="nav-link relative py-2 hover:text-[#00e5cc] transition-colors" href="#features">
-          Features
+        <a className="nav-link relative py-2 hover:text-[#00e5cc] transition-colors" href="/overview">
+          Overview
           <div className="h-[1px] w-0 bg-[#00e5cc] absolute bottom-0 left-0 transition-all duration-300 hover:w-full"></div>
         </a>
-        <a className="nav-link relative py-2 hover:text-[#00e5cc] transition-colors" href="#demo">
-          Analytics
+        <a className="nav-link relative py-2 hover:text-[#00e5cc] transition-colors" href="/investment">
+          Investment
           <div className="h-[1px] w-0 bg-[#00e5cc] absolute bottom-0 left-0 transition-all duration-300 hover:w-full"></div>
         </a>
-        <a className="nav-link relative py-2 hover:text-[#00e5cc] transition-colors" href="#foss">
-          Stack
+        <a className="nav-link relative py-2 hover:text-[#00e5cc] transition-colors" href="/insights">
+          Insights
           <div className="h-[1px] w-0 bg-[#00e5cc] absolute bottom-0 left-0 transition-all duration-300 hover:w-full"></div>
         </a>
       </div>
