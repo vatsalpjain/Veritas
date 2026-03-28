@@ -9,6 +9,7 @@ from langgraph.graph import END, START, StateGraph
 from app.agent.nodes.analyze_asset import analyze_asset_node
 from app.agent.nodes.general_research import general_research_node
 from app.agent.nodes.router import router_node
+from app.agent.nodes.regulators_check import regulators_check_node
 from app.agent.nodes.strategy_advisor import strategy_advisor_node
 from app.agent.nodes.verify_news import verify_news_node
 from app.agent.nodes.what_if import what_if_node
@@ -71,6 +72,7 @@ def create_agent_graph():
     graph.add_node("analyze", analyze_asset_node)
     graph.add_node("strategy", strategy_advisor_node)
     graph.add_node("what_if", what_if_node)
+    graph.add_node("regulatory", regulators_check_node)
     graph.add_node("general", general_research_node)
     graph.add_node("iteration_control", _increment_iteration)
 
@@ -86,6 +88,7 @@ def create_agent_graph():
             "analyze": "analyze",
             "strategy": "strategy",
             "what_if": "what_if",
+            "regulatory": "regulatory",
             "general": "general",
         },
     )
@@ -95,6 +98,7 @@ def create_agent_graph():
     graph.add_edge("analyze", "iteration_control")
     graph.add_edge("strategy", "iteration_control")
     graph.add_edge("what_if", "iteration_control")
+    graph.add_edge("regulatory", "iteration_control")
     graph.add_edge("general", "iteration_control")
 
     # Loop until stop condition is met

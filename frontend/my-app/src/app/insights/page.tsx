@@ -10,6 +10,7 @@ import type {
   EvidenceItem,
   LayerTrace,
   IterationOutput,
+  RegulatoryResult,
   VerificationResult,
   WorkflowSummary,
 } from '@/lib/types/agent';
@@ -28,6 +29,7 @@ export default function InsightsPage() {
   const [workflowSummary, setWorkflowSummary] = useState<WorkflowSummary | null>(null);
   const [activeIntent, setActiveIntent] = useState<string>('general');
   const [verification, setVerification] = useState<VerificationResult | null>(null);
+  const [regulatory, setRegulatory] = useState<RegulatoryResult | null>(null);
   const [isStreaming, setIsStreaming] = useState(false);
   const [streamingAnswer, setStreamingAnswer] = useState('');
 
@@ -47,6 +49,7 @@ export default function InsightsPage() {
     setWorkflowSummary(null);
     setActiveIntent('general');
     setVerification(null);
+    setRegulatory(null);
     setStreamingAnswer('');
     setIsStreaming(true);
 
@@ -119,6 +122,9 @@ export default function InsightsPage() {
         onVerification: (result) => {
           setVerification(result);
         },
+        onRegulatory: (result) => {
+          setRegulatory(result);
+        },
         onWorkflowDone: (summary) => {
           setWorkflowSummary(summary);
         },
@@ -158,6 +164,7 @@ export default function InsightsPage() {
     setWorkflowSummary(null);
     setActiveIntent('general');
     setVerification(null);
+    setRegulatory(null);
     setStreamingAnswer('');
     setSessionId(`veritas-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`);
   }, []);
@@ -195,6 +202,7 @@ export default function InsightsPage() {
             evidenceItems={evidenceItems}
             workflowSummary={workflowSummary}
             verification={verification}
+            regulatory={regulatory}
             activeIntent={activeIntent}
           />
         </div>

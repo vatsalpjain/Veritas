@@ -5,6 +5,7 @@ import type {
   EvidenceItem,
   IterationOutput,
   LayerTrace,
+  RegulatoryResult,
   SourceReference,
   ThinkingStep,
   VerificationResult,
@@ -24,6 +25,7 @@ export interface AgentSSECallbacks {
   onAnswerChunk: (content: string) => void;
   onAnswerEnd: () => void;
   onVerification: (result: VerificationResult) => void;
+  onRegulatory: (result: RegulatoryResult) => void;
   onWorkflowDone: (summary: WorkflowSummary) => void;
   onDone: (info: { total_tokens: number; duration_ms: number }) => void;
   onError: (message: string) => void;
@@ -104,6 +106,9 @@ export async function streamAgentChat(
               break;
             case 'verification':
               callbacks.onVerification(event.result);
+              break;
+            case 'regulatory':
+              callbacks.onRegulatory(event.result);
               break;
             case 'workflow_done':
               callbacks.onWorkflowDone(event.summary);

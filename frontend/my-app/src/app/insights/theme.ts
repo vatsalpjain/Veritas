@@ -1,4 +1,4 @@
-export type AgentIntent = 'verify' | 'analyze' | 'strategy' | 'what_if' | 'general';
+export type AgentIntent = 'verify' | 'analyze' | 'strategy' | 'what_if' | 'regulatory' | 'general';
 
 export interface IntentTheme {
   accent: string;
@@ -31,6 +31,12 @@ export const INTENT_THEME: Record<AgentIntent, IntentTheme> = {
     softBg: '#fef9e7',
     softBorder: 'rgba(201,168,76,0.35)',
     label: 'Scenario Mode',
+  },
+  regulatory: {
+    accent: '#d14334',
+    softBg: '#fff1ef',
+    softBorder: 'rgba(209,67,52,0.35)',
+    label: 'Regulatory Mode',
   },
   general: {
     accent: '#475569',

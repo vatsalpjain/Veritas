@@ -12,7 +12,7 @@ from app.agent.state import AgentState
 
 log = logging.getLogger("veritas.nodes.router")
 
-_VALID_INTENTS = {"verify", "analyze", "strategy", "what_if", "general"}
+_VALID_INTENTS = {"verify", "analyze", "strategy", "what_if", "regulatory", "general"}
 
 
 async def router_node(state: AgentState) -> dict:

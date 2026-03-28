@@ -13,6 +13,8 @@ ROUTER_SYSTEM_PROMPT = (
     "Keywords: strategy, invest, rebalance, allocation, where to invest, should I buy/sell.\n"
     '- "what_if": Hypothetical scenarios, causal chains. '
     "Keywords: what if, what would happen, why is, cause, impact, implications, scenario.\n"
+    '- "regulatory": Compliance, legal, SEBI, tax, law-breaking risk checks. '
+    "Keywords: sebi, regulatory, compliant, legal, law, violation, tax, insider trading, manipulation.\n"
     '- "general": Anything else — definitions, comparisons, general financial questions.\n\n'
     "ENTITY EXTRACTION — CRITICAL RULES:\n"
     "- ALWAYS convert company names to their STOCK TICKER SYMBOL.\n"

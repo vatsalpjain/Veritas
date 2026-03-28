@@ -723,6 +723,7 @@ async def agent_chat(request: AgentChatRequest):
                 "evidence_items": [],
                 "answer": "",
                 "verification_result": None,
+                "regulatory_result": None,
                 "error": None,
             }
 
@@ -776,6 +777,9 @@ async def agent_chat(request: AgentChatRequest):
 
             if (final_state or {}).get("verification_result"):
                 yield {"data": json.dumps({"type": "verification", "result": final_state["verification_result"]})}
+
+            if (final_state or {}).get("regulatory_result"):
+                yield {"data": json.dumps({"type": "regulatory", "result": final_state["regulatory_result"]})}
 
             if final_state:
                 yield {

@@ -6,12 +6,14 @@ import type {
   EvidenceItem,
   IterationOutput,
   LayerTrace,
+  RegulatoryResult,
   VerificationResult,
   WorkflowSummary,
 } from '@/lib/types/agent';
 import SourceCard from './SourceCard';
 import DataCard from './DataCard';
 import VerificationBadge from './VerificationBadge';
+import RegulatoryBadge from './RegulatoryBadge';
 import IterationTimeline from './IterationTimeline';
 import EvidenceLedger from './EvidenceLedger';
 import ModePlanCard from './ModePlanCard';
@@ -26,6 +28,7 @@ interface Props {
   iterationOutputs: IterationOutput[];
   workflowSummary: WorkflowSummary | null;
   verification: VerificationResult | null;
+  regulatory: RegulatoryResult | null;
   activeIntent: string;
 }
 
@@ -37,6 +40,7 @@ export default function ContextPanel({
   iterationOutputs,
   workflowSummary,
   verification,
+  regulatory,
   activeIntent,
 }: Props) {
   const theme = getTheme(activeIntent);
@@ -46,7 +50,8 @@ export default function ContextPanel({
     evidenceItems.length === 0 &&
     layerTraces.length === 0 &&
     iterationOutputs.length === 0 &&
-    !verification;
+    !verification &&
+    !regulatory;
 
   return (
     <div
@@ -108,6 +113,13 @@ export default function ContextPanel({
           <div>
             <SectionLabel icon="verified" label="Verification Result" />
             <VerificationBadge result={verification} />
+          </div>
+        )}
+
+        {regulatory && (
+          <div>
+            <SectionLabel icon="gavel" label="Regulatory Result" />
+            <RegulatoryBadge result={regulatory} />
           </div>
         )}
 

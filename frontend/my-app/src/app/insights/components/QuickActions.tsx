@@ -38,6 +38,13 @@ const ACTIONS = [
     bg: '#fef9e7',
     placeholder: 'Describe a scenario (e.g. "What if oil prices spike to $150?")',
   },
+  {
+    icon: 'gavel',
+    label: 'Regulators Check',
+    color: '#d14334',
+    bg: '#fff1ef',
+    placeholder: 'Describe an action/plan to check SEBI/tax compliance risk...',
+  },
 ];
 
 export default function QuickActions({ onSend, disabled, activeIntent }: Props) {
@@ -59,7 +66,11 @@ export default function QuickActions({ onSend, disabled, activeIntent }: Props) 
     e.preventDefault();
     if (!inputVal.trim()) return;
     const prefix =
-      activeIdx === 0 ? 'Verify: ' : activeIdx === 1 ? 'Analyze ' : 'What if ';
+      activeIdx === 0 ? 'Verify: '
+      : activeIdx === 1 ? 'Analyze '
+      : activeIdx === 2 ? 'Strategy: '
+      : activeIdx === 3 ? 'What if '
+      : 'Regulatory check: ';
     onSend(`${prefix}${inputVal.trim()}`);
     setActiveIdx(null);
     setInputVal('');

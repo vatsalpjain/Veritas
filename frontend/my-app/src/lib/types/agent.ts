@@ -24,6 +24,15 @@ export interface VerificationResult {
   raw_analysis: string;
 }
 
+export interface RegulatoryResult {
+  verdict?: string;
+  risk_level?: string;
+  confidence?: number;
+  finding_count?: number;
+  disclaimer?: string;
+  raw_analysis?: string;
+}
+
 export interface LayerTrace {
   iteration: number;
   layer: 'router' | 'execution' | 'synthesis';
@@ -95,6 +104,7 @@ export type SSEEvent =
   | { type: 'answer_chunk'; content: string }
   | { type: 'answer_end' }
   | { type: 'verification'; result: VerificationResult }
+  | { type: 'regulatory'; result: RegulatoryResult }
   | { type: 'workflow_done'; summary: WorkflowSummary }
   | { type: 'done'; total_tokens: number; duration_ms: number }
   | { type: 'error'; message: string };

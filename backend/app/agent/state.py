@@ -62,7 +62,7 @@ class AgentState(TypedDict):
     conversation_history: list[dict[str, str]]
 
     # ── Router output ──
-    intent: Literal["verify", "analyze", "strategy", "what_if", "general"]
+    intent: Literal["verify", "analyze", "strategy", "what_if", "regulatory", "general"]
     intent_confidence: float
     entities: list[str]
     needs_portfolio: bool
@@ -83,4 +83,5 @@ class AgentState(TypedDict):
     # ── Output ──
     answer: str
     verification_result: dict[str, Any] | None
+    regulatory_result: dict[str, Any] | None
     error: str | None

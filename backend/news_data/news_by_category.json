@@ -1,6 +1,23 @@
 {
   "all": [
     {
+      "id": "8aa37b7777d3",
+      "source": "Finnhub",
+      "source_name": "Reuters",
+      "headline": "Iran-linked hackers breach FBI director's personal email, publish photos and documents - Reuters",
+      "summary": "Iran-linked hackers breach FBI director's personal email, publish photos and documents  Reuters",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOZnl4Mkp5MnI3ZDg3X1RYMk1aX1JpWkhKLUN5czJlUGtoaU9NZE9RM2dQZlJkMXNQMWtfRElSU0tjMTdZaWN2UnNUb0dIcEZLZjB0RThIdEpQMW5WWkxWblMzNmszZElmcjE2WXNnMXBjNHA0NE15V0dYMVZhYmNjcm8ySjlUZkVIaWZURW1aQmhLNEk4TDV6d1g3SXpJV1psSTBxZTViRE5iSU9WYzRXbjhrUDZ2Um93MDFYNkpDUQ?oc=5",
+      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
+      "category": "equity",
+      "sentiment": "neutral",
+      "sentiment_score": null,
+      "related_tickers": [],
+      "tag": "Equity · Markets",
+      "tag_class": "tag-green",
+      "published_at": "2026-03-28T23:14:28+00:00",
+      "fetched_at": "2026-03-28T23:36:53.805780+00:00"
+    },
+    {
       "id": "c9c1c57a4711",
       "source": "Finnhub",
       "source_name": "Reuters",
@@ -15,7 +32,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-28T19:56:16+00:00",
-      "fetched_at": "2026-03-28T23:04:13.612927+00:00"
+      "fetched_at": "2026-03-28T23:36:53.806050+00:00"
     },
     {
       "id": "288bdb4a2519",
@@ -32,7 +49,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-28T18:31:17+00:00",
-      "fetched_at": "2026-03-28T23:04:13.613072+00:00"
+      "fetched_at": "2026-03-28T23:36:53.806232+00:00"
     },
     {
       "id": "c318e56aff2e",
@@ -49,7 +66,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-28T17:20:46+00:00",
-      "fetched_at": "2026-03-28T23:04:13.613131+00:00"
+      "fetched_at": "2026-03-28T23:36:53.806386+00:00"
     },
     {
       "id": "1beb24c9b2c3",
@@ -66,7 +83,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-28T16:39:43+00:00",
-      "fetched_at": "2026-03-28T23:04:13.613176+00:00"
+      "fetched_at": "2026-03-28T23:36:53.806540+00:00"
     },
     {
       "id": "f914f710f59f",
@@ -83,7 +100,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-28T15:53:00+00:00",
-      "fetched_at": "2026-03-28T23:04:13.613229+00:00"
+      "fetched_at": "2026-03-28T23:36:53.806695+00:00"
     },
     {
       "id": "0bda71f89967",
@@ -100,7 +117,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-28T15:42:21+00:00",
-      "fetched_at": "2026-03-28T23:04:13.613265+00:00"
+      "fetched_at": "2026-03-28T23:36:53.806813+00:00"
     },
     {
       "id": "a4d01b368b35",
@@ -117,7 +134,7 @@
       "tag": "Macro · Policy",
       "tag_class": "tag-blue",
       "published_at": "2026-03-28T15:03:43+00:00",
-      "fetched_at": "2026-03-28T23:04:13.613291+00:00"
+      "fetched_at": "2026-03-28T23:36:53.806887+00:00"
     },
     {
       "id": "4c4ad10bd4e6",
@@ -134,7 +151,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-28T14:33:06+00:00",
-      "fetched_at": "2026-03-28T23:04:13.613347+00:00"
+      "fetched_at": "2026-03-28T23:36:53.807007+00:00"
     },
     {
       "id": "56e306eee04e",
@@ -151,7 +168,7 @@
       "tag": "Macro · Policy",
       "tag_class": "tag-blue",
       "published_at": "2026-03-28T13:57:37+00:00",
-      "fetched_at": "2026-03-28T23:04:13.613386+00:00"
+      "fetched_at": "2026-03-28T23:36:53.807078+00:00"
     },
     {
       "id": "efad0742bd94",
@@ -168,7 +185,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-28T13:39:10+00:00",
-      "fetched_at": "2026-03-28T23:04:13.613427+00:00"
+      "fetched_at": "2026-03-28T23:36:53.807181+00:00"
     },
     {
       "id": "b02f7e2c567b",
@@ -185,7 +202,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-28T13:00:01+00:00",
-      "fetched_at": "2026-03-28T23:04:13.613494+00:00"
+      "fetched_at": "2026-03-28T23:36:53.807321+00:00"
     },
     {
       "id": "75af4b129a7f",
@@ -202,7 +219,7 @@
       "tag": "Crypto · Market",
       "tag_class": "tag-amber",
       "published_at": "2026-03-28T12:00:01+00:00",
-      "fetched_at": "2026-03-28T23:04:13.613533+00:00"
+      "fetched_at": "2026-03-28T23:36:53.807399+00:00"
     },
     {
       "id": "1e447ba21231",
@@ -219,7 +236,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-28T11:40:29+00:00",
-      "fetched_at": "2026-03-28T23:04:13.613573+00:00"
+      "fetched_at": "2026-03-28T23:36:53.807548+00:00"
     },
     {
       "id": "db00fe04d5e3",
@@ -236,7 +253,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-28T11:20:44+00:00",
-      "fetched_at": "2026-03-28T23:04:13.613612+00:00"
+      "fetched_at": "2026-03-28T23:36:53.807646+00:00"
     },
     {
       "id": "fb58b74a8047",
@@ -253,7 +270,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-28T11:00:01+00:00",
-      "fetched_at": "2026-03-28T23:04:13.613654+00:00"
+      "fetched_at": "2026-03-28T23:36:53.807745+00:00"
     },
     {
       "id": "f674df189a70",
@@ -270,7 +287,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-28T09:46:09+00:00",
-      "fetched_at": "2026-03-28T23:04:13.613694+00:00"
+      "fetched_at": "2026-03-28T23:36:53.807840+00:00"
     },
     {
       "id": "71530ef60343",
@@ -287,7 +304,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-28T07:34:09+00:00",
-      "fetched_at": "2026-03-28T23:04:13.613732+00:00"
+      "fetched_at": "2026-03-28T23:36:53.807925+00:00"
     },
     {
       "id": "c820142ea624",
@@ -304,7 +321,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-28T05:00:00+00:00",
-      "fetched_at": "2026-03-28T23:04:13.613775+00:00"
+      "fetched_at": "2026-03-28T23:36:53.807994+00:00"
     },
     {
       "id": "9451d0a0f9b3",
@@ -324,6 +341,23 @@
       "fetched_at": "2026-03-28T23:04:13.613821+00:00"
     },
     {
+      "id": "7b8d8e95c3be",
+      "source": "Finnhub",
+      "source_name": "Reuters",
+      "headline": "Yemen's Houthis enter Iran war with attack on Israel, while US Marines arrive in region - Reuters",
+      "summary": "Yemen's Houthis enter Iran war with attack on Israel, while US Marines arrive in region  Reuters",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNNVVtc1ZtWmlSeGkxX2N1VkZxUW1RUkFReGRKX0o5OXROT21WUjVGMS1lUFlqVFpNcUtSN3gtR3BaMFNaMGR5RDRkYW1DaExPcXJ6eEx6dXlYRVBIWEpHSm94dWNlRTZlQnhaR1BwNGl0WnhneklBenpxV1dMcDFROHlGMFQtOVF1ZGxWUm14VWtvMXlicko5bWZZWHdvSUo1aUJELWxZYTgwZFZkX3ZJd242Z0I?oc=5",
+      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
+      "category": "equity",
+      "sentiment": "neutral",
+      "sentiment_score": null,
+      "related_tickers": [],
+      "tag": "Equity · Markets",
+      "tag_class": "tag-green",
+      "published_at": "2026-03-28T04:27:00+00:00",
+      "fetched_at": "2026-03-28T23:36:53.808080+00:00"
+    },
+    {
       "id": "c453eea941a0",
       "source": "Finnhub",
       "source_name": "Reuters",
@@ -338,7 +372,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T23:59:58+00:00",
-      "fetched_at": "2026-03-28T23:04:13.613870+00:00"
+      "fetched_at": "2026-03-28T23:36:53.808160+00:00"
     },
     {
       "id": "c6ddd154f429",
@@ -355,7 +389,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T22:47:36+00:00",
-      "fetched_at": "2026-03-28T23:04:13.613910+00:00"
+      "fetched_at": "2026-03-28T23:36:53.808236+00:00"
     },
     {
       "id": "1c8727252ee8",
@@ -372,7 +406,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T22:39:20+00:00",
-      "fetched_at": "2026-03-28T23:04:13.613947+00:00"
+      "fetched_at": "2026-03-28T23:36:53.808318+00:00"
     },
     {
       "id": "e56f19125afb",
@@ -389,7 +423,7 @@
       "tag": "Commodity",
       "tag_class": "tag-red",
       "published_at": "2026-03-27T22:32:09+00:00",
-      "fetched_at": "2026-03-28T23:04:13.613990+00:00"
+      "fetched_at": "2026-03-28T23:36:53.808415+00:00"
     },
     {
       "id": "3e47a70a7e44",
@@ -406,7 +440,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T22:14:34+00:00",
-      "fetched_at": "2026-03-28T23:04:13.614026+00:00"
+      "fetched_at": "2026-03-28T23:36:53.808502+00:00"
     },
     {
       "id": "b193821b4d57",
@@ -423,24 +457,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T21:55:44+00:00",
-      "fetched_at": "2026-03-28T23:04:13.614063+00:00"
-    },
-    {
-      "id": "8aa37b7777d3",
-      "source": "Finnhub",
-      "source_name": "Reuters",
-      "headline": "Iran-linked hackers breach FBI director's personal email, publish photos and documents - Reuters",
-      "summary": "Iran-linked hackers breach FBI director's personal email, publish photos and documents  Reuters",
-      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOZnl4Mkp5MnI3ZDg3X1RYMk1aX1JpWkhKLUN5czJlUGtoaU9NZE9RM2dQZlJkMXNQMWtfRElSU0tjMTdZaWN2UnNUb0dIcEZLZjB0RThIdEpQMW5WWkxWblMzNmszZElmcjE2WXNnMXBjNHA0NE15V0dYMVZhYmNjcm8ySjlUZkVIaWZURW1aQmhLNEk4TDV6d1g3SXpJV1psSTBxZTViRE5iSU9WYzRXbjhrUDZ2Um93MDFYNkpDUQ?oc=5",
-      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
-      "category": "equity",
-      "sentiment": "neutral",
-      "sentiment_score": null,
-      "related_tickers": [],
-      "tag": "Equity · Markets",
-      "tag_class": "tag-green",
-      "published_at": "2026-03-27T21:46:44+00:00",
-      "fetched_at": "2026-03-28T23:04:13.614101+00:00"
+      "fetched_at": "2026-03-28T23:36:53.808752+00:00"
     },
     {
       "id": "d03260b75e6e",
@@ -457,7 +474,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T21:42:07+00:00",
-      "fetched_at": "2026-03-28T23:04:13.614136+00:00"
+      "fetched_at": "2026-03-28T23:36:53.808937+00:00"
     },
     {
       "id": "b37e5ff7b53f",
@@ -474,7 +491,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T21:12:26+00:00",
-      "fetched_at": "2026-03-28T23:04:13.614170+00:00"
+      "fetched_at": "2026-03-28T23:36:53.809031+00:00"
     },
     {
       "id": "d9c127533fe4",
@@ -491,7 +508,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T20:35:25+00:00",
-      "fetched_at": "2026-03-28T23:04:13.614414+00:00"
+      "fetched_at": "2026-03-28T23:36:53.809115+00:00"
     },
     {
       "id": "8545a3bacea7",
@@ -508,7 +525,7 @@
       "tag": "Commodity",
       "tag_class": "tag-red",
       "published_at": "2026-03-27T20:24:53+00:00",
-      "fetched_at": "2026-03-28T23:04:13.614482+00:00"
+      "fetched_at": "2026-03-28T23:36:53.809190+00:00"
     },
     {
       "id": "97cb143d4b06",
@@ -525,7 +542,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T19:56:24+00:00",
-      "fetched_at": "2026-03-28T23:04:13.614526+00:00"
+      "fetched_at": "2026-03-28T23:36:53.809262+00:00"
     },
     {
       "id": "5cd700159496",
@@ -542,7 +559,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T19:18:55+00:00",
-      "fetched_at": "2026-03-28T23:04:13.614579+00:00"
+      "fetched_at": "2026-03-28T23:36:53.809340+00:00"
     },
     {
       "id": "23b85e3c339d",
@@ -559,7 +576,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T19:16:04+00:00",
-      "fetched_at": "2026-03-28T23:04:13.614615+00:00"
+      "fetched_at": "2026-03-28T23:36:53.809412+00:00"
     },
     {
       "id": "746314e8f5b8",
@@ -576,7 +593,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T19:06:44+00:00",
-      "fetched_at": "2026-03-28T23:04:13.614646+00:00"
+      "fetched_at": "2026-03-28T23:36:53.809475+00:00"
     },
     {
       "id": "38809dff52d5",
@@ -593,7 +610,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T19:04:46+00:00",
-      "fetched_at": "2026-03-28T23:04:13.614687+00:00"
+      "fetched_at": "2026-03-28T23:36:53.809557+00:00"
     },
     {
       "id": "c9b164f857b4",
@@ -610,7 +627,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T18:58:52+00:00",
-      "fetched_at": "2026-03-28T23:04:13.614732+00:00"
+      "fetched_at": "2026-03-28T23:36:53.809633+00:00"
     },
     {
       "id": "4fcc05e03c43",
@@ -627,7 +644,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T18:53:52+00:00",
-      "fetched_at": "2026-03-28T23:04:13.614765+00:00"
+      "fetched_at": "2026-03-28T23:36:53.809700+00:00"
     },
     {
       "id": "87737e8023d6",
@@ -644,7 +661,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T18:04:35+00:00",
-      "fetched_at": "2026-03-28T23:04:13.614798+00:00"
+      "fetched_at": "2026-03-28T23:36:53.809768+00:00"
     },
     {
       "id": "e1dc48fa55a5",
@@ -661,7 +678,7 @@
       "tag": "Commodity",
       "tag_class": "tag-red",
       "published_at": "2026-03-27T18:04:20+00:00",
-      "fetched_at": "2026-03-28T23:04:13.614857+00:00"
+      "fetched_at": "2026-03-28T23:36:53.809831+00:00"
     },
     {
       "id": "51755c6dad0d",
@@ -678,7 +695,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T17:50:46+00:00",
-      "fetched_at": "2026-03-28T23:04:13.614900+00:00"
+      "fetched_at": "2026-03-28T23:36:53.809893+00:00"
     },
     {
       "id": "403ffe15c6f6",
@@ -695,7 +712,7 @@
       "tag": "Macro · Policy",
       "tag_class": "tag-blue",
       "published_at": "2026-03-27T17:45:45+00:00",
-      "fetched_at": "2026-03-28T23:04:13.614919+00:00"
+      "fetched_at": "2026-03-28T23:36:53.809937+00:00"
     },
     {
       "id": "638dc50db730",
@@ -712,7 +729,7 @@
       "tag": "Macro · Policy",
       "tag_class": "tag-blue",
       "published_at": "2026-03-27T17:27:09+00:00",
-      "fetched_at": "2026-03-28T23:04:13.614940+00:00"
+      "fetched_at": "2026-03-28T23:36:53.810045+00:00"
     },
     {
       "id": "b96a1b26b4d2",
@@ -729,7 +746,7 @@
       "tag": "Commodity",
       "tag_class": "tag-red",
       "published_at": "2026-03-27T17:08:22+00:00",
-      "fetched_at": "2026-03-28T23:04:13.614970+00:00"
+      "fetched_at": "2026-03-28T23:36:53.810105+00:00"
     },
     {
       "id": "a408f439de92",
@@ -746,7 +763,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T17:01:48+00:00",
-      "fetched_at": "2026-03-28T23:04:13.615002+00:00"
+      "fetched_at": "2026-03-28T23:36:53.810161+00:00"
     },
     {
       "id": "0b0bbb15facc",
@@ -763,7 +780,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T16:49:31+00:00",
-      "fetched_at": "2026-03-28T23:04:13.615044+00:00"
+      "fetched_at": "2026-03-28T23:36:53.810223+00:00"
     },
     {
       "id": "bfc3b6ca3d6b",
@@ -780,7 +797,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T16:39:05+00:00",
-      "fetched_at": "2026-03-28T23:04:13.615080+00:00"
+      "fetched_at": "2026-03-28T23:36:53.810285+00:00"
     },
     {
       "id": "f9baa04a93c0",
@@ -797,7 +814,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T15:33:12+00:00",
-      "fetched_at": "2026-03-28T23:04:13.615109+00:00"
+      "fetched_at": "2026-03-28T23:36:53.810341+00:00"
     },
     {
       "id": "0daad7ec71dc",
@@ -814,7 +831,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T15:32:12+00:00",
-      "fetched_at": "2026-03-28T23:04:13.615147+00:00"
+      "fetched_at": "2026-03-28T23:36:53.810406+00:00"
     },
     {
       "id": "5664e1722456",
@@ -831,24 +848,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T15:14:51+00:00",
-      "fetched_at": "2026-03-28T23:04:13.615213+00:00"
-    },
-    {
-      "id": "70fbb87ac60a",
-      "source": "Finnhub",
-      "source_name": "Reuters",
-      "headline": "G7 foreign ministers demand an end to attacks on civilians in Iran war - Reuters",
-      "summary": "G7 foreign ministers demand an end to attacks on civilians in Iran war  Reuters",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQWjZNWlZUa3p2RmotQlY1ZGFFcUlpS2t3a0U4Q3dOZy0yWFc2SHpXN3MwWEJRSVc5ZEFOTzV0cFRZX3RVSll6WU1TYkowdk5Qd092YjM2UjhrSk1DMTJJSG10UU96YVVZN1BaZGlOZzBWbmpYRDZQbTBfYktPLW1NcXIwSmhsS0xmazFDQnNuZlI5UGwyQXI1alRVeV9CY2xDeGNaYXV1U1pROUk3UGFWdGx3?oc=5",
-      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
-      "category": "equity",
-      "sentiment": "neutral",
-      "sentiment_score": null,
-      "related_tickers": [],
-      "tag": "Equity · Markets",
-      "tag_class": "tag-green",
-      "published_at": "2026-03-27T14:54:37+00:00",
-      "fetched_at": "2026-03-28T23:04:13.615244+00:00"
+      "fetched_at": "2026-03-28T23:36:53.810506+00:00"
     }
   ],
   "macro": [
@@ -867,7 +867,7 @@
       "tag": "Macro · Policy",
       "tag_class": "tag-blue",
       "published_at": "2026-03-28T15:03:43+00:00",
-      "fetched_at": "2026-03-28T23:04:13.613291+00:00"
+      "fetched_at": "2026-03-28T23:36:53.806887+00:00"
     },
     {
       "id": "56e306eee04e",
@@ -884,7 +884,7 @@
       "tag": "Macro · Policy",
       "tag_class": "tag-blue",
       "published_at": "2026-03-28T13:57:37+00:00",
-      "fetched_at": "2026-03-28T23:04:13.613386+00:00"
+      "fetched_at": "2026-03-28T23:36:53.807078+00:00"
     },
     {
       "id": "403ffe15c6f6",
@@ -901,7 +901,7 @@
       "tag": "Macro · Policy",
       "tag_class": "tag-blue",
       "published_at": "2026-03-27T17:45:45+00:00",
-      "fetched_at": "2026-03-28T23:04:13.614919+00:00"
+      "fetched_at": "2026-03-28T23:36:53.809937+00:00"
     },
     {
       "id": "638dc50db730",
@@ -918,10 +918,27 @@
       "tag": "Macro · Policy",
       "tag_class": "tag-blue",
       "published_at": "2026-03-27T17:27:09+00:00",
-      "fetched_at": "2026-03-28T23:04:13.614940+00:00"
+      "fetched_at": "2026-03-28T23:36:53.810045+00:00"
     }
   ],
   "equity": [
+    {
+      "id": "8aa37b7777d3",
+      "source": "Finnhub",
+      "source_name": "Reuters",
+      "headline": "Iran-linked hackers breach FBI director's personal email, publish photos and documents - Reuters",
+      "summary": "Iran-linked hackers breach FBI director's personal email, publish photos and documents  Reuters",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOZnl4Mkp5MnI3ZDg3X1RYMk1aX1JpWkhKLUN5czJlUGtoaU9NZE9RM2dQZlJkMXNQMWtfRElSU0tjMTdZaWN2UnNUb0dIcEZLZjB0RThIdEpQMW5WWkxWblMzNmszZElmcjE2WXNnMXBjNHA0NE15V0dYMVZhYmNjcm8ySjlUZkVIaWZURW1aQmhLNEk4TDV6d1g3SXpJV1psSTBxZTViRE5iSU9WYzRXbjhrUDZ2Um93MDFYNkpDUQ?oc=5",
+      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
+      "category": "equity",
+      "sentiment": "neutral",
+      "sentiment_score": null,
+      "related_tickers": [],
+      "tag": "Equity · Markets",
+      "tag_class": "tag-green",
+      "published_at": "2026-03-28T23:14:28+00:00",
+      "fetched_at": "2026-03-28T23:36:53.805780+00:00"
+    },
     {
       "id": "c9c1c57a4711",
       "source": "Finnhub",
@@ -937,7 +954,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-28T19:56:16+00:00",
-      "fetched_at": "2026-03-28T23:04:13.612927+00:00"
+      "fetched_at": "2026-03-28T23:36:53.806050+00:00"
     },
     {
       "id": "288bdb4a2519",
@@ -954,7 +971,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-28T18:31:17+00:00",
-      "fetched_at": "2026-03-28T23:04:13.613072+00:00"
+      "fetched_at": "2026-03-28T23:36:53.806232+00:00"
     },
     {
       "id": "c318e56aff2e",
@@ -971,7 +988,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-28T17:20:46+00:00",
-      "fetched_at": "2026-03-28T23:04:13.613131+00:00"
+      "fetched_at": "2026-03-28T23:36:53.806386+00:00"
     },
     {
       "id": "1beb24c9b2c3",
@@ -988,7 +1005,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-28T16:39:43+00:00",
-      "fetched_at": "2026-03-28T23:04:13.613176+00:00"
+      "fetched_at": "2026-03-28T23:36:53.806540+00:00"
     },
     {
       "id": "f914f710f59f",
@@ -1005,7 +1022,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-28T15:53:00+00:00",
-      "fetched_at": "2026-03-28T23:04:13.613229+00:00"
+      "fetched_at": "2026-03-28T23:36:53.806695+00:00"
     },
     {
       "id": "0bda71f89967",
@@ -1022,7 +1039,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-28T15:42:21+00:00",
-      "fetched_at": "2026-03-28T23:04:13.613265+00:00"
+      "fetched_at": "2026-03-28T23:36:53.806813+00:00"
     },
     {
       "id": "4c4ad10bd4e6",
@@ -1039,7 +1056,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-28T14:33:06+00:00",
-      "fetched_at": "2026-03-28T23:04:13.613347+00:00"
+      "fetched_at": "2026-03-28T23:36:53.807007+00:00"
     },
     {
       "id": "efad0742bd94",
@@ -1056,7 +1073,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-28T13:39:10+00:00",
-      "fetched_at": "2026-03-28T23:04:13.613427+00:00"
+      "fetched_at": "2026-03-28T23:36:53.807181+00:00"
     },
     {
       "id": "b02f7e2c567b",
@@ -1073,7 +1090,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-28T13:00:01+00:00",
-      "fetched_at": "2026-03-28T23:04:13.613494+00:00"
+      "fetched_at": "2026-03-28T23:36:53.807321+00:00"
     },
     {
       "id": "1e447ba21231",
@@ -1090,7 +1107,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-28T11:40:29+00:00",
-      "fetched_at": "2026-03-28T23:04:13.613573+00:00"
+      "fetched_at": "2026-03-28T23:36:53.807548+00:00"
     },
     {
       "id": "db00fe04d5e3",
@@ -1107,7 +1124,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-28T11:20:44+00:00",
-      "fetched_at": "2026-03-28T23:04:13.613612+00:00"
+      "fetched_at": "2026-03-28T23:36:53.807646+00:00"
     },
     {
       "id": "fb58b74a8047",
@@ -1124,7 +1141,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-28T11:00:01+00:00",
-      "fetched_at": "2026-03-28T23:04:13.613654+00:00"
+      "fetched_at": "2026-03-28T23:36:53.807745+00:00"
     },
     {
       "id": "f674df189a70",
@@ -1141,7 +1158,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-28T09:46:09+00:00",
-      "fetched_at": "2026-03-28T23:04:13.613694+00:00"
+      "fetched_at": "2026-03-28T23:36:53.807840+00:00"
     },
     {
       "id": "71530ef60343",
@@ -1158,7 +1175,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-28T07:34:09+00:00",
-      "fetched_at": "2026-03-28T23:04:13.613732+00:00"
+      "fetched_at": "2026-03-28T23:36:53.807925+00:00"
     },
     {
       "id": "c820142ea624",
@@ -1175,7 +1192,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-28T05:00:00+00:00",
-      "fetched_at": "2026-03-28T23:04:13.613775+00:00"
+      "fetched_at": "2026-03-28T23:36:53.807994+00:00"
     },
     {
       "id": "9451d0a0f9b3",
@@ -1195,6 +1212,23 @@
       "fetched_at": "2026-03-28T23:04:13.613821+00:00"
     },
     {
+      "id": "7b8d8e95c3be",
+      "source": "Finnhub",
+      "source_name": "Reuters",
+      "headline": "Yemen's Houthis enter Iran war with attack on Israel, while US Marines arrive in region - Reuters",
+      "summary": "Yemen's Houthis enter Iran war with attack on Israel, while US Marines arrive in region  Reuters",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNNVVtc1ZtWmlSeGkxX2N1VkZxUW1RUkFReGRKX0o5OXROT21WUjVGMS1lUFlqVFpNcUtSN3gtR3BaMFNaMGR5RDRkYW1DaExPcXJ6eEx6dXlYRVBIWEpHSm94dWNlRTZlQnhaR1BwNGl0WnhneklBenpxV1dMcDFROHlGMFQtOVF1ZGxWUm14VWtvMXlicko5bWZZWHdvSUo1aUJELWxZYTgwZFZkX3ZJd242Z0I?oc=5",
+      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
+      "category": "equity",
+      "sentiment": "neutral",
+      "sentiment_score": null,
+      "related_tickers": [],
+      "tag": "Equity · Markets",
+      "tag_class": "tag-green",
+      "published_at": "2026-03-28T04:27:00+00:00",
+      "fetched_at": "2026-03-28T23:36:53.808080+00:00"
+    },
+    {
       "id": "c453eea941a0",
       "source": "Finnhub",
       "source_name": "Reuters",
@@ -1209,7 +1243,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T23:59:58+00:00",
-      "fetched_at": "2026-03-28T23:04:13.613870+00:00"
+      "fetched_at": "2026-03-28T23:36:53.808160+00:00"
     },
     {
       "id": "c6ddd154f429",
@@ -1226,7 +1260,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T22:47:36+00:00",
-      "fetched_at": "2026-03-28T23:04:13.613910+00:00"
+      "fetched_at": "2026-03-28T23:36:53.808236+00:00"
     },
     {
       "id": "1c8727252ee8",
@@ -1243,7 +1277,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T22:39:20+00:00",
-      "fetched_at": "2026-03-28T23:04:13.613947+00:00"
+      "fetched_at": "2026-03-28T23:36:53.808318+00:00"
     },
     {
       "id": "3e47a70a7e44",
@@ -1260,7 +1294,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T22:14:34+00:00",
-      "fetched_at": "2026-03-28T23:04:13.614026+00:00"
+      "fetched_at": "2026-03-28T23:36:53.808502+00:00"
     },
     {
       "id": "b193821b4d57",
@@ -1277,24 +1311,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T21:55:44+00:00",
-      "fetched_at": "2026-03-28T23:04:13.614063+00:00"
-    },
-    {
-      "id": "8aa37b7777d3",
-      "source": "Finnhub",
-      "source_name": "Reuters",
-      "headline": "Iran-linked hackers breach FBI director's personal email, publish photos and documents - Reuters",
-      "summary": "Iran-linked hackers breach FBI director's personal email, publish photos and documents  Reuters",
-      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOZnl4Mkp5MnI3ZDg3X1RYMk1aX1JpWkhKLUN5czJlUGtoaU9NZE9RM2dQZlJkMXNQMWtfRElSU0tjMTdZaWN2UnNUb0dIcEZLZjB0RThIdEpQMW5WWkxWblMzNmszZElmcjE2WXNnMXBjNHA0NE15V0dYMVZhYmNjcm8ySjlUZkVIaWZURW1aQmhLNEk4TDV6d1g3SXpJV1psSTBxZTViRE5iSU9WYzRXbjhrUDZ2Um93MDFYNkpDUQ?oc=5",
-      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
-      "category": "equity",
-      "sentiment": "neutral",
-      "sentiment_score": null,
-      "related_tickers": [],
-      "tag": "Equity · Markets",
-      "tag_class": "tag-green",
-      "published_at": "2026-03-27T21:46:44+00:00",
-      "fetched_at": "2026-03-28T23:04:13.614101+00:00"
+      "fetched_at": "2026-03-28T23:36:53.808752+00:00"
     },
     {
       "id": "d03260b75e6e",
@@ -1311,7 +1328,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T21:42:07+00:00",
-      "fetched_at": "2026-03-28T23:04:13.614136+00:00"
+      "fetched_at": "2026-03-28T23:36:53.808937+00:00"
     },
     {
       "id": "b37e5ff7b53f",
@@ -1328,7 +1345,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T21:12:26+00:00",
-      "fetched_at": "2026-03-28T23:04:13.614170+00:00"
+      "fetched_at": "2026-03-28T23:36:53.809031+00:00"
     },
     {
       "id": "d9c127533fe4",
@@ -1345,7 +1362,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T20:35:25+00:00",
-      "fetched_at": "2026-03-28T23:04:13.614414+00:00"
+      "fetched_at": "2026-03-28T23:36:53.809115+00:00"
     },
     {
       "id": "97cb143d4b06",
@@ -1362,7 +1379,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T19:56:24+00:00",
-      "fetched_at": "2026-03-28T23:04:13.614526+00:00"
+      "fetched_at": "2026-03-28T23:36:53.809262+00:00"
     },
     {
       "id": "5cd700159496",
@@ -1379,7 +1396,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T19:18:55+00:00",
-      "fetched_at": "2026-03-28T23:04:13.614579+00:00"
+      "fetched_at": "2026-03-28T23:36:53.809340+00:00"
     },
     {
       "id": "23b85e3c339d",
@@ -1396,7 +1413,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T19:16:04+00:00",
-      "fetched_at": "2026-03-28T23:04:13.614615+00:00"
+      "fetched_at": "2026-03-28T23:36:53.809412+00:00"
     },
     {
       "id": "746314e8f5b8",
@@ -1413,7 +1430,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T19:06:44+00:00",
-      "fetched_at": "2026-03-28T23:04:13.614646+00:00"
+      "fetched_at": "2026-03-28T23:36:53.809475+00:00"
     },
     {
       "id": "38809dff52d5",
@@ -1430,7 +1447,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T19:04:46+00:00",
-      "fetched_at": "2026-03-28T23:04:13.614687+00:00"
+      "fetched_at": "2026-03-28T23:36:53.809557+00:00"
     },
     {
       "id": "c9b164f857b4",
@@ -1447,7 +1464,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T18:58:52+00:00",
-      "fetched_at": "2026-03-28T23:04:13.614732+00:00"
+      "fetched_at": "2026-03-28T23:36:53.809633+00:00"
     },
     {
       "id": "4fcc05e03c43",
@@ -1464,7 +1481,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T18:53:52+00:00",
-      "fetched_at": "2026-03-28T23:04:13.614765+00:00"
+      "fetched_at": "2026-03-28T23:36:53.809700+00:00"
     },
     {
       "id": "87737e8023d6",
@@ -1481,7 +1498,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T18:04:35+00:00",
-      "fetched_at": "2026-03-28T23:04:13.614798+00:00"
+      "fetched_at": "2026-03-28T23:36:53.809768+00:00"
     },
     {
       "id": "51755c6dad0d",
@@ -1498,7 +1515,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T17:50:46+00:00",
-      "fetched_at": "2026-03-28T23:04:13.614900+00:00"
+      "fetched_at": "2026-03-28T23:36:53.809893+00:00"
     },
     {
       "id": "a408f439de92",
@@ -1515,7 +1532,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T17:01:48+00:00",
-      "fetched_at": "2026-03-28T23:04:13.615002+00:00"
+      "fetched_at": "2026-03-28T23:36:53.810161+00:00"
     },
     {
       "id": "0b0bbb15facc",
@@ -1532,7 +1549,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T16:49:31+00:00",
-      "fetched_at": "2026-03-28T23:04:13.615044+00:00"
+      "fetched_at": "2026-03-28T23:36:53.810223+00:00"
     },
     {
       "id": "bfc3b6ca3d6b",
@@ -1549,7 +1566,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T16:39:05+00:00",
-      "fetched_at": "2026-03-28T23:04:13.615080+00:00"
+      "fetched_at": "2026-03-28T23:36:53.810285+00:00"
     },
     {
       "id": "f9baa04a93c0",
@@ -1566,7 +1583,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T15:33:12+00:00",
-      "fetched_at": "2026-03-28T23:04:13.615109+00:00"
+      "fetched_at": "2026-03-28T23:36:53.810341+00:00"
     },
     {
       "id": "0daad7ec71dc",
@@ -1583,7 +1600,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T15:32:12+00:00",
-      "fetched_at": "2026-03-28T23:04:13.615147+00:00"
+      "fetched_at": "2026-03-28T23:36:53.810406+00:00"
     },
     {
       "id": "5664e1722456",
@@ -1600,24 +1617,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T15:14:51+00:00",
-      "fetched_at": "2026-03-28T23:04:13.615213+00:00"
-    },
-    {
-      "id": "70fbb87ac60a",
-      "source": "Finnhub",
-      "source_name": "Reuters",
-      "headline": "G7 foreign ministers demand an end to attacks on civilians in Iran war - Reuters",
-      "summary": "G7 foreign ministers demand an end to attacks on civilians in Iran war  Reuters",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQWjZNWlZUa3p2RmotQlY1ZGFFcUlpS2t3a0U4Q3dOZy0yWFc2SHpXN3MwWEJRSVc5ZEFOTzV0cFRZX3RVSll6WU1TYkowdk5Qd092YjM2UjhrSk1DMTJJSG10UU96YVVZN1BaZGlOZzBWbmpYRDZQbTBfYktPLW1NcXIwSmhsS0xmazFDQnNuZlI5UGwyQXI1alRVeV9CY2xDeGNaYXV1U1pROUk3UGFWdGx3?oc=5",
-      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
-      "category": "equity",
-      "sentiment": "neutral",
-      "sentiment_score": null,
-      "related_tickers": [],
-      "tag": "Equity · Markets",
-      "tag_class": "tag-green",
-      "published_at": "2026-03-27T14:54:37+00:00",
-      "fetched_at": "2026-03-28T23:04:13.615244+00:00"
+      "fetched_at": "2026-03-28T23:36:53.810506+00:00"
     }
   ],
   "commodity": [
@@ -1636,7 +1636,7 @@
       "tag": "Commodity",
       "tag_class": "tag-red",
       "published_at": "2026-03-27T22:32:09+00:00",
-      "fetched_at": "2026-03-28T23:04:13.613990+00:00"
+      "fetched_at": "2026-03-28T23:36:53.808415+00:00"
     },
     {
       "id": "8545a3bacea7",
@@ -1653,7 +1653,7 @@
       "tag": "Commodity",
       "tag_class": "tag-red",
       "published_at": "2026-03-27T20:24:53+00:00",
-      "fetched_at": "2026-03-28T23:04:13.614482+00:00"
+      "fetched_at": "2026-03-28T23:36:53.809190+00:00"
     },
     {
       "id": "e1dc48fa55a5",
@@ -1670,7 +1670,7 @@
       "tag": "Commodity",
       "tag_class": "tag-red",
       "published_at": "2026-03-27T18:04:20+00:00",
-      "fetched_at": "2026-03-28T23:04:13.614857+00:00"
+      "fetched_at": "2026-03-28T23:36:53.809831+00:00"
     },
     {
       "id": "b96a1b26b4d2",
@@ -1687,7 +1687,7 @@
       "tag": "Commodity",
       "tag_class": "tag-red",
       "published_at": "2026-03-27T17:08:22+00:00",
-      "fetched_at": "2026-03-28T23:04:13.614970+00:00"
+      "fetched_at": "2026-03-28T23:36:53.810105+00:00"
     }
   ],
   "crypto": [
@@ -1706,7 +1706,7 @@
       "tag": "Crypto · Market",
       "tag_class": "tag-amber",
       "published_at": "2026-03-28T12:00:01+00:00",
-      "fetched_at": "2026-03-28T23:04:13.613533+00:00"
+      "fetched_at": "2026-03-28T23:36:53.807399+00:00"
     }
   ]
 }

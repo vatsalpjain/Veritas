@@ -45,6 +45,15 @@ def get_mode_plan(intent: str, iteration: int, entities: list[str] | None = None
                 "Summarize actionable implications and hedges",
             ],
         },
+        "regulatory": {
+            "title": "Regulatory Check Workflow",
+            "steps": [
+                "Interpret user action/claim and compliance context",
+                "Screen against SEBI and tax red-flag rules",
+                "Cross-reference public regulatory guidance",
+                "Issue compliance verdict and safe alternatives",
+            ],
+        },
         "general": {
             "title": "Research Workflow",
             "steps": [
