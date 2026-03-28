@@ -35,7 +35,11 @@ backend/
 │   ├── main.py              # All API routes
 │   └── services/
 │       ├── yfinance_service.py   # yfinance data fetching
-│       └── nse_service.py        # NSE India direct API
+│       ├── nse_service.py        # NSE India direct API
+│       ├── portfolio_service.py  # Portfolio CRUD & calculations
+│       └── insights_service.py   # AI insights (mock)
+├── data/
+│   └── portfolio.json       # User portfolio storage (JSON file)
 ├── main.py                  # Entry point
 ├── pyproject.toml
 └── backend_doc.md
@@ -110,6 +114,69 @@ backend/
 
 ---
 
+### Portfolio Endpoints (`/portfolio/...`)
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/portfolio` | Get all holdings with live prices |
+| GET | `/portfolio/summary` | Total value, P&L, allocation breakdown |
+| GET | `/portfolio/top-performers?limit=5` | Top N holdings by daily change |
+| GET | `/portfolio/activity?limit=10` | Recent transactions |
+| POST | `/portfolio/holding` | Add a new holding |
+| PUT | `/portfolio/holding/{symbol}` | Update holding quantity/price |
+| DELETE | `/portfolio/holding/{symbol}` | Remove a holding |
+| POST | `/portfolio/transaction` | Log a buy/sell/dividend |
+| PUT | `/portfolio/cash` | Update cash balance |
+
+**Storage:** JSON file at `data/portfolio.json` (persists across restarts)
+
+---
+
+### Insights Endpoints (`/insights/...`)
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/insights` | AI-driven insights (mock data) |
+| GET | `/insights/risk-score` | Portfolio risk score |
+| GET | `/insights/rebalancing` | Rebalancing suggestions |
+
+---
+
+### Investments Page Endpoints (`/investments/...`)
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/investments/stats` | Top stats (total value, profit, day's change, buying power) |
+| GET | `/investments/holdings` | Holdings table with trend sparkline data |
+| GET | `/investments/performance?period=1M` | Performance history for chart (1M, 3M, 1Y, ALL) |
+| GET | `/investments/breakdown` | Asset breakdown for pie chart |
+| GET | `/investments/opportunities` | Investment opportunities (mock) |
+| GET | `/investments/alerts` | Portfolio risk alerts |
+
+---
+
+### News Endpoints (`/news/...`)
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/news` | Get news articles (optional: category, ticker, limit, refresh) |
+| POST | `/news/refresh` | Force refresh news from Finnhub API |
+| GET | `/news/flashcards` | Lightweight news cards for UI ticker |
+| GET | `/news/sentiment` | Aggregated sentiment by category and ticker |
+| GET | `/news/ticker/{ticker}` | News for a specific stock ticker |
+
+**Query params for `/news`:**
+- `category`: macro, equity, commodity, crypto
+- `ticker`: Filter by stock symbol
+- `limit`: Max articles (default 20)
+- `refresh`: Force API refresh (default false)
+
+**Requires:** `FINNHUB_API_KEY` in `.env`
+
+**Cache:** Auto-refreshes every 15 minutes. Data stored in `news_data/` folder.
+
+---
+
 ## Response Examples
 
 ### `/yf/quote/RELIANCE.NS`
@@ -169,6 +236,274 @@ backend/
 }
 ```
 
+### `/portfolio`
+```json
+[
+  {
+    "symbol": "RELIANCE.NS",
+    "quantity": 50,
+    "avg_buy_price": 2400.00,
+    "current_price": 2450.50,
+    "current_value": 122525.00,
+    "invested_value": 120000.00,
+    "pnl": 2525.00,
+    "pnl_percent": 2.10,
+    "daily_change": 0.43,
+    "asset_type": "equity"
+  }
+]
+```
+
+### `/portfolio/summary`
+```json
+{
+  "total_assets": 650000.00,
+  "total_invested": 500000.00,
+  "total_current_value": 520000.00,
+  "total_pnl": 20000.00,
+  "total_pnl_percent": 4.00,
+  "cash_balance": 150000.00,
+  "dividends_ytd": 1200.00,
+  "allocation": {
+    "equities": 77.69,
+    "cash": 23.08
+  },
+  "holdings_count": 5
+}
+```
+
+### `/portfolio/top-performers`
+```json
+[
+  {
+    "symbol": "RELIANCE.NS",
+    "current_price": 2450.50,
+    "daily_change": 1.84
+  }
+]
+```
+
+### `/insights`
+```json
+[
+  {
+    "id": "insight_1",
+    "type": "research_report",
+    "title": "New Research Report: Tech Sector Resilience",
+    "summary": "Our analysis indicates enterprise SaaS remains undervalued...",
+    "action_label": "READ FULL REPORT",
+    "timestamp": "2024-03-28T10:00:00"
+  },
+  {
+    "id": "insight_2",
+    "type": "buy_signal",
+    "title": "RELIANCE Momentum Alert",
+    "summary": "Technical indicators suggest 8% upside potential...",
+    "symbol": "RELIANCE.NS",
+    "analysts_agree": 7,
+    "timestamp": "2024-03-28T07:00:00"
+  }
+]
+```
+
+### `/insights/risk-score`
+```json
+{
+  "score": 4,
+  "max_score": 10,
+  "label": "Balanced",
+  "description": "Based on 5 holdings diversification"
+}
+```
+
+### `POST /portfolio/holding` (Request Body)
+```json
+{
+  "symbol": "SBIN.NS",
+  "quantity": 100,
+  "avg_buy_price": 750.00,
+  "asset_type": "equity"
+}
+```
+
+### `POST /portfolio/transaction` (Request Body)
+```json
+{
+  "type": "buy",
+  "symbol": "SBIN.NS",
+  "quantity": 100,
+  "price": 750.00
+}
+```
+Or for dividend:
+```json
+{
+  "type": "dividend",
+  "symbol": "ITC.NS",
+  "amount": 500.00
+}
+```
+
+### `/investments/stats`
+```json
+{
+  "total_investment_value": 520000.00,
+  "all_time_profit": 20000.00,
+  "all_time_profit_percent": 4.00,
+  "days_change": 2500.00,
+  "days_change_percent": 0.48,
+  "buying_power": 150000.00
+}
+```
+
+### `/investments/holdings`
+```json
+[
+  {
+    "symbol": "RELIANCE.NS",
+    "ticker": "RELIANCE",
+    "name": "RELIANCE",
+    "sector": "Energy",
+    "shares": 50,
+    "cost_basis": 2400.00,
+    "current_price": 2450.50,
+    "market_value": 122525.00,
+    "return_percent": 2.10,
+    "return_value": 2525.00,
+    "trend": [
+      {"date": "2024-03-21", "close": 2420.00},
+      {"date": "2024-03-22", "close": 2435.00},
+      {"date": "2024-03-25", "close": 2450.50}
+    ]
+  }
+]
+```
+
+### `/investments/performance?period=1M`
+```json
+{
+  "period": "1M",
+  "data_points": [
+    {"date": "2024-02-28", "value": 480000.00},
+    {"date": "2024-03-07", "value": 495000.00},
+    {"date": "2024-03-14", "value": 510000.00},
+    {"date": "2024-03-21", "value": 520000.00}
+  ],
+  "peak": {
+    "value": 520000.00,
+    "date": "2024-03-21"
+  },
+  "growth": 40000.00,
+  "growth_percent": 8.33
+}
+```
+
+### `/investments/breakdown`
+```json
+{
+  "allocation": [
+    {"type": "equity", "name": "Stocks", "value": 520000.00, "percentage": 77.61},
+    {"type": "cash", "name": "Cash & Equivalents", "value": 150000.00, "percentage": 22.39}
+  ],
+  "total_value": 670000.00,
+  "target_achievement": 77.61
+}
+```
+
+### `/investments/opportunities`
+```json
+[
+  {
+    "id": "opp_1",
+    "action": "BUY",
+    "symbol": "HDFCBANK.NS",
+    "ticker": "HDFCBANK",
+    "name": "HDFC Bank Ltd",
+    "reason": "Strong fundamentals with consistent earnings growth.",
+    "current_price": 1650.00,
+    "daily_change": 1.2
+  }
+]
+```
+
+### `/investments/alerts`
+```json
+[
+  {
+    "type": "concentration",
+    "severity": "warning",
+    "title": "Portfolio Risk Alert",
+    "message": "Your Energy exposure is currently 45% above recommended allocation.",
+    "action": "Rebalance Now"
+  }
+]
+```
+
+### `/news`
+```json
+[
+  {
+    "id": "a1b2c3d4e5f6",
+    "source": "Finnhub",
+    "source_name": "Reuters",
+    "headline": "RBI Holds Rates Steady Amid Inflation Concerns",
+    "summary": "The Reserve Bank of India maintained its repo rate...",
+    "url": "https://...",
+    "image": "https://...",
+    "category": "macro",
+    "sentiment": "neutral",
+    "related_tickers": [],
+    "tag": "Macro · Policy",
+    "tag_class": "tag-blue",
+    "published_at": "2024-03-28T10:00:00+00:00",
+    "fetched_at": "2024-03-28T12:00:00+00:00"
+  }
+]
+```
+
+### `/news/flashcards`
+```json
+[
+  {
+    "id": "a1b2c3d4e5f6",
+    "headline": "RBI Holds Rates Steady",
+    "summary": "The Reserve Bank of India maintained...",
+    "source": "Reuters",
+    "category": "macro",
+    "sentiment": "neutral",
+    "tag": "Macro · Policy",
+    "tag_class": "tag-blue",
+    "tickers": [],
+    "url": "https://...",
+    "published_at": "2024-03-28T10:00:00+00:00"
+  }
+]
+```
+
+### `/news/sentiment`
+```json
+{
+  "generated_at": "2024-03-28T12:00:00+00:00",
+  "by_category": {
+    "macro": {"bullish": 2, "bearish": 1, "neutral": 5, "total": 8},
+    "equity": {"bullish": 10, "bearish": 3, "neutral": 12, "total": 25}
+  },
+  "by_ticker": {
+    "RELIANCE.NS": {"bullish": 2, "bearish": 0, "neutral": 3, "total": 5}
+  }
+}
+```
+
+### `POST /news/refresh`
+```json
+{
+  "status": "ok",
+  "fetched": 25,
+  "total_stored": 50,
+  "updated_at": "2024-03-28T12:00:00+00:00"
+}
+```
+
 ---
 
 ## Error Handling
@@ -221,6 +556,9 @@ Current:
 |------|--------|
 | Initial | Basic setup with health endpoint |
 | Update | Added yfinance + NSE data ingestion |
+| Update | Added portfolio management + AI insights |
+| Update | Added investments page endpoints (stats, holdings, performance, breakdown, opportunities, alerts) |
+| Update | Added news endpoints (Finnhub integration) |
 
 ---
 
