@@ -177,6 +177,41 @@ backend/
 
 ---
 
+### Markets Page Endpoints (`/markets/...`)
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/markets` | Get all market data for Markets page (indices, chart, sectors, signals, forecasts, assets) |
+| GET | `/markets/indices` | Market indices (S&P 500, NASDAQ, BTC, ETH) |
+| GET | `/markets/chart?symbol=QQQ` | Candlestick chart data for all periods (1D, 1W, 1M, 1Y) |
+| GET | `/markets/sectors` | Sector performance heatmap (computed from sector ETFs) |
+| GET | `/markets/signals` | Algorithmic trading signals (computed from RSI, SMA) |
+| GET | `/markets/forecasts` | Growth forecasts for sectors (computed from momentum) |
+| GET | `/markets/assets?tab=STOCKS` | Asset explorer data (STOCKS, OPTIONS, CRYPTO) |
+
+**All data is computed from yfinance and cached in `portfolio.json` for 5 minutes.**
+
+---
+
+### Portfolio Analysis Endpoints (`/portfolio/...`)
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/portfolio/analysis` | Get full portfolio analysis for Portfolio page |
+| GET | `/portfolio/diversification` | Diversification score (computed from holdings) |
+| GET | `/portfolio/allocation` | Current vs target allocation by asset class |
+| PUT | `/portfolio/allocation/targets` | Update target allocation percentages |
+| GET | `/portfolio/rebalancing` | Rebalancing recommendations (computed from allocation deltas) |
+| GET | `/portfolio/strategy` | Current investment strategy |
+| PUT | `/portfolio/strategy` | Update investment strategy |
+| GET | `/portfolio/strategy/advisor` | Strategy advisor recommendation (computed from portfolio beta) |
+| GET | `/portfolio/goals` | Investment goals with progress (computed from portfolio value) |
+| PUT | `/portfolio/goals` | Update investment goals |
+
+**All analysis data is computed from holdings and stored in `portfolio.json`.**
+
+---
+
 ## Response Examples
 
 ### `/yf/quote/RELIANCE.NS`
@@ -504,6 +539,121 @@ Or for dividend:
 }
 ```
 
+### `/markets`
+```json
+{
+  "indices": [
+    {"id": "sp500", "label": "S&P 500", "symbol": "^GSPC", "price": 5204.34, "changePercent": 1.24, "barFillPercent": 75},
+    {"id": "nasdaq", "label": "NASDAQ", "symbol": "^IXIC", "price": 16428.82, "changePercent": 1.89, "barFillPercent": 83},
+    {"id": "btc", "label": "Bitcoin", "symbol": "BTC-USD", "price": 68432, "changePercent": -2.11, "barFillPercent": 33},
+    {"id": "eth", "label": "Ethereum", "symbol": "ETH-USD", "price": 3492, "changePercent": 0.45, "barFillPercent": 50}
+  ],
+  "chart": {
+    "symbol": "QQQ",
+    "name": "Invesco QQQ Trust Series 1",
+    "volatility": 1.4,
+    "rsi": 64.2,
+    "candles": {
+      "1D": [{"date": "2024-03-28T09:30:00", "open": 445.2, "high": 446.1, "low": 444.8, "close": 445.9, "volume": 2500000}],
+      "1W": [],
+      "1M": [],
+      "1Y": []
+    }
+  },
+  "sectors": [
+    {"id": "xlk", "label": "Technology", "changePercent": 2.45},
+    {"id": "xlv", "label": "Healthcare", "changePercent": -0.82}
+  ],
+  "signals": [
+    {"id": "sig-nvda-entry", "ticker": "NVDA", "signalType": "ENTRY", "status": "CONFIRMED", "description": "RSI at 28.5 indicates oversold.", "icon": "login"}
+  ],
+  "growthForecasts": [
+    {"label": "AI & Semiconductors", "forecastPercent": 12.4, "barWidthPercent": 85}
+  ],
+  "assets": {
+    "STOCKS": [{"id": "aapl", "ticker": "AAPL", "name": "Apple Inc.", "sector": "Technology", "price": 172.62, "changePercent24h": 0.68, "volatility": "Low", "expGrowthPercent": 14.2}],
+    "OPTIONS": [],
+    "CRYPTO": []
+  }
+}
+```
+
+### `/portfolio/analysis`
+```json
+{
+  "diversification": {
+    "score": 85,
+    "grade": "EXCELLENT",
+    "headline": "Your portfolio is well-defended against market volatility.",
+    "body": "Based on your current holdings across 5 sectors and 3 asset classes.",
+    "tags": ["LOW RISK", "BALANCED GROWTH"],
+    "sectorCount": 5,
+    "assetClassCount": 3
+  },
+  "currentStrategy": {
+    "name": "Moderate Growth",
+    "description": "Designed for 7–10 year horizons with focus on capital preservation.",
+    "ctaLabel": "Change Strategy"
+  },
+  "allocation": [
+    {"id": "domestic-equity", "label": "Domestic Equity", "icon": "trending_up", "currentPercent": 52, "targetPercent": 45, "status": "OVERWEIGHT"},
+    {"id": "international-equity", "label": "International Equity", "icon": "language", "currentPercent": 21, "targetPercent": 20, "status": "ALIGNED"},
+    {"id": "fixed-income", "label": "Fixed Income", "icon": "account_balance", "currentPercent": 18, "targetPercent": 25, "status": "UNDERWEIGHT"},
+    {"id": "cash-alternatives", "label": "Cash & Alternatives", "icon": "savings", "currentPercent": 9, "targetPercent": 10, "status": "ALIGNED"}
+  ],
+  "rebalancing": [
+    {"id": "reb-sell-domestic", "action": "SELL", "title": "Reduce Domestic Equity", "subtitle": "Current overweight by 7% ($14,500)", "amount": 5000, "ctaLabel": "VIEW POSITIONS"}
+  ],
+  "strategyAdvisor": {
+    "label": "Aggressive Growth",
+    "rationale": "Your portfolio beta of 1.25 indicates high risk tolerance.",
+    "expectedReturnPA": 12.4,
+    "riskLevel": "High",
+    "horizonYears": "15+ Years",
+    "equitySplit": 85,
+    "bondSplit": 15
+  },
+  "goals": [
+    {"id": "retirement", "icon": "landscape", "iconBg": "#e5eeff", "iconColor": "#131b2e", "label": "RETIREMENT 2045", "currentValue": 1240000, "targetValue": 3500000, "progressPercent": 35.4, "status": "On Track", "statusColor": "#009668", "progressBarColor": "#000000"}
+  ]
+}
+```
+
+### `/portfolio/diversification`
+```json
+{
+  "score": 85,
+  "grade": "EXCELLENT",
+  "headline": "Your portfolio is well-defended against market volatility.",
+  "body": "Based on your current holdings across 5 sectors and 3 asset classes.",
+  "tags": ["LOW RISK", "BALANCED GROWTH"],
+  "sectorCount": 5,
+  "assetClassCount": 3
+}
+```
+
+### `/markets/signals`
+```json
+[
+  {
+    "id": "sig-nvda-entry",
+    "ticker": "NVDA",
+    "signalType": "ENTRY",
+    "status": "CONFIRMED",
+    "description": "RSI at 28.5 indicates oversold. Price near support level $824.50.",
+    "icon": "login"
+  },
+  {
+    "id": "sig-tsla-exit",
+    "ticker": "TSLA",
+    "signalType": "EXIT",
+    "status": "WARNING",
+    "description": "RSI at 72.3 indicates overbought. Consider taking profits.",
+    "icon": "logout"
+  }
+]
+```
+
 ---
 
 ## Error Handling
@@ -559,6 +709,8 @@ Current:
 | Update | Added portfolio management + AI insights |
 | Update | Added investments page endpoints (stats, holdings, performance, breakdown, opportunities, alerts) |
 | Update | Added news endpoints (Finnhub integration) |
+| Update | Added markets page endpoints (indices, chart, sectors, signals, forecasts, assets) |
+| Update | Added portfolio analysis endpoints (diversification, allocation, rebalancing, strategy, goals) |
 
 ---
 

@@ -1,43 +1,25 @@
 import type { MarketData, ChartPeriod, CandlePoint } from '@/lib/types/market';
+import { apiFetch } from '@/lib/api/client';
 
 // ─────────────────────────────────────────────────────────────────────────────
-// MOCK DATA — Single swap point: replace getMarketData() body below.
-//
-// Backend integration plan (http://localhost:8000):
-//
-//   const BASE = process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:8000';
-//
-//   // Index cards
-//   const [sp500, nasdaq, btc, eth] = await Promise.all([
-//     fetch(`${BASE}/yf/index/%5EGSPC`).then(r => r.json()),   // ^GSPC
-//     fetch(`${BASE}/yf/index/%5EIXIC`).then(r => r.json()),   // ^IXIC
-//     fetch(`${BASE}/yf/quote/BTC-USD`).then(r => r.json()),
-//     fetch(`${BASE}/yf/quote/ETH-USD`).then(r => r.json()),
-//   ]);
-//
-//   // Chart candles for QQQ across all periods
-//   const [c1d, c1w, c1m, c1y] = await Promise.all([
-//     fetch(`${BASE}/yf/history/QQQ?period=1d&interval=5m`).then(r => r.json()),
-//     fetch(`${BASE}/yf/history/QQQ?period=5d&interval=1h`).then(r => r.json()),
-//     fetch(`${BASE}/yf/history/QQQ?period=1mo&interval=1d`).then(r => r.json()),
-//     fetch(`${BASE}/yf/history/QQQ?period=1y&interval=1wk`).then(r => r.json()),
-//   ]);
-//
-//   // Asset explorer batch quotes
-//   const stockQuotes = await fetch(`${BASE}/yf/batch-quotes`, {
-//     method: 'POST',
-//     headers: { 'Content-Type': 'application/json' },
-//     body: JSON.stringify({ symbols: ['AAPL', 'MSFT', 'AMD', 'NVDA', 'GOOGL'] }),
-//   }).then(r => r.json());
-//
-//   // Crypto quotes
-//   const [btcQ, ethQ, solQ] = await Promise.all([
-//     fetch(`${BASE}/yf/quote/BTC-USD`).then(r => r.json()),
-//     fetch(`${BASE}/yf/quote/ETH-USD`).then(r => r.json()),
-//     fetch(`${BASE}/yf/quote/SOL-USD`).then(r => r.json()),
-//   ]);
-//
-//   Map the above responses to MarketData shape in src/lib/types/market.ts
+// MARKET DATA FETCHING - Connected to backend API
+// All data is computed and cached by the backend in portfolio.json
+// ─────────────────────────────────────────────────────────────────────────────
+
+export async function getMarketData(): Promise<MarketData> {
+  try {
+    // Fetch all market data from the backend in one call
+    const data = await apiFetch<MarketData>('/markets', { revalidate: 60 });
+    return data;
+  } catch (error) {
+    console.error('Failed to fetch market data from backend:', error);
+    // Return fallback mock data if backend fails
+    return mockMarketData;
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// FALLBACK MOCK DATA - Used only when backend is unavailable
 // ─────────────────────────────────────────────────────────────────────────────
 
 function buildCandles(base: number, count: number, seed: number): CandlePoint[] {
@@ -146,7 +128,8 @@ export const mockMarketData: MarketData = {
   },
 };
 
-export async function getMarketData(): Promise<MarketData> {
-  // TODO: replace with real parallel API calls — see comments at top of file
-  return mockMarketData;
-}
+// ─────────────────────────────────────────────────────────────────────────────
+// Data-fetching function — now connected to backend
+// ─────────────────────────────────────────────────────────────────────────────
+
+// Exported for backward compatibility - getMarketData is now at top of file

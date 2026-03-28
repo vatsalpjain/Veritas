@@ -8,6 +8,8 @@ from app.services import portfolio_service as portfolio_svc
 from app.services import insights_service as insights_svc
 from app.services import investments_service as investments_svc
 from app.services import news_service as news_svc
+from app.services import markets_service as markets_svc
+from app.services import portfolio_analysis_service as portfolio_analysis_svc
 
 
 # Pydantic models for request bodies
@@ -339,3 +341,125 @@ async def get_news_sentiment(refresh: bool = Query(False)):
 async def get_ticker_news(ticker: str, limit: int = Query(10)):
     """Get news for a specific ticker."""
     return news_svc.get_ticker_news(ticker=ticker, limit=limit)
+
+
+# ============== MARKETS PAGE ENDPOINTS ==============
+
+@app.get("/markets")
+async def get_markets_data():
+    """Get all market data for the Markets page."""
+    return markets_svc.get_full_market_data()
+
+
+@app.get("/markets/indices")
+async def get_market_indices():
+    """Get market indices (S&P 500, NASDAQ, BTC, ETH)."""
+    return markets_svc.get_market_indices()
+
+
+@app.get("/markets/chart")
+async def get_chart_data(symbol: str = Query("QQQ", description="Symbol for chart data")):
+    """Get candlestick chart data for all periods."""
+    return markets_svc.get_chart_data(symbol)
+
+
+@app.get("/markets/sectors")
+async def get_sector_heatmap():
+    """Get sector performance heatmap."""
+    return markets_svc.get_sector_heatmap()
+
+
+@app.get("/markets/signals")
+async def get_algorithmic_signals():
+    """Get algorithmic trading signals."""
+    return markets_svc.get_algorithmic_signals()
+
+
+@app.get("/markets/forecasts")
+async def get_growth_forecasts():
+    """Get growth forecasts for sectors."""
+    return markets_svc.get_growth_forecasts()
+
+
+@app.get("/markets/assets")
+async def get_asset_explorer(tab: str = Query("STOCKS", description="STOCKS, OPTIONS, or CRYPTO")):
+    """Get assets for the explorer table."""
+    return markets_svc.get_asset_explorer(tab)
+
+
+# ============== PORTFOLIO ANALYSIS ENDPOINTS ==============
+
+@app.get("/portfolio/analysis")
+async def get_portfolio_analysis():
+    """Get full portfolio analysis for the Portfolio page."""
+    return portfolio_analysis_svc.get_full_portfolio_analysis()
+
+
+@app.get("/portfolio/diversification")
+async def get_diversification_score():
+    """Get portfolio diversification score."""
+    return portfolio_analysis_svc.compute_diversification_score()
+
+
+@app.get("/portfolio/allocation")
+async def get_allocation():
+    """Get current vs target allocation."""
+    return portfolio_analysis_svc.compute_allocation()
+
+
+@app.put("/portfolio/allocation/targets")
+async def update_allocation_targets(targets: dict[str, float]):
+    """Update target allocation percentages."""
+    return portfolio_analysis_svc.update_allocation_targets(targets)
+
+
+@app.get("/portfolio/rebalancing")
+async def get_rebalancing_recommendations():
+    """Get rebalancing recommendations."""
+    return portfolio_analysis_svc.compute_rebalancing_recommendations()
+
+
+@app.get("/portfolio/strategy")
+async def get_current_strategy():
+    """Get current investment strategy."""
+    return portfolio_analysis_svc.get_current_strategy()
+
+
+class StrategyUpdate(BaseModel):
+    name: str
+    description: str
+    ctaLabel: str = "Change Strategy"
+
+
+@app.put("/portfolio/strategy")
+async def update_strategy(strategy: StrategyUpdate):
+    """Update current investment strategy."""
+    return portfolio_analysis_svc.update_current_strategy(strategy.model_dump())
+
+
+@app.get("/portfolio/strategy/advisor")
+async def get_strategy_advisor():
+    """Get strategy advisor recommendation."""
+    return portfolio_analysis_svc.get_strategy_advisor()
+
+
+@app.get("/portfolio/goals")
+async def get_goals():
+    """Get investment goals with progress."""
+    return portfolio_analysis_svc.get_goals()
+
+
+class GoalUpdate(BaseModel):
+    id: str
+    icon: str = "flag"
+    iconBg: str = "#e5eeff"
+    iconColor: str = "#131b2e"
+    label: str
+    targetValue: float
+    progressBarColor: str = "#000000"
+
+
+@app.put("/portfolio/goals")
+async def update_goals(goals: list[GoalUpdate]):
+    """Update investment goals."""
+    return portfolio_analysis_svc.update_goals([g.model_dump() for g in goals])

@@ -23,13 +23,22 @@ from pathlib import Path
 import requests
 from dotenv import load_dotenv
 
-load_dotenv()
+# Resolve .env relative to this file's location so it works regardless of CWD
+_ENV_PATH = Path(__file__).resolve().parents[2] / ".env"
+load_dotenv(dotenv_path=_ENV_PATH, override=True)
 
 log = logging.getLogger("news_service")
 
 # ── Config ─────────────────────────────────────────────────────────────────
-FINNHUB_API_KEY: str = os.getenv("FINNHUB_API_KEY", "")
-FINNHUB_BASE    = "https://finnhub.io/api/v1"
+# Do NOT cache as a module-level constant — read fresh each call so restarts
+# via uvicorn reloader always pick up the latest .env value.
+FINNHUB_BASE = "https://finnhub.io/api/v1"
+
+
+def _get_api_key() -> str:
+    """Read key fresh every call — survives uvicorn hot-reload without restart."""
+    load_dotenv(dotenv_path=_ENV_PATH, override=True)
+    return os.getenv("FINNHUB_API_KEY", "")
 
 NEWS_DATA_DIR   = Path("news_data")
 NEWS_DATA_DIR.mkdir(parents=True, exist_ok=True)
@@ -131,10 +140,11 @@ def _tag_and_class(category: str, sentiment: str) -> tuple[str, str]:
 
 def _finnhub_get(endpoint: str, params: dict) -> list | dict | None:
     """Generic Finnhub GET with error handling."""
-    if not FINNHUB_API_KEY:
+    api_key = _get_api_key()
+    if not api_key:
         log.warning("FINNHUB_API_KEY not set in .env — skipping fetch")
         return None
-    params["token"] = FINNHUB_API_KEY
+    params["token"] = api_key
     try:
         resp = requests.get(f"{FINNHUB_BASE}{endpoint}", params=params, timeout=10)
         resp.raise_for_status()

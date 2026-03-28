@@ -1,29 +1,25 @@
 import type { PortfolioData } from '@/lib/types/portfolio';
+import { apiFetch } from '@/lib/api/client';
 
 // ─────────────────────────────────────────────────────────────────────────────
-// MOCK DATA — Single swap point: replace getPortfolioData() body with real calls.
-//
-// Backend integration plan (http://localhost:8000):
-//
-//   Step 1 — Fetch all holding quotes in one shot:
-//     const quotes = await fetch(`${BASE}/yf/batch-quotes`, {
-//       method: 'POST',
-//       body: JSON.stringify({ symbols: ['AAPL', 'NVDA', 'MSFT', ...] })
-//     }).then(r => r.json());
-//
-//   Step 2 — Get sector/fundamentals for bucketing into asset classes:
-//     const fundamentals = await Promise.all(
-//       symbols.map(s => fetch(`${BASE}/yf/fundamentals/${s}`).then(r => r.json()))
-//     );
-//     // Use fundamentals[i].sector to bucket → Domestic/International/Fixed Income/Cash
-//
-//   Step 3 — User profile (strategy, goals, targets): own backend DB endpoints
-//     e.g. GET /api/user/portfolio-profile
-//
-//   Step 4 — Compute diversification score, allocation deltas, rebalancing on backend
-//     or derive client-side from the above data.
-//
-// Response shape must conform to PortfolioData in src/lib/types/portfolio.ts
+// PORTFOLIO DATA FETCHING - Connected to backend API
+// All data is computed from holdings and cached in portfolio.json
+// ─────────────────────────────────────────────────────────────────────────────
+
+export async function getPortfolioData(): Promise<PortfolioData> {
+  try {
+    // Fetch all portfolio analysis data from the backend in one call
+    const data = await apiFetch<PortfolioData>('/portfolio/analysis', { revalidate: 60 });
+    return data;
+  } catch (error) {
+    console.error('Failed to fetch portfolio data from backend:', error);
+    // Return fallback mock data if backend fails
+    return mockPortfolioData;
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// FALLBACK MOCK DATA - Used only when backend is unavailable
 // ─────────────────────────────────────────────────────────────────────────────
 
 export const mockPortfolioData: PortfolioData = {
@@ -160,12 +156,7 @@ export const mockPortfolioData: PortfolioData = {
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
-// Data-fetching function — swap body here when backend is live
+// Data-fetching function — now connected to backend
 // ─────────────────────────────────────────────────────────────────────────────
 
-export async function getPortfolioData(): Promise<PortfolioData> {
-  // TODO: replace with real API calls (see comments at top of file)
-  // const BASE = process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:8000';
-  // ...
-  return mockPortfolioData;
-}
+// Exported for backward compatibility - getPortfolioData is now at top of file

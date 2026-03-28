@@ -1,18 +1,206 @@
 {
   "holdings": [
-    {"symbol": "RELIANCE.NS", "quantity": 50, "avg_buy_price": 2400.00, "asset_type": "equity"},
-    {"symbol": "TCS.NS", "quantity": 30, "avg_buy_price": 3500.00, "asset_type": "equity"},
-    {"symbol": "INFY.NS", "quantity": 100, "avg_buy_price": 1450.00, "asset_type": "equity"},
-    {"symbol": "HDFCBANK.NS", "quantity": 40, "avg_buy_price": 1600.00, "asset_type": "equity"},
-    {"symbol": "ITC.NS", "quantity": 200, "avg_buy_price": 420.00, "asset_type": "equity"}
+    {
+      "symbol": "RELIANCE.NS",
+      "quantity": 50,
+      "avg_buy_price": 2400.0,
+      "asset_type": "equity"
+    },
+    {
+      "symbol": "TCS.NS",
+      "quantity": 30,
+      "avg_buy_price": 3500.0,
+      "asset_type": "equity"
+    },
+    {
+      "symbol": "INFY.NS",
+      "quantity": 100,
+      "avg_buy_price": 1450.0,
+      "asset_type": "equity"
+    },
+    {
+      "symbol": "HDFCBANK.NS",
+      "quantity": 40,
+      "avg_buy_price": 1600.0,
+      "asset_type": "equity"
+    },
+    {
+      "symbol": "ITC.NS",
+      "quantity": 200,
+      "avg_buy_price": 420.0,
+      "asset_type": "equity"
+    }
   ],
-  "cash_balance": 150000.00,
+  "cash_balance": 150000.0,
   "transactions": [
-    {"type": "buy", "symbol": "RELIANCE.NS", "quantity": 50, "price": 2400.00, "timestamp": "2024-01-15T10:30:00"},
-    {"type": "buy", "symbol": "TCS.NS", "quantity": 30, "price": 3500.00, "timestamp": "2024-02-10T11:00:00"},
-    {"type": "buy", "symbol": "INFY.NS", "quantity": 100, "price": 1450.00, "timestamp": "2024-02-20T09:45:00"},
-    {"type": "dividend", "symbol": "ITC.NS", "amount": 1200.00, "timestamp": "2024-03-01T00:00:00"},
-    {"type": "buy", "symbol": "HDFCBANK.NS", "quantity": 40, "price": 1600.00, "timestamp": "2024-03-10T14:20:00"},
-    {"type": "buy", "symbol": "ITC.NS", "quantity": 200, "price": 420.00, "timestamp": "2024-03-15T10:00:00"}
-  ]
+    {
+      "type": "buy",
+      "symbol": "RELIANCE.NS",
+      "quantity": 50,
+      "price": 2400.0,
+      "timestamp": "2024-01-15T10:30:00"
+    },
+    {
+      "type": "buy",
+      "symbol": "TCS.NS",
+      "quantity": 30,
+      "price": 3500.0,
+      "timestamp": "2024-02-10T11:00:00"
+    },
+    {
+      "type": "buy",
+      "symbol": "INFY.NS",
+      "quantity": 100,
+      "price": 1450.0,
+      "timestamp": "2024-02-20T09:45:00"
+    },
+    {
+      "type": "dividend",
+      "symbol": "ITC.NS",
+      "amount": 1200.0,
+      "timestamp": "2024-03-01T00:00:00"
+    },
+    {
+      "type": "buy",
+      "symbol": "HDFCBANK.NS",
+      "quantity": 40,
+      "price": 1600.0,
+      "timestamp": "2024-03-10T14:20:00"
+    },
+    {
+      "type": "buy",
+      "symbol": "ITC.NS",
+      "quantity": 200,
+      "price": 420.0,
+      "timestamp": "2024-03-15T10:00:00"
+    }
+  ],
+  "diversification": {
+    "score": 46,
+    "grade": "FAIR",
+    "headline": "Your portfolio could benefit from more diversification.",
+    "body": "Based on your current holdings across 4 sectors and 1 asset classes. Your largest position represents 36% of your portfolio - consider rebalancing.",
+    "tags": [
+      "ELEVATED RISK",
+      "CONCENTRATED"
+    ],
+    "sectorCount": 4,
+    "assetClassCount": 1
+  },
+  "diversification_computed_at": "2026-03-28T15:17:08.742235",
+  "allocation": [
+    {
+      "id": "domestic-equity",
+      "label": "Domestic Equity",
+      "icon": "trending_up",
+      "currentPercent": 70.0,
+      "targetPercent": 45,
+      "status": "OVERWEIGHT"
+    },
+    {
+      "id": "international-equity",
+      "label": "International Equity",
+      "icon": "language",
+      "currentPercent": 0.0,
+      "targetPercent": 20,
+      "status": "UNDERWEIGHT"
+    },
+    {
+      "id": "fixed-income",
+      "label": "Fixed Income",
+      "icon": "account_balance",
+      "currentPercent": 0.0,
+      "targetPercent": 25,
+      "status": "UNDERWEIGHT"
+    },
+    {
+      "id": "cash-alternatives",
+      "label": "Cash & Alternatives",
+      "icon": "savings",
+      "currentPercent": 30.0,
+      "targetPercent": 10,
+      "status": "OVERWEIGHT"
+    }
+  ],
+  "allocation_computed_at": "2026-03-28T15:17:12.231967",
+  "rebalancing": [
+    {
+      "id": "reb-sell-domestic-equity",
+      "action": "SELL",
+      "title": "Reduce Domestic Equity",
+      "subtitle": "Current overweight by 25.0% ($126,314)",
+      "amount": 126314.0,
+      "ctaLabel": "VIEW POSITIONS"
+    },
+    {
+      "id": "reb-sell-cash-alternatives",
+      "action": "SELL",
+      "title": "Reduce Cash & Alternatives",
+      "subtitle": "Current overweight by 20.0% ($101,051)",
+      "amount": 101051.0,
+      "ctaLabel": "VIEW POSITIONS"
+    },
+    {
+      "id": "reb-buy-international-equity",
+      "action": "BUY",
+      "title": "Increase International Equity",
+      "subtitle": "Underweight by 20.0% ($101,051)",
+      "amount": 101051.0,
+      "ctaLabel": "EXPLORE OPTIONS"
+    }
+  ],
+  "rebalancing_computed_at": "2026-03-28T15:17:17.400163",
+  "strategy_advisor": {
+    "label": "Conservative Income",
+    "rationale": "Your portfolio beta of 0.14 indicates conservative positioning. Focus on income and capital preservation.",
+    "expectedReturnPA": 4.3,
+    "riskLevel": "Low",
+    "horizonYears": "5-10 Years",
+    "equitySplit": 50,
+    "bondSplit": 50
+  },
+  "strategy_advisor_computed_at": "2026-03-28T15:17:19.943372",
+  "goals_computed": [
+    {
+      "id": "retirement",
+      "icon": "landscape",
+      "iconBg": "#e5eeff",
+      "iconColor": "#131b2e",
+      "label": "RETIREMENT 2045",
+      "currentValue": 303154.0,
+      "targetValue": 3500000,
+      "progressPercent": 8.7,
+      "status": "Early stage",
+      "statusColor": "#94a3b8",
+      "progressBarColor": "#000000"
+    },
+    {
+      "id": "education",
+      "icon": "school",
+      "iconBg": "#eff4ff",
+      "iconColor": "#006591",
+      "label": "EDUCATION FUND",
+      "currentValue": 101051.0,
+      "targetValue": 250000,
+      "progressPercent": 40.4,
+      "status": "Behind",
+      "statusColor": "#94a3b8",
+      "progressBarColor": "#006591",
+      "ctaLabel": "Increase contributions"
+    },
+    {
+      "id": "vacation-home",
+      "icon": "home",
+      "iconBg": "#f0fdf4",
+      "iconColor": "#009668",
+      "label": "VACATION HOME",
+      "currentValue": 101051.0,
+      "targetValue": 150000,
+      "progressPercent": 67.4,
+      "status": "On Track",
+      "statusColor": "#009668",
+      "progressBarColor": "#39b8fd"
+    }
+  ],
+  "goals_computed_at": "2026-03-28T15:17:21.552749"
 }
