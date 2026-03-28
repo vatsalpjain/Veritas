@@ -1,5 +1,107 @@
 [
   {
+    "id": "1e447ba21231",
+    "source": "Finnhub",
+    "source_name": "CNBC",
+    "headline": "Yemen's Houthis launch Israel strike, the first time since the U.S.-Israel war began",
+    "summary": "The entry of the Houthis in the war marks a significant escalation in the conflict as it enters its second month.",
+    "url": "https://www.cnbc.com/2026/03/28/yemens-houthis-launch-israel-strike-the-first-of-the-iran-war.html",
+    "image": "https://image.cnbcfm.com/api/v1/image/108192706-17565665502025-08-01t134009z_763079206_rc2cyfawz0se_rtrmadp_0_israel-palestinians-protests-yemen.jpeg?v=1756566576&w=1920&h=1080",
+    "category": "equity",
+    "sentiment": "neutral",
+    "sentiment_score": null,
+    "related_tickers": [],
+    "tag": "Equity · Markets",
+    "tag_class": "tag-green",
+    "published_at": "2026-03-28T11:40:29+00:00",
+    "fetched_at": "2026-03-28T12:05:19.659623+00:00"
+  },
+  {
+    "id": "db00fe04d5e3",
+    "source": "Finnhub",
+    "source_name": "CNBC",
+    "headline": "How Chinese, Russian Arctic ambitions are fueling a U.S. polar icebreaker mission",
+    "summary": "China and Russia have a big lead in efforts to control once impenetrable Arctic waters. The U.S. is spending billions on new icebreakers in a race to catch up.",
+    "url": "https://www.cnbc.com/2026/03/28/china-russia-arctic-polar-icebreaker-ships.html",
+    "image": "https://image.cnbcfm.com/api/v1/image/108284413-1774650412851-Sequence_0700_01_36_17Still002.png?v=1774650466&w=1920&h=1080",
+    "category": "equity",
+    "sentiment": "neutral",
+    "sentiment_score": null,
+    "related_tickers": [],
+    "tag": "Equity · Markets",
+    "tag_class": "tag-green",
+    "published_at": "2026-03-28T11:20:44+00:00",
+    "fetched_at": "2026-03-28T12:05:19.659695+00:00"
+  },
+  {
+    "id": "a2fe5e7fa997",
+    "source": "Finnhub",
+    "source_name": "Reuters",
+    "headline": "Kuwait airport suffers 'significant' radar system damage in Iranian drone attacks - Reuters",
+    "summary": "Kuwait airport suffers 'significant' radar system damage in Iranian drone attacks  Reuters",
+    "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOV0pfaXJWRndFa0RqX3VuN2hEQ0MwWmRIWFdJZS1ULTVRc1NtYWZwcWZyYVpWd1F5dnFBY252OFM0SmJqQmdIQldYd2ZxU0pxdkdTbmx0RXpNUUVmdTV1REljT2xJUHFVVFhFOVBYN01UM0M0QW5hTjVqeGxnbUs3bjl5TmktYVJ2V1RnbmZ0aGxYdXRIWjRsWTFGbEdKOS01bkRGZDMwSVU4STNMV3M4a3pPdEdpUXBDQjhMeDNtT0ZtTU5aVVdsbFk2RXgxLXM?oc=5",
+    "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
+    "category": "equity",
+    "sentiment": "neutral",
+    "sentiment_score": null,
+    "related_tickers": [],
+    "tag": "Equity · Markets",
+    "tag_class": "tag-green",
+    "published_at": "2026-03-28T11:09:40+00:00",
+    "fetched_at": "2026-03-28T12:05:19.659751+00:00"
+  },
+  {
+    "id": "fb58b74a8047",
+    "source": "Finnhub",
+    "source_name": "CNBC",
+    "headline": "A Paramount-Warner Bros. movie slate will need more animated features to compete with Disney and Universal",
+    "summary": "In the last decade Paramount and Warner Bros. have each released eight animated features, meanwhile Disney has released 21 and Universal has launched 23.",
+    "url": "https://www.cnbc.com/2026/03/28/paramount-warner-bros-movie-slate-needs-animation.html",
+    "image": "https://image.cnbcfm.com/api/v1/image/108284239-1774633275187-Side_by_Side_template.jpg?v=1774633397&w=1920&h=1080",
+    "category": "equity",
+    "sentiment": "neutral",
+    "sentiment_score": null,
+    "related_tickers": [],
+    "tag": "Equity · Markets",
+    "tag_class": "tag-green",
+    "published_at": "2026-03-28T11:00:01+00:00",
+    "fetched_at": "2026-03-28T12:05:19.659798+00:00"
+  },
+  {
+    "id": "f674df189a70",
+    "source": "Finnhub",
+    "source_name": "Reuters",
+    "headline": "Iran's president says trust needed for talks, Pakistan prime minister's office says - Reuters",
+    "summary": "Iran's president says trust needed for talks, Pakistan prime minister's office says  Reuters",
+    "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOUUllOWc3VlJtRkRDM3BaRjVCNnN4eU1mOU1zVzJqMzZ0MTJ3MEhULWJnWVhoenUtdWFObzRpX0RXakhyZ0VpQi1lZDEtQ2lmcUlYdGM3cF9xZDVYNk43bDNwdk4xQm4yNHRfZ2Vkd1REeFdUUW1ieGR3UndnTUlVT2JIek5DczA1N0hrOVVEYndKWXloQXBrc18tZ0t4OWRTTE1RMmhtbjdMM2RYcWc0Y2I2emF4dEQ4ZVNnY0NEX25GMkJ5alJieDZNaw?oc=5",
+    "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
+    "category": "equity",
+    "sentiment": "neutral",
+    "sentiment_score": null,
+    "related_tickers": [],
+    "tag": "Equity · Markets",
+    "tag_class": "tag-green",
+    "published_at": "2026-03-28T09:46:09+00:00",
+    "fetched_at": "2026-03-28T12:05:19.659843+00:00"
+  },
+  {
+    "id": "1beb24c9b2c3",
+    "source": "Finnhub",
+    "source_name": "Reuters",
+    "headline": "Pakistan to host talks with Saudi Arabia, Turkey, Egypt amid Iran war diplomacy - Reuters",
+    "summary": "Pakistan to host talks with Saudi Arabia, Turkey, Egypt amid Iran war diplomacy  Reuters",
+    "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNaC1yVzNjb09FMzkyS2JnX0FUblA3LUU4U2pEdWdZNXpRaTVKazVMRE1xcG81RUF1WGN3YUhaY2Q5NG9sQ3Z0UXdLVXkxeXhUSFpVaHA1UTZqcXJKTktobTZhRmo0bW1uUGlxZVhhV0t6eGd2VkVBRl9JZW5jUXdmTGx5c0pUdWtHaFJqSzBYdlhKbDVWSWljSHpVZXJWOGlhRm5ySFZMVlkwWF9rbFFuVE1VQ2gyVzRoejhpUktKQUxnSXQzTWdETQ?oc=5",
+    "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
+    "category": "equity",
+    "sentiment": "neutral",
+    "sentiment_score": null,
+    "related_tickers": [],
+    "tag": "Equity · Markets",
+    "tag_class": "tag-green",
+    "published_at": "2026-03-28T09:05:43+00:00",
+    "fetched_at": "2026-03-28T12:05:19.659885+00:00"
+  },
+  {
     "id": "71530ef60343",
     "source": "Finnhub",
     "source_name": "Reuters",
@@ -14,11 +116,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-28T07:34:09+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.289661+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.242830+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.659927+00:00"
   },
   {
     "id": "c318e56aff2e",
@@ -35,11 +133,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-28T05:04:00+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.289768+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.242884+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.659966+00:00"
   },
   {
     "id": "59c35b483fdc",
@@ -56,11 +150,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-28T04:27:00+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.289888+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.242923+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.660017+00:00"
   },
   {
     "id": "c453eea941a0",
@@ -77,11 +167,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-27T23:59:58+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.289927+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.242963+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.660060+00:00"
   },
   {
     "id": "c6ddd154f429",
@@ -98,11 +184,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-27T22:47:36+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.289956+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.242998+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.660097+00:00"
   },
   {
     "id": "1c8727252ee8",
@@ -119,11 +201,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-27T22:39:20+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.289987+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.243033+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.660139+00:00"
   },
   {
     "id": "e56f19125afb",
@@ -140,11 +218,7 @@
     "tag": "Commodity",
     "tag_class": "tag-red",
     "published_at": "2026-03-27T22:32:09+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.290031+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.243072+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.660191+00:00"
   },
   {
     "id": "3e47a70a7e44",
@@ -161,11 +235,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-27T22:14:34+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.290063+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.243109+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.660233+00:00"
   },
   {
     "id": "b193821b4d57",
@@ -182,11 +252,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-27T21:55:44+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.290094+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.243143+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.660272+00:00"
   },
   {
     "id": "8aa37b7777d3",
@@ -203,11 +269,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-27T21:46:44+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.290124+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.243178+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.660310+00:00"
   },
   {
     "id": "d03260b75e6e",
@@ -224,11 +286,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-27T21:42:07+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.290153+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.243211+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.660348+00:00"
   },
   {
     "id": "b37e5ff7b53f",
@@ -245,11 +303,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-27T21:12:26+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.290178+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.243237+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.660383+00:00"
   },
   {
     "id": "d9c127533fe4",
@@ -266,11 +320,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-27T20:35:25+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.290205+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.243260+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.660421+00:00"
   },
   {
     "id": "8545a3bacea7",
@@ -287,11 +337,7 @@
     "tag": "Commodity",
     "tag_class": "tag-red",
     "published_at": "2026-03-27T20:24:53+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.290231+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.243280+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.660457+00:00"
   },
   {
     "id": "97cb143d4b06",
@@ -308,11 +354,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-27T19:56:24+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.290258+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.243302+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.660493+00:00"
   },
   {
     "id": "5cd700159496",
@@ -329,11 +371,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-27T19:18:55+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.290288+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.243325+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.660535+00:00"
   },
   {
     "id": "23b85e3c339d",
@@ -350,11 +388,24 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-27T19:16:04+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.290318+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.243347+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.660572+00:00"
+  },
+  {
+    "id": "746314e8f5b8",
+    "source": "Finnhub",
+    "source_name": "Reuters",
+    "headline": "Scenes from one month of war - Reuters",
+    "summary": "Scenes from one month of war  Reuters",
+    "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5mSlYtVlJ2alZTdjF2d1VGZmI4SVV1Tkx5SXJxRzE1N1JCb3ZHTThyeGRYWWdXUDdXWU1EWGtnY19TY1NCOENQZmQyMVhiZF9KWWdaT1VtdU9HcXJwQ0ZiMmVuZlNWTm8xelVKQ2NZaXcwajQ?oc=5",
+    "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
+    "category": "equity",
+    "sentiment": "neutral",
+    "sentiment_score": null,
+    "related_tickers": [],
+    "tag": "Equity · Markets",
+    "tag_class": "tag-green",
+    "published_at": "2026-03-27T19:06:44+00:00",
+    "fetched_at": "2026-03-28T12:05:19.660612+00:00"
   },
   {
     "id": "38809dff52d5",
@@ -371,11 +422,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-27T19:04:46+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.290347+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.243369+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.660651+00:00"
   },
   {
     "id": "c9b164f857b4",
@@ -392,11 +439,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-27T18:58:52+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.290375+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.243387+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.660688+00:00"
   },
   {
     "id": "4fcc05e03c43",
@@ -413,11 +456,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-27T18:53:52+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.290400+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.243407+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.660723+00:00"
   },
   {
     "id": "87737e8023d6",
@@ -434,11 +473,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-27T18:04:35+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.290426+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.243426+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.660760+00:00"
   },
   {
     "id": "e1dc48fa55a5",
@@ -455,11 +490,7 @@
     "tag": "Commodity",
     "tag_class": "tag-red",
     "published_at": "2026-03-27T18:04:20+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.290453+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.243444+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.660803+00:00"
   },
   {
     "id": "51755c6dad0d",
@@ -476,11 +507,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-27T17:50:46+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.290479+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.243465+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.660839+00:00"
   },
   {
     "id": "638dc50db730",
@@ -497,11 +524,7 @@
     "tag": "Macro · Policy",
     "tag_class": "tag-blue",
     "published_at": "2026-03-27T17:27:09+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.290495+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.243478+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.660864+00:00"
   },
   {
     "id": "b96a1b26b4d2",
@@ -518,11 +541,7 @@
     "tag": "Commodity",
     "tag_class": "tag-red",
     "published_at": "2026-03-27T17:08:22+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.290519+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.243499+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.660902+00:00"
   },
   {
     "id": "a408f439de92",
@@ -539,11 +558,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-27T17:01:48+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.290545+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.243519+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.660937+00:00"
   },
   {
     "id": "0b0bbb15facc",
@@ -560,11 +575,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-27T16:49:31+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.290574+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.243541+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.660974+00:00"
   },
   {
     "id": "bfc3b6ca3d6b",
@@ -581,11 +592,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-27T16:39:05+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.290603+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.243562+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.661011+00:00"
   },
   {
     "id": "f9baa04a93c0",
@@ -602,11 +609,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-27T15:33:12+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.290627+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.243580+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.661043+00:00"
   },
   {
     "id": "0daad7ec71dc",
@@ -623,11 +626,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-27T15:32:12+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.290655+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.243602+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.661078+00:00"
   },
   {
     "id": "5664e1722456",
@@ -644,11 +643,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-27T15:14:51+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.290699+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.243632+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.661130+00:00"
   },
   {
     "id": "70fbb87ac60a",
@@ -665,11 +660,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-27T14:54:37+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.290726+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.243652+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.661170+00:00"
   },
   {
     "id": "6897ef604043",
@@ -686,11 +677,7 @@
     "tag": "Commodity",
     "tag_class": "tag-red",
     "published_at": "2026-03-27T14:49:18+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.290748+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.243683+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.661199+00:00"
   },
   {
     "id": "045c6b61cf3f",
@@ -707,11 +694,7 @@
     "tag": "Macro · Policy",
     "tag_class": "tag-blue",
     "published_at": "2026-03-27T14:40:00+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.290773+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.243700+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.661234+00:00"
   },
   {
     "id": "31814ae0f599",
@@ -728,11 +711,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-27T14:32:00+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.290847+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.243715+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.661264+00:00"
   },
   {
     "id": "7c2b8dded27b",
@@ -749,11 +728,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-27T14:07:36+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.290873+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.243734+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.661297+00:00"
   },
   {
     "id": "b6f2e8a1bc17",
@@ -770,11 +745,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-27T14:01:43+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.290908+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.243759+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.661343+00:00"
   },
   {
     "id": "75c43910e138",
@@ -791,11 +762,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-27T13:35:17+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.290934+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.243777+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.661378+00:00"
   },
   {
     "id": "dae060098168",
@@ -812,11 +779,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-27T13:32:09+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.290961+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.243798+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.661703+00:00"
   },
   {
     "id": "791312d37f46",
@@ -833,11 +796,7 @@
     "tag": "Commodity",
     "tag_class": "tag-red",
     "published_at": "2026-03-27T13:31:12+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.290994+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.243822+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.661758+00:00"
   },
   {
     "id": "a173351c04d5",
@@ -854,11 +813,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-27T13:00:01+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.291022+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.243841+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.661796+00:00"
   },
   {
     "id": "39ea223e332f",
@@ -875,11 +830,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-27T12:43:18+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.291050+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.243863+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.661843+00:00"
   },
   {
     "id": "78c19930e62c",
@@ -896,11 +847,7 @@
     "tag": "Macro · Policy",
     "tag_class": "tag-blue",
     "published_at": "2026-03-27T12:35:44+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.291068+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.243877+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.661873+00:00"
   },
   {
     "id": "0daaa3e53a88",
@@ -917,11 +864,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-27T12:15:47+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.291097+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.243898+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.661910+00:00"
   },
   {
     "id": "bc16ad016c0f",
@@ -938,11 +881,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-27T11:13:47+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.291123+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.243917+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.661944+00:00"
   },
   {
     "id": "2d2205e6f9d9",
@@ -959,11 +898,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-27T10:28:39+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.291150+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.243936+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.661985+00:00"
   },
   {
     "id": "28d152e2b98e",
@@ -980,11 +915,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-27T10:06:09+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.291176+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.243962+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.662024+00:00"
   },
   {
     "id": "f87f15dbba64",
@@ -1001,11 +932,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-27T09:58:43+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.291203+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.243987+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.662061+00:00"
   },
   {
     "id": "3f1bc1d0c810",
@@ -1022,11 +949,7 @@
     "tag": "Commodity",
     "tag_class": "tag-red",
     "published_at": "2026-03-27T07:52:09+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.291227+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.244005+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.662094+00:00"
   },
   {
     "id": "48a103aea1da",
@@ -1043,11 +966,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-27T07:24:04+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.291253+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.244026+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.662129+00:00"
   },
   {
     "id": "26574f95e146",
@@ -1064,11 +983,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-27T06:23:58+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.291303+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.244045+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.662164+00:00"
   },
   {
     "id": "d4c4a395600c",
@@ -1085,11 +1000,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-27T05:59:00+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.291332+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.244064+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.662426+00:00"
   },
   {
     "id": "9de153955161",
@@ -1106,11 +1017,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-27T03:34:00+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.291361+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.244084+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.662562+00:00"
   },
   {
     "id": "f8c61469f154",
@@ -1127,11 +1034,7 @@
     "tag": "Commodity",
     "tag_class": "tag-red",
     "published_at": "2026-03-27T02:44:00+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.291386+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.244106+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.662602+00:00"
   },
   {
     "id": "4919926d71fd",
@@ -1148,11 +1051,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-27T02:38:00+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.291412+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.244126+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.662640+00:00"
   },
   {
     "id": "d2f39869f261",
@@ -1169,11 +1068,7 @@
     "tag": "Commodity",
     "tag_class": "tag-red",
     "published_at": "2026-03-27T02:23:00+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.291436+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.244143+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.662675+00:00"
   },
   {
     "id": "e6132abe7c43",
@@ -1190,11 +1085,7 @@
     "tag": "Commodity",
     "tag_class": "tag-red",
     "published_at": "2026-03-27T01:12:00+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.291463+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.244159+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.662709+00:00"
   },
   {
     "id": "be6dc983ebbe",
@@ -1211,11 +1102,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-27T00:24:00+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.291490+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.244178+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.662748+00:00"
   },
   {
     "id": "8c36e65d1b05",
@@ -1232,11 +1119,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-27T00:15:00+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.291519+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.244199+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.662790+00:00"
   },
   {
     "id": "42114aff0efc",
@@ -1253,11 +1136,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-27T00:05:00+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.291544+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.244216+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.662825+00:00"
   },
   {
     "id": "4b133cbd5ed7",
@@ -1274,11 +1153,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-27T00:03:00+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.291569+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.244234+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.663010+00:00"
   },
   {
     "id": "c74a038dc206",
@@ -1295,11 +1170,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-26T23:56:32+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.291593+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.244252+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.663079+00:00"
   },
   {
     "id": "bab974a5f49c",
@@ -1316,11 +1187,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-26T23:52:39+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.291620+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.244271+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.663124+00:00"
   },
   {
     "id": "15726652abb0",
@@ -1337,11 +1204,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-26T23:41:22+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.291644+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.244282+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.663160+00:00"
   },
   {
     "id": "4a9fa38edc98",
@@ -1358,11 +1221,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-26T23:24:00+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.291670+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.244295+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.663198+00:00"
   },
   {
     "id": "2893a09cda7d",
@@ -1379,11 +1238,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-26T23:09:09+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.291695+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.244308+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.663237+00:00"
   },
   {
     "id": "20aefbc2903c",
@@ -1400,11 +1255,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-26T23:01:40+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.291723+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.244322+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.663277+00:00"
   },
   {
     "id": "d69e50fa3512",
@@ -1421,11 +1272,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-26T22:47:00+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.291748+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.244334+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.663313+00:00"
   },
   {
     "id": "a224f21cc75d",
@@ -1442,11 +1289,7 @@
     "tag": "Macro · Policy",
     "tag_class": "tag-blue",
     "published_at": "2026-03-26T22:26:37+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.291764+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.244341+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.663339+00:00"
   },
   {
     "id": "8d7ea46a1c8f",
@@ -1463,11 +1306,7 @@
     "tag": "Macro · Policy",
     "tag_class": "tag-blue",
     "published_at": "2026-03-26T22:05:04+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.291779+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.244349+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.663367+00:00"
   },
   {
     "id": "ae7f709ba4c3",
@@ -1484,11 +1323,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-26T21:56:08+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.291845+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.244361+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.663404+00:00"
   },
   {
     "id": "ca3e6016f72a",
@@ -1505,11 +1340,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-26T21:27:00+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.291872+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.244373+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.663446+00:00"
   },
   {
     "id": "d817658f2903",
@@ -1526,11 +1357,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-26T21:00:00+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.291897+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.244385+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.663503+00:00"
   },
   {
     "id": "bf5f989570a5",
@@ -1547,11 +1374,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-26T20:51:36+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.291923+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.244398+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.663540+00:00"
   },
   {
     "id": "bb1a7f7abe53",
@@ -1568,11 +1391,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-26T20:48:10+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.291952+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.244413+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.663578+00:00"
   },
   {
     "id": "b84a468aa1d7",
@@ -1589,11 +1408,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-26T20:07:53+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.291978+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.244426+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.663613+00:00"
   },
   {
     "id": "fa555f4ef64e",
@@ -1610,11 +1425,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-26T19:59:21+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.292003+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.244438+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.663648+00:00"
   },
   {
     "id": "b481a2c493c2",
@@ -1631,11 +1442,7 @@
     "tag": "Commodity",
     "tag_class": "tag-red",
     "published_at": "2026-03-26T19:42:49+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.292029+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.244450+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.663682+00:00"
   },
   {
     "id": "46526a29d82e",
@@ -1652,11 +1459,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-26T18:56:52+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.292055+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.244463+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.663722+00:00"
   },
   {
     "id": "06c39b44a3f4",
@@ -1673,11 +1476,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-26T18:40:04+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.292081+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.244475+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.663760+00:00"
   },
   {
     "id": "9ca115b3a045",
@@ -1694,11 +1493,7 @@
     "tag": "Macro · Policy",
     "tag_class": "tag-blue",
     "published_at": "2026-03-26T18:31:30+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.292098+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.244483+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.663773+00:00"
   },
   {
     "id": "430173f315a8",
@@ -1715,11 +1510,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-26T18:20:00+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.292122+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.244498+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.663792+00:00"
   },
   {
     "id": "c27d40eab920",
@@ -1736,11 +1527,7 @@
     "tag": "Commodity",
     "tag_class": "tag-red",
     "published_at": "2026-03-26T17:49:16+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.292144+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.244508+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.663808+00:00"
   },
   {
     "id": "15e2622b284e",
@@ -1757,11 +1544,7 @@
     "tag": "Commodity",
     "tag_class": "tag-red",
     "published_at": "2026-03-26T17:26:29+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.292166+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.244520+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.663823+00:00"
   },
   {
     "id": "93a871409718",
@@ -1778,11 +1561,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-26T17:24:07+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.292189+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.244532+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.663840+00:00"
   },
   {
     "id": "569affe1c6a7",
@@ -1799,11 +1578,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-26T17:02:29+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.292214+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.244543+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.663856+00:00"
   },
   {
     "id": "9cb046ec04bb",
@@ -1820,11 +1595,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-26T16:18:25+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.292242+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.244557+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.663874+00:00"
   },
   {
     "id": "f9ac7b08889c",
@@ -1841,11 +1612,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-26T16:01:23+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.292266+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.244571+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.663891+00:00"
   },
   {
     "id": "e42c202ccd96",
@@ -1862,11 +1629,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-26T15:55:55+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.292290+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.244584+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.663910+00:00"
   },
   {
     "id": "e9fb7c605560",
@@ -1883,11 +1646,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-26T15:55:39+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.292314+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.244598+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.663941+00:00"
   },
   {
     "id": "751074ad6743",
@@ -1904,11 +1663,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-26T15:41:42+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.292338+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.244611+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.663957+00:00"
   },
   {
     "id": "96d1284aa1e3",
@@ -1925,11 +1680,7 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-26T15:31:44+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.292361+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.244625+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.663976+00:00"
   },
   {
     "id": "0ca4edf79d77",
@@ -1946,157 +1697,6 @@
     "tag": "Equity · Markets",
     "tag_class": "tag-green",
     "published_at": "2026-03-26T14:54:12+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.292389+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.244640+00:00"
->>>>>>> Stashed changes
-  },
-  {
-    "id": "699d79aeb161",
-    "source": "Finnhub",
-    "source_name": "CNBC",
-    "headline": "Major outgoing CEOs are citing AI as a factor in their decisions to step down",
-    "summary": "Coca-Cola CEO James Quincey and former Walmart CEO Doug McMillon have told CNBC that the next wave of artificial intelligence is a reason for their departures.",
-    "url": "https://www.cnbc.com/2026/03/26/coca-cola-james-quincey-walmart-doug-mcmillon-artificial-intelligence-step-down.html",
-    "image": "https://image.cnbcfm.com/api/v1/image/108283491-1774536581454-Side_by_Side_template.jpg?v=1774536710&w=1920&h=1080",
-    "category": "equity",
-    "sentiment": "neutral",
-    "sentiment_score": null,
-    "related_tickers": [],
-    "tag": "Equity · Markets",
-    "tag_class": "tag-green",
-    "published_at": "2026-03-26T14:53:07+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.292418+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.244654+00:00"
->>>>>>> Stashed changes
-  },
-  {
-    "id": "8116eab8e3d0",
-    "source": "Finnhub",
-    "source_name": "Reuters",
-    "headline": "US confirms death of Iranian IRGC naval commander - Reuters",
-    "summary": "US confirms death of Iranian IRGC naval commander  Reuters",
-    "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQbDl6TDN1OHhWN29hczcyVFVCd1Z3eGNhdFIwTUVWT2V6OTJqRkNDeHRTQ25NcW9pUExyTDhNdkV0aTZPZkk5c1RRWmZYYzZ6MUhmalBrNm1JVWw0TDBrdUlhWFNob1AwMmU4VnZRWUZhRHVFQUp0VjRlQ19YNXJGTVhhWGpFa1k4eF9ZV202ci1Ub2d4cHpLTmVrNEFwSmV6b3c?oc=5",
-    "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
-    "category": "equity",
-    "sentiment": "neutral",
-    "sentiment_score": null,
-    "related_tickers": [],
-    "tag": "Equity · Markets",
-    "tag_class": "tag-green",
-    "published_at": "2026-03-26T14:41:49+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.292442+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.244665+00:00"
->>>>>>> Stashed changes
-  },
-  {
-    "id": "ec15a2dd4506",
-    "source": "Finnhub",
-    "source_name": "Reuters",
-    "headline": "US proposal to end war is 'one-sided', door to diplomacy still open, Iranian official says - Reuters",
-    "summary": "US proposal to end war is 'one-sided', door to diplomacy still open, Iranian official says  Reuters",
-    "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOVDdsek91SGEzM3RIV09PelBrOFpoaWg2X0Q4WWw5azVEYVJ6bUowbDJWTmxFU0tnNmZpU1dpZG1FLWJObjlyZE1wOVZ6dmNlUkZGRTkySmVuWkxYdDdWbWJPOVliYy05bUFWYnZ4TDdzUmdLNVI1cll6c29iQU9WODFTdGUwVW96WVpoclJ4VjFKTTllNXFzRnRXZmc0aTV3eVdlWEh6MVdJMlFSSkVLbmQ5bFlBYmJTVENfUWhZek9qcnVCbXZuTEZoSDlUbkE?oc=5",
-    "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
-    "category": "equity",
-    "sentiment": "neutral",
-    "sentiment_score": null,
-    "related_tickers": [],
-    "tag": "Equity · Markets",
-    "tag_class": "tag-green",
-    "published_at": "2026-03-26T14:24:32+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.292471+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.244678+00:00"
->>>>>>> Stashed changes
-  },
-  {
-    "id": "5b3b4b25c054",
-    "source": "Finnhub",
-    "source_name": "Reuters",
-    "headline": "EU urges countries to start filling gas storage early amid Iran war, sources say - Reuters",
-    "summary": "EU urges countries to start filling gas storage early amid Iran war, sources say  Reuters",
-    "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPNDVHNmlCX2JCeWVvQkx0bUxrTW9ONE9lQ2p1RW9Ub2NJSk1DVURQX1hoRHo5bFVKcXZZdHBNeGNCMUxYdUhtSkZJeW0tQ0UxQ2VHZUtGWlFrQ3EyNkpPX3hTSXhuU1MwLVhJb2NvSF92RExBbHFXeVVZbDlWVmg1UVYzYnRpeldhV0pUSks1ck5pRWNjZFBCRzFKVm5hTkRPaVhqd2NPMGhYcDhQcG5OLUJCYUEtT21POHZ0N0dJMjVoeVRYVV9Rd3hlOWZHU1ptSnF4a2NHRDBwb1hrVklsdmFVbmh2elk?oc=5",
-    "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
-    "category": "equity",
-    "sentiment": "neutral",
-    "sentiment_score": null,
-    "related_tickers": [],
-    "tag": "Equity · Markets",
-    "tag_class": "tag-green",
-    "published_at": "2026-03-26T14:15:53+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.292498+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.244691+00:00"
->>>>>>> Stashed changes
-  },
-  {
-    "id": "acad384b4040",
-    "source": "Finnhub",
-    "source_name": "Reuters",
-    "headline": "OECD: Iran war erases global growth upgrade, fans inflation - Reuters",
-    "summary": "OECD: Iran war erases global growth upgrade, fans inflation  Reuters",
-    "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOVW5Ob1pLVWZxV0hZUkNtMDJ6RlpEenRLaVBaNTVDaEJ5Wms4b3pGYTZyVjZaTVkzTDR6VXJvX2ZEcUgxSGV1NmIzQndpSFlHMDVxZmlvVmdMX2czR2lLdm56dGVZNlg5cmhwUG5VMF9CV3NJMmwySW9zYWlhTklPd21WVDVReGF0c3BwcVBkV3liVTZtZG5SS2ZvSkpTVWV6MHBmVHRIRWU?oc=5",
-    "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
-    "category": "macro",
-    "sentiment": "neutral",
-    "sentiment_score": null,
-    "related_tickers": [],
-    "tag": "Macro · Policy",
-    "tag_class": "tag-blue",
-    "published_at": "2026-03-26T13:52:16+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.292515+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.244699+00:00"
->>>>>>> Stashed changes
-  },
-  {
-    "id": "3c4499a952b0",
-    "source": "Finnhub",
-    "source_name": "Reuters",
-    "headline": "Yemen's Houthis ready to join Iran war if needed, raising new shipping risk - Reuters",
-    "summary": "Yemen's Houthis ready to join Iran war if needed, raising new shipping risk  Reuters",
-    "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNRXR4c1EtZ1BtU2dUbWRONTlfdjZGUk9CNUNtQlZaMmpWX192alJ2bnBtREdaX2lpN09kRmtUc0xTdmZ3bGxNUGdkcVl2SnZLXzBfLXFCOTBQTnRTdlh2UHVULVB2aXRSUFYyNWpUWVJlR3UwZmxrVWZMbHhmZnoyLV9CdmJ5SnRKZ016Z1hRNGhRT0xSZGJndnd0cTdrNkhNMk55MElsbXNBb1RqMHZhTUF5MWVtenFPU2ctdDJRdF9lUQ?oc=5",
-    "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
-    "category": "equity",
-    "sentiment": "neutral",
-    "sentiment_score": null,
-    "related_tickers": [],
-    "tag": "Equity · Markets",
-    "tag_class": "tag-green",
-    "published_at": "2026-03-26T13:21:10+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.292542+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.244710+00:00"
->>>>>>> Stashed changes
-  },
-  {
-    "id": "262ca42c3a61",
-    "source": "Finnhub",
-    "source_name": "Reuters",
-    "headline": "Israel took Iran's Araqchi, Qalibaf off hit list after Pakistan request to US, Pakistani source says - Reuters",
-    "summary": "Israel took Iran's Araqchi, Qalibaf off hit list after Pakistan request to US, Pakistani source says  Reuters",
-    "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxONWRqbGduSHA3LXJPTjA3dmpwdzhkSFQwUzRuODRqNzIydkZPeHhnOC1oZk5Ic0VibVd5VlNuY3NqUHkxYzliZ0phWlVyZGlWR0N6Qmd3bmFacE9wRmV1Z0hFSUNMZUE4ZFV3WE5DUTd3TUlod09YVHBmREJxRlN0c2M4SkFrVjZ2TlZwQ1QzS3FFeHJQaVJfQ0t4ZWdaZ1hacG9EUVc3S0FDRkFUZ0puMW5WNndRTWZUU01BUEhRWEFYZ3l4WmpF?oc=5",
-    "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
-    "category": "equity",
-    "sentiment": "neutral",
-    "sentiment_score": null,
-    "related_tickers": [],
-    "tag": "Equity · Markets",
-    "tag_class": "tag-green",
-    "published_at": "2026-03-26T13:09:09+00:00",
-<<<<<<< Updated upstream
-    "fetched_at": "2026-03-28T10:08:05.292570+00:00"
-=======
-    "fetched_at": "2026-03-28T10:32:17.244724+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-03-28T12:05:19.663996+00:00"
   }
 ]

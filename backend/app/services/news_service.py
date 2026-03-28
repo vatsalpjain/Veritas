@@ -74,8 +74,12 @@ def _article_id(headline: str, source: str) -> str:
 
 def _load_json(path: Path) -> list | dict:
     if path.exists():
-        with open(path, encoding="utf-8") as f:
-            return json.load(f)
+        try:
+            with open(path, encoding="utf-8") as f:
+                return json.load(f)
+        except (json.JSONDecodeError, ValueError):
+            log.warning("Corrupted JSON in %s — resetting", path)
+            return []
     return []
 
 

@@ -1,6 +1,11 @@
+import json
+import logging
+import time
+
 from fastapi import FastAPI, Query
 from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
+from sse_starlette.sse import EventSourceResponse
 
 from app.services import yfinance_service as yf_svc
 from app.services import nse_service as nse_svc
@@ -472,3 +477,120 @@ class GoalUpdate(BaseModel):
 async def update_goals(goals: list[GoalUpdate]):
     """Update investment goals."""
     return portfolio_analysis_svc.update_goals([g.model_dump() for g in goals])
+
+
+# ============== VERITAS AGENT ENDPOINTS ==============
+
+from app.agent.graph import create_agent_graph
+from app.agent.session import SessionStore
+
+_agent_sessions = SessionStore()
+_log = logging.getLogger("veritas.endpoint")
+
+
+class AgentChatRequest(BaseModel):
+    query: str = Field(..., description="User's question or command")
+    session_id: str = Field(default="default", description="Session ID for multi-turn")
+
+
+@app.post("/agent/chat")
+async def agent_chat(request: AgentChatRequest):
+    """Stream Veritas agent response via SSE."""
+
+    async def event_generator():
+        start_time = time.time()
+
+        try:
+            history = _agent_sessions.get_history(request.session_id)
+
+            initial_state = {
+                "query": request.query,
+                "session_id": request.session_id,
+                "conversation_history": history,
+                "intent": "general",
+                "intent_confidence": 0.0,
+                "entities": [],
+                "needs_portfolio": False,
+                "tool_results": [],
+                "tool_summaries": [],
+                "sources": [],
+                "data_snapshots": [],
+                "thinking_steps": [],
+                "answer": "",
+                "verification_result": None,
+                "error": None,
+            }
+
+            graph = create_agent_graph()
+
+            yield {"data": json.dumps({"type": "thinking", "step": "Classifying your query...", "tool": None, "status": "running"})}
+
+            final_state = None
+            async for event in graph.astream(initial_state, stream_mode="updates"):
+                for node_name, node_output in event.items():
+                    for step in node_output.get("thinking_steps", []):
+                        yield {"data": json.dumps({"type": "thinking", **step})}
+
+                    for source in node_output.get("sources", []):
+                        yield {"data": json.dumps({"type": "source", "source": source})}
+
+                    for snapshot in node_output.get("data_snapshots", []):
+                        yield {"data": json.dumps({"type": "data_snapshot", "snapshot": snapshot})}
+
+                    if node_output.get("answer"):
+                        final_state = node_output
+
+            answer = (final_state or {}).get("answer", "I could not generate a response. Please try again.")
+
+            yield {"data": json.dumps({"type": "answer_start"})}
+
+            chunk_size = 50
+            for i in range(0, len(answer), chunk_size):
+                yield {"data": json.dumps({"type": "answer_chunk", "content": answer[i:i + chunk_size]})}
+
+            yield {"data": json.dumps({"type": "answer_end"})}
+
+            if (final_state or {}).get("verification_result"):
+                yield {"data": json.dumps({"type": "verification", "result": final_state["verification_result"]})}
+
+            _agent_sessions.add_turn(request.session_id, "user", request.query)
+            _agent_sessions.add_turn(request.session_id, "assistant", answer)
+
+            duration_ms = int((time.time() - start_time) * 1000)
+            yield {"data": json.dumps({"type": "done", "total_tokens": 0, "duration_ms": duration_ms})}
+
+        except Exception as exc:
+            _log.exception("Agent error: %s", exc)
+            yield {"data": json.dumps({"type": "error", "message": str(exc)})}
+
+    return EventSourceResponse(event_generator())
+
+
+@app.get("/agent/health")
+async def agent_health():
+    """Check if Groq API is reachable and agent is ready."""
+    try:
+        from app.agent.config import _get_groq_api_key
+        api_key = _get_groq_api_key()
+        if not api_key:
+            return {"status": "error", "message": "GROQ_API_KEY not set in .env"}
+
+        from langchain_groq import ChatGroq
+        llm = ChatGroq(model="llama-3.1-8b-instant", max_tokens=5, api_key=api_key)
+        response = await llm.ainvoke([{"role": "user", "content": "hi"}])
+        return {"status": "ok", "model": "llama-3.1-8b-instant", "groq": "connected"}
+    except Exception as exc:
+        return {"status": "error", "message": str(exc)}
+
+
+@app.get("/agent/sessions")
+async def list_agent_sessions():
+    """List active agent sessions."""
+    return _agent_sessions.list_sessions()
+
+
+@app.delete("/agent/session/{session_id}")
+async def clear_agent_session(session_id: str):
+    """Clear a conversation session."""
+    _agent_sessions.clear(session_id)
+    return {"status": "cleared", "session_id": session_id}
