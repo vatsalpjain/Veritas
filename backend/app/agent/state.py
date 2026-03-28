@@ -28,6 +28,33 @@ class ThinkingStep(TypedDict):
     status: Literal["running", "done", "error"]
 
 
+class IterationTrace(TypedDict):
+    """Structured trace item emitted per iteration/layer."""
+    iteration: int
+    layer: Literal["router", "execution", "synthesis"]
+    intent: str
+    summary: str
+    confidence: float | None
+    stop_reason: str | None
+    timestamp: str
+
+
+class EvidenceItem(TypedDict):
+    """Structured evidence card for confidence and contradiction tracking."""
+    id: str
+    iteration: int
+    intent: str
+    source_type: Literal["news", "market_data", "web_search", "portfolio", "filing"]
+    source_title: str
+    source_url: str | None
+    signal: Literal["supporting", "conflicting", "neutral"]
+    rating: Literal["high", "medium", "low"]
+    confidence: float
+    recency_days: int | None
+    quality_score: float
+    rationale: str
+
+
 class AgentState(TypedDict):
     # ── Input ──
     query: str
@@ -46,6 +73,12 @@ class AgentState(TypedDict):
     sources: list[SourceReference]
     data_snapshots: list[DataSnapshot]
     thinking_steps: list[ThinkingStep]
+    iteration: int
+    max_iterations: int
+    stop_reason: str | None
+    traces: list[IterationTrace]
+    iteration_outputs: list[dict[str, Any]]
+    evidence_items: list[EvidenceItem]
 
     # ── Output ──
     answer: str

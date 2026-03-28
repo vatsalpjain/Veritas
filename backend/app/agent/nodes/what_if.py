@@ -3,12 +3,15 @@ What-if / cause chain analysis node — scenario simulation with historical prec
 """
 
 import logging
+from datetime import datetime, timezone
 
 from app.agent.config import PRIMARY_MODEL, safe_llm_call
 from app.agent.prompts.system import get_veritas_system_prompt
 from app.agent.prompts.what_if_prompt import WHAT_IF_SYSTEM_PROMPT
 from app.agent.state import AgentState
+from app.agent.tools.evidence_tools import build_evidence_items, build_market_evidence
 from app.agent.tools.market_data import build_data_snapshots, get_asset_data, summarize_market_data
+from app.agent.tools.workflow_plan import get_mode_plan
 from app.agent.tools.web_search import summarize_search_results, web_search
 
 log = logging.getLogger("veritas.nodes.what_if")
@@ -23,10 +26,13 @@ async def what_if_node(state: AgentState) -> dict:
     """
     query = state["query"]
     entities = state.get("entities") or []
+    iteration = int(state.get("iteration", 0)) + 1
 
     # ── Step 1: Search historical precedents ──
     search_query = f"historical impact {query} stock market financial markets"
     precedents = web_search(search_query, max_results=5)
+    if iteration > 1:
+        precedents += web_search(f"{query} tail risk contagion policy response", max_results=3)
     precedent_summary = summarize_search_results(precedents)
 
     # ── Step 2: Get current data for affected entities ──
@@ -75,6 +81,16 @@ async def what_if_node(state: AgentState) -> dict:
             "confidence": None,
         })
 
+    evidence_items = (
+        build_evidence_items(iteration=iteration, intent="what_if", source_type="web_search", raw_items=precedents)
+        + build_market_evidence(iteration=iteration, intent="what_if", market_data=market_data)
+    )
+    mode_plan = get_mode_plan("what_if", iteration, entities)
+    confidence_by_title = {e["source_title"]: e["confidence"] for e in evidence_items}
+    for src in sources:
+        if src.get("title") in confidence_by_title:
+            src["confidence"] = confidence_by_title[src["title"]]
+
     return {
         "tool_results": [
             {"tool": "web_search", "data": precedent_summary},
@@ -86,8 +102,35 @@ async def what_if_node(state: AgentState) -> dict:
         ],
         "sources": sources,
         "data_snapshots": data_snapshots,
+        "traces": [
+            {
+                "iteration": int(state.get("iteration", 0)) + 1,
+                "layer": "execution",
+                "intent": "what_if",
+                "summary": "Evaluated scenario using historical precedents and current market context.",
+                "confidence": float(state.get("intent_confidence", 0.0)) if state.get("intent_confidence") is not None else None,
+                "stop_reason": None,
+                "timestamp": datetime.now(timezone.utc).isoformat(),
+            }
+        ],
+        "iteration_outputs": [
+            {
+                "iteration": int(state.get("iteration", 0)) + 1,
+                "layer": "execution",
+                "intent": "what_if",
+                "tools": ["web_search", "market_data"],
+                "tool_summaries": [
+                    f"Found {len(precedents)} historical precedents",
+                    f"Loaded market context for {len(entities)} entities",
+                ],
+                "mode_plan": mode_plan,
+                "answer_preview": answer[:220],
+            }
+        ],
+        "evidence_items": evidence_items,
         "thinking_steps": [
             {"step": "Searching historical precedents...", "tool": "web_search", "status": "done"},
+            *([{"step": "Expanding with tail-risk scenarios...", "tool": "web_search", "status": "done"}] if iteration > 1 else []),
             {"step": "Checking affected assets...", "tool": "market_data", "status": "done"},
             {"step": "Building cause-effect chain...", "tool": None, "status": "done"},
         ],

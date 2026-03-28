@@ -1,36 +1,70 @@
 'use client';
 
-import type { SourceReference, DataSnapshot, VerificationResult } from '@/lib/types/agent';
+import type {
+  SourceReference,
+  DataSnapshot,
+  EvidenceItem,
+  IterationOutput,
+  LayerTrace,
+  VerificationResult,
+  WorkflowSummary,
+} from '@/lib/types/agent';
 import SourceCard from './SourceCard';
 import DataCard from './DataCard';
 import VerificationBadge from './VerificationBadge';
+import IterationTimeline from './IterationTimeline';
+import EvidenceLedger from './EvidenceLedger';
+import ModePlanCard from './ModePlanCard';
+import StrategyWorkspace from './StrategyWorkspace';
+import { getTheme } from '../theme';
 
 interface Props {
   sources: SourceReference[];
   dataSnapshots: DataSnapshot[];
+  evidenceItems: EvidenceItem[];
+  layerTraces: LayerTrace[];
+  iterationOutputs: IterationOutput[];
+  workflowSummary: WorkflowSummary | null;
   verification: VerificationResult | null;
+  activeIntent: string;
 }
 
-export default function ContextPanel({ sources, dataSnapshots, verification }: Props) {
-  const isEmpty = sources.length === 0 && dataSnapshots.length === 0 && !verification;
+export default function ContextPanel({
+  sources,
+  dataSnapshots,
+  evidenceItems,
+  layerTraces,
+  iterationOutputs,
+  workflowSummary,
+  verification,
+  activeIntent,
+}: Props) {
+  const theme = getTheme(activeIntent);
+  const isEmpty =
+    sources.length === 0 &&
+    dataSnapshots.length === 0 &&
+    evidenceItems.length === 0 &&
+    layerTraces.length === 0 &&
+    iterationOutputs.length === 0 &&
+    !verification;
 
   return (
     <div
       className="flex flex-col flex-1 min-h-0 rounded-xl overflow-hidden"
       style={{
         backgroundColor: '#f8f9ff',
-        border: '1px solid rgba(198,198,205,0.15)',
+        border: `1px solid ${theme.softBorder}`,
         boxShadow: '0 8px 32px rgba(11,28,48,0.04)',
       }}
     >
       {/* Header */}
       <div
         className="flex items-center gap-2 px-5 py-3"
-        style={{ borderBottom: '1px solid rgba(226,232,240,0.5)' }}
+        style={{ borderBottom: `1px solid ${theme.softBorder}`, backgroundColor: theme.softBg }}
       >
         <span
           className="material-symbols-outlined"
-          style={{ fontSize: '16px', color: '#006591', fontVariationSettings: "'FILL' 0, 'wght' 400" }}
+          style={{ fontSize: '16px', color: theme.accent, fontVariationSettings: "'FILL' 0, 'wght' 400" }}
         >
           hub
         </span>
@@ -43,9 +77,9 @@ export default function ContextPanel({ sources, dataSnapshots, verification }: P
         {!isEmpty && (
           <span
             className="text-[10px] font-bold px-2 py-0.5 rounded-full ml-auto"
-            style={{ backgroundColor: '#e5eeff', color: '#006591', fontFamily: 'Inter, sans-serif' }}
+            style={{ backgroundColor: '#ffffff', color: theme.accent, fontFamily: 'Inter, sans-serif', border: `1px solid ${theme.softBorder}` }}
           >
-            {sources.length + dataSnapshots.length} items
+            {sources.length + dataSnapshots.length + evidenceItems.length} items
           </span>
         )}
       </div>
@@ -76,6 +110,18 @@ export default function ContextPanel({ sources, dataSnapshots, verification }: P
             <VerificationBadge result={verification} />
           </div>
         )}
+
+        <IterationTimeline traces={layerTraces} outputs={iterationOutputs} summary={workflowSummary} />
+
+        <ModePlanCard outputs={iterationOutputs} activeIntent={activeIntent} workflowSummary={workflowSummary} />
+
+        <EvidenceLedger evidence={evidenceItems} />
+
+        <StrategyWorkspace
+          activeIntent={activeIntent}
+          dataSnapshots={dataSnapshots}
+          iterationOutputs={iterationOutputs}
+        />
 
         {/* Data snapshots */}
         {dataSnapshots.length > 0 && (

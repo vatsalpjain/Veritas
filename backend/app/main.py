@@ -673,6 +673,7 @@ _log = logging.getLogger("veritas.endpoint")
 class AgentChatRequest(BaseModel):
     query: str = Field(..., description="User's question or command")
     session_id: str = Field(default="default", description="Session ID for multi-turn")
+    max_iterations: int = Field(default=2, ge=1, le=5, description="Max loop iterations for agent workflow")
 
 
 class MindsetChatRequest(BaseModel):
@@ -714,6 +715,12 @@ async def agent_chat(request: AgentChatRequest):
                 "sources": [],
                 "data_snapshots": [],
                 "thinking_steps": [],
+                "iteration": 0,
+                "max_iterations": request.max_iterations,
+                "stop_reason": None,
+                "traces": [],
+                "iteration_outputs": [],
+                "evidence_items": [],
                 "answer": "",
                 "verification_result": None,
                 "error": None,
@@ -724,8 +731,27 @@ async def agent_chat(request: AgentChatRequest):
             yield {"data": json.dumps({"type": "thinking", "step": "Classifying your query...", "tool": None, "status": "running"})}
 
             final_state = None
+            workflow_iterations = 0
+            workflow_stop_reason = None
             async for event in graph.astream(initial_state, stream_mode="updates"):
                 for node_name, node_output in event.items():
+                    if "iteration" in node_output:
+                        try:
+                            workflow_iterations = max(workflow_iterations, int(node_output.get("iteration", 0)))
+                        except (TypeError, ValueError):
+                            pass
+                    if node_output.get("stop_reason"):
+                        workflow_stop_reason = node_output.get("stop_reason")
+
+                    for trace in node_output.get("traces", []):
+                        yield {"data": json.dumps({"type": "layer_trace", "trace": trace})}
+
+                    for layer_output in node_output.get("iteration_outputs", []):
+                        yield {"data": json.dumps({"type": "iteration_output", "output": layer_output})}
+
+                    for evidence in node_output.get("evidence_items", []):
+                        yield {"data": json.dumps({"type": "evidence_item", "evidence": evidence})}
+
                     for step in node_output.get("thinking_steps", []):
                         yield {"data": json.dumps({"type": "thinking", **step})}
 
@@ -750,6 +776,19 @@ async def agent_chat(request: AgentChatRequest):
 
             if (final_state or {}).get("verification_result"):
                 yield {"data": json.dumps({"type": "verification", "result": final_state["verification_result"]})}
+
+            if final_state:
+                yield {
+                    "data": json.dumps(
+                        {
+                            "type": "workflow_done",
+                            "summary": {
+                                "iterations": workflow_iterations or int(final_state.get("iteration", 0)),
+                                "stop_reason": workflow_stop_reason or final_state.get("stop_reason") or "answer_ready",
+                            },
+                        }
+                    )
+                }
 
             _agent_sessions.add_turn(request.session_id, "user", request.query)
             _agent_sessions.add_turn(request.session_id, "assistant", answer)

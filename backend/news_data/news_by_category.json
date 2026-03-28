@@ -1,6 +1,57 @@
 {
   "all": [
     {
+      "id": "c9c1c57a4711",
+      "source": "Finnhub",
+      "source_name": "Reuters",
+      "headline": "Don't strike a deal with Iran's current leaders, opposition figure Pahlavi warns - Reuters",
+      "summary": "Don't strike a deal with Iran's current leaders, opposition figure Pahlavi warns  Reuters",
+      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPV3JXLTE5ejVPRHFJUHg4Nzc4T2VPWHhnVzhUTVd3d2dCSjViMUwyTjJsOEtrLXNuNFJRdXoyR3pidlYwY09tSkg3b0tWNFBvX29sSUNwMWx4UVkyeDAxLXRreF9NTGh3ZzZ1M2dGUlVSSDNDSUxacUhtVHp5MFZySXMzWVFvWnhVLXY2eFExV1FodHFmWThXMmp1UkZiWWVLbFJFR1NmdWdCY3p5azFTZkxIdzdIZG9qRlRFbDhaSy1KTkgxelBFTkJyX0Y3Z3c?oc=5",
+      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
+      "category": "equity",
+      "sentiment": "neutral",
+      "sentiment_score": null,
+      "related_tickers": [],
+      "tag": "Equity · Markets",
+      "tag_class": "tag-green",
+      "published_at": "2026-03-28T19:56:16+00:00",
+      "fetched_at": "2026-03-28T23:04:13.612927+00:00"
+    },
+    {
+      "id": "288bdb4a2519",
+      "source": "Finnhub",
+      "source_name": "Reuters",
+      "headline": "Houthis fire missiles at Israel, Iran's missile toll revealed and Tiger Woods arrest - Reuters",
+      "summary": "Houthis fire missiles at Israel, Iran's missile toll revealed and Tiger Woods arrest  Reuters",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPdE9pQTE0Mjk2cGF0cEo3dkFaU2RDWXJraG1LYWNDZ2tJOXhscWJFZnFGeG1VLTFqU0lDT0tVZzZhcldIa0NHOXFwazV3U2t3T21GX2FMNzFITTh1WFNKUzBSX0hJSktXdWtTR1Qwd3JrQmpKbTVNZ09HZ3F6RGpsTWFrNHZ1cldHVVl2VFN6dTRYbXhZN01MNXF1U0I5U1ktaW81eGVyWVUxZmdXT083bmh6b3d5Mk9jcHZOVA?oc=5",
+      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
+      "category": "equity",
+      "sentiment": "neutral",
+      "sentiment_score": null,
+      "related_tickers": [],
+      "tag": "Equity · Markets",
+      "tag_class": "tag-green",
+      "published_at": "2026-03-28T18:31:17+00:00",
+      "fetched_at": "2026-03-28T23:04:13.613072+00:00"
+    },
+    {
+      "id": "c318e56aff2e",
+      "source": "Finnhub",
+      "source_name": "Reuters",
+      "headline": "One month into Iran war, only hard choices for Trump - Reuters",
+      "summary": "One month into Iran war, only hard choices for Trump  Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOaUowNVVxX09hcFM0a3lfN2s3MkZrV0gydk5Ea3gweXZJYnZ1d3FvYkdqT2QzTGJaSjQwZldwb19qQjFHbWgzQnR6OWp5T2VMRFpYa3NxYVhRRVV0Ui12bHdEZjJaTTl0SzRkUWpPZXFTZG5uVldwWVpQdmphWmdRSHJnWUlOMG9mdTdHNjUzSlYyd0tkcEh4eG9hWjFEYzI5azlJ?oc=5",
+      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
+      "category": "equity",
+      "sentiment": "neutral",
+      "sentiment_score": null,
+      "related_tickers": [],
+      "tag": "Equity · Markets",
+      "tag_class": "tag-green",
+      "published_at": "2026-03-28T17:20:46+00:00",
+      "fetched_at": "2026-03-28T23:04:13.613131+00:00"
+    },
+    {
       "id": "1beb24c9b2c3",
       "source": "Finnhub",
       "source_name": "Reuters",
@@ -14,12 +65,127 @@
       "related_tickers": [],
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
-      "published_at": "2026-03-28T12:06:09+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312208+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862301+00:00"
->>>>>>> Stashed changes
+      "published_at": "2026-03-28T16:39:43+00:00",
+      "fetched_at": "2026-03-28T23:04:13.613176+00:00"
+    },
+    {
+      "id": "f914f710f59f",
+      "source": "Finnhub",
+      "source_name": "Reuters",
+      "headline": "Kuwait airport hit by drones, radar system damaged, no casualties reported - Reuters",
+      "summary": "Kuwait airport hit by drones, radar system damaged, no casualties reported  Reuters",
+      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOV0pfaXJWRndFa0RqX3VuN2hEQ0MwWmRIWFdJZS1ULTVRc1NtYWZwcWZyYVpWd1F5dnFBY252OFM0SmJqQmdIQldYd2ZxU0pxdkdTbmx0RXpNUUVmdTV1REljT2xJUHFVVFhFOVBYN01UM0M0QW5hTjVqeGxnbUs3bjl5TmktYVJ2V1RnbmZ0aGxYdXRIWjRsWTFGbEdKOS01bkRGZDMwSVU4STNMV3M4a3pPdEdpUXBDQjhMeDNtT0ZtTU5aVVdsbFk2RXgxLXM?oc=5",
+      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
+      "category": "equity",
+      "sentiment": "neutral",
+      "sentiment_score": null,
+      "related_tickers": [],
+      "tag": "Equity · Markets",
+      "tag_class": "tag-green",
+      "published_at": "2026-03-28T15:53:00+00:00",
+      "fetched_at": "2026-03-28T23:04:13.613229+00:00"
+    },
+    {
+      "id": "0bda71f89967",
+      "source": "Finnhub",
+      "source_name": "CNBC",
+      "headline": "Here are 3 themes that drove another super challenging week for stocks",
+      "summary": "The Iran war carnage on Wall Street is ever-widening.",
+      "url": "https://www.cnbc.com/2026/03/28/here-are-3-themes-that-drove-another-super-challenging-week-for-stocks.html",
+      "image": "https://image.cnbcfm.com/api/v1/image/108127872-17440536252025-04-07t191548z_1897652394_rc27tdafs9qc_rtrmadp_0_usa-stocks.jpeg?v=1744053733&w=1920&h=1080",
+      "category": "equity",
+      "sentiment": "neutral",
+      "sentiment_score": null,
+      "related_tickers": [],
+      "tag": "Equity · Markets",
+      "tag_class": "tag-green",
+      "published_at": "2026-03-28T15:42:21+00:00",
+      "fetched_at": "2026-03-28T23:04:13.613265+00:00"
+    },
+    {
+      "id": "a4d01b368b35",
+      "source": "Finnhub",
+      "source_name": "Reuters",
+      "headline": "Emirates Global Aluminium reports 'significant damage' from Iranian strikes - Reuters",
+      "summary": "Emirates Global Aluminium reports 'significant damage' from Iranian strikes  Reuters",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPeVlXMm1salRYUzVodlRtY3JWeHItekRGTFRiTjhHRnBXWWV3aGVsYTVRY1V3UWNObjFiNHZJbzd4aFg4OEdKcnRGNDNHc2djeklLOV9kRGxWRTRXeURMYkU0ZDFKYVpRTktPSllPLXVycWpRYjNRR0o5dWNzRU5nM3RmeDJRTWMwdnVkeTVOeFZxWU5PMlhnZU1XeWVMVTZYVGhhblUwSXlKZk9lU3VoMWNYN0V3TEYzRkd1QkV2aw?oc=5",
+      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
+      "category": "macro",
+      "sentiment": "neutral",
+      "sentiment_score": null,
+      "related_tickers": [],
+      "tag": "Macro · Policy",
+      "tag_class": "tag-blue",
+      "published_at": "2026-03-28T15:03:43+00:00",
+      "fetched_at": "2026-03-28T23:04:13.613291+00:00"
+    },
+    {
+      "id": "4c4ad10bd4e6",
+      "source": "Finnhub",
+      "source_name": "Reuters",
+      "headline": "Baghdad orders probe after drone targets Kurdistan president’s home - Reuters",
+      "summary": "Baghdad orders probe after drone targets Kurdistan president’s home  Reuters",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOalBOcmdMejV5YlA1YXJYWjNDa1dpVWRFM1FtbnNaQzhBQTdqYWpmOFY4b0ZSVWliZFA3YUQ3ZGo5VjFSaTZmQndlVkpBc3Zqck1YWXc2TlZORUs3cjFaeHpvMmxLSzA3aFNQVWJKeEVZbU1CZmc3Q3BDU1EyNXduMGF0ZWJkV3A1SlVVcWVJYlFYXzlUVmRlY0dXRGdvYl9taE9PWlBWUDE1N25xU0ZtVkNIYXh5WmowVXN2NA?oc=5",
+      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
+      "category": "equity",
+      "sentiment": "neutral",
+      "sentiment_score": null,
+      "related_tickers": [],
+      "tag": "Equity · Markets",
+      "tag_class": "tag-green",
+      "published_at": "2026-03-28T14:33:06+00:00",
+      "fetched_at": "2026-03-28T23:04:13.613347+00:00"
+    },
+    {
+      "id": "56e306eee04e",
+      "source": "Finnhub",
+      "source_name": "CNBC",
+      "headline": "Worried about Strait of Hormuz inflation to come? The world economy has one word for you: Plastics",
+      "summary": "Worried about consumer inflation to come from Strait of Hormuz closure? The economy has one word for you other than oil: plastics.",
+      "url": "https://www.cnbc.com/2026/03/28/iran-war-strait-of-hormuz-petrochemicals-oil-plastics.html",
+      "image": "https://image.cnbcfm.com/api/v1/image/108284402-1774648639025-gettyimages-1840676065-1006_32_fl230829091.jpeg?v=1774648666&w=1920&h=1080",
+      "category": "macro",
+      "sentiment": "neutral",
+      "sentiment_score": null,
+      "related_tickers": [],
+      "tag": "Macro · Policy",
+      "tag_class": "tag-blue",
+      "published_at": "2026-03-28T13:57:37+00:00",
+      "fetched_at": "2026-03-28T23:04:13.613386+00:00"
+    },
+    {
+      "id": "efad0742bd94",
+      "source": "Finnhub",
+      "source_name": "Reuters",
+      "headline": "Rosatom says situation at Iran's Bushehr nuclear power plant keeps deteriorating - Reuters",
+      "summary": "Rosatom says situation at Iran's Bushehr nuclear power plant keeps deteriorating  Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOckVzYWVXYVlIZ2lGS1BtMlRieFFGNVY0MWJiWS1ocU5FcVZDY0dWOVJVRmk2S0pRQjZTWHk4YnJlTWUwZXhBYWprazZ5Vl9ERHRFRURwU295ZDFnR3VmQjlTR1AtZlBjc1pPdjFfRkxzTjlvYjlEdktGdE1DSWVrV0kteUZPSm9OMFlmQ000T1hQQTQyUnJnTDNRaDRKZHcwZXlVZzdEcGZkV0ZnMEZnUzA1MDREYkNBX1JKM2dZY1hzSjNWelFTWUh3?oc=5",
+      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
+      "category": "equity",
+      "sentiment": "neutral",
+      "sentiment_score": null,
+      "related_tickers": [],
+      "tag": "Equity · Markets",
+      "tag_class": "tag-green",
+      "published_at": "2026-03-28T13:39:10+00:00",
+      "fetched_at": "2026-03-28T23:04:13.613427+00:00"
+    },
+    {
+      "id": "b02f7e2c567b",
+      "source": "Finnhub",
+      "source_name": "CNBC",
+      "headline": "'Gut-wrenching': She says her poor credit cost her a promotion—why employers may check and how to improve your credit",
+      "summary": "Brittany Greene helps individuals build and repair their credit as head of community at Self Financial. She knows first hand what poor credit can cost you.",
+      "url": "https://www.cnbc.com/2026/03/28/employee-lost-promotion-due-to-credit-history.html",
+      "image": "https://image.cnbcfm.com/api/v1/image/108269372-1771965073642-Dr_Brittany_Greene_Self_Headshot.jpg?v=1774644125&w=1920&h=1080",
+      "category": "equity",
+      "sentiment": "neutral",
+      "sentiment_score": null,
+      "related_tickers": [],
+      "tag": "Equity · Markets",
+      "tag_class": "tag-green",
+      "published_at": "2026-03-28T13:00:01+00:00",
+      "fetched_at": "2026-03-28T23:04:13.613494+00:00"
     },
     {
       "id": "75af4b129a7f",
@@ -36,11 +202,7 @@
       "tag": "Crypto · Market",
       "tag_class": "tag-amber",
       "published_at": "2026-03-28T12:00:01+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312258+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862323+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.613533+00:00"
     },
     {
       "id": "1e447ba21231",
@@ -57,11 +219,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-28T11:40:29+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312301+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862339+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.613573+00:00"
     },
     {
       "id": "db00fe04d5e3",
@@ -78,32 +236,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-28T11:20:44+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312340+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862353+00:00"
->>>>>>> Stashed changes
-    },
-    {
-      "id": "a2fe5e7fa997",
-      "source": "Finnhub",
-      "source_name": "Reuters",
-      "headline": "Kuwait airport suffers 'significant' radar system damage in Iranian drone attacks - Reuters",
-      "summary": "Kuwait airport suffers 'significant' radar system damage in Iranian drone attacks  Reuters",
-      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOV0pfaXJWRndFa0RqX3VuN2hEQ0MwWmRIWFdJZS1ULTVRc1NtYWZwcWZyYVpWd1F5dnFBY252OFM0SmJqQmdIQldYd2ZxU0pxdkdTbmx0RXpNUUVmdTV1REljT2xJUHFVVFhFOVBYN01UM0M0QW5hTjVqeGxnbUs3bjl5TmktYVJ2V1RnbmZ0aGxYdXRIWjRsWTFGbEdKOS01bkRGZDMwSVU4STNMV3M4a3pPdEdpUXBDQjhMeDNtT0ZtTU5aVVdsbFk2RXgxLXM?oc=5",
-      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
-      "category": "equity",
-      "sentiment": "neutral",
-      "sentiment_score": null,
-      "related_tickers": [],
-      "tag": "Equity · Markets",
-      "tag_class": "tag-green",
-      "published_at": "2026-03-28T11:09:40+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312377+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862366+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.613612+00:00"
     },
     {
       "id": "fb58b74a8047",
@@ -120,11 +253,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-28T11:00:01+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312422+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862380+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.613654+00:00"
     },
     {
       "id": "f674df189a70",
@@ -141,11 +270,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-28T09:46:09+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312459+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862394+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.613694+00:00"
     },
     {
       "id": "71530ef60343",
@@ -162,19 +287,15 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-28T07:34:09+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312493+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862406+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.613732+00:00"
     },
     {
-      "id": "c318e56aff2e",
+      "id": "c820142ea624",
       "source": "Finnhub",
       "source_name": "Reuters",
-      "headline": "One month into Iran war, only hard choices for Trump - Reuters",
-      "summary": "One month into Iran war, only hard choices for Trump  Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOaUowNVVxX09hcFM0a3lfN2s3MkZrV0gydk5Ea3gweXZJYnZ1d3FvYkdqT2QzTGJaSjQwZldwb19qQjFHbWgzQnR6OWp5T2VMRFpYa3NxYVhRRVV0Ui12bHdEZjJaTTl0SzRkUWpPZXFTZG5uVldwWVpQdmphWmdRSHJnWUlOMG9mdTdHNjUzSlYyd0tkcEh4eG9hWjFEYzI5azlJ?oc=5",
+      "headline": "Inside Iran: A video diary - Reuters",
+      "summary": "Inside Iran: A video diary  Reuters",
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5BVlBlQ2tEQlh4elZMdmo1emZZcld3Q2Q4eXBsWlRPZ25GcnRtb1EwTHdma1J3RHQtWmNxbV82RlhyLW1FWVJZMnF4ajJnLV9HVGpUZWdzN1FCYkNWdXBvTzAyUGNhbFVUcFJqVGRNM3V6VkowZ2lR?oc=5",
       "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
       "category": "equity",
       "sentiment": "neutral",
@@ -182,19 +303,15 @@
       "related_tickers": [],
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
-      "published_at": "2026-03-28T05:04:00+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312526+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862418+00:00"
->>>>>>> Stashed changes
+      "published_at": "2026-03-28T05:00:00+00:00",
+      "fetched_at": "2026-03-28T23:04:13.613775+00:00"
     },
     {
-      "id": "59c35b483fdc",
+      "id": "9451d0a0f9b3",
       "source": "Finnhub",
       "source_name": "Reuters",
-      "headline": "Yemen's Houthis strike at Israel as attacks on Iran continue - Reuters",
-      "summary": "Yemen's Houthis strike at Israel as attacks on Iran continue  Reuters",
+      "headline": "Yemen's Houthis strike at Israel in their first such attack since Iran war began - Reuters",
+      "summary": "Yemen's Houthis strike at Israel in their first such attack since Iran war began  Reuters",
       "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNNVVtc1ZtWmlSeGkxX2N1VkZxUW1RUkFReGRKX0o5OXROT21WUjVGMS1lUFlqVFpNcUtSN3gtR3BaMFNaMGR5RDRkYW1DaExPcXJ6eEx6dXlYRVBIWEpHSm94dWNlRTZlQnhaR1BwNGl0WnhneklBenpxV1dMcDFROHlGMFQtOVF1ZGxWUm14VWtvMXlicko5bWZZWHdvSUo1aUJELWxZYTgwZFZkX3ZJd242Z0I?oc=5",
       "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
       "category": "equity",
@@ -204,11 +321,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-28T04:27:00+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312551+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862430+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.613821+00:00"
     },
     {
       "id": "c453eea941a0",
@@ -225,11 +338,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T23:59:58+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312565+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862442+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.613870+00:00"
     },
     {
       "id": "c6ddd154f429",
@@ -246,11 +355,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T22:47:36+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312578+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862455+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.613910+00:00"
     },
     {
       "id": "1c8727252ee8",
@@ -267,11 +372,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T22:39:20+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312591+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862467+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.613947+00:00"
     },
     {
       "id": "e56f19125afb",
@@ -288,11 +389,7 @@
       "tag": "Commodity",
       "tag_class": "tag-red",
       "published_at": "2026-03-27T22:32:09+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312609+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862484+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.613990+00:00"
     },
     {
       "id": "3e47a70a7e44",
@@ -309,11 +406,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T22:14:34+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312625+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862496+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.614026+00:00"
     },
     {
       "id": "b193821b4d57",
@@ -330,11 +423,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T21:55:44+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312639+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862508+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.614063+00:00"
     },
     {
       "id": "8aa37b7777d3",
@@ -351,11 +440,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T21:46:44+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312654+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862520+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.614101+00:00"
     },
     {
       "id": "d03260b75e6e",
@@ -372,11 +457,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T21:42:07+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312667+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862533+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.614136+00:00"
     },
     {
       "id": "b37e5ff7b53f",
@@ -393,11 +474,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T21:12:26+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312680+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862543+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.614170+00:00"
     },
     {
       "id": "d9c127533fe4",
@@ -414,11 +491,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T20:35:25+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312694+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862555+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.614414+00:00"
     },
     {
       "id": "8545a3bacea7",
@@ -435,11 +508,7 @@
       "tag": "Commodity",
       "tag_class": "tag-red",
       "published_at": "2026-03-27T20:24:53+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312707+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862566+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.614482+00:00"
     },
     {
       "id": "97cb143d4b06",
@@ -456,11 +525,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T19:56:24+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312721+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862576+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.614526+00:00"
     },
     {
       "id": "5cd700159496",
@@ -477,11 +542,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T19:18:55+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312736+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862589+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.614579+00:00"
     },
     {
       "id": "23b85e3c339d",
@@ -498,11 +559,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T19:16:04+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312749+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862600+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.614615+00:00"
     },
     {
       "id": "746314e8f5b8",
@@ -519,11 +576,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T19:06:44+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312761+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862610+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.614646+00:00"
     },
     {
       "id": "38809dff52d5",
@@ -540,11 +593,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T19:04:46+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312775+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862623+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.614687+00:00"
     },
     {
       "id": "c9b164f857b4",
@@ -561,11 +610,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T18:58:52+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312788+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862635+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.614732+00:00"
     },
     {
       "id": "4fcc05e03c43",
@@ -582,11 +627,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T18:53:52+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312802+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862646+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.614765+00:00"
     },
     {
       "id": "87737e8023d6",
@@ -603,11 +644,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T18:04:35+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312815+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862658+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.614798+00:00"
     },
     {
       "id": "e1dc48fa55a5",
@@ -624,11 +661,7 @@
       "tag": "Commodity",
       "tag_class": "tag-red",
       "published_at": "2026-03-27T18:04:20+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312829+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862669+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.614857+00:00"
     },
     {
       "id": "51755c6dad0d",
@@ -645,11 +678,24 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T17:50:46+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312841+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862681+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.614900+00:00"
+    },
+    {
+      "id": "403ffe15c6f6",
+      "source": "Finnhub",
+      "source_name": "Reuters",
+      "headline": "Fed's Paulson worried about war's impact on inflation expectations - Reuters",
+      "summary": "Fed's Paulson worried about war's impact on inflation expectations  Reuters",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNVTJ4cFFodUxvNGMtdm1XdjJBVlB1UnYtNC00QVYxRUJRQ1JUbm1Id2l4bDJGZ25xMS1OUEpmYkdSaFZBMFdDUjk2ZXotQmRaZXVzR2RXNVJ5NDlfdE9NSE9uYnAwcWRINFBWZ2hCMGpLQ19CY1VFbHpJdHRwY2VxUFBFdm1ZSG1lcHItT2FhaHItOWZYRnRxaFdNc3V2LWE0cTVnRWZzZw?oc=5",
+      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
+      "category": "macro",
+      "sentiment": "neutral",
+      "sentiment_score": null,
+      "related_tickers": [],
+      "tag": "Macro · Policy",
+      "tag_class": "tag-blue",
+      "published_at": "2026-03-27T17:45:45+00:00",
+      "fetched_at": "2026-03-28T23:04:13.614919+00:00"
     },
     {
       "id": "638dc50db730",
@@ -666,11 +712,7 @@
       "tag": "Macro · Policy",
       "tag_class": "tag-blue",
       "published_at": "2026-03-27T17:27:09+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312850+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862688+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.614940+00:00"
     },
     {
       "id": "b96a1b26b4d2",
@@ -687,11 +729,7 @@
       "tag": "Commodity",
       "tag_class": "tag-red",
       "published_at": "2026-03-27T17:08:22+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312861+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862698+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.614970+00:00"
     },
     {
       "id": "a408f439de92",
@@ -708,11 +746,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T17:01:48+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312873+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862710+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.615002+00:00"
     },
     {
       "id": "0b0bbb15facc",
@@ -729,11 +763,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T16:49:31+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312888+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862722+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.615044+00:00"
     },
     {
       "id": "bfc3b6ca3d6b",
@@ -750,11 +780,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T16:39:05+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312902+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862734+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.615080+00:00"
     },
     {
       "id": "f9baa04a93c0",
@@ -771,11 +797,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T15:33:12+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312914+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862750+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.615109+00:00"
     },
     {
       "id": "0daad7ec71dc",
@@ -792,11 +814,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T15:32:12+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312929+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862762+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.615147+00:00"
     },
     {
       "id": "5664e1722456",
@@ -813,11 +831,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T15:14:51+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312951+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862785+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.615213+00:00"
     },
     {
       "id": "70fbb87ac60a",
@@ -834,224 +848,61 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T14:54:37+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312964+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862796+00:00"
->>>>>>> Stashed changes
-    },
+      "fetched_at": "2026-03-28T23:04:13.615244+00:00"
+    }
+  ],
+  "macro": [
     {
-      "id": "6897ef604043",
+      "id": "a4d01b368b35",
       "source": "Finnhub",
-      "source_name": "CNBC",
-      "headline": "The key to this stock market is oil. Here's what investors need to consider",
-      "summary": "High oil prices create a difficult dynamic for companies, consumers, and investors.",
-      "url": "https://www.cnbc.com/2026/03/27/the-key-to-this-stock-market-is-oil-what-investors-need-to-consider.html",
-      "image": "https://image.cnbcfm.com/api/v1/image/108277330-17733319542026-03-12t153731z_1782110747_rc213kan8r1m_rtrmadp_0_iran-crisis-gulf-oman.jpeg?v=1773331994&w=1920&h=1080",
-      "category": "commodity",
-      "sentiment": "neutral",
-      "sentiment_score": null,
-      "related_tickers": [],
-      "tag": "Commodity",
-      "tag_class": "tag-red",
-      "published_at": "2026-03-27T14:49:18+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312975+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862808+00:00"
->>>>>>> Stashed changes
-    },
-    {
-      "id": "045c6b61cf3f",
-      "source": "Finnhub",
-      "source_name": "CNBC",
-      "headline": "Every Cure’s drug repurposing strategy isn't what you think, and it could change rare disease treatment",
-      "summary": "When David Fajgenbaum and his colleagues launched the drug repurposing non-profit Every Cure, they chose a path that challenged the traditional research model.",
-      "url": "https://www.cnbc.com/2026/03/27/every-cure-drug-repurposing-rare-disease-treatment.html",
-      "image": "https://image.cnbcfm.com/api/v1/image/108283986-1774613188078-David_Fajgenbaum.jpg?v=1774614629&w=1920&h=1080",
+      "source_name": "Reuters",
+      "headline": "Emirates Global Aluminium reports 'significant damage' from Iranian strikes - Reuters",
+      "summary": "Emirates Global Aluminium reports 'significant damage' from Iranian strikes  Reuters",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPeVlXMm1salRYUzVodlRtY3JWeHItekRGTFRiTjhHRnBXWWV3aGVsYTVRY1V3UWNObjFiNHZJbzd4aFg4OEdKcnRGNDNHc2djeklLOV9kRGxWRTRXeURMYkU0ZDFKYVpRTktPSllPLXVycWpRYjNRR0o5dWNzRU5nM3RmeDJRTWMwdnVkeTVOeFZxWU5PMlhnZU1XeWVMVTZYVGhhblUwSXlKZk9lU3VoMWNYN0V3TEYzRkd1QkV2aw?oc=5",
+      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
       "category": "macro",
       "sentiment": "neutral",
       "sentiment_score": null,
       "related_tickers": [],
       "tag": "Macro · Policy",
       "tag_class": "tag-blue",
-      "published_at": "2026-03-27T14:40:00+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312987+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862822+00:00"
->>>>>>> Stashed changes
+      "published_at": "2026-03-28T15:03:43+00:00",
+      "fetched_at": "2026-03-28T23:04:13.613291+00:00"
     },
     {
-      "id": "31814ae0f599",
-      "source": "Finnhub",
-      "source_name": "MarketWatch",
-      "headline": "Consumer sentiment drops sharply in late March as war with Iran creates more financial unease",
-      "summary": "",
-      "url": "https://www.marketwatch.com/story/consumer-sentiment-drops-sharply-in-late-march-as-war-with-iran-creates-more-financial-unease-763e37a0",
-      "image": "https://static2.finnhub.io/file/publicdatany/finnhubimage/market_watch_logo.png",
-      "category": "equity",
-      "sentiment": "neutral",
-      "sentiment_score": null,
-      "related_tickers": [],
-      "tag": "Equity · Markets",
-      "tag_class": "tag-green",
-      "published_at": "2026-03-27T14:32:00+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312998+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862833+00:00"
->>>>>>> Stashed changes
-    },
-    {
-      "id": "7c2b8dded27b",
-      "source": "Finnhub",
-      "source_name": "Reuters",
-      "headline": "Iran war could mean stagflation for EU, Dombrovskis says - Reuters",
-      "summary": "Iran war could mean stagflation for EU, Dombrovskis says  Reuters",
-      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQVVBSME9UdGVaU2VneGprdEl4d2xsVU9zM3NXQjRuUS1UV3BkbVdmb295a0ZwRkpyT2t5cFktU3g2LWdsd21BVTZHTkk1WkpQck03MnltNFVIMWtKMDNpNjZDZ3hBcmJMaV91Vy1JOERhdUo5Z1pjZWwxSkRJN2M1SENmbmRvRzI1bHhTWlBJQmVEeVBZYjBMOWFQcXA?oc=5",
-      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
-      "category": "equity",
-      "sentiment": "neutral",
-      "sentiment_score": null,
-      "related_tickers": [],
-      "tag": "Equity · Markets",
-      "tag_class": "tag-green",
-      "published_at": "2026-03-27T14:07:36+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.313010+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862844+00:00"
->>>>>>> Stashed changes
-    },
-    {
-      "id": "b6f2e8a1bc17",
-      "source": "Finnhub",
-      "source_name": "Reuters",
-      "headline": "Gulf states tell US ending the war is not enough, Iran’s capabilities must be degraded - Reuters",
-      "summary": "Gulf states tell US ending the war is not enough, Iran’s capabilities must be degraded  Reuters",
-      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPMFpYcjZtQUJuVEJsNG02OF9tTXVzeWVPd1A0ZGdyUHpSeG01dmRka19YVldNTUNkSnFjSTNNLUxvajVEVkMzQjJLbUJTQW9lYXpYdzZNenpERGh6MW1xTGFsX2xXQU9vTzM2NVQxaVRUZWhYd1BtVnRKdURqa0F6azhjYVctUzJmUERubW1GcWgzVG1MelNxMnhBTUZHbkhoMmtLa2N4YTRnbDd2cXc2TjJxWVdBVHcybFc0UGx0ZHkzMUJfVUpEeV94aHV4alU?oc=5",
-      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
-      "category": "equity",
-      "sentiment": "neutral",
-      "sentiment_score": null,
-      "related_tickers": [],
-      "tag": "Equity · Markets",
-      "tag_class": "tag-green",
-      "published_at": "2026-03-27T14:01:43+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.313027+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862861+00:00"
->>>>>>> Stashed changes
-    },
-    {
-      "id": "75c43910e138",
-      "source": "Finnhub",
-      "source_name": "Reuters",
-      "headline": "Ukraine closes on Mideast deals to help counter Iranian drones - Reuters",
-      "summary": "Ukraine closes on Mideast deals to help counter Iranian drones  Reuters",
-      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNYUZobDF2eUt4U1BzRWo4bGJfWURPeEFKcDM2SDhaV0R5RmlGREN2MURYdUJ6RFphQ0JqWmVDUlg0bnVlcWw4U0pRZWpoQjN1alV3WHExMjZJUWVJaTU2NzB1X1UyMnJxNm5kMUFCaG43VlNwWWdEb0VRQjg2dEctMVI4NkhFT3lqckFWLVBFSUp2dlNjZWJ3SUpFeHU3OG5DVmlXNGtiWQ?oc=5",
-      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
-      "category": "equity",
-      "sentiment": "neutral",
-      "sentiment_score": null,
-      "related_tickers": [],
-      "tag": "Equity · Markets",
-      "tag_class": "tag-green",
-      "published_at": "2026-03-27T13:35:17+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.313043+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862872+00:00"
->>>>>>> Stashed changes
-    },
-    {
-      "id": "dae060098168",
-      "source": "Finnhub",
-      "source_name": "Reuters",
-      "headline": "Exclusive: Trump's Iran war pushes India to rekindle old friendship with Russia - Reuters",
-      "summary": "Exclusive: Trump's Iran war pushes India to rekindle old friendship with Russia  Reuters",
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPWVlqMEt1bTlrZjNqTFJLTURURWdGYkxKZkdZa3lUQ2lIQ0JFS0xjUlRoYl9JZERMOGw0bmpkUVA5NktLWHBkejQxVTl1RjA3cEExWHdISjJlc1NyWlBkV0s4OF9lR0Zwc3JjaVM5eElGU2JHT0pxQ1VhUVZVQUY3bl8yVllGdlkwRXhNcml5cjlKOVZrVkRnV1lBVHpGS0VhRUVKT1MwM3lNY21fOVJRMFlaaTdtOVk?oc=5",
-      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
-      "category": "equity",
-      "sentiment": "neutral",
-      "sentiment_score": null,
-      "related_tickers": [],
-      "tag": "Equity · Markets",
-      "tag_class": "tag-green",
-      "published_at": "2026-03-27T13:32:09+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.313057+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862886+00:00"
->>>>>>> Stashed changes
-    },
-    {
-      "id": "791312d37f46",
+      "id": "56e306eee04e",
       "source": "Finnhub",
       "source_name": "CNBC",
-      "headline": "Rising oil prices could increase food costs—but hoarding groceries ‘makes a bad situation worse,’ economist says",
-      "summary": "Rising oil prices can take months to filter into grocery bills, and the impact is often smaller than consumers expect.",
-      "url": "https://www.cnbc.com/2026/03/27/rising-oil-prices-lift-food-costs.html",
-      "image": "https://image.cnbcfm.com/api/v1/image/108282513-1774387233346-gettyimages-1385769253-img_96293.jpeg?v=1774387624&w=1920&h=1080",
-      "category": "commodity",
+      "headline": "Worried about Strait of Hormuz inflation to come? The world economy has one word for you: Plastics",
+      "summary": "Worried about consumer inflation to come from Strait of Hormuz closure? The economy has one word for you other than oil: plastics.",
+      "url": "https://www.cnbc.com/2026/03/28/iran-war-strait-of-hormuz-petrochemicals-oil-plastics.html",
+      "image": "https://image.cnbcfm.com/api/v1/image/108284402-1774648639025-gettyimages-1840676065-1006_32_fl230829091.jpeg?v=1774648666&w=1920&h=1080",
+      "category": "macro",
       "sentiment": "neutral",
       "sentiment_score": null,
       "related_tickers": [],
-      "tag": "Commodity",
-      "tag_class": "tag-red",
-      "published_at": "2026-03-27T13:31:12+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.313071+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862906+00:00"
->>>>>>> Stashed changes
+      "tag": "Macro · Policy",
+      "tag_class": "tag-blue",
+      "published_at": "2026-03-28T13:57:37+00:00",
+      "fetched_at": "2026-03-28T23:04:13.613386+00:00"
     },
     {
-      "id": "a173351c04d5",
-      "source": "Finnhub",
-      "source_name": "CNBC",
-      "headline": "Iran war wipes out $100 billion from luxury stocks",
-      "summary": "Dubai in the UAE has been the biggest driver of growth in recent years, and the Middle East tensions come at a critical time in the luxury industry.",
-      "url": "https://www.cnbc.com/2026/03/27/iran-war-wipes-out-100-billion-from-luxury-stocks.html",
-      "image": "",
-      "category": "equity",
-      "sentiment": "neutral",
-      "sentiment_score": null,
-      "related_tickers": [],
-      "tag": "Equity · Markets",
-      "tag_class": "tag-green",
-      "published_at": "2026-03-27T13:00:01+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.313086+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862916+00:00"
->>>>>>> Stashed changes
-    },
-    {
-      "id": "39ea223e332f",
+      "id": "403ffe15c6f6",
       "source": "Finnhub",
       "source_name": "Reuters",
-      "headline": "UN rights chief urges US to conclude probe into deadly Iran school strike - Reuters",
-      "summary": "UN rights chief urges US to conclude probe into deadly Iran school strike  Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNWjQwLXRlcW1Ud21hTnRGdDdidjZfd1JRdnVIR2dxeDktWVcyenFTMzAyQzJ5d1RyMV9oTno4bzlTN3liXzNsQlJickJJcE5fWUNjOXlTSkszV1o3eVBmUUZveGlJVWlnajJBOUpOemh0ZTBmaVpLVWpVLVM3eEdzSHRoaEFXMXViUERhTlhMSkphSnVUNm9KTl9paURVWmtEN3E5U0RoRHFZNFhQbTNmcWxGLWx1V2lIeUE?oc=5",
+      "headline": "Fed's Paulson worried about war's impact on inflation expectations - Reuters",
+      "summary": "Fed's Paulson worried about war's impact on inflation expectations  Reuters",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNVTJ4cFFodUxvNGMtdm1XdjJBVlB1UnYtNC00QVYxRUJRQ1JUbm1Id2l4bDJGZ25xMS1OUEpmYkdSaFZBMFdDUjk2ZXotQmRaZXVzR2RXNVJ5NDlfdE9NSE9uYnAwcWRINFBWZ2hCMGpLQ19CY1VFbHpJdHRwY2VxUFBFdm1ZSG1lcHItT2FhaHItOWZYRnRxaFdNc3V2LWE0cTVnRWZzZw?oc=5",
       "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
-      "category": "equity",
+      "category": "macro",
       "sentiment": "neutral",
       "sentiment_score": null,
       "related_tickers": [],
-      "tag": "Equity · Markets",
-      "tag_class": "tag-green",
-      "published_at": "2026-03-27T12:43:18+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.313099+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862926+00:00"
->>>>>>> Stashed changes
-    }
-  ],
-  "macro": [
+      "tag": "Macro · Policy",
+      "tag_class": "tag-blue",
+      "published_at": "2026-03-27T17:45:45+00:00",
+      "fetched_at": "2026-03-28T23:04:13.614919+00:00"
+    },
     {
       "id": "638dc50db730",
       "source": "Finnhub",
@@ -1067,35 +918,61 @@
       "tag": "Macro · Policy",
       "tag_class": "tag-blue",
       "published_at": "2026-03-27T17:27:09+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312850+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862688+00:00"
->>>>>>> Stashed changes
-    },
-    {
-      "id": "045c6b61cf3f",
-      "source": "Finnhub",
-      "source_name": "CNBC",
-      "headline": "Every Cure’s drug repurposing strategy isn't what you think, and it could change rare disease treatment",
-      "summary": "When David Fajgenbaum and his colleagues launched the drug repurposing non-profit Every Cure, they chose a path that challenged the traditional research model.",
-      "url": "https://www.cnbc.com/2026/03/27/every-cure-drug-repurposing-rare-disease-treatment.html",
-      "image": "https://image.cnbcfm.com/api/v1/image/108283986-1774613188078-David_Fajgenbaum.jpg?v=1774614629&w=1920&h=1080",
-      "category": "macro",
-      "sentiment": "neutral",
-      "sentiment_score": null,
-      "related_tickers": [],
-      "tag": "Macro · Policy",
-      "tag_class": "tag-blue",
-      "published_at": "2026-03-27T14:40:00+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312987+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862822+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.614940+00:00"
     }
   ],
   "equity": [
+    {
+      "id": "c9c1c57a4711",
+      "source": "Finnhub",
+      "source_name": "Reuters",
+      "headline": "Don't strike a deal with Iran's current leaders, opposition figure Pahlavi warns - Reuters",
+      "summary": "Don't strike a deal with Iran's current leaders, opposition figure Pahlavi warns  Reuters",
+      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPV3JXLTE5ejVPRHFJUHg4Nzc4T2VPWHhnVzhUTVd3d2dCSjViMUwyTjJsOEtrLXNuNFJRdXoyR3pidlYwY09tSkg3b0tWNFBvX29sSUNwMWx4UVkyeDAxLXRreF9NTGh3ZzZ1M2dGUlVSSDNDSUxacUhtVHp5MFZySXMzWVFvWnhVLXY2eFExV1FodHFmWThXMmp1UkZiWWVLbFJFR1NmdWdCY3p5azFTZkxIdzdIZG9qRlRFbDhaSy1KTkgxelBFTkJyX0Y3Z3c?oc=5",
+      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
+      "category": "equity",
+      "sentiment": "neutral",
+      "sentiment_score": null,
+      "related_tickers": [],
+      "tag": "Equity · Markets",
+      "tag_class": "tag-green",
+      "published_at": "2026-03-28T19:56:16+00:00",
+      "fetched_at": "2026-03-28T23:04:13.612927+00:00"
+    },
+    {
+      "id": "288bdb4a2519",
+      "source": "Finnhub",
+      "source_name": "Reuters",
+      "headline": "Houthis fire missiles at Israel, Iran's missile toll revealed and Tiger Woods arrest - Reuters",
+      "summary": "Houthis fire missiles at Israel, Iran's missile toll revealed and Tiger Woods arrest  Reuters",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPdE9pQTE0Mjk2cGF0cEo3dkFaU2RDWXJraG1LYWNDZ2tJOXhscWJFZnFGeG1VLTFqU0lDT0tVZzZhcldIa0NHOXFwazV3U2t3T21GX2FMNzFITTh1WFNKUzBSX0hJSktXdWtTR1Qwd3JrQmpKbTVNZ09HZ3F6RGpsTWFrNHZ1cldHVVl2VFN6dTRYbXhZN01MNXF1U0I5U1ktaW81eGVyWVUxZmdXT083bmh6b3d5Mk9jcHZOVA?oc=5",
+      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
+      "category": "equity",
+      "sentiment": "neutral",
+      "sentiment_score": null,
+      "related_tickers": [],
+      "tag": "Equity · Markets",
+      "tag_class": "tag-green",
+      "published_at": "2026-03-28T18:31:17+00:00",
+      "fetched_at": "2026-03-28T23:04:13.613072+00:00"
+    },
+    {
+      "id": "c318e56aff2e",
+      "source": "Finnhub",
+      "source_name": "Reuters",
+      "headline": "One month into Iran war, only hard choices for Trump - Reuters",
+      "summary": "One month into Iran war, only hard choices for Trump  Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOaUowNVVxX09hcFM0a3lfN2s3MkZrV0gydk5Ea3gweXZJYnZ1d3FvYkdqT2QzTGJaSjQwZldwb19qQjFHbWgzQnR6OWp5T2VMRFpYa3NxYVhRRVV0Ui12bHdEZjJaTTl0SzRkUWpPZXFTZG5uVldwWVpQdmphWmdRSHJnWUlOMG9mdTdHNjUzSlYyd0tkcEh4eG9hWjFEYzI5azlJ?oc=5",
+      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
+      "category": "equity",
+      "sentiment": "neutral",
+      "sentiment_score": null,
+      "related_tickers": [],
+      "tag": "Equity · Markets",
+      "tag_class": "tag-green",
+      "published_at": "2026-03-28T17:20:46+00:00",
+      "fetched_at": "2026-03-28T23:04:13.613131+00:00"
+    },
     {
       "id": "1beb24c9b2c3",
       "source": "Finnhub",
@@ -1110,12 +987,93 @@
       "related_tickers": [],
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
-      "published_at": "2026-03-28T12:06:09+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312208+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862301+00:00"
->>>>>>> Stashed changes
+      "published_at": "2026-03-28T16:39:43+00:00",
+      "fetched_at": "2026-03-28T23:04:13.613176+00:00"
+    },
+    {
+      "id": "f914f710f59f",
+      "source": "Finnhub",
+      "source_name": "Reuters",
+      "headline": "Kuwait airport hit by drones, radar system damaged, no casualties reported - Reuters",
+      "summary": "Kuwait airport hit by drones, radar system damaged, no casualties reported  Reuters",
+      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOV0pfaXJWRndFa0RqX3VuN2hEQ0MwWmRIWFdJZS1ULTVRc1NtYWZwcWZyYVpWd1F5dnFBY252OFM0SmJqQmdIQldYd2ZxU0pxdkdTbmx0RXpNUUVmdTV1REljT2xJUHFVVFhFOVBYN01UM0M0QW5hTjVqeGxnbUs3bjl5TmktYVJ2V1RnbmZ0aGxYdXRIWjRsWTFGbEdKOS01bkRGZDMwSVU4STNMV3M4a3pPdEdpUXBDQjhMeDNtT0ZtTU5aVVdsbFk2RXgxLXM?oc=5",
+      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
+      "category": "equity",
+      "sentiment": "neutral",
+      "sentiment_score": null,
+      "related_tickers": [],
+      "tag": "Equity · Markets",
+      "tag_class": "tag-green",
+      "published_at": "2026-03-28T15:53:00+00:00",
+      "fetched_at": "2026-03-28T23:04:13.613229+00:00"
+    },
+    {
+      "id": "0bda71f89967",
+      "source": "Finnhub",
+      "source_name": "CNBC",
+      "headline": "Here are 3 themes that drove another super challenging week for stocks",
+      "summary": "The Iran war carnage on Wall Street is ever-widening.",
+      "url": "https://www.cnbc.com/2026/03/28/here-are-3-themes-that-drove-another-super-challenging-week-for-stocks.html",
+      "image": "https://image.cnbcfm.com/api/v1/image/108127872-17440536252025-04-07t191548z_1897652394_rc27tdafs9qc_rtrmadp_0_usa-stocks.jpeg?v=1744053733&w=1920&h=1080",
+      "category": "equity",
+      "sentiment": "neutral",
+      "sentiment_score": null,
+      "related_tickers": [],
+      "tag": "Equity · Markets",
+      "tag_class": "tag-green",
+      "published_at": "2026-03-28T15:42:21+00:00",
+      "fetched_at": "2026-03-28T23:04:13.613265+00:00"
+    },
+    {
+      "id": "4c4ad10bd4e6",
+      "source": "Finnhub",
+      "source_name": "Reuters",
+      "headline": "Baghdad orders probe after drone targets Kurdistan president’s home - Reuters",
+      "summary": "Baghdad orders probe after drone targets Kurdistan president’s home  Reuters",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOalBOcmdMejV5YlA1YXJYWjNDa1dpVWRFM1FtbnNaQzhBQTdqYWpmOFY4b0ZSVWliZFA3YUQ3ZGo5VjFSaTZmQndlVkpBc3Zqck1YWXc2TlZORUs3cjFaeHpvMmxLSzA3aFNQVWJKeEVZbU1CZmc3Q3BDU1EyNXduMGF0ZWJkV3A1SlVVcWVJYlFYXzlUVmRlY0dXRGdvYl9taE9PWlBWUDE1N25xU0ZtVkNIYXh5WmowVXN2NA?oc=5",
+      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
+      "category": "equity",
+      "sentiment": "neutral",
+      "sentiment_score": null,
+      "related_tickers": [],
+      "tag": "Equity · Markets",
+      "tag_class": "tag-green",
+      "published_at": "2026-03-28T14:33:06+00:00",
+      "fetched_at": "2026-03-28T23:04:13.613347+00:00"
+    },
+    {
+      "id": "efad0742bd94",
+      "source": "Finnhub",
+      "source_name": "Reuters",
+      "headline": "Rosatom says situation at Iran's Bushehr nuclear power plant keeps deteriorating - Reuters",
+      "summary": "Rosatom says situation at Iran's Bushehr nuclear power plant keeps deteriorating  Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOckVzYWVXYVlIZ2lGS1BtMlRieFFGNVY0MWJiWS1ocU5FcVZDY0dWOVJVRmk2S0pRQjZTWHk4YnJlTWUwZXhBYWprazZ5Vl9ERHRFRURwU295ZDFnR3VmQjlTR1AtZlBjc1pPdjFfRkxzTjlvYjlEdktGdE1DSWVrV0kteUZPSm9OMFlmQ000T1hQQTQyUnJnTDNRaDRKZHcwZXlVZzdEcGZkV0ZnMEZnUzA1MDREYkNBX1JKM2dZY1hzSjNWelFTWUh3?oc=5",
+      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
+      "category": "equity",
+      "sentiment": "neutral",
+      "sentiment_score": null,
+      "related_tickers": [],
+      "tag": "Equity · Markets",
+      "tag_class": "tag-green",
+      "published_at": "2026-03-28T13:39:10+00:00",
+      "fetched_at": "2026-03-28T23:04:13.613427+00:00"
+    },
+    {
+      "id": "b02f7e2c567b",
+      "source": "Finnhub",
+      "source_name": "CNBC",
+      "headline": "'Gut-wrenching': She says her poor credit cost her a promotion—why employers may check and how to improve your credit",
+      "summary": "Brittany Greene helps individuals build and repair their credit as head of community at Self Financial. She knows first hand what poor credit can cost you.",
+      "url": "https://www.cnbc.com/2026/03/28/employee-lost-promotion-due-to-credit-history.html",
+      "image": "https://image.cnbcfm.com/api/v1/image/108269372-1771965073642-Dr_Brittany_Greene_Self_Headshot.jpg?v=1774644125&w=1920&h=1080",
+      "category": "equity",
+      "sentiment": "neutral",
+      "sentiment_score": null,
+      "related_tickers": [],
+      "tag": "Equity · Markets",
+      "tag_class": "tag-green",
+      "published_at": "2026-03-28T13:00:01+00:00",
+      "fetched_at": "2026-03-28T23:04:13.613494+00:00"
     },
     {
       "id": "1e447ba21231",
@@ -1132,11 +1090,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-28T11:40:29+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312301+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862339+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.613573+00:00"
     },
     {
       "id": "db00fe04d5e3",
@@ -1153,32 +1107,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-28T11:20:44+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312340+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862353+00:00"
->>>>>>> Stashed changes
-    },
-    {
-      "id": "a2fe5e7fa997",
-      "source": "Finnhub",
-      "source_name": "Reuters",
-      "headline": "Kuwait airport suffers 'significant' radar system damage in Iranian drone attacks - Reuters",
-      "summary": "Kuwait airport suffers 'significant' radar system damage in Iranian drone attacks  Reuters",
-      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOV0pfaXJWRndFa0RqX3VuN2hEQ0MwWmRIWFdJZS1ULTVRc1NtYWZwcWZyYVpWd1F5dnFBY252OFM0SmJqQmdIQldYd2ZxU0pxdkdTbmx0RXpNUUVmdTV1REljT2xJUHFVVFhFOVBYN01UM0M0QW5hTjVqeGxnbUs3bjl5TmktYVJ2V1RnbmZ0aGxYdXRIWjRsWTFGbEdKOS01bkRGZDMwSVU4STNMV3M4a3pPdEdpUXBDQjhMeDNtT0ZtTU5aVVdsbFk2RXgxLXM?oc=5",
-      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
-      "category": "equity",
-      "sentiment": "neutral",
-      "sentiment_score": null,
-      "related_tickers": [],
-      "tag": "Equity · Markets",
-      "tag_class": "tag-green",
-      "published_at": "2026-03-28T11:09:40+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312377+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862366+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.613612+00:00"
     },
     {
       "id": "fb58b74a8047",
@@ -1195,11 +1124,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-28T11:00:01+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312422+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862380+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.613654+00:00"
     },
     {
       "id": "f674df189a70",
@@ -1216,11 +1141,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-28T09:46:09+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312459+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862394+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.613694+00:00"
     },
     {
       "id": "71530ef60343",
@@ -1237,19 +1158,15 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-28T07:34:09+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312493+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862406+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.613732+00:00"
     },
     {
-      "id": "c318e56aff2e",
+      "id": "c820142ea624",
       "source": "Finnhub",
       "source_name": "Reuters",
-      "headline": "One month into Iran war, only hard choices for Trump - Reuters",
-      "summary": "One month into Iran war, only hard choices for Trump  Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOaUowNVVxX09hcFM0a3lfN2s3MkZrV0gydk5Ea3gweXZJYnZ1d3FvYkdqT2QzTGJaSjQwZldwb19qQjFHbWgzQnR6OWp5T2VMRFpYa3NxYVhRRVV0Ui12bHdEZjJaTTl0SzRkUWpPZXFTZG5uVldwWVpQdmphWmdRSHJnWUlOMG9mdTdHNjUzSlYyd0tkcEh4eG9hWjFEYzI5azlJ?oc=5",
+      "headline": "Inside Iran: A video diary - Reuters",
+      "summary": "Inside Iran: A video diary  Reuters",
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5BVlBlQ2tEQlh4elZMdmo1emZZcld3Q2Q4eXBsWlRPZ25GcnRtb1EwTHdma1J3RHQtWmNxbV82RlhyLW1FWVJZMnF4ajJnLV9HVGpUZWdzN1FCYkNWdXBvTzAyUGNhbFVUcFJqVGRNM3V6VkowZ2lR?oc=5",
       "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
       "category": "equity",
       "sentiment": "neutral",
@@ -1257,19 +1174,15 @@
       "related_tickers": [],
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
-      "published_at": "2026-03-28T05:04:00+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312526+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862418+00:00"
->>>>>>> Stashed changes
+      "published_at": "2026-03-28T05:00:00+00:00",
+      "fetched_at": "2026-03-28T23:04:13.613775+00:00"
     },
     {
-      "id": "59c35b483fdc",
+      "id": "9451d0a0f9b3",
       "source": "Finnhub",
       "source_name": "Reuters",
-      "headline": "Yemen's Houthis strike at Israel as attacks on Iran continue - Reuters",
-      "summary": "Yemen's Houthis strike at Israel as attacks on Iran continue  Reuters",
+      "headline": "Yemen's Houthis strike at Israel in their first such attack since Iran war began - Reuters",
+      "summary": "Yemen's Houthis strike at Israel in their first such attack since Iran war began  Reuters",
       "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNNVVtc1ZtWmlSeGkxX2N1VkZxUW1RUkFReGRKX0o5OXROT21WUjVGMS1lUFlqVFpNcUtSN3gtR3BaMFNaMGR5RDRkYW1DaExPcXJ6eEx6dXlYRVBIWEpHSm94dWNlRTZlQnhaR1BwNGl0WnhneklBenpxV1dMcDFROHlGMFQtOVF1ZGxWUm14VWtvMXlicko5bWZZWHdvSUo1aUJELWxZYTgwZFZkX3ZJd242Z0I?oc=5",
       "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
       "category": "equity",
@@ -1279,11 +1192,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-28T04:27:00+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312551+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862430+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.613821+00:00"
     },
     {
       "id": "c453eea941a0",
@@ -1300,11 +1209,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T23:59:58+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312565+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862442+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.613870+00:00"
     },
     {
       "id": "c6ddd154f429",
@@ -1321,11 +1226,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T22:47:36+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312578+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862455+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.613910+00:00"
     },
     {
       "id": "1c8727252ee8",
@@ -1342,11 +1243,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T22:39:20+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312591+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862467+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.613947+00:00"
     },
     {
       "id": "3e47a70a7e44",
@@ -1363,11 +1260,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T22:14:34+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312625+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862496+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.614026+00:00"
     },
     {
       "id": "b193821b4d57",
@@ -1384,11 +1277,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T21:55:44+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312639+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862508+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.614063+00:00"
     },
     {
       "id": "8aa37b7777d3",
@@ -1405,11 +1294,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T21:46:44+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312654+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862520+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.614101+00:00"
     },
     {
       "id": "d03260b75e6e",
@@ -1426,11 +1311,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T21:42:07+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312667+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862533+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.614136+00:00"
     },
     {
       "id": "b37e5ff7b53f",
@@ -1447,11 +1328,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T21:12:26+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312680+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862543+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.614170+00:00"
     },
     {
       "id": "d9c127533fe4",
@@ -1468,11 +1345,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T20:35:25+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312694+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862555+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.614414+00:00"
     },
     {
       "id": "97cb143d4b06",
@@ -1489,11 +1362,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T19:56:24+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312721+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862576+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.614526+00:00"
     },
     {
       "id": "5cd700159496",
@@ -1510,11 +1379,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T19:18:55+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312736+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862589+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.614579+00:00"
     },
     {
       "id": "23b85e3c339d",
@@ -1531,11 +1396,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T19:16:04+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312749+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862600+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.614615+00:00"
     },
     {
       "id": "746314e8f5b8",
@@ -1552,11 +1413,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T19:06:44+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312761+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862610+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.614646+00:00"
     },
     {
       "id": "38809dff52d5",
@@ -1573,11 +1430,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T19:04:46+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312775+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862623+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.614687+00:00"
     },
     {
       "id": "c9b164f857b4",
@@ -1594,11 +1447,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T18:58:52+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312788+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862635+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.614732+00:00"
     },
     {
       "id": "4fcc05e03c43",
@@ -1615,11 +1464,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T18:53:52+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312802+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862646+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.614765+00:00"
     },
     {
       "id": "87737e8023d6",
@@ -1636,11 +1481,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T18:04:35+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312815+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862658+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.614798+00:00"
     },
     {
       "id": "51755c6dad0d",
@@ -1657,11 +1498,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T17:50:46+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312841+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862681+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.614900+00:00"
     },
     {
       "id": "a408f439de92",
@@ -1678,11 +1515,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T17:01:48+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312873+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862710+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.615002+00:00"
     },
     {
       "id": "0b0bbb15facc",
@@ -1699,11 +1532,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T16:49:31+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312888+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862722+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.615044+00:00"
     },
     {
       "id": "bfc3b6ca3d6b",
@@ -1720,11 +1549,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T16:39:05+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312902+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862734+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.615080+00:00"
     },
     {
       "id": "f9baa04a93c0",
@@ -1741,11 +1566,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T15:33:12+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312914+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862750+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.615109+00:00"
     },
     {
       "id": "0daad7ec71dc",
@@ -1762,11 +1583,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T15:32:12+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312929+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862762+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.615147+00:00"
     },
     {
       "id": "5664e1722456",
@@ -1783,11 +1600,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T15:14:51+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312951+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862785+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.615213+00:00"
     },
     {
       "id": "70fbb87ac60a",
@@ -1804,158 +1617,7 @@
       "tag": "Equity · Markets",
       "tag_class": "tag-green",
       "published_at": "2026-03-27T14:54:37+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312964+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862796+00:00"
->>>>>>> Stashed changes
-    },
-    {
-      "id": "31814ae0f599",
-      "source": "Finnhub",
-      "source_name": "MarketWatch",
-      "headline": "Consumer sentiment drops sharply in late March as war with Iran creates more financial unease",
-      "summary": "",
-      "url": "https://www.marketwatch.com/story/consumer-sentiment-drops-sharply-in-late-march-as-war-with-iran-creates-more-financial-unease-763e37a0",
-      "image": "https://static2.finnhub.io/file/publicdatany/finnhubimage/market_watch_logo.png",
-      "category": "equity",
-      "sentiment": "neutral",
-      "sentiment_score": null,
-      "related_tickers": [],
-      "tag": "Equity · Markets",
-      "tag_class": "tag-green",
-      "published_at": "2026-03-27T14:32:00+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312998+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862833+00:00"
->>>>>>> Stashed changes
-    },
-    {
-      "id": "7c2b8dded27b",
-      "source": "Finnhub",
-      "source_name": "Reuters",
-      "headline": "Iran war could mean stagflation for EU, Dombrovskis says - Reuters",
-      "summary": "Iran war could mean stagflation for EU, Dombrovskis says  Reuters",
-      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQVVBSME9UdGVaU2VneGprdEl4d2xsVU9zM3NXQjRuUS1UV3BkbVdmb295a0ZwRkpyT2t5cFktU3g2LWdsd21BVTZHTkk1WkpQck03MnltNFVIMWtKMDNpNjZDZ3hBcmJMaV91Vy1JOERhdUo5Z1pjZWwxSkRJN2M1SENmbmRvRzI1bHhTWlBJQmVEeVBZYjBMOWFQcXA?oc=5",
-      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
-      "category": "equity",
-      "sentiment": "neutral",
-      "sentiment_score": null,
-      "related_tickers": [],
-      "tag": "Equity · Markets",
-      "tag_class": "tag-green",
-      "published_at": "2026-03-27T14:07:36+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.313010+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862844+00:00"
->>>>>>> Stashed changes
-    },
-    {
-      "id": "b6f2e8a1bc17",
-      "source": "Finnhub",
-      "source_name": "Reuters",
-      "headline": "Gulf states tell US ending the war is not enough, Iran’s capabilities must be degraded - Reuters",
-      "summary": "Gulf states tell US ending the war is not enough, Iran’s capabilities must be degraded  Reuters",
-      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPMFpYcjZtQUJuVEJsNG02OF9tTXVzeWVPd1A0ZGdyUHpSeG01dmRka19YVldNTUNkSnFjSTNNLUxvajVEVkMzQjJLbUJTQW9lYXpYdzZNenpERGh6MW1xTGFsX2xXQU9vTzM2NVQxaVRUZWhYd1BtVnRKdURqa0F6azhjYVctUzJmUERubW1GcWgzVG1MelNxMnhBTUZHbkhoMmtLa2N4YTRnbDd2cXc2TjJxWVdBVHcybFc0UGx0ZHkzMUJfVUpEeV94aHV4alU?oc=5",
-      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
-      "category": "equity",
-      "sentiment": "neutral",
-      "sentiment_score": null,
-      "related_tickers": [],
-      "tag": "Equity · Markets",
-      "tag_class": "tag-green",
-      "published_at": "2026-03-27T14:01:43+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.313027+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862861+00:00"
->>>>>>> Stashed changes
-    },
-    {
-      "id": "75c43910e138",
-      "source": "Finnhub",
-      "source_name": "Reuters",
-      "headline": "Ukraine closes on Mideast deals to help counter Iranian drones - Reuters",
-      "summary": "Ukraine closes on Mideast deals to help counter Iranian drones  Reuters",
-      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNYUZobDF2eUt4U1BzRWo4bGJfWURPeEFKcDM2SDhaV0R5RmlGREN2MURYdUJ6RFphQ0JqWmVDUlg0bnVlcWw4U0pRZWpoQjN1alV3WHExMjZJUWVJaTU2NzB1X1UyMnJxNm5kMUFCaG43VlNwWWdEb0VRQjg2dEctMVI4NkhFT3lqckFWLVBFSUp2dlNjZWJ3SUpFeHU3OG5DVmlXNGtiWQ?oc=5",
-      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
-      "category": "equity",
-      "sentiment": "neutral",
-      "sentiment_score": null,
-      "related_tickers": [],
-      "tag": "Equity · Markets",
-      "tag_class": "tag-green",
-      "published_at": "2026-03-27T13:35:17+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.313043+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862872+00:00"
->>>>>>> Stashed changes
-    },
-    {
-      "id": "dae060098168",
-      "source": "Finnhub",
-      "source_name": "Reuters",
-      "headline": "Exclusive: Trump's Iran war pushes India to rekindle old friendship with Russia - Reuters",
-      "summary": "Exclusive: Trump's Iran war pushes India to rekindle old friendship with Russia  Reuters",
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPWVlqMEt1bTlrZjNqTFJLTURURWdGYkxKZkdZa3lUQ2lIQ0JFS0xjUlRoYl9JZERMOGw0bmpkUVA5NktLWHBkejQxVTl1RjA3cEExWHdISjJlc1NyWlBkV0s4OF9lR0Zwc3JjaVM5eElGU2JHT0pxQ1VhUVZVQUY3bl8yVllGdlkwRXhNcml5cjlKOVZrVkRnV1lBVHpGS0VhRUVKT1MwM3lNY21fOVJRMFlaaTdtOVk?oc=5",
-      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
-      "category": "equity",
-      "sentiment": "neutral",
-      "sentiment_score": null,
-      "related_tickers": [],
-      "tag": "Equity · Markets",
-      "tag_class": "tag-green",
-      "published_at": "2026-03-27T13:32:09+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.313057+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862886+00:00"
->>>>>>> Stashed changes
-    },
-    {
-      "id": "a173351c04d5",
-      "source": "Finnhub",
-      "source_name": "CNBC",
-      "headline": "Iran war wipes out $100 billion from luxury stocks",
-      "summary": "Dubai in the UAE has been the biggest driver of growth in recent years, and the Middle East tensions come at a critical time in the luxury industry.",
-      "url": "https://www.cnbc.com/2026/03/27/iran-war-wipes-out-100-billion-from-luxury-stocks.html",
-      "image": "",
-      "category": "equity",
-      "sentiment": "neutral",
-      "sentiment_score": null,
-      "related_tickers": [],
-      "tag": "Equity · Markets",
-      "tag_class": "tag-green",
-      "published_at": "2026-03-27T13:00:01+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.313086+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862916+00:00"
->>>>>>> Stashed changes
-    },
-    {
-      "id": "39ea223e332f",
-      "source": "Finnhub",
-      "source_name": "Reuters",
-      "headline": "UN rights chief urges US to conclude probe into deadly Iran school strike - Reuters",
-      "summary": "UN rights chief urges US to conclude probe into deadly Iran school strike  Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNWjQwLXRlcW1Ud21hTnRGdDdidjZfd1JRdnVIR2dxeDktWVcyenFTMzAyQzJ5d1RyMV9oTno4bzlTN3liXzNsQlJickJJcE5fWUNjOXlTSkszV1o3eVBmUUZveGlJVWlnajJBOUpOemh0ZTBmaVpLVWpVLVM3eEdzSHRoaEFXMXViUERhTlhMSkphSnVUNm9KTl9paURVWmtEN3E5U0RoRHFZNFhQbTNmcWxGLWx1V2lIeUE?oc=5",
-      "image": "https://static2.finnhub.io/file/finnhub/logo/reuters_logo.jpeg",
-      "category": "equity",
-      "sentiment": "neutral",
-      "sentiment_score": null,
-      "related_tickers": [],
-      "tag": "Equity · Markets",
-      "tag_class": "tag-green",
-      "published_at": "2026-03-27T12:43:18+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.313099+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862926+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.615244+00:00"
     }
   ],
   "commodity": [
@@ -1974,11 +1636,7 @@
       "tag": "Commodity",
       "tag_class": "tag-red",
       "published_at": "2026-03-27T22:32:09+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312609+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862484+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.613990+00:00"
     },
     {
       "id": "8545a3bacea7",
@@ -1995,11 +1653,7 @@
       "tag": "Commodity",
       "tag_class": "tag-red",
       "published_at": "2026-03-27T20:24:53+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312707+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862566+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.614482+00:00"
     },
     {
       "id": "e1dc48fa55a5",
@@ -2016,11 +1670,7 @@
       "tag": "Commodity",
       "tag_class": "tag-red",
       "published_at": "2026-03-27T18:04:20+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312829+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862669+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.614857+00:00"
     },
     {
       "id": "b96a1b26b4d2",
@@ -2037,53 +1687,7 @@
       "tag": "Commodity",
       "tag_class": "tag-red",
       "published_at": "2026-03-27T17:08:22+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312861+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862698+00:00"
->>>>>>> Stashed changes
-    },
-    {
-      "id": "6897ef604043",
-      "source": "Finnhub",
-      "source_name": "CNBC",
-      "headline": "The key to this stock market is oil. Here's what investors need to consider",
-      "summary": "High oil prices create a difficult dynamic for companies, consumers, and investors.",
-      "url": "https://www.cnbc.com/2026/03/27/the-key-to-this-stock-market-is-oil-what-investors-need-to-consider.html",
-      "image": "https://image.cnbcfm.com/api/v1/image/108277330-17733319542026-03-12t153731z_1782110747_rc213kan8r1m_rtrmadp_0_iran-crisis-gulf-oman.jpeg?v=1773331994&w=1920&h=1080",
-      "category": "commodity",
-      "sentiment": "neutral",
-      "sentiment_score": null,
-      "related_tickers": [],
-      "tag": "Commodity",
-      "tag_class": "tag-red",
-      "published_at": "2026-03-27T14:49:18+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312975+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862808+00:00"
->>>>>>> Stashed changes
-    },
-    {
-      "id": "791312d37f46",
-      "source": "Finnhub",
-      "source_name": "CNBC",
-      "headline": "Rising oil prices could increase food costs—but hoarding groceries ‘makes a bad situation worse,’ economist says",
-      "summary": "Rising oil prices can take months to filter into grocery bills, and the impact is often smaller than consumers expect.",
-      "url": "https://www.cnbc.com/2026/03/27/rising-oil-prices-lift-food-costs.html",
-      "image": "https://image.cnbcfm.com/api/v1/image/108282513-1774387233346-gettyimages-1385769253-img_96293.jpeg?v=1774387624&w=1920&h=1080",
-      "category": "commodity",
-      "sentiment": "neutral",
-      "sentiment_score": null,
-      "related_tickers": [],
-      "tag": "Commodity",
-      "tag_class": "tag-red",
-      "published_at": "2026-03-27T13:31:12+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.313071+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862906+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.614970+00:00"
     }
   ],
   "crypto": [
@@ -2102,11 +1706,7 @@
       "tag": "Crypto · Market",
       "tag_class": "tag-amber",
       "published_at": "2026-03-28T12:00:01+00:00",
-<<<<<<< Updated upstream
-      "fetched_at": "2026-03-28T12:55:54.312258+00:00"
-=======
-      "fetched_at": "2026-03-28T12:34:13.862323+00:00"
->>>>>>> Stashed changes
+      "fetched_at": "2026-03-28T23:04:13.613533+00:00"
     }
   ]
 }

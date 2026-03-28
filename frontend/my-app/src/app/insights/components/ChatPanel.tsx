@@ -4,12 +4,14 @@ import { useState, useRef, useEffect } from 'react';
 import type { ChatMessage, ThinkingStep } from '@/lib/types/agent';
 import MessageBubble from './MessageBubble';
 import ThinkingStepRow from './ThinkingStep';
+import { getTheme } from '../theme';
 
 interface Props {
   messages: ChatMessage[];
   thinkingSteps: ThinkingStep[];
   streamingAnswer: string;
   isStreaming: boolean;
+  activeIntent: string;
   onSend: (query: string) => void;
   onStop: () => void;
   onNewChat: () => void;
@@ -20,6 +22,7 @@ export default function ChatPanel({
   thinkingSteps,
   streamingAnswer,
   isStreaming,
+  activeIntent,
   onSend,
   onStop,
   onNewChat,
@@ -49,20 +52,21 @@ export default function ChatPanel({
   }
 
   const isEmpty = messages.length === 0 && !isStreaming;
+  const theme = getTheme(activeIntent);
 
   return (
     <div
       className="flex flex-col flex-1 min-h-0 rounded-xl overflow-hidden"
       style={{
         backgroundColor: '#ffffff',
-        border: '1px solid rgba(198,198,205,0.15)',
+        border: `1px solid ${theme.softBorder}`,
         boxShadow: '0 8px 32px rgba(11,28,48,0.04)',
       }}
     >
       {/* Header */}
       <div
         className="flex items-center justify-between px-5 py-3"
-        style={{ borderBottom: '1px solid rgba(226,232,240,0.5)' }}
+        style={{ borderBottom: `1px solid ${theme.softBorder}`, backgroundColor: theme.softBg }}
       >
         <div className="flex items-center gap-2">
           <div
@@ -71,7 +75,7 @@ export default function ChatPanel({
           >
             <span
               className="material-symbols-outlined"
-              style={{ fontSize: '14px', color: '#39b8fd', fontVariationSettings: "'FILL' 1, 'wght' 400" }}
+              style={{ fontSize: '14px', color: theme.accent, fontVariationSettings: "'FILL' 1, 'wght' 400" }}
             >
               neurology
             </span>
@@ -85,7 +89,7 @@ export default function ChatPanel({
           {isStreaming && (
             <span
               className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full"
-              style={{ backgroundColor: '#e5eeff', color: '#006591', fontFamily: 'Inter, sans-serif' }}
+              style={{ backgroundColor: '#ffffff', color: theme.accent, fontFamily: 'Inter, sans-serif', border: `1px solid ${theme.softBorder}` }}
             >
               Researching...
             </span>
@@ -182,8 +186,8 @@ export default function ChatPanel({
             maxHeight: '120px',
           }}
           onFocus={(e) => {
-            e.currentTarget.style.borderColor = '#006591';
-            e.currentTarget.style.boxShadow = '0 0 0 2px rgba(0,101,145,0.12)';
+            e.currentTarget.style.borderColor = theme.accent;
+            e.currentTarget.style.boxShadow = `0 0 0 2px ${theme.accent}22`;
           }}
           onBlur={(e) => {
             e.currentTarget.style.borderColor = 'rgba(198,198,205,0.2)';
@@ -204,7 +208,7 @@ export default function ChatPanel({
             type="submit"
             disabled={!input.trim()}
             className="px-4 py-2.5 rounded-lg text-[12px] font-bold text-white transition-opacity disabled:opacity-40"
-            style={{ backgroundColor: '#131b2e', fontFamily: 'Inter, sans-serif' }}
+            style={{ backgroundColor: theme.accent, fontFamily: 'Inter, sans-serif' }}
           >
             <span
               className="material-symbols-outlined"

@@ -1,10 +1,12 @@
 'use client';
 
 import { useState } from 'react';
+import { getTheme } from '../theme';
 
 interface Props {
   onSend: (query: string) => void;
   disabled: boolean;
+  activeIntent: string;
 }
 
 const ACTIONS = [
@@ -38,9 +40,10 @@ const ACTIONS = [
   },
 ];
 
-export default function QuickActions({ onSend, disabled }: Props) {
+export default function QuickActions({ onSend, disabled, activeIntent }: Props) {
   const [activeIdx, setActiveIdx] = useState<number | null>(null);
   const [inputVal, setInputVal] = useState('');
+  const theme = getTheme(activeIntent);
 
   function handleClick(idx: number) {
     const action = ACTIONS[idx];
@@ -63,7 +66,7 @@ export default function QuickActions({ onSend, disabled }: Props) {
   }
 
   return (
-    <div className="space-y-2">
+    <div className="space-y-2 p-2 rounded-xl" style={{ border: `1px solid ${theme.softBorder}`, backgroundColor: theme.softBg }}>
       <div className="flex gap-2">
         {ACTIONS.map((action, idx) => (
           <button
@@ -100,7 +103,7 @@ export default function QuickActions({ onSend, disabled }: Props) {
             className="flex-1 px-4 py-2.5 rounded-lg text-sm outline-none"
             style={{
               backgroundColor: '#ffffff',
-              border: '1px solid rgba(198,198,205,0.3)',
+              border: `1px solid ${theme.softBorder}`,
               color: '#0f172a',
               fontFamily: 'Inter, sans-serif',
             }}

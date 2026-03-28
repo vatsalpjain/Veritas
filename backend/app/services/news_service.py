@@ -93,6 +93,9 @@ def _is_cache_fresh() -> bool:
     if not FILE_META.exists():
         return False
     meta = _load_json(FILE_META)
+    if not isinstance(meta, dict):
+        log.warning("Invalid meta format in %s — expected object, got %s", FILE_META, type(meta).__name__)
+        return False
     last = meta.get("last_fetched_ts", 0)
     return (time.time() - last) < CACHE_TTL_SECS
 
@@ -377,16 +380,22 @@ def get_news(
 
     # ticker filter takes priority
     if ticker:
-        by_ticker: dict = _load_json(FILE_BY_TICKER) if FILE_BY_TICKER.exists() else {}
+        by_ticker = _load_json(FILE_BY_TICKER) if FILE_BY_TICKER.exists() else {}
+        if not isinstance(by_ticker, dict):
+            by_ticker = {}
         return by_ticker.get(ticker.upper(), [])[:limit]
 
     # category filter
     if category and category != "all":
-        by_cat: dict = _load_json(FILE_BY_CAT) if FILE_BY_CAT.exists() else {}
+        by_cat = _load_json(FILE_BY_CAT) if FILE_BY_CAT.exists() else {}
+        if not isinstance(by_cat, dict):
+            by_cat = {}
         return by_cat.get(category, [])[:limit]
 
     # default: unified feed
-    unified: list = _load_json(FILE_UNIFIED) if FILE_UNIFIED.exists() else []
+    unified = _load_json(FILE_UNIFIED) if FILE_UNIFIED.exists() else []
+    if not isinstance(unified, list):
+        unified = []
     return unified[:limit]
 
 
@@ -417,7 +426,9 @@ def get_ticker_news(ticker: str, limit: int = 10) -> list[dict]:
     """
     if not _is_cache_fresh():
         fetch_and_store()
-    by_ticker: dict = _load_json(FILE_BY_TICKER) if FILE_BY_TICKER.exists() else {}
+    by_ticker = _load_json(FILE_BY_TICKER) if FILE_BY_TICKER.exists() else {}
+    if not isinstance(by_ticker, dict):
+        by_ticker = {}
     return by_ticker.get(ticker.upper(), [])[:limit]
 
 
@@ -433,8 +444,12 @@ def get_market_intelligence_feed(domain: str = "all", limit: int = 10) -> dict:
     # Get articles based on domain
     if domain == "all" or not domain:
         articles = _load_json(FILE_UNIFIED) if FILE_UNIFIED.exists() else []
+        if not isinstance(articles, list):
+            articles = []
     else:
-        by_cat: dict = _load_json(FILE_BY_CAT) if FILE_BY_CAT.exists() else {}
+        by_cat = _load_json(FILE_BY_CAT) if FILE_BY_CAT.exists() else {}
+        if not isinstance(by_cat, dict):
+            by_cat = {}
         articles = by_cat.get(domain, [])
     
     articles = articles[:limit]
@@ -469,8 +484,12 @@ def get_market_intelligence_feed(domain: str = "all", limit: int = 10) -> dict:
         })
     
     # Get counts per domain for the filter buttons
-    by_cat: dict = _load_json(FILE_BY_CAT) if FILE_BY_CAT.exists() else {}
-    unified: list = _load_json(FILE_UNIFIED) if FILE_UNIFIED.exists() else []
+    by_cat = _load_json(FILE_BY_CAT) if FILE_BY_CAT.exists() else {}
+    if not isinstance(by_cat, dict):
+        by_cat = {}
+    unified = _load_json(FILE_UNIFIED) if FILE_UNIFIED.exists() else []
+    if not isinstance(unified, list):
+        unified = []
     
     return {
         "domain": domain,

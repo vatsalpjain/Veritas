@@ -4,6 +4,7 @@ Router node — classifies user intent using Llama 8B for fast, cheap classifica
 
 import json
 import logging
+from datetime import datetime, timezone
 
 from app.agent.config import ROUTER_MODEL, ROUTER_MAX_TOKENS, ROUTER_TEMPERATURE, safe_llm_call
 from app.agent.prompts.router_prompt import ROUTER_SYSTEM_PROMPT
@@ -59,6 +60,27 @@ async def router_node(state: AgentState) -> dict:
         "intent_confidence": float(parsed.get("confidence", 0.8)),
         "entities": list(parsed.get("entities") or []),
         "needs_portfolio": bool(parsed.get("needs_portfolio", False)),
+        "traces": [
+            {
+                "iteration": int(state.get("iteration", 0)) + 1,
+                "layer": "router",
+                "intent": intent,
+                "summary": f"Router classified query as '{intent}'.",
+                "confidence": float(parsed.get("confidence", 0.8)),
+                "stop_reason": None,
+                "timestamp": datetime.now(timezone.utc).isoformat(),
+            }
+        ],
+        "iteration_outputs": [
+            {
+                "iteration": int(state.get("iteration", 0)) + 1,
+                "layer": "router",
+                "intent": intent,
+                "entities": list(parsed.get("entities") or []),
+                "needs_portfolio": bool(parsed.get("needs_portfolio", False)),
+                "confidence": float(parsed.get("confidence", 0.8)),
+            }
+        ],
         "thinking_steps": [
             {"step": f"Intent: {intent} ({parsed.get('confidence', 0.8):.0%})", "tool": None, "status": "done"},
         ],

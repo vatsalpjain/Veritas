@@ -85,10 +85,14 @@ def summarize_portfolio(portfolio: dict[str, Any]) -> str:
 def build_portfolio_snapshots(portfolio: dict[str, Any]) -> list[dict[str, Any]]:
     """Build DataSnapshot dicts for the context panel."""
     summary = portfolio.get("summary") or {}
-    if not summary:
-        return []
+    allocation = portfolio.get("allocation") or []
+    diversification = portfolio.get("diversification") or {}
+    strategy = portfolio.get("strategy") or {}
 
-    return [
+    snapshots: list[dict[str, Any]] = []
+
+    if summary:
+        snapshots.append(
         {
             "type": "portfolio_summary",
             "label": "Your Portfolio",
@@ -100,4 +104,32 @@ def build_portfolio_snapshots(portfolio: dict[str, Any]) -> list[dict[str, Any]]
                 "holdings_count": summary.get("holdings_count"),
             },
         }
-    ]
+    )
+
+    if allocation:
+        snapshots.append(
+            {
+                "type": "metric",
+                "label": "Allocation Mix",
+                "data": {
+                    "allocations": allocation,
+                },
+            }
+        )
+
+    if diversification or strategy:
+        snapshots.append(
+            {
+                "type": "metric",
+                "label": "Risk Profile",
+                "data": {
+                    "score": diversification.get("score"),
+                    "grade": diversification.get("grade"),
+                    "sectorCount": diversification.get("sectorCount"),
+                    "assetClassCount": diversification.get("assetClassCount"),
+                    "strategyName": strategy.get("name"),
+                },
+            }
+        )
+
+    return snapshots

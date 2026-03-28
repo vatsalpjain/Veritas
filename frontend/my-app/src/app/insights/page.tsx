@@ -7,7 +7,11 @@ import type {
   ThinkingStep,
   SourceReference,
   DataSnapshot,
+  EvidenceItem,
+  LayerTrace,
+  IterationOutput,
   VerificationResult,
+  WorkflowSummary,
 } from '@/lib/types/agent';
 import ChatPanel from './components/ChatPanel';
 import ContextPanel from './components/ContextPanel';
@@ -18,6 +22,11 @@ export default function InsightsPage() {
   const [sources, setSources] = useState<SourceReference[]>([]);
   const [dataSnapshots, setDataSnapshots] = useState<DataSnapshot[]>([]);
   const [thinkingSteps, setThinkingSteps] = useState<ThinkingStep[]>([]);
+  const [layerTraces, setLayerTraces] = useState<LayerTrace[]>([]);
+  const [iterationOutputs, setIterationOutputs] = useState<IterationOutput[]>([]);
+  const [evidenceItems, setEvidenceItems] = useState<EvidenceItem[]>([]);
+  const [workflowSummary, setWorkflowSummary] = useState<WorkflowSummary | null>(null);
+  const [activeIntent, setActiveIntent] = useState<string>('general');
   const [verification, setVerification] = useState<VerificationResult | null>(null);
   const [isStreaming, setIsStreaming] = useState(false);
   const [streamingAnswer, setStreamingAnswer] = useState('');
@@ -32,6 +41,11 @@ export default function InsightsPage() {
     setSources([]);
     setDataSnapshots([]);
     setThinkingSteps([]);
+    setLayerTraces([]);
+    setIterationOutputs([]);
+    setEvidenceItems([]);
+    setWorkflowSummary(null);
+    setActiveIntent('general');
     setVerification(null);
     setStreamingAnswer('');
     setIsStreaming(true);
@@ -69,6 +83,21 @@ export default function InsightsPage() {
         onDataSnapshot: (snapshot) => {
           setDataSnapshots(prev => [...prev, snapshot]);
         },
+        onLayerTrace: (trace) => {
+          setLayerTraces(prev => [...prev, trace]);
+          if (trace.layer === 'router' && trace.intent) {
+            setActiveIntent(trace.intent);
+          }
+        },
+        onIterationOutput: (output) => {
+          setIterationOutputs(prev => [...prev, output]);
+        },
+        onEvidenceItem: (evidence) => {
+          setEvidenceItems(prev => {
+            if (prev.some(item => item.id === evidence.id)) return prev;
+            return [...prev, evidence];
+          });
+        },
         onAnswerStart: () => {
           setStreamingAnswer('');
         },
@@ -89,6 +118,9 @@ export default function InsightsPage() {
         },
         onVerification: (result) => {
           setVerification(result);
+        },
+        onWorkflowDone: (summary) => {
+          setWorkflowSummary(summary);
         },
         onDone: () => {
           setIsStreaming(false);
@@ -120,6 +152,11 @@ export default function InsightsPage() {
     setSources([]);
     setDataSnapshots([]);
     setThinkingSteps([]);
+    setLayerTraces([]);
+    setIterationOutputs([]);
+    setEvidenceItems([]);
+    setWorkflowSummary(null);
+    setActiveIntent('general');
     setVerification(null);
     setStreamingAnswer('');
     setSessionId(`veritas-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`);
@@ -129,7 +166,7 @@ export default function InsightsPage() {
     <div className="flex flex-col flex-1 min-h-0 overflow-hidden">
       {/* Quick actions bar */}
       <div className="px-6 pt-4 pb-2">
-        <QuickActions onSend={handleSend} disabled={isStreaming} />
+        <QuickActions onSend={handleSend} disabled={isStreaming} activeIntent={activeIntent} />
       </div>
 
       {/* Main split: Chat + Context */}
@@ -141,6 +178,7 @@ export default function InsightsPage() {
             thinkingSteps={thinkingSteps}
             streamingAnswer={streamingAnswer}
             isStreaming={isStreaming}
+            activeIntent={activeIntent}
             onSend={handleSend}
             onStop={handleStop}
             onNewChat={handleNewChat}
@@ -152,7 +190,12 @@ export default function InsightsPage() {
           <ContextPanel
             sources={sources}
             dataSnapshots={dataSnapshots}
+            layerTraces={layerTraces}
+            iterationOutputs={iterationOutputs}
+            evidenceItems={evidenceItems}
+            workflowSummary={workflowSummary}
             verification={verification}
+            activeIntent={activeIntent}
           />
         </div>
       </div>

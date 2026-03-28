@@ -3,11 +3,14 @@ General research node — catch-all for general financial questions.
 """
 
 import logging
+from datetime import datetime, timezone
 
 from app.agent.config import PRIMARY_MODEL, safe_llm_call
 from app.agent.prompts.system import get_veritas_system_prompt
 from app.agent.state import AgentState
+from app.agent.tools.evidence_tools import build_evidence_items, build_market_evidence
 from app.agent.tools.market_data import build_data_snapshots, get_asset_data, summarize_market_data
+from app.agent.tools.workflow_plan import get_mode_plan
 from app.agent.tools.web_search import summarize_search_results, web_search
 
 log = logging.getLogger("veritas.nodes.general_research")
@@ -22,9 +25,12 @@ async def general_research_node(state: AgentState) -> dict:
     """
     query = state["query"]
     entities = state.get("entities") or []
+    iteration = int(state.get("iteration", 0)) + 1
 
     # ── Step 1: Web search ──
     search_results = web_search(query, max_results=3)
+    if iteration > 1:
+        search_results += web_search(f"{query} corroboration counterpoint analysis", max_results=2)
     search_summary = summarize_search_results(search_results)
 
     # ── Step 2: Market data if entities present ──
@@ -67,13 +73,50 @@ async def general_research_node(state: AgentState) -> dict:
             "confidence": None,
         })
 
+    evidence_items = (
+        build_evidence_items(iteration=iteration, intent="general", source_type="web_search", raw_items=search_results)
+        + build_market_evidence(iteration=iteration, intent="general", market_data=market_data if entities else {})
+    )
+    mode_plan = get_mode_plan("general", iteration, entities)
+    confidence_by_title = {e["source_title"]: e["confidence"] for e in evidence_items}
+    for src in sources:
+        if src.get("title") in confidence_by_title:
+            src["confidence"] = confidence_by_title[src["title"]]
+
     return {
         "tool_results": [{"tool": "web_search", "data": search_summary}],
         "tool_summaries": ["Searched web for context"],
         "sources": sources,
         "data_snapshots": data_snapshots,
+        "traces": [
+            {
+                "iteration": int(state.get("iteration", 0)) + 1,
+                "layer": "execution",
+                "intent": "general",
+                "summary": "Synthesized response from web context and optional market snapshots.",
+                "confidence": float(state.get("intent_confidence", 0.0)) if state.get("intent_confidence") is not None else None,
+                "stop_reason": None,
+                "timestamp": datetime.now(timezone.utc).isoformat(),
+            }
+        ],
+        "iteration_outputs": [
+            {
+                "iteration": int(state.get("iteration", 0)) + 1,
+                "layer": "execution",
+                "intent": "general",
+                "tools": ["web_search", "market_data"],
+                "tool_summaries": [
+                    f"Collected {len(search_results)} web references",
+                    f"Loaded market snapshots for {len(entities)} entities",
+                ],
+                "mode_plan": mode_plan,
+                "answer_preview": answer[:220],
+            }
+        ],
+        "evidence_items": evidence_items,
         "thinking_steps": [
             {"step": "Researching...", "tool": "web_search", "status": "done"},
+            *([{"step": "Running corroboration pass...", "tool": "web_search", "status": "done"}] if iteration > 1 else []),
         ],
         "answer": answer,
     }
