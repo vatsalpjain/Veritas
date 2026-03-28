@@ -214,7 +214,7 @@ export default function NewsSection({ data }: Props) {
   if (safeData.length === 0) return null;
 
   return (
-    <section className="space-y-4 min-w-0 w-full">
+    <section className="space-y-4 min-w-0 w-full rounded-2xl p-6" style={{ backgroundColor: '#0b1c30' }}>
       {/* Header */}
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">

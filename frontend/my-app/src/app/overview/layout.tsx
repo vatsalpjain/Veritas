@@ -14,10 +14,10 @@ export default function OverviewLayout({ children }: { children: React.ReactNode
       style={{ fontFamily: 'var(--font-inter), sans-serif' }}
     >
       <Sidebar />
-      <div className="flex-1 ml-64 flex flex-col min-h-screen">
+      <div className="flex-1 ml-64 flex flex-col min-h-screen min-w-0">
         <SharedTopNav />
-        <main className="p-8 w-full overflow-x-hidden">
-          <div className="space-y-12 max-w-[1400px]">
+        <main className="flex-1 p-6 w-full overflow-x-hidden min-w-0">
+          <div className="space-y-8 w-full">
             {children}
           </div>
         </main>
