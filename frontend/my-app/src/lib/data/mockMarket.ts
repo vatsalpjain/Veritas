@@ -6,11 +6,67 @@ import { apiFetch } from '@/lib/api/client';
 // All data is computed and cached by the backend in portfolio.json
 // ─────────────────────────────────────────────────────────────────────────────
 
+/**
+ * Fetch live NASDAQ candlestick data from backend
+ */
+export async function fetchNasdaqCandles(period: ChartPeriod): Promise<CandlePoint[]> {
+  try {
+    const periodMap: Record<ChartPeriod, { period: string; interval: string }> = {
+      '1D': { period: '1d', interval: '5m' },
+      '1W': { period: '5d', interval: '1h' },
+      '1M': { period: '1mo', interval: '1d' },
+      '1Y': { period: '1y', interval: '1d' },
+    };
+    
+    const { period: yf_period, interval } = periodMap[period];
+    const response = await fetch(
+      `http://localhost:8000/yf/history/^IXIC?period=${yf_period}&interval=${interval}`,
+      { next: { revalidate: 60 } }
+    );
+    
+    if (!response.ok) throw new Error('Failed to fetch NASDAQ data');
+    
+    const data = await response.json();
+    return data.map((bar: any) => ({
+      date: bar.date,
+      open: bar.open,
+      high: bar.high,
+      low: bar.low,
+      close: bar.close,
+      volume: bar.volume,
+    }));
+  } catch (error) {
+    console.error('Failed to fetch NASDAQ candles:', error);
+    // Return fallback mock data
+    return candlesByPeriod[period];
+  }
+}
+
 export async function getMarketData(): Promise<MarketData> {
   try {
-    // Fetch all market data from the backend in one call
-    const data = await apiFetch<MarketData>('/markets', { revalidate: 60 });
-    return data;
+    // Fetch NASDAQ candles for all periods in parallel
+    const [candles1D, candles1W, candles1M, candles1Y] = await Promise.all([
+      fetchNasdaqCandles('1D'),
+      fetchNasdaqCandles('1W'),
+      fetchNasdaqCandles('1M'),
+      fetchNasdaqCandles('1Y'),
+    ]);
+
+    return {
+      ...mockMarketData,
+      chart: {
+        symbol: '^IXIC',
+        name: 'NASDAQ Composite',
+        volatility: 1.4,
+        rsi: 64.2,
+        candles: {
+          '1D': candles1D,
+          '1W': candles1W,
+          '1M': candles1M,
+          '1Y': candles1Y,
+        },
+      },
+    };
   } catch (error) {
     console.error('Failed to fetch market data from backend:', error);
     // Return fallback mock data if backend fails
@@ -56,10 +112,10 @@ export const mockMarketData: MarketData = {
   ],
 
   chart: {
-    symbol: 'QQQ',
-    name: 'Invesco QQQ Trust Series 1',
-    volatility: 1.4,
-    rsi: 64.2,
+    symbol: 'TCS.NS',
+    name: 'Tata Consultancy Services Ltd',
+    volatility: 1.2,
+    rsi: 58.4,
     candles: candlesByPeriod,
   },
 

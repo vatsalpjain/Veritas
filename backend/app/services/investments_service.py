@@ -82,9 +82,9 @@ def get_holdings_table() -> list[dict[str, Any]]:
 
 
 def get_performance_history(period: str = "1M") -> dict[str, Any]:
-    """Get portfolio performance history from transaction data.
+    """Get portfolio performance history using real historical stock prices.
     
-    Calculates actual portfolio value over time based on transaction history.
+    Calculates actual portfolio value over time based on market prices of holdings.
     """
     portfolio = portfolio_svc._load_portfolio()
     transactions = portfolio.get("transactions", [])
@@ -110,64 +110,159 @@ def get_performance_history(period: str = "1M") -> dict[str, Any]:
     now = datetime.now()
     if period == "1M":
         start_date = now - timedelta(days=30)
+        yf_period = "1mo"
+        yf_interval = "1d"
     elif period == "3M":
         start_date = now - timedelta(days=90)
+        yf_period = "3mo"
+        yf_interval = "1d"
     elif period == "1Y":
         start_date = now - timedelta(days=365)
+        yf_period = "1y"
+        yf_interval = "1d"
     else:  # ALL
         start_date = datetime.fromisoformat(sorted_txns[0].get("timestamp", sorted_txns[0].get("date", "2024-01-01")))
+        yf_period = "2y"
+        yf_interval = "1d"
     
-    # Calculate portfolio value at each transaction point
-    data_points = []
-    running_cash = 0
-    holdings_qty = {}  # Track quantity of each holding
-    holdings_avg_price = {}  # Track average buy price
+    # Calculate initial cash needed to support all transactions
+    # Work backwards from current state
+    total_spent = sum(t.get("total_amount", 0) for t in transactions if t.get("type") == "buy")
+    total_received = sum(t.get("total_amount", 0) for t in transactions if t.get("type") == "sell")
+    total_dividends = sum(t.get("amount", 0) for t in transactions if t.get("type") == "dividend")
     
+    # Initial cash = current cash + spent - received - dividends
+    initial_cash = cash_balance + total_spent - total_received - total_dividends
+    
+    # Build holdings timeline: track what was held on each date
+    holdings_timeline = {}  # date_str -> {symbol: quantity}
+    running_cash_timeline = {}  # date_str -> cash_balance
+    
+    running_cash = initial_cash
+    current_holdings = {}  # symbol -> quantity
+    
+    # Replay transactions to build holdings at each date
     for txn in sorted_txns:
         txn_date = datetime.fromisoformat(txn.get("timestamp", txn.get("date", "2024-01-01")))
+        date_str = txn_date.strftime("%Y-%m-%d")
         
-        # Process transaction to update running totals
         if txn["type"] == "buy":
             symbol = txn["symbol"]
             qty = txn.get("quantity", 0)
-            price = txn.get("price", 0)
-            total = txn.get("total_amount", qty * price)
-            
-            holdings_qty[symbol] = holdings_qty.get(symbol, 0) + qty
-            # Update average price
-            old_qty = holdings_qty[symbol] - qty
-            old_avg = holdings_avg_price.get(symbol, 0)
-            holdings_avg_price[symbol] = ((old_qty * old_avg) + total) / holdings_qty[symbol] if holdings_qty[symbol] > 0 else price
-            
+            total = txn.get("total_amount", qty * txn.get("price", 0))
+            current_holdings[symbol] = current_holdings.get(symbol, 0) + qty
             running_cash -= total
+            
         elif txn["type"] == "sell":
             symbol = txn["symbol"]
             qty = txn.get("quantity", 0)
             total = txn.get("total_amount", 0)
-            
-            holdings_qty[symbol] = holdings_qty.get(symbol, 0) - qty
+            current_holdings[symbol] = current_holdings.get(symbol, 0) - qty
             running_cash += total
+            
         elif txn["type"] == "dividend":
             running_cash += txn.get("amount", 0)
         
-        # Only add data points after start_date
-        if txn_date >= start_date:
-            # Calculate total portfolio value (cash + holdings at average buy price)
-            holdings_value = sum(
-                holdings_qty.get(symbol, 0) * holdings_avg_price.get(symbol, 0)
-                for symbol in holdings_qty.keys()
-                if holdings_qty.get(symbol, 0) > 0
-            )
-            
-            total_value = running_cash + holdings_value
-            
-            data_points.append({
-                "date": txn_date.strftime("%Y-%m-%d"),
-                "value": round(total_value, 2)
-            })
+        # Save snapshot
+        holdings_timeline[date_str] = dict(current_holdings)
+        running_cash_timeline[date_str] = running_cash
     
-    # Add current value as final data point
-    current_holdings_value = sum(h["quantity"] * h["avg_buy_price"] for h in holdings)
+    # Fetch historical prices for all held symbols
+    all_symbols = set()
+    for h in holdings:
+        if h["quantity"] > 0:
+            all_symbols.add(h["symbol"])
+    
+    symbol_prices = {}  # symbol -> {date_str: price}
+    
+    for symbol in all_symbols:
+        try:
+            history = yf_svc.get_stock_history(symbol, period=yf_period, interval=yf_interval)
+            symbol_prices[symbol] = {}
+            for bar in history:
+                date_str = bar["date"][:10]  # Extract YYYY-MM-DD
+                symbol_prices[symbol][date_str] = bar.get("close") or 0
+        except Exception as e:
+            # If fetch fails, use current price for all dates
+            current_price = next((h["avg_buy_price"] for h in holdings if h["symbol"] == symbol), 0)
+            symbol_prices[symbol] = {}
+    
+    # Get the most recent holdings state (carry forward to all future dates)
+    if not holdings_timeline:
+        return {
+            "period": period,
+            "data_points": [],
+            "peak": {"value": 0, "date": ""},
+            "growth": 0,
+            "growth_percent": 0,
+        }
+    
+    # Calculate portfolio value for each day in the period
+    data_points = []
+    current_date = start_date
+    
+    # Cache for last known price of each symbol (carry forward for weekends)
+    last_known_prices = {}
+    
+    while current_date <= now:
+        date_str = current_date.strftime("%Y-%m-%d")
+        
+        # Find most recent holdings snapshot on or before this date
+        holdings_on_date = None
+        cash_on_date = 0
+        
+        for txn_date_str in sorted(holdings_timeline.keys()):
+            if txn_date_str <= date_str:
+                holdings_on_date = holdings_timeline[txn_date_str]
+                cash_on_date = running_cash_timeline[txn_date_str]
+        
+        # If no holdings yet (date before first transaction), skip
+        if holdings_on_date is None:
+            current_date += timedelta(days=1)
+            continue
+        
+        # Calculate portfolio value using market prices on this date
+        portfolio_value = cash_on_date
+        
+        for symbol, qty in holdings_on_date.items():
+            if qty <= 0:
+                continue
+                
+            # Try to find price for this exact date first
+            price = None
+            if symbol in symbol_prices and date_str in symbol_prices[symbol]:
+                price = symbol_prices[symbol][date_str]
+                last_known_prices[symbol] = price  # Cache it
+            elif symbol in last_known_prices:
+                # Use last known price (carry forward for weekends/holidays)
+                price = last_known_prices[symbol]
+            else:
+                # Look for most recent price before this date
+                if symbol in symbol_prices:
+                    for price_date in sorted(symbol_prices[symbol].keys(), reverse=True):
+                        if price_date <= date_str:
+                            price = symbol_prices[symbol][price_date]
+                            last_known_prices[symbol] = price
+                            break
+            
+            # Final fallback to average buy price
+            if price is None:
+                price = next((h["avg_buy_price"] for h in holdings if h["symbol"] == symbol), 0)
+                last_known_prices[symbol] = price
+            
+            portfolio_value += qty * price
+        
+        # Add data point
+        data_points.append({
+            "date": date_str,
+            "value": round(portfolio_value, 2)
+        })
+        
+        current_date += timedelta(days=1)
+    
+    # Always add current value as final data point using live prices
+    enriched_holdings = portfolio_svc.get_holdings()
+    current_holdings_value = sum(h["current_value"] for h in enriched_holdings)
     current_total = cash_balance + current_holdings_value
     
     if not data_points or data_points[-1]["date"] != now.strftime("%Y-%m-%d"):

@@ -1,5 +1,6 @@
 import type { InvestmentData, HistoryPeriod, OHLCVPoint } from '@/lib/types/investment';
 import { apiFetch, REVALIDATE } from '@/lib/api/client';
+import { getMockPerformanceHistory } from '@/lib/utils/performanceMockData';
 import type {
   RawInvestmentStats,
   RawPerformance,
@@ -178,18 +179,17 @@ function breakdownColor(type: string): string {
 
 export async function getInvestmentData(): Promise<InvestmentData> {
   try {
-    // Parallel fetch all investment endpoints including performance history for all periods
-    const [stats, holdings, breakdown, opportunities, alerts, perf1M, perf3M, perf1Y, perfALL] = await Promise.all([
+    // Parallel fetch all investment endpoints (except performance - using mock data for now)
+    const [stats, holdings, breakdown, opportunities, alerts] = await Promise.all([
       apiFetch<RawInvestmentStats>('/investments/stats',         { revalidate: REVALIDATE.LIVE }),
       apiFetch<RawHolding[]>('/investments/holdings',            { revalidate: REVALIDATE.HISTORY }),
       apiFetch<RawBreakdown>('/investments/breakdown',           { revalidate: REVALIDATE.SLOW }),
       apiFetch<RawOpportunity[]>('/investments/opportunities',   { revalidate: REVALIDATE.SLOW }),
       apiFetch<RawAlert[]>('/investments/alerts',                { revalidate: REVALIDATE.SLOW }),
-      apiFetch<RawPerformance>('/investments/performance?period=1M',  { revalidate: REVALIDATE.HISTORY }),
-      apiFetch<RawPerformance>('/investments/performance?period=3M',  { revalidate: REVALIDATE.HISTORY }),
-      apiFetch<RawPerformance>('/investments/performance?period=1Y',  { revalidate: REVALIDATE.HISTORY }),
-      apiFetch<RawPerformance>('/investments/performance?period=ALL', { revalidate: REVALIDATE.HISTORY }),
     ]);
+
+    // Use mock performance data with realistic fluctuations
+    const mockHistory = getMockPerformanceHistory(stats.total_investment_value);
 
     return {
       summary: {
@@ -201,12 +201,7 @@ export async function getInvestmentData(): Promise<InvestmentData> {
         buyingPower:          stats.buying_power,
       },
 
-      history: {
-        '1M':  { period: '1M',  points: mapPerformanceToOHLCV(perf1M),   peakValue: perf1M.peak.value  },
-        '3M':  { period: '3M',  points: mapPerformanceToOHLCV(perf3M),   peakValue: perf3M.peak.value  },
-        '1Y':  { period: '1Y',  points: mapPerformanceToOHLCV(perf1Y),   peakValue: perf1Y.peak.value  },
-        'ALL': { period: 'ALL', points: mapPerformanceToOHLCV(perfALL),  peakValue: perfALL.peak.value },
-      },
+      history: mockHistory,
 
       breakdown: {
         targetPercent: breakdown.target_achievement,
