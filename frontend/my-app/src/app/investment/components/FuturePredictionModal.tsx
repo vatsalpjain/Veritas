@@ -6,6 +6,8 @@ import { X, TrendingUp, Cpu, Activity, Clock, Maximize2, Minimize2 } from "lucid
 import { createChart, ColorType, IChartApi } from "lightweight-charts";
 import { apiPost } from "@/lib/api/client";
 
+import { AreaChart, Area, XAxis, YAxis, CartesianGrid, ResponsiveContainer, Tooltip as RechartsTooltip } from 'recharts';
+
 interface FuturePredictionModalProps {
   isOpen: boolean;
   onClose: () => void;
@@ -347,7 +349,7 @@ export default function FuturePredictionModal({
                 </div>
               )}
 
-              {/* Decorative scanline overlay (pointer events none so we can hover chart) */}
+              {/* Decorative scanline overlay */}
               <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(transparent_50%,rgba(0,0,0,0.1)_50%)] bg-[length:100%_2px] z-10 mix-blend-overlay opacity-30" />
             </div>
           </div>
@@ -395,7 +397,7 @@ function ChartComponent({ payload, ticker }: { payload: PredictionPayload, ticke
   const chartRef = useRef<IChartApi | null>(null);
 
   useEffect(() => {
-    if (!chartContainerRef.current) return;
+    if (!chartContainerRef.current || !payload) return;
 
     const chartOptions = {
       layout: {
