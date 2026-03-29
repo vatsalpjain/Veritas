@@ -29,6 +29,37 @@ export interface CurrentStrategy {
   name: string;       // e.g. "Moderate Growth"
   description: string;
   ctaLabel: string;
+  source?: string;
+  accepted_at?: string;
+}
+
+export interface StrategyDraft {
+  name: string;
+  description: string;
+  ctaLabel: string;
+  source: string;
+  status: 'draft';
+  notes?: string;
+  objective?: string;
+  time_horizon?: string;
+  risk_profile?: string;
+  rebalance_rule?: string;
+  max_drawdown_pct?: number | null;
+  max_single_position_pct?: number | null;
+  max_sector_exposure_pct?: number | null;
+  stop_loss_rule?: string;
+  entry_rule?: string;
+  validation_metrics?: string[];
+  allocation_targets?: Record<string, number>;
+  suggested_actions?: string[];
+  created_at?: string | null;
+}
+
+export interface StrategyEditorState {
+  currentStrategy: CurrentStrategy;
+  draftStrategy: StrategyDraft | null;
+  hasDraft: boolean;
+  updated_at: string;
 }
 
 // ─── Asset Allocation Ratios ──────────────────────────────────────────────────

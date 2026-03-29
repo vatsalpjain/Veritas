@@ -67,7 +67,7 @@ async def what_if_node(state: AgentState) -> dict:
             {"role": "user", "content": user_message},
         ],
         model=PRIMARY_MODEL,
-        max_tokens=600,
+        max_tokens=1100,
         fallback_model="llama-3.1-8b-instant",
     )
 

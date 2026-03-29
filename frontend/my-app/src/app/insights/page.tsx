@@ -18,6 +18,10 @@ import ChatPanel from './components/ChatPanel';
 import ContextPanel from './components/ContextPanel';
 import QuickActions from './components/QuickActions';
 
+interface SendOptions {
+  includePortfolioContext?: boolean;
+}
+
 export default function InsightsPage() {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [sources, setSources] = useState<SourceReference[]>([]);
@@ -36,7 +40,7 @@ export default function InsightsPage() {
   const [sessionId, setSessionId] = useState(() => `veritas-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`);
   const abortRef = useRef<AbortController | null>(null);
 
-  const handleSend = useCallback(async (query: string) => {
+  const handleSend = useCallback(async (query: string, options?: SendOptions) => {
     if (!query.trim() || isStreaming) return;
 
     // Reset context panel for new query
@@ -141,7 +145,7 @@ export default function InsightsPage() {
           setMessages(prev => [...prev, errMsg]);
           setIsStreaming(false);
         },
-      }, controller.signal);
+      }, { includePortfolioContext: Boolean(options?.includePortfolioContext) }, controller.signal);
     } catch (err: unknown) {
       if (err instanceof DOMException && err.name === 'AbortError') return;
       setIsStreaming(false);

@@ -35,12 +35,17 @@ export async function streamAgentChat(
   query: string,
   sessionId: string,
   callbacks: AgentSSECallbacks,
+  options?: { includePortfolioContext?: boolean },
   signal?: AbortSignal,
 ): Promise<void> {
   const response = await fetch(`${API_BASE}/agent/chat`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ query, session_id: sessionId }),
+    body: JSON.stringify({
+      query,
+      session_id: sessionId,
+      include_portfolio_context: Boolean(options?.includePortfolioContext),
+    }),
     signal,
   });
 

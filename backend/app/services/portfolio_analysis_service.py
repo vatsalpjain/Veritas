@@ -99,6 +99,28 @@ DEFAULT_STRATEGY = {
     "ctaLabel": "Change Strategy",
 }
 
+DEFAULT_STRATEGY_DRAFT = {
+    "name": "",
+    "description": "",
+    "ctaLabel": "Apply Strategy",
+    "source": "manual",
+    "status": "draft",
+    "notes": "",
+    "objective": "",
+    "time_horizon": "",
+    "risk_profile": "",
+    "rebalance_rule": "",
+    "max_drawdown_pct": None,
+    "max_single_position_pct": None,
+    "max_sector_exposure_pct": None,
+    "stop_loss_rule": "",
+    "entry_rule": "",
+    "validation_metrics": [],
+    "allocation_targets": {},
+    "suggested_actions": [],
+    "created_at": None,
+}
+
 DEFAULT_STRATEGY_ADVISOR = {
     "label": "Aggressive Growth",
     "rationale": "Based on your portfolio composition and growth trajectory, your risk tolerance supports an equity-heavy allocation.",
@@ -396,9 +418,92 @@ def get_current_strategy() -> dict[str, Any]:
 def update_current_strategy(strategy: dict[str, Any]) -> dict[str, Any]:
     """Update current investment strategy."""
     data = _load_data()
-    data["current_strategy"] = strategy
+    strategy_copy = {
+        "name": strategy.get("name", DEFAULT_STRATEGY["name"]),
+        "description": strategy.get("description", DEFAULT_STRATEGY["description"]),
+        "ctaLabel": strategy.get("ctaLabel", "Change Strategy"),
+        "source": strategy.get("source", "manual"),
+        "accepted_at": datetime.now().isoformat(),
+    }
+    data["current_strategy"] = strategy_copy
     _save_data(data)
-    return strategy
+    return strategy_copy
+
+
+def get_strategy_editor_state() -> dict[str, Any]:
+    """Get active strategy + pending draft for strategy editor UI."""
+    data = _load_data()
+    current = data.get("current_strategy", DEFAULT_STRATEGY)
+    draft = data.get("strategy_draft")
+    return {
+        "currentStrategy": current,
+        "draftStrategy": draft,
+        "hasDraft": bool(draft),
+        "updated_at": datetime.now().isoformat(),
+    }
+
+
+def save_strategy_draft(strategy_draft: dict[str, Any]) -> dict[str, Any]:
+    """Save a pending strategy draft from manual editor or Veritas agent."""
+    data = _load_data()
+    base = dict(DEFAULT_STRATEGY_DRAFT)
+    base.update(
+        {
+            "name": strategy_draft.get("name", "").strip(),
+            "description": strategy_draft.get("description", "").strip(),
+            "ctaLabel": strategy_draft.get("ctaLabel", "Apply Strategy"),
+            "source": strategy_draft.get("source", "manual"),
+            "status": "draft",
+            "notes": strategy_draft.get("notes", ""),
+            "objective": strategy_draft.get("objective", ""),
+            "time_horizon": strategy_draft.get("time_horizon", ""),
+            "risk_profile": strategy_draft.get("risk_profile", ""),
+            "rebalance_rule": strategy_draft.get("rebalance_rule", ""),
+            "max_drawdown_pct": strategy_draft.get("max_drawdown_pct"),
+            "max_single_position_pct": strategy_draft.get("max_single_position_pct"),
+            "max_sector_exposure_pct": strategy_draft.get("max_sector_exposure_pct"),
+            "stop_loss_rule": strategy_draft.get("stop_loss_rule", ""),
+            "entry_rule": strategy_draft.get("entry_rule", ""),
+            "validation_metrics": strategy_draft.get("validation_metrics", []),
+            "allocation_targets": strategy_draft.get("allocation_targets", {}),
+            "suggested_actions": strategy_draft.get("suggested_actions", []),
+            "created_at": datetime.now().isoformat(),
+        }
+    )
+
+    data["strategy_draft"] = base
+    _save_data(data)
+    return base
+
+
+def accept_strategy_draft() -> dict[str, Any]:
+    """Promote pending strategy draft to current strategy and apply allocation targets when present."""
+    data = _load_data()
+    draft = data.get("strategy_draft")
+    if not draft:
+        return {"error": "No strategy draft available to accept."}
+
+    active = {
+        "name": draft.get("name") or DEFAULT_STRATEGY["name"],
+        "description": draft.get("description") or DEFAULT_STRATEGY["description"],
+        "ctaLabel": "Change Strategy",
+        "source": draft.get("source", "manual"),
+        "accepted_at": datetime.now().isoformat(),
+    }
+    data["current_strategy"] = active
+
+    allocation_targets = draft.get("allocation_targets") or {}
+    if isinstance(allocation_targets, dict) and allocation_targets:
+        data["allocation_targets"] = allocation_targets
+
+    data["strategy_draft"] = None
+    _save_data(data)
+
+    return {
+        "currentStrategy": active,
+        "allocation": compute_allocation(),
+        "message": "Strategy accepted and applied.",
+    }
 
 
 def get_strategy_advisor() -> dict[str, Any]:

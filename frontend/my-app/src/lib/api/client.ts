@@ -1,9 +1,23 @@
 // ─── Backend API Client ───────────────────────────────────────────────────────
-// Base URL reads from env; falls back to localhost:8000 for local dev.
+// Base URL reads from env; falls back to same-origin proxy (/backend).
 // All fetches use Next.js cache revalidation so data stays fresh.
 // ─────────────────────────────────────────────────────────────────────────────
 
-export const BASE_URL = process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:8000';
+export const BASE_URL = process.env.NEXT_PUBLIC_API_URL ?? '/backend';
+
+function resolveBaseUrl(): string {
+  if (/^https?:\/\//i.test(BASE_URL)) return BASE_URL;
+
+  // Browser can use same-origin relative paths (rewrites handle /backend).
+  if (typeof window !== 'undefined') return BASE_URL;
+
+  // Node/server fetch requires absolute URLs.
+  const serverApi = process.env.API_BASE_URL ?? process.env.BACKEND_URL ?? process.env.NEXT_PUBLIC_API_URL;
+  if (serverApi && /^https?:\/\//i.test(serverApi)) return serverApi;
+
+  // Safe local default for server-side rendering.
+  return 'http://localhost:8000';
+}
 
 // Revalidation windows (seconds)
 export const REVALIDATE = {
@@ -27,12 +41,22 @@ export async function apiFetch<T>(
   options?: RequestInit & { revalidate?: number },
 ): Promise<T> {
   const { revalidate = REVALIDATE.LIVE, ...fetchOptions } = options ?? {};
-  const url = `${BASE_URL}${endpoint}`;
-
-  const res = await fetch(url, {
-    ...fetchOptions,
-    next: { revalidate },
-  });
+  const url = `${resolveBaseUrl()}${endpoint}`;
+  let res: Response;
+  try {
+    // `next.revalidate` is only meaningful on the server; browser fetch ignores it.
+    res = await fetch(url, {
+      ...fetchOptions,
+      ...(typeof window === 'undefined' ? { next: { revalidate } } : {}),
+    });
+  } catch (error) {
+    const message = error instanceof Error ? error.message : 'Network request failed';
+    throw new ApiError(
+      0,
+      endpoint,
+      `Failed to reach API at ${url}. ${message}. Check backend availability and NEXT_PUBLIC_API_URL.`,
+    );
+  }
 
   if (!res.ok) {
     let message = res.statusText;
@@ -49,11 +73,22 @@ export async function apiFetch<T>(
 }
 
 export async function apiPost<T>(endpoint: string, body: unknown): Promise<T> {
-  const res = await fetch(`${BASE_URL}${endpoint}`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(body),
-  });
+  const url = `${resolveBaseUrl()}${endpoint}`;
+  let res: Response;
+  try {
+    res = await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body),
+    });
+  } catch (error) {
+    const message = error instanceof Error ? error.message : 'Network request failed';
+    throw new ApiError(
+      0,
+      endpoint,
+      `Failed to reach API at ${url}. ${message}. Check backend availability and NEXT_PUBLIC_API_URL.`,
+    );
+  }
 
   if (!res.ok) {
     let message = res.statusText;

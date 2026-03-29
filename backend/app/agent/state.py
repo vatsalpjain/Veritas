@@ -60,6 +60,7 @@ class AgentState(TypedDict):
     query: str
     session_id: str
     conversation_history: list[dict[str, str]]
+    portfolio_context_enabled: bool
 
     # ── Router output ──
     intent: Literal["verify", "analyze", "strategy", "what_if", "regulatory", "general"]

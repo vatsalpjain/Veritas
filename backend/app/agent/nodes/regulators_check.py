@@ -23,9 +23,42 @@ async def regulators_check_node(state: AgentState) -> dict:
 
     rule_scan = evaluate_regulatory_risks(query)
 
-    web_results = web_search(f"SEBI compliance guidance {query}", max_results=4)
+    q_lower = query.lower()
+    crypto_hint = any(
+        term in q_lower
+        for term in [
+            "crypto", "bitcoin", "ethereum", "token", "vda", "virtual digital asset",
+            "wallet", "exchange", "defi", "stablecoin",
+        ]
+    )
+
+    search_queries: list[str] = [f"SEBI compliance guidance India {query}"]
+    if crypto_hint:
+        search_queries.extend(
+            [
+                f"India crypto VDA compliance Section 115BBH 194S {query}",
+                f"India PMLA FIU virtual digital assets compliance {query}",
+            ]
+        )
+
+    if not rule_scan.get("findings"):
+        search_queries.extend(
+            [
+                f"India legal interpretation compliance checklist {query}",
+                f"Indian securities tax regulatory clarification {query}",
+            ]
+        )
+
+    web_results: list[dict] = []
+    for sq in search_queries:
+        web_results += web_search(sq, max_results=4)
+
     if iteration > 1:
-        web_results += web_search(f"Indian tax compliance red flags {query}", max_results=2)
+        web_results += web_search(f"Indian tax compliance red flags {query}", max_results=3)
+
+    if not web_results:
+        web_results = web_search(f"India legal regulatory analysis {query}", max_results=6)
+
     web_summary = summarize_search_results(web_results, max_items=5)
 
     system_prompt = f"{get_veritas_system_prompt()}\n\n{REGULATORY_SYSTEM_PROMPT}"
@@ -43,7 +76,7 @@ async def regulators_check_node(state: AgentState) -> dict:
             {"role": "user", "content": user_message},
         ],
         model=PRIMARY_MODEL,
-        max_tokens=650,
+        max_tokens=1000,
         fallback_model="llama-3.1-8b-instant",
     )
 
@@ -98,6 +131,8 @@ async def regulators_check_node(state: AgentState) -> dict:
         "tool_summaries": [
             "Ran SEBI/tax keyword risk pre-check",
             f"Collected {len(web_results)} regulatory references",
+            *(["Applied crypto/VDA regulatory sweep"] if crypto_hint else []),
+            *(["Applied broad legal fallback search due to low rule matches"] if not rule_scan.get("findings") else []),
             f"Mapped statute refs: {', '.join((rule_scan.get('statute_refs') or [])[:3]) or 'none'}",
         ],
         "sources": sources,

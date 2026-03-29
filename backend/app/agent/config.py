@@ -19,7 +19,7 @@ log = logging.getLogger("veritas.config")
 PRIMARY_MODEL = "llama-3.3-70b-versatile"
 ROUTER_MODEL = "llama-3.1-8b-instant"
 
-PRIMARY_MAX_TOKENS = 1200
+PRIMARY_MAX_TOKENS = 2200
 ROUTER_MAX_TOKENS = 100
 
 PRIMARY_TEMPERATURE = 0.1

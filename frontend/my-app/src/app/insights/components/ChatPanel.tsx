@@ -12,7 +12,7 @@ interface Props {
   streamingAnswer: string;
   isStreaming: boolean;
   activeIntent: string;
-  onSend: (query: string) => void;
+  onSend: (query: string, options?: { includePortfolioContext?: boolean }) => void;
   onStop: () => void;
   onNewChat: () => void;
 }
@@ -28,6 +28,7 @@ export default function ChatPanel({
   onNewChat,
 }: Props) {
   const [input, setInput] = useState('');
+  const [includePortfolioContext, setIncludePortfolioContext] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
 
@@ -40,7 +41,7 @@ export default function ChatPanel({
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!input.trim() || isStreaming) return;
-    onSend(input.trim());
+    onSend(input.trim(), { includePortfolioContext });
     setInput('');
   }
 
@@ -170,6 +171,24 @@ export default function ChatPanel({
         className="px-4 py-3 flex gap-2 items-end"
         style={{ borderTop: '1px solid rgba(226,232,240,0.5)' }}
       >
+        <button
+          type="button"
+          onClick={() => setIncludePortfolioContext((prev) => !prev)}
+          disabled={isStreaming}
+          className="shrink-0 px-2.5 py-2.5 rounded-lg text-[11px] font-bold transition-colors disabled:opacity-50 flex items-center gap-1"
+          style={{
+            backgroundColor: includePortfolioContext ? '#e6f9f1' : '#f1f5f9',
+            color: includePortfolioContext ? '#009668' : '#64748b',
+            border: `1px solid ${includePortfolioContext ? '#00966855' : '#cbd5e1'}`,
+            fontFamily: 'Inter, sans-serif',
+          }}
+          title="When on, strategy mode can use your portfolio as context"
+        >
+          <span className="material-symbols-outlined align-middle" style={{ fontSize: '16px' }}>
+            account_balance_wallet
+          </span>
+          <span>{includePortfolioContext ? 'Portfolio On' : 'Portfolio Off'}</span>
+        </button>
         <textarea
           ref={inputRef}
           value={input}

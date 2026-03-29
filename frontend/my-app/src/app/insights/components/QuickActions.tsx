@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { getTheme } from '../theme';
 
 interface Props {
-  onSend: (query: string) => void;
+  onSend: (query: string, options?: { includePortfolioContext?: boolean }) => void;
   disabled: boolean;
   activeIntent: string;
 }
@@ -29,7 +29,7 @@ const ACTIONS = [
     label: 'Strategy Advice',
     color: '#009668',
     bg: '#e6f9f1',
-    prompt: 'Review my current portfolio and suggest strategy changes based on current market conditions.',
+    prompt: 'Build a strategy based on current market conditions with clear buy/sell/hold actions.',
   },
   {
     icon: 'device_hub',

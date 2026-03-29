@@ -3,6 +3,7 @@ import DiversificationHero from './components/DiversificationHero';
 import AllocationRatios from './components/AllocationRatios';
 import RebalancingSection from './components/RebalancingSection';
 import GoalTrackers from './components/GoalTrackers';
+import StrategyEditorSection from './components/StrategyEditorSection';
 
 // React Server Component.
 // When backend is ready, replace getPortfolioData() in src/lib/data/mockPortfolio.ts
@@ -28,6 +29,9 @@ export default async function PortfolioPage() {
         recommendations={data.rebalancing}
         advisor={data.strategyAdvisor}
       />
+
+      {/* ── Section 3.5: Strategy Maker / Editor ── */}
+      <StrategyEditorSection initialCurrentStrategy={data.currentStrategy} />
 
       {/* ── Section 4: Goal Trackers ── */}
       <GoalTrackers data={data.goals} />

@@ -3,12 +3,54 @@
 import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { X, TrendingUp, Cpu, Activity, Clock, Maximize2, Minimize2 } from "lucide-react";
-import { createChart, ColorType, IChartApi, ISeriesApi } from "lightweight-charts";
+import { createChart, ColorType, IChartApi } from "lightweight-charts";
+import { apiPost } from "@/lib/api/client";
 
 interface FuturePredictionModalProps {
   isOpen: boolean;
   onClose: () => void;
   holdings: Array<{ ticker: string; name: string }>;
+}
+
+type CandlePoint = { time: string; open: number; high: number; low: number; close: number };
+type LinePoint = { time: string; value: number };
+type RiskPoint = { time: string; upper: number; lower: number };
+
+type PredictionPayload = {
+  data: CandlePoint[];
+  trend_line?: LinePoint[];
+  risk_band?: RiskPoint[];
+  model?: string;
+  period?: string;
+  horizon_days?: number;
+  retrained?: boolean;
+  trained_at_utc?: string;
+  metrics?: {
+    linear?: { directional_accuracy?: number; test_mae?: number };
+    logistic?: { test_accuracy?: number; brier_score?: number };
+  };
+  error?: string;
+};
+
+type PredictionApiResponse = PredictionPayload & {
+  ticker?: string;
+  models_available?: string[];
+};
+
+type ModelOption = "hybrid" | "linear" | "logistic" | "linear_stochastic" | "regime_switch";
+
+const MODEL_OPTIONS: Array<{ value: ModelOption; label: string }> = [
+  { value: "hybrid", label: "Hybrid" },
+  { value: "linear", label: "Linear" },
+  { value: "logistic", label: "Logistic" },
+  { value: "linear_stochastic", label: "Linear Stochastic" },
+  { value: "regime_switch", label: "Regime Switch" },
+];
+
+const PERIOD_OPTIONS = ["1mo", "3mo", "6mo", "1y", "2y", "5y", "10y", "ytd", "max"];
+
+function cacheKeyFor(ticker: string, model: ModelOption, period: string, horizon: number): string {
+  return `${ticker}|${model}|${period}|${horizon}`;
 }
 
 export default function FuturePredictionModal({
@@ -22,33 +64,68 @@ export default function FuturePredictionModal({
   
   const [activeTab, setActiveTab] = useState(0);
   const [isExpanded, setIsExpanded] = useState(true);
-  const [chartDataCache, setChartDataCache] = useState<Record<string, any[]>>({});
+  const [chartDataCache, setChartDataCache] = useState<Record<string, PredictionPayload>>({});
+  const [selectedModel, setSelectedModel] = useState<ModelOption>("hybrid");
+  const [selectedPeriod, setSelectedPeriod] = useState("5y");
+  const [selectedHorizon, setSelectedHorizon] = useState(30);
   const [isLoading, setIsLoading] = useState(false);
+  const [isTraining, setIsTraining] = useState(false);
+  const [statusMessage, setStatusMessage] = useState<string>("");
 
   const currentHolding = holdings[activeTab];
 
-  // Fetch data
+  // Clear transient status whenever configuration changes.
   useEffect(() => {
-    if (!isOpen || !currentHolding) return;
-    
-    const fetchChartData = async () => {
-      const ticker = currentHolding.ticker;
-      if (chartDataCache[ticker]) return; // already cached
-      
-      setIsLoading(true);
-      try {
-        const res = await fetch(`http://localhost:8000/investments/future-predictions/${ticker}`);
-        const json = await res.json();
-        setChartDataCache((prev) => ({ ...prev, [ticker]: json.data }));
-      } catch (err) {
-        console.error("Failed to fetch future predictions:", err);
-      } finally {
-        setIsLoading(false);
-      }
-    };
+    if (!isOpen) return;
+    setStatusMessage("");
+  }, [isOpen, selectedModel, selectedPeriod, selectedHorizon, activeTab]);
 
-    fetchChartData();
-  }, [isOpen, activeTab, currentHolding, chartDataCache]);
+  const trainSelectedModel = async () => {
+    if (!currentHolding) return;
+
+    const ticker = currentHolding.ticker;
+    const key = cacheKeyFor(ticker, selectedModel, selectedPeriod, selectedHorizon);
+
+    setIsTraining(true);
+    setIsLoading(true);
+    setStatusMessage(`Training ${selectedModel} model for ${ticker}...`);
+    try {
+      const json = await apiPost<PredictionApiResponse>("/investments/future-predictions/train", {
+        ticker,
+        model: selectedModel,
+        period: selectedPeriod,
+        horizon: selectedHorizon,
+      });
+
+      const payload: PredictionPayload = {
+        data: json.data ?? [],
+        trend_line: json.trend_line ?? [],
+        risk_band: json.risk_band ?? [],
+        model: json.model,
+        period: json.period,
+        horizon_days: json.horizon_days,
+        retrained: json.retrained,
+        trained_at_utc: json.trained_at_utc,
+        metrics: json.metrics,
+        error: json.error,
+      };
+
+      setChartDataCache((prev) => ({ ...prev, [key]: payload }));
+      if (json.error) {
+        setStatusMessage(`Training failed: ${json.error}`);
+      } else {
+        setStatusMessage(
+          `Training complete for ${ticker} (${payload.model ?? selectedModel}, ${payload.period ?? selectedPeriod}, ${payload.horizon_days ?? selectedHorizon}d).`
+        );
+      }
+    } catch (err) {
+      console.error("Failed to train model:", err);
+      setStatusMessage("Training failed due to a network or server error.");
+    } finally {
+      setIsTraining(false);
+      setIsLoading(false);
+    }
+  };
 
   useEffect(() => {
     let ctx = gsap.context(() => {});
@@ -91,7 +168,9 @@ export default function FuturePredictionModal({
 
   if (!isOpen) return null;
 
-  const currentData = currentHolding ? chartDataCache[currentHolding.ticker] : null;
+  const currentData = currentHolding
+    ? chartDataCache[cacheKeyFor(currentHolding.ticker, selectedModel, selectedPeriod, selectedHorizon)]
+    : null;
 
   return (
     <div
@@ -125,7 +204,7 @@ export default function FuturePredictionModal({
                   <Cpu className="w-3 h-3" /> AI GENERATED
                 </span>
               </h2>
-              <p className="text-sm text-gray-400">Projected 30-day performance based on stochastic modeling</p>
+              <p className="text-sm text-gray-400">Train model per stock and project model-specific future trend paths</p>
             </div>
           </div>
           
@@ -175,6 +254,67 @@ export default function FuturePredictionModal({
 
           {/* Main Chart Area */}
           <div className="flex-1 p-6 flex flex-col relative w-full h-full">
+            <div className="mb-4 grid grid-cols-1 lg:grid-cols-4 gap-3">
+              <div className="flex items-center gap-2 rounded-xl border border-white/10 bg-black/30 px-3 py-2">
+                <span className="text-xs text-gray-400">Model</span>
+                <select
+                  value={selectedModel}
+                  onChange={(e) => setSelectedModel(e.target.value as ModelOption)}
+                  className="ml-auto bg-transparent text-sm text-white outline-none"
+                >
+                  {MODEL_OPTIONS.map((opt) => (
+                    <option key={opt.value} value={opt.value} className="bg-[#0a0f1d]">
+                      {opt.label}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              <div className="flex items-center gap-2 rounded-xl border border-white/10 bg-black/30 px-3 py-2">
+                <span className="text-xs text-gray-400">History</span>
+                <select
+                  value={selectedPeriod}
+                  onChange={(e) => setSelectedPeriod(e.target.value)}
+                  className="ml-auto bg-transparent text-sm text-white outline-none"
+                >
+                  {PERIOD_OPTIONS.map((period) => (
+                    <option key={period} value={period} className="bg-[#0a0f1d]">
+                      {period}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              <div className="flex items-center gap-2 rounded-xl border border-white/10 bg-black/30 px-3 py-2">
+                <span className="text-xs text-gray-400">Horizon</span>
+                <select
+                  value={selectedHorizon}
+                  onChange={(e) => setSelectedHorizon(Number(e.target.value))}
+                  className="ml-auto bg-transparent text-sm text-white outline-none"
+                >
+                  {[15, 30, 45, 60].map((h) => (
+                    <option key={h} value={h} className="bg-[#0a0f1d]">
+                      {h}d
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              <button
+                onClick={trainSelectedModel}
+                disabled={isTraining || !currentHolding}
+                className="rounded-xl border border-emerald-400/30 bg-emerald-500/15 px-4 py-2 text-sm font-semibold text-emerald-300 hover:bg-emerald-500/20 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {isTraining ? "Training..." : "Train Selected Model"}
+              </button>
+            </div>
+
+            {statusMessage ? (
+              <div className="mb-4 rounded-lg border border-white/10 bg-black/30 px-3 py-2 text-xs text-gray-300">
+                {statusMessage}
+              </div>
+            ) : null}
+
             {/* Mobile Tabs */}
             <div className="w-full md:hidden flex overflow-x-auto gap-2 pb-4 mb-4 border-b border-white/5 hide-scrollbar">
                {holdings.map((h, i) => (
@@ -197,9 +337,15 @@ export default function FuturePredictionModal({
                 <div className="absolute inset-0 flex items-center justify-center z-20 bg-black/50 backdrop-blur-sm">
                   <div className="w-10 h-10 border-4 border-emerald-500/20 border-t-emerald-500 rounded-full animate-spin" />
                 </div>
-              ) : currentData ? (
-                <ChartComponent data={currentData} ticker={currentHolding.ticker} />
-              ) : null}
+              ) : currentData?.error ? (
+                <div className="p-6 text-sm text-red-300">{currentData.error}</div>
+              ) : currentData && (currentData.data?.length ?? 0) > 0 ? (
+                <ChartComponent payload={currentData} ticker={currentHolding.ticker} />
+              ) : (
+                <div className="p-6 text-sm text-gray-400">
+                  Train the selected model to generate and plot authentic model predictions.
+                </div>
+              )}
 
               {/* Decorative scanline overlay (pointer events none so we can hover chart) */}
               <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(transparent_50%,rgba(0,0,0,0.1)_50%)] bg-[length:100%_2px] z-10 mix-blend-overlay opacity-30" />
@@ -244,7 +390,7 @@ function TimelineItem({ ticker, msg, color, border, bg, dot }: { ticker: string,
 }
 
 // Sub-component to manage lightweight-charts instance
-function ChartComponent({ data, ticker }: { data: any[], ticker: string }) {
+function ChartComponent({ payload, ticker }: { payload: PredictionPayload, ticker: string }) {
   const chartContainerRef = useRef<HTMLDivElement>(null);
   const chartRef = useRef<IChartApi | null>(null);
 
@@ -265,6 +411,7 @@ function ChartComponent({ data, ticker }: { data: any[], ticker: string }) {
       },
       rightPriceScale: {
         borderColor: 'rgba(255, 255, 255, 0.1)',
+        scaleMargins: { top: 0.12, bottom: 0.12 },
       },
       timeScale: {
         borderColor: 'rgba(255, 255, 255, 0.1)',
@@ -282,7 +429,52 @@ function ChartComponent({ data, ticker }: { data: any[], ticker: string }) {
       wickDownColor: '#ff3366',
     });
 
-    candlestickSeries.setData(data);
+    const candleData = payload.data ?? [];
+    const trendData = payload.trend_line ?? candleData.map((x) => ({ time: x.time, value: x.close }));
+    const riskData = payload.risk_band ?? [];
+
+    candlestickSeries.setData(candleData);
+
+    const trendSeries = chart.addLineSeries({
+      color: '#3b82f6',
+      lineWidth: 3,
+      priceLineVisible: false,
+      lastValueVisible: true,
+    });
+    trendSeries.setData(trendData);
+
+    if (candleData.length > 0) {
+      const baseline = chart.addLineSeries({
+        color: 'rgba(16,185,129,0.55)',
+        lineWidth: 1,
+        lineStyle: 2,
+        priceLineVisible: false,
+        lastValueVisible: false,
+      });
+      const anchor = candleData[0].open;
+      baseline.setData(candleData.map((r) => ({ time: r.time, value: anchor })));
+    }
+
+    if (riskData.length > 0) {
+      const upperSeries = chart.addLineSeries({
+        color: 'rgba(59,130,246,0.24)',
+        lineWidth: 1,
+        lineStyle: 2,
+        priceLineVisible: false,
+        lastValueVisible: false,
+      });
+      upperSeries.setData(riskData.map((r) => ({ time: r.time, value: r.upper })));
+
+      const lowerSeries = chart.addLineSeries({
+        color: 'rgba(59,130,246,0.24)',
+        lineWidth: 1,
+        lineStyle: 2,
+        priceLineVisible: false,
+        lastValueVisible: false,
+      });
+      lowerSeries.setData(riskData.map((r) => ({ time: r.time, value: r.lower })));
+    }
+
     chart.timeScale().fitContent();
 
     const handleResize = () => {
@@ -303,12 +495,12 @@ function ChartComponent({ data, ticker }: { data: any[], ticker: string }) {
       window.removeEventListener('resize', handleResize);
       chart.remove();
     };
-  }, [data]);
+  }, [payload]);
 
   return (
     <div className="relative w-full h-full p-2">
       <div className="absolute top-4 left-4 z-10 text-white/50 text-2xl font-bold tracking-widest uppercase pointer-events-none mix-blend-overlay">
-        {ticker} - 30 DAY PREDICTION
+        {ticker} - MODEL PREDICTION
       </div>
       <div ref={chartContainerRef} className="w-full h-full" />
     </div>

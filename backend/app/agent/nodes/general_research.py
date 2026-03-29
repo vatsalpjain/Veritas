@@ -59,7 +59,7 @@ async def general_research_node(state: AgentState) -> dict:
             {"role": "user", "content": user_message},
         ],
         model=PRIMARY_MODEL,
-        max_tokens=500,
+        max_tokens=900,
         fallback_model="llama-3.1-8b-instant",
     )
 

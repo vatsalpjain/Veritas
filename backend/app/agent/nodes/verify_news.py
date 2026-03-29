@@ -67,7 +67,7 @@ async def verify_news_node(state: AgentState) -> dict:
             {"role": "user", "content": "\n".join(parts)},
         ],
         model=PRIMARY_MODEL,
-        max_tokens=600,
+        max_tokens=1000,
         fallback_model="llama-3.1-8b-instant",
     )
 

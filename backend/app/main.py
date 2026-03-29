@@ -63,6 +63,13 @@ class ReportEmailRequest(BaseModel):
     subject: str | None = None
     message: str | None = None
 
+
+class FuturePredictionTrainRequest(BaseModel):
+    ticker: str = Field(..., min_length=1, max_length=20)
+    model: str = Field(default="hybrid", description="hybrid | linear | logistic | linear_stochastic | regime_switch")
+    period: str = Field(default="5y", description="1mo,3mo,6mo,1y,2y,5y,10y,ytd,max")
+    horizon: int = Field(default=30, ge=7, le=90)
+
 app = FastAPI(title="CodeCrafters API", version="0.1.0")
 
 app.add_middleware(
@@ -337,9 +344,32 @@ async def get_rebalancing():
 # ============== INVESTMENTS PAGE ENDPOINTS ==============
 
 @app.get("/investments/future-predictions/{ticker}")
-async def get_future_prediction_chart(ticker: str):
-    """Generate and return a futuristic mplfinance chart for the ticker."""
-    return future_svc.generate_future_chart(ticker)
+async def get_future_prediction_chart(
+    ticker: str,
+    model: str = Query("hybrid", description="hybrid | linear | logistic | linear_stochastic | regime_switch"),
+    period: str = Query("5y", description="1mo,3mo,6mo,1y,2y,5y,10y,ytd,max"),
+    horizon: int = Query(30, ge=7, le=90, description="Forecast horizon in business days"),
+    retrain: bool = Query(False, description="If true, retrain model before generating chart"),
+):
+    """Get model-based future prediction chart payload for a ticker."""
+    return future_svc.generate_future_chart(
+        ticker=ticker,
+        model=model,
+        period=period,
+        horizon=horizon,
+        retrain=retrain,
+    )
+
+
+@app.post("/investments/future-predictions/train")
+async def train_future_prediction_models(payload: FuturePredictionTrainRequest):
+    """Train/retrain prediction model(s) for ticker and return chart-ready output."""
+    return future_svc.train_future_models(
+        ticker=payload.ticker,
+        model=payload.model,
+        period=payload.period,
+        horizon=payload.horizon,
+    )
 
 @app.get("/investments/stats")
 async def get_investment_stats():
@@ -511,6 +541,26 @@ class StrategyUpdate(BaseModel):
     ctaLabel: str = "Change Strategy"
 
 
+class StrategyDraftUpdate(BaseModel):
+    name: str
+    description: str
+    ctaLabel: str = "Apply Strategy"
+    source: str = "manual"
+    notes: str | None = None
+    objective: str | None = None
+    time_horizon: str | None = None
+    risk_profile: str | None = None
+    rebalance_rule: str | None = None
+    max_drawdown_pct: float | None = None
+    max_single_position_pct: float | None = None
+    max_sector_exposure_pct: float | None = None
+    stop_loss_rule: str | None = None
+    entry_rule: str | None = None
+    validation_metrics: list[str] = Field(default_factory=list)
+    allocation_targets: dict[str, float] = Field(default_factory=dict)
+    suggested_actions: list[str] = Field(default_factory=list)
+
+
 @app.put("/portfolio/strategy")
 async def update_strategy(strategy: StrategyUpdate):
     """Update current investment strategy."""
@@ -521,6 +571,24 @@ async def update_strategy(strategy: StrategyUpdate):
 async def get_strategy_advisor():
     """Get strategy advisor recommendation."""
     return portfolio_analysis_svc.get_strategy_advisor()
+
+
+@app.get("/portfolio/strategy/editor")
+async def get_strategy_editor_state():
+    """Get active strategy and pending draft for editor UI."""
+    return portfolio_analysis_svc.get_strategy_editor_state()
+
+
+@app.post("/portfolio/strategy/draft")
+async def save_strategy_draft(payload: StrategyDraftUpdate):
+    """Save strategy draft from manual editor or Veritas apply action."""
+    return portfolio_analysis_svc.save_strategy_draft(payload.model_dump())
+
+
+@app.post("/portfolio/strategy/accept")
+async def accept_strategy_draft():
+    """Accept pending strategy draft and apply it as current strategy."""
+    return portfolio_analysis_svc.accept_strategy_draft()
 
 
 @app.get("/portfolio/goals")
@@ -679,7 +747,11 @@ _log = logging.getLogger("veritas.endpoint")
 class AgentChatRequest(BaseModel):
     query: str = Field(..., description="User's question or command")
     session_id: str = Field(default="default", description="Session ID for multi-turn")
-    max_iterations: int = Field(default=2, ge=1, le=5, description="Max loop iterations for agent workflow")
+    include_portfolio_context: bool = Field(
+        default=False,
+        description="When true, agent can use user's portfolio as strategy context",
+    )
+    max_iterations: int = Field(default=3, ge=1, le=6, description="Max loop iterations for agent workflow")
 
 
 class MindsetChatRequest(BaseModel):
@@ -712,6 +784,7 @@ async def agent_chat(request: AgentChatRequest):
                 "query": request.query,
                 "session_id": request.session_id,
                 "conversation_history": history,
+                "portfolio_context_enabled": bool(request.include_portfolio_context),
                 "intent": "general",
                 "intent_confidence": 0.0,
                 "entities": [],

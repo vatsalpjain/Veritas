@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import FuturePredictionModal from "./FuturePredictionModal";
-import { Sparkles } from "lucide-react";
 
 interface Holding {
   ticker: string;
