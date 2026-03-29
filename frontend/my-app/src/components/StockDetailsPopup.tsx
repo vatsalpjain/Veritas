@@ -168,7 +168,7 @@ export default function StockDetailsPopup({ ticker, onClose }: StockDetailsPopup
         style={{ backgroundColor: 'rgba(0,0,0,0.7)' }}
         onClick={onClose}
       >
-        <div className="bg-white rounded-xl p-8">
+        <div className="bg-white rounded-xl glass-card-edge p-8">
           <p className="text-lg font-semibold" style={{ fontFamily: 'Inter, sans-serif' }}>
             Loading {ticker}...
           </p>
@@ -184,7 +184,7 @@ export default function StockDetailsPopup({ ticker, onClose }: StockDetailsPopup
         style={{ backgroundColor: 'rgba(0,0,0,0.7)' }}
         onClick={onClose}
       >
-        <div className="bg-white rounded-xl p-8">
+        <div className="bg-white rounded-xl glass-card-edge p-8">
           <p className="text-lg font-semibold text-red-600" style={{ fontFamily: 'Inter, sans-serif' }}>
             Failed to load stock data
           </p>
@@ -200,7 +200,7 @@ export default function StockDetailsPopup({ ticker, onClose }: StockDetailsPopup
       onClick={onClose}
     >
       <div
-        className="bg-white rounded-xl p-8 max-w-4xl w-full shadow-2xl my-8"
+        className="bg-white rounded-xl glass-card-edge p-8 max-w-4xl w-full shadow-2xl my-8"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}

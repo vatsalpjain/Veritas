@@ -174,7 +174,6 @@ export default function HoldingDetailModal({ holding, onClose }: Props) {
     (async () => {
       const {
         createChart, ColorType, CrosshairMode, LineStyle,
-        CandlestickSeries, LineSeries, HistogramSeries,
       } = await import('lightweight-charts');
       if (disposed) return;
 
@@ -258,22 +257,7 @@ export default function HoldingDetailModal({ holding, onClose }: Props) {
         height: 320,
       });
 
-      const addCandleSeries = (chart: any, options: any) =>
-        typeof chart.addCandlestickSeries === 'function'
-          ? chart.addCandlestickSeries(options)
-          : chart.addSeries(CandlestickSeries, options);
-
-      const addLineSeries = (chart: any, options: any) =>
-        typeof chart.addLineSeries === 'function'
-          ? chart.addLineSeries(options)
-          : chart.addSeries(LineSeries, options);
-
-      const addHistogramSeries = (chart: any, options: any) =>
-        typeof chart.addHistogramSeries === 'function'
-          ? chart.addHistogramSeries(options)
-          : chart.addSeries(HistogramSeries, options);
-
-      const candleSeries = addCandleSeries(mainChart, {
+      const candleSeries = mainChart.addCandlestickSeries({
         upColor:         '#009668',
         downColor:       '#ba1a1a',
         borderUpColor:   '#009668',
@@ -284,7 +268,7 @@ export default function HoldingDetailModal({ holding, onClose }: Props) {
       candleSeries.setData(bars.map(toSeries));
 
       // Volume overlay on dedicated scale
-      const volSeries = addHistogramSeries(mainChart, {
+      const volSeries = mainChart.addHistogramSeries({
         priceFormat:  { type: 'volume' },
         priceScaleId: 'vol',
       });
@@ -295,7 +279,7 @@ export default function HoldingDetailModal({ holding, onClose }: Props) {
 
       // MA20
       if (ma20Data.length > 0) {
-        const ma20 = addLineSeries(mainChart, {
+        const ma20 = mainChart.addLineSeries({
           color:                 '#006591',
           lineWidth:             1,
           crosshairMarkerVisible: false,
@@ -307,7 +291,7 @@ export default function HoldingDetailModal({ holding, onClose }: Props) {
 
       // MA50
       if (ma50Data.length > 0) {
-        const ma50 = addLineSeries(mainChart, {
+        const ma50 = mainChart.addLineSeries({
           color:                 '#C9A84C',
           lineWidth:             1,
           crosshairMarkerVisible: false,
@@ -331,7 +315,7 @@ export default function HoldingDetailModal({ holding, onClose }: Props) {
         },
       });
 
-      const rsiSeries = addLineSeries(rsiChart, {
+      const rsiSeries = rsiChart.addLineSeries({
         color:       '#006591',
         lineWidth:   2,
         priceFormat: { type: 'price', precision: 1, minMove: 0.1 },
@@ -357,7 +341,7 @@ export default function HoldingDetailModal({ holding, onClose }: Props) {
       });
 
       if (macdData.histogram.length > 0) {
-        const histSeries = addHistogramSeries(macdChart, {
+        const histSeries = macdChart.addHistogramSeries({
           priceFormat: { type: 'price', precision: 4, minMove: 0.0001 },
         });
         histSeries.setData(macdData.histogram.map(p => ({
@@ -366,13 +350,13 @@ export default function HoldingDetailModal({ holding, onClose }: Props) {
           color: p.value >= 0 ? 'rgba(0,150,104,0.55)' : 'rgba(186,26,26,0.55)',
         })));
 
-        const macdLine = addLineSeries(macdChart, {
+        const macdLine = macdChart.addLineSeries({
           color: '#006591', lineWidth: 2,
           crosshairMarkerVisible: false, lastValueVisible: false, priceLineVisible: false,
         });
         macdLine.setData(macdData.macdLine.map(p => ({ time: p.time, value: p.value })));
 
-        const sigLine = addLineSeries(macdChart, {
+        const sigLine = macdChart.addLineSeries({
           color: '#C9A84C', lineWidth: 2,
           crosshairMarkerVisible: false, lastValueVisible: false, priceLineVisible: false,
         });

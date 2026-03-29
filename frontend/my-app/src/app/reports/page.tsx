@@ -29,7 +29,7 @@ export default async function ReportsPage() {
 
       {/* Summary KPI Row */}
       <section className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-        <div className="bg-white rounded-xl p-5 shadow-[0_24px_40px_rgba(11,28,48,0.05)] lg:col-span-2">
+        <div className="bg-white rounded-xl glass-card-edge p-5 shadow-[0_24px_40px_rgba(11,28,48,0.05)] lg:col-span-2">
           <p className="text-[10px] uppercase tracking-widest font-bold text-slate-500 mb-1" style={{ fontFamily: 'Inter, sans-serif' }}>
             Total Portfolio Value
           </p>
@@ -41,7 +41,7 @@ export default async function ReportsPage() {
           </span>
         </div>
         
-        <div className="bg-white rounded-xl p-5 shadow-[0_24px_40px_rgba(11,28,48,0.05)]">
+        <div className="bg-white rounded-xl glass-card-edge p-5 shadow-[0_24px_40px_rgba(11,28,48,0.05)]">
           <p className="text-[10px] uppercase tracking-widest font-bold text-slate-500 mb-1" style={{ fontFamily: 'Inter, sans-serif' }}>
             Realised P&L
           </p>
@@ -51,7 +51,7 @@ export default async function ReportsPage() {
           <p className="text-[11px] text-slate-500 mt-1">From closed positions</p>
         </div>
 
-        <div className="bg-white rounded-xl p-5 shadow-[0_24px_40px_rgba(11,28,48,0.05)]">
+        <div className="bg-white rounded-xl glass-card-edge p-5 shadow-[0_24px_40px_rgba(11,28,48,0.05)]">
           <p className="text-[10px] uppercase tracking-widest font-bold text-slate-500 mb-1" style={{ fontFamily: 'Inter, sans-serif' }}>
             Unrealised P&L
           </p>
@@ -61,7 +61,7 @@ export default async function ReportsPage() {
           <p className="text-[11px] text-slate-500 mt-1">Live open positions</p>
         </div>
 
-        <div className="bg-white rounded-xl p-5 shadow-[0_24px_40px_rgba(11,28,48,0.05)]">
+        <div className="bg-white rounded-xl glass-card-edge p-5 shadow-[0_24px_40px_rgba(11,28,48,0.05)]">
           <p className="text-[10px] uppercase tracking-widest font-bold text-slate-500 mb-1" style={{ fontFamily: 'Inter, sans-serif' }}>
             Dividends YTD
           </p>
@@ -71,7 +71,7 @@ export default async function ReportsPage() {
           <p className="text-[11px] text-slate-500 mt-1">Across 6 holdings</p>
         </div>
 
-        <div className="bg-white rounded-xl p-5 shadow-[0_24px_40px_rgba(11,28,48,0.05)]">
+        <div className="bg-white rounded-xl glass-card-edge p-5 shadow-[0_24px_40px_rgba(11,28,48,0.05)]">
           <p className="text-[10px] uppercase tracking-widest font-bold text-slate-500 mb-1" style={{ fontFamily: 'Inter, sans-serif' }}>
             XIRR
           </p>

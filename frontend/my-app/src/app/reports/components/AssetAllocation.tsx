@@ -1,6 +1,6 @@
 export default function AssetAllocation() {
   return (
-    <div className="bg-white rounded-xl p-7 shadow-[0_24px_40px_rgba(11,28,48,0.05)]">
+    <div className="bg-white rounded-xl glass-card-edge p-7 shadow-[0_24px_40px_rgba(11,28,48,0.05)]">
       <p className="text-[10px] uppercase tracking-widest font-bold text-slate-500 mb-1" style={{ fontFamily: 'Inter, sans-serif' }}>
         Allocation Breakdown
       </p>

@@ -11,7 +11,7 @@ DATA_FILE = Path(__file__).parent.parent.parent / "data" / "portfolio.json"
 def _load_portfolio() -> dict:
     """Load portfolio from JSON file."""
     if not DATA_FILE.exists():
-        return {"holdings": [], "cash_balance": 0, "transactions": []}
+        return {"holdings": [], "cash_balance": 0, "transactions": [], "watchlist": []}
     with open(DATA_FILE, "r") as f:
         return json.load(f)
 
@@ -27,6 +27,7 @@ def get_holdings() -> list[dict[str, Any]]:
     """Get all holdings with current prices."""
     portfolio = _load_portfolio()
     holdings = portfolio.get("holdings", [])
+    transactions = portfolio.get("transactions", [])
     
     enriched = []
     for h in holdings:
@@ -39,6 +40,13 @@ def get_holdings() -> list[dict[str, Any]]:
         except Exception:
             current_price = h["avg_buy_price"]
             daily_change = 0
+        
+        # Calculate buy_date and sell_date from transactions
+        sym_txns = [t for t in transactions if t.get("symbol") == symbol]
+        buy_txns = sorted([t for t in sym_txns if t.get("type") == "buy"], key=lambda k: k.get("timestamp", ""))
+        sell_txns = sorted([t for t in sym_txns if t.get("type") == "sell"], key=lambda k: k.get("timestamp", ""))
+        
+        buy_date = buy_txns[0].get("timestamp", buy_txns[0].get("date", "N/A")).split("T")[0] if buy_txns else "N/A"
         
         quantity = h["quantity"]
         avg_price = h["avg_buy_price"]
@@ -58,6 +66,9 @@ def get_holdings() -> list[dict[str, Any]]:
             "pnl_percent": round(pnl_percent, 2),
             "daily_change": round(daily_change, 2),
             "asset_type": h.get("asset_type", "equity"),
+            "buy_date": buy_date,
+            "sell_date": "Active",
+            "status": "Holding"
         })
     
     return enriched
@@ -387,3 +398,169 @@ def sell_stock(symbol: str, amount: float) -> dict[str, Any]:
         }
     except Exception as e:
         return {"error": str(e)}
+
+
+def get_watchlist() -> list[dict[str, Any]]:
+    """Get watchlist with current live prices."""
+    portfolio = _load_portfolio()
+    watchlist = portfolio.get("watchlist", [])
+    
+    enriched = []
+    for item in watchlist:
+        symbol = item["symbol"]
+        try:
+            quote = yf_svc.get_stock_quote(symbol)
+            current_price = quote.get("price") or 0.0
+            prev_close = quote.get("previous_close") or current_price
+            daily_change = ((current_price - prev_close) / prev_close * 100) if prev_close else 0
+        except Exception:
+            current_price = 0.0
+            daily_change = 0
+            
+        enriched.append({
+            "symbol": symbol,
+            "quantity": item.get("quantity", 0),
+            "avg_buy_price": 0,
+            "current_price": round(current_price, 2),
+            "current_value": round(item.get("quantity", 0) * current_price, 2),
+            "invested_value": 0,
+            "pnl": 0,
+            "pnl_percent": 0,
+            "daily_change": round(daily_change, 2),
+            "asset_type": "equity",
+            "buy_date": item.get("buy_date") or item.get("added_date", datetime.now().strftime('%Y-%m-%d')),
+            "sell_date": item.get("sell_date") or "Watching",
+            "status": "Watchlist"
+        })
+    return enriched
+
+
+def add_to_watchlist(
+    symbol: str, 
+    quantity: float = 0.0, 
+    buy_date: str | None = None, 
+    sell_date: str | None = None
+) -> dict[str, Any]:
+    """Add a symbol to the watchlist."""
+    portfolio = _load_portfolio()
+    watchlist = portfolio.get("watchlist", [])
+    
+    # Check if already in watchlist
+    for wl in watchlist:
+        if wl["symbol"] == symbol:
+            # Update existing instead of rejecting
+            wl["quantity"] = quantity
+            if buy_date: wl["buy_date"] = buy_date
+            if sell_date: wl["sell_date"] = sell_date
+            portfolio["watchlist"] = watchlist
+            _save_portfolio(portfolio)
+            return {"message": f"Updated {symbol} in watchlist", "symbol": symbol}
+        
+    new_entry = {
+        "symbol": symbol,
+        "quantity": quantity,
+        "added_date": datetime.now().strftime('%Y-%m-%d')
+    }
+    if buy_date: new_entry["buy_date"] = buy_date
+    if sell_date: new_entry["sell_date"] = sell_date
+    
+    watchlist.append(new_entry)
+    
+    portfolio["watchlist"] = watchlist
+    _save_portfolio(portfolio)
+    return {"message": f"Added {symbol} to watchlist", "symbol": symbol}
+
+
+def remove_from_watchlist(symbol: str) -> dict[str, Any]:
+    """Remove a symbol from the watchlist."""
+    portfolio = _load_portfolio()
+    watchlist = portfolio.get("watchlist", [])
+    
+    initial_len = len(watchlist)
+    watchlist = [item for item in watchlist if item["symbol"] != symbol]
+    
+    if len(watchlist) == initial_len:
+        return {"error": f"{symbol} is not in your watchlist"}
+        
+    portfolio["watchlist"] = watchlist
+    _save_portfolio(portfolio)
+    return {"message": f"Removed {symbol} from watchlist", "symbol": symbol}
+
+
+def add_holding(symbol: str, quantity: float, avg_buy_price: float, buy_date: str) -> dict[str, Any]:
+    """Add or increment an active holding in the portfolio."""
+    portfolio = _load_portfolio()
+    holdings = portfolio.get("holdings", [])
+    transactions = portfolio.get("transactions", [])
+    
+    symbol_upper = symbol.upper()
+    
+    # 1. Update Holdings list
+    found = False
+    for h in holdings:
+        if h.get("symbol", "").upper() == symbol_upper:
+            old_qty = h.get("quantity", 0.0)
+            old_price = h.get("avg_buy_price", 0.0)
+            
+            new_qty = old_qty + quantity
+            if new_qty > 0:
+                h["avg_buy_price"] = round(((old_qty * old_price) + (quantity * avg_buy_price)) / new_qty, 4)
+                h["quantity"] = round(new_qty, 4)
+            found = True
+            break
+            
+    if not found:
+        # Schema match portfolio.json exactly
+        holdings.append({
+            "symbol": symbol_upper,
+            "quantity": quantity,
+            "avg_buy_price": avg_buy_price,
+            "asset_type": "equity"
+        })
+        
+    # 2. Append Transaction
+    if "T" not in buy_date:
+        tx_date = f"{buy_date}T00:00:00Z"
+    else:
+        tx_date = buy_date
+        
+    transactions.append({
+        "id": f"txn-{int(datetime.now().timestamp())}",
+        "type": "buy",
+        "symbol": symbol_upper,
+        "quantity": quantity,
+        "price": avg_buy_price,
+        "timestamp": tx_date
+    })
+    
+    portfolio["holdings"] = holdings
+    portfolio["transactions"] = transactions
+    _save_portfolio(portfolio)
+    return {"message": f"Successfully bought {quantity} shares of {symbol_upper}", "symbol": symbol_upper}
+
+
+def remove_holding(symbol: str) -> dict[str, Any]:
+    """Purge an active holding entirely from the portfolio list."""
+    portfolio = _load_portfolio()
+    holdings = portfolio.get("holdings", [])
+    
+    symbol_upper = symbol.upper()
+    initial_len = len(holdings)
+    
+    # Filter out the symbol, checking primary symbol key
+    holdings = [h for h in holdings if h.get("symbol", "").upper() != symbol_upper and h.get("ticker", "").upper() != symbol_upper]
+    
+    if len(holdings) == initial_len:
+        return {"error": f"{symbol_upper} was not found in Active Holdings."}
+        
+    portfolio["holdings"] = holdings
+    _save_portfolio(portfolio)
+    return {"message": f"Successfully sold/removed {symbol_upper} from Active Holdings", "symbol": symbol_upper}
+
+
+def get_unified_investments() -> dict[str, list[dict[str, Any]]]:
+    """Return both active holdings and watchlist in unified schemas."""
+    return {
+        "active": get_holdings(),
+        "watchlist": get_watchlist()
+    }

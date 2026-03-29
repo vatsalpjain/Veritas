@@ -247,6 +247,52 @@ async def get_portfolio():
     return portfolio_svc.get_holdings()
 
 
+@app.get("/portfolio/unified-investments")
+async def get_unified_investments():
+    """Get unified active holdings and watchlist."""
+    return portfolio_svc.get_unified_investments()
+
+
+from pydantic import BaseModel
+
+class HoldingBuyRequest(BaseModel):
+    symbol: str
+    quantity: float
+    avg_buy_price: float
+    buy_date: str
+
+@app.post("/portfolio/holdings/add")
+async def add_holding_endpoint(req: HoldingBuyRequest):
+    """Add new active holding."""
+    return portfolio_svc.add_holding(
+        req.symbol, req.quantity, req.avg_buy_price, req.buy_date
+    )
+
+@app.delete("/portfolio/holdings/remove/{symbol}")
+async def remove_holding_endpoint(symbol: str):
+    """Delete an active holding."""
+    return portfolio_svc.remove_holding(symbol)
+
+class WatchlistAddRequest(BaseModel):
+    symbol: str
+    quantity: float = 0.0
+    buy_date: str | None = None
+    sell_date: str | None = None
+
+@app.post("/portfolio/watchlist/add")
+async def add_to_watchlist(req: WatchlistAddRequest):
+    """Add symbol to watchlist."""
+    return portfolio_svc.add_to_watchlist(
+        req.symbol, req.quantity, req.buy_date, req.sell_date
+    )
+
+
+@app.delete("/portfolio/watchlist/remove/{symbol}")
+async def remove_from_watchlist(symbol: str):
+    """Remove symbol from watchlist."""
+    return portfolio_svc.remove_from_watchlist(symbol)
+
+
 @app.get("/portfolio/summary")
 async def get_portfolio_summary():
     """Get portfolio summary with totals and allocation."""

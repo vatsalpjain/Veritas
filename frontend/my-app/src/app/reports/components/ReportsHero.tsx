@@ -15,6 +15,37 @@ export default function ReportsHero() {
     year: 'numeric',
   });
 
+  const playSuccessSound = () => {
+    try {
+      const AudioContext = window.AudioContext || (window as any).webkitAudioContext;
+      if (!AudioContext) return;
+      const ctx = new AudioContext();
+      const playNote = (freq: number, startTime: number, duration: number) => {
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'triangle'; // Triangular wave is much louder/brighter than sine
+        osc.frequency.setValueAtTime(freq, ctx.currentTime + startTime);
+        
+        gain.gain.setValueAtTime(0, ctx.currentTime + startTime);
+        gain.gain.linearRampToValueAtTime(1.0, ctx.currentTime + startTime + 0.05); // Max volume
+        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + startTime + duration);
+        
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start(ctx.currentTime + startTime);
+        osc.stop(ctx.currentTime + startTime + duration);
+      };
+      
+      // Play a louder, longer triumphant arpeggio (C5 -> E5 -> G5 -> C6)
+      playNote(523.25, 0.0, 0.4);      // C5
+      playNote(659.25, 0.15, 0.5);     // E5
+      playNote(783.99, 0.30, 0.6);     // G5
+      playNote(1046.50, 0.50, 1.5);    // C6 (lasts much longer)
+    } catch (e) {
+      console.error("Audio notification failed:", e);
+    }
+  };
+
   const getBackendPeriod = (period: string) => (period === 'All' ? 'ALL' : period);
 
   const handleDownloadPDF = async () => {
@@ -64,6 +95,10 @@ export default function ReportsHero() {
       }
 
       const payload = await response.json().catch(() => ({}));
+      
+      // Play sound upon successful send
+      playSuccessSound();
+      
       alert(`Report sent to ${payload.to || 'configured mailbox'}`);
     } catch (error) {
       console.error(error);

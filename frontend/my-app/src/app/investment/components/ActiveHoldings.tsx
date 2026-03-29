@@ -4,6 +4,8 @@ import { useState } from 'react';
 import Link from 'next/link';
 import type { Holding } from '@/lib/types/investment';
 import HoldingDetailModal from './HoldingDetailModal';
+import BuyAssetModal from './BuyAssetModal';
+import SellAssetModal from './SellAssetModal';
 
 interface Props {
   data: Holding[];
@@ -35,6 +37,8 @@ function Sparkline({ points, positive }: { points: number[]; positive: boolean }
 
 export default function ActiveHoldings({ data }: Props) {
   const [selected, setSelected] = useState<Holding | null>(null);
+  const [isBuyModalOpen, setIsBuyModalOpen] = useState(false);
+  const [isSellModalOpen, setIsSellModalOpen] = useState(false);
 
   return (
     <>
@@ -46,19 +50,24 @@ export default function ActiveHoldings({ data }: Props) {
         >
           Active Holdings
         </h3>
-        <Link
-          href="/portfolio"
-          className="text-sm font-bold flex items-center gap-1 transition-all hover:underline"
-          style={{ color: '#006591', fontFamily: 'Manrope, sans-serif' }}
-        >
-          View Full Portfolio
-          <span
-            className="material-symbols-outlined"
-            style={{ fontSize: '16px', fontVariationSettings: "'FILL' 0, 'wght' 400" }}
+        <div className="flex gap-3">
+          <button
+            onClick={() => setIsBuyModalOpen(true)}
+            className="px-4 py-2 bg-[#009668] text-white text-sm font-bold rounded-lg shadow-sm hover:bg-[#007a55] transition-all flex items-center gap-1.5"
+            style={{ fontFamily: 'Manrope, sans-serif' }}
           >
-            arrow_forward
-          </span>
-        </Link>
+            <span className="material-symbols-outlined text-[18px]">add_circle</span>
+            Buy Asset
+          </button>
+          <button
+            onClick={() => setIsSellModalOpen(true)}
+            className="px-4 py-2 bg-white border border-[#e2e8f0] text-[#ba1a1a] text-sm font-bold rounded-lg shadow-sm hover:bg-[#fff0f2] hover:border-[#fda4af] transition-all flex items-center gap-1.5"
+            style={{ fontFamily: 'Manrope, sans-serif' }}
+          >
+            <span className="material-symbols-outlined text-[18px]">remove_circle</span>
+            Sell Asset
+          </button>
+        </div>
       </div>
 
       <div
@@ -187,6 +196,21 @@ export default function ActiveHoldings({ data }: Props) {
         <HoldingDetailModal
           holding={selected}
           onClose={() => setSelected(null)}
+        />
+      )}
+      
+      {isBuyModalOpen && (
+        <BuyAssetModal 
+          onClose={() => setIsBuyModalOpen(false)}
+          onSuccess={() => window.location.reload()}
+        />
+      )}
+      
+      {isSellModalOpen && (
+        <SellAssetModal 
+          holdings={data}
+          onClose={() => setIsSellModalOpen(false)}
+          onSuccess={() => window.location.reload()}
         />
       )}
     </>

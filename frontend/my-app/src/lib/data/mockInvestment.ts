@@ -181,11 +181,11 @@ export async function getInvestmentData(): Promise<InvestmentData> {
   try {
     // Parallel fetch all investment endpoints (except performance - using mock data for now)
     const [stats, holdings, breakdown, opportunities, alerts] = await Promise.all([
-      apiFetch<RawInvestmentStats>('/investments/stats',         { revalidate: REVALIDATE.LIVE }),
-      apiFetch<RawHolding[]>('/investments/holdings',            { revalidate: REVALIDATE.HISTORY }),
-      apiFetch<RawBreakdown>('/investments/breakdown',           { revalidate: REVALIDATE.SLOW }),
-      apiFetch<RawOpportunity[]>('/investments/opportunities',   { revalidate: REVALIDATE.SLOW }),
-      apiFetch<RawAlert[]>('/investments/alerts',                { revalidate: REVALIDATE.SLOW }),
+      apiFetch<RawInvestmentStats>('/investments/stats',         { revalidate: 0 }),
+      apiFetch<RawHolding[]>('/investments/holdings',            { revalidate: 0 }),
+      apiFetch<RawBreakdown>('/investments/breakdown',           { revalidate: 0 }),
+      apiFetch<RawOpportunity[]>('/investments/opportunities',   { revalidate: 0 }),
+      apiFetch<RawAlert[]>('/investments/alerts',                { revalidate: 0 }),
     ]);
 
     // Use mock performance data with realistic fluctuations

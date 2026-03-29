@@ -149,7 +149,7 @@ export default function AlgorithmicSignals({ data }: Props) {
         onClick={() => setSelectedStock(null)}
       >
         <div
-          className="bg-white rounded-xl p-8 max-w-2xl w-full shadow-2xl"
+          className="bg-white rounded-xl glass-card-edge p-8 max-w-2xl w-full shadow-2xl"
           onClick={(e) => e.stopPropagation()}
         >
           {/* Header */}

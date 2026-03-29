@@ -3,6 +3,7 @@ import HeroStats from './components/HeroStats';
 import PerformanceChart from './components/PerformanceChart';
 import AssetBreakdown from './components/AssetBreakdown';
 import ActiveHoldings from './components/ActiveHoldings';
+import WatchlistTable from './components/WatchlistTable';
 import Opportunities from './components/Opportunities';
 import FuturePredictionSection from './components/FuturePredictionSection';
 
@@ -32,6 +33,9 @@ export default async function InvestmentPage() {
 
       {/* ── Section 3: Active Holdings ── */}
       <ActiveHoldings data={data.holdings} />
+
+      {/* ── Section 4: Watchlist ── */}
+      <WatchlistTable />
 
       {/* ── Section 4: Opportunities ── */}
       <Opportunities opportunities={data.opportunities} riskAlert={data.riskAlert} />

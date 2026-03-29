@@ -22,7 +22,7 @@ export default function ClosedPositions() {
         Closed Positions
       </div>
 
-      <div className="bg-white rounded-xl shadow-[0_24px_40px_rgba(11,28,48,0.05)] overflow-hidden">
+      <div className="bg-white rounded-xl glass-card-edge shadow-[0_24px_40px_rgba(11,28,48,0.05)] overflow-hidden">
         <div className="grid grid-cols-12 px-6 py-3 bg-[#eff4ff] text-[10px] uppercase tracking-widest font-bold text-slate-500" style={{ fontFamily: 'Inter, sans-serif' }}>
           <div className="col-span-3">Asset</div>
           <div className="col-span-1 text-right">Type</div>

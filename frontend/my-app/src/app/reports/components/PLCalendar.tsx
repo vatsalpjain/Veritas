@@ -43,7 +43,7 @@ export default function PLCalendar() {
   const grid = getCalendarGrid();
 
   return (
-    <section className="bg-white rounded-xl p-7 shadow-[0_24px_40px_rgba(11,28,48,0.05)]">
+    <section className="bg-white rounded-xl glass-card-edge p-7 shadow-[0_24px_40px_rgba(11,28,48,0.05)]">
       <div className="flex items-center justify-between mb-5">
         <div>
           <p className="text-[10px] uppercase tracking-widest font-bold text-slate-500 mb-1" style={{ fontFamily: 'Inter, sans-serif' }}>
