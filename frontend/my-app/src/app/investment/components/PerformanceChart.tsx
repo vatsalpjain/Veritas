@@ -88,9 +88,9 @@ export default function PerformanceChart({ data }: Props) {
 
   // Format value for display
   const formatValue = (val: number) => {
-    if (val >= 1_000_000) return `$${(val / 1_000_000).toFixed(2)}M`;
-    if (val >= 1_000) return `$${(val / 1_000).toFixed(1)}K`;
-    return `$${val.toFixed(0)}`;
+    if (val >= 1_000_000) return `₹${(val / 1_000_000).toFixed(2)}M`;
+    if (val >= 1_000) return `₹${(val / 1_000).toFixed(1)}K`;
+    return `₹${val.toFixed(0)}`;
   };
 
   // Format date for display
@@ -329,7 +329,7 @@ export default function PerformanceChart({ data }: Props) {
               className="absolute top-4 right-4 text-white text-[10px] font-bold px-2 py-1 rounded"
               style={{ backgroundColor: '#000000', fontFamily: 'Inter, sans-serif' }}
             >
-              PEAK: ${fmtPeak}M
+              PEAK: ₹{fmtPeak}M
             </div>
           </div>
         </div>

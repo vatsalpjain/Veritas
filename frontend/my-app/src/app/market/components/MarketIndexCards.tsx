@@ -45,8 +45,8 @@ export default function MarketIndexCards({ data }: Props) {
                 style={{ color: '#000000', fontFamily: 'Manrope, sans-serif' }}
               >
                 {idx.price >= 10000
-                  ? `$${idx.price.toLocaleString('en-US', { maximumFractionDigits: 0 })}`
-                  : idx.price.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                  ? `₹${idx.price.toLocaleString('en-IN', { maximumFractionDigits: 0 })}`
+                  : idx.price.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
               </h2>
               <span
                 className="text-xs font-bold"

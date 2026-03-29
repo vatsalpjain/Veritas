@@ -8,7 +8,7 @@ export default function Footer() {
     >
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
         <div
-          className="text-2xl tracking-widest"
+          className="text-3xl tracking-widest"
           style={{ fontFamily: 'var(--font-bebas-neue)', color: '#00e5cc' }}
         >
           VERITAS

@@ -28,13 +28,13 @@ const MOCK_PERSONAS: InvestorPersona[] = [
     sectors_focus: ['Consumer Staples', 'Financials', 'Energy'],
     risk_profile: 'Low-Medium',
     time_horizon: 'Decades',
-    net_worth_estimate: '$133 B',
+    net_worth_estimate: '₹133 B',
     famous_advice: 'Be fearful when others are greedy, and greedy when others are fearful.',
     signature_bets: ['Coca-Cola', 'American Express', 'GEICO', 'Apple', 'BNSF Railway'],
     notable_facts: [
-      'Donated over $50 B to charity through the Giving Pledge.',
+      'Donated over ₹50 B to charity through the Giving Pledge.',
       'Bought his first stock at age 11.',
-      'Lives in the same Omaha house he bought for $31,500 in 1958.',
+      'Lives in the same Omaha house he bought for ₹31,500 in 1958.',
     ],
     principles: [
       'Circle of competence',
@@ -60,7 +60,7 @@ const MOCK_PERSONAS: InvestorPersona[] = [
     sectors_focus: ['Macro', 'Global Equities', 'Commodities'],
     risk_profile: 'Medium',
     time_horizon: '3–10 years',
-    net_worth_estimate: '$15.4 B',
+  net_worth_estimate: '₹15.4 B',
     famous_advice: 'He who lives by the crystal ball will eat shattered glass.',
     signature_bets: ['Gold', 'Emerging Markets', 'Risk Parity', 'Inflation-linked bonds'],
     notable_facts: [
@@ -89,7 +89,7 @@ const MOCK_PERSONAS: InvestorPersona[] = [
     sectors_focus: ['Consumer Discretionary', 'Retail', 'Growth'],
     risk_profile: 'Medium-High',
     time_horizon: '2–5 years',
-    net_worth_estimate: '$450 M',
+  net_worth_estimate: '₹450 M',
     famous_advice: 'Know what you own, and know why you own it.',
     signature_bets: ['Dunkin\' Donuts', 'Chrysler', 'Taco Bell', 'Fannie Mae'],
     notable_facts: [
@@ -118,7 +118,7 @@ const MOCK_PERSONAS: InvestorPersona[] = [
     sectors_focus: ['Finance', 'Consumer Staples', 'Technology'],
     risk_profile: 'Low-Medium',
     time_horizon: 'Decades',
-    net_worth_estimate: '$2.6 B',
+  net_worth_estimate: '₹2.6 B',
     famous_advice: 'Invert, always invert: turn a situation or problem upside down.',
     signature_bets: ['Costco', 'Alibaba', 'Daily Journal Corporation'],
     notable_facts: [
@@ -147,13 +147,13 @@ const MOCK_PERSONAS: InvestorPersona[] = [
     sectors_focus: ['Technology', 'Healthcare Innovation', 'Fintech'],
     risk_profile: 'High',
     time_horizon: '5 years',
-    net_worth_estimate: '$250 M',
+  net_worth_estimate: '₹250 M',
     famous_advice: 'If we are right, the returns will be extraordinary. If we are wrong, we are wrong early.',
     signature_bets: ['Tesla', 'Coinbase', 'CRISPR Therapeutics', 'UiPath', 'Palantir'],
     notable_facts: [
       'ARK Innovation ETF returned 157% in 2020, the best year for any active ETF.',
       'Publishes all trades publicly every day — a unique transparency move.',
-      'Target price for Tesla: $2,000+ by 2027.',
+  'Target price for Tesla: ₹2,000+ by 2027.',
     ],
     principles: [
       'Convergence of disruptive technologies',

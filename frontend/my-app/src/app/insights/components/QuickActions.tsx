@@ -36,7 +36,7 @@ const ACTIONS = [
     label: 'What If...',
     color: '#c9a84c',
     bg: '#fef9e7',
-    placeholder: 'Describe a scenario (e.g. "What if oil prices spike to $150?")',
+  placeholder: 'Describe a scenario (e.g. "What if oil prices spike to ₹150?")',
   },
   {
     icon: 'gavel',

@@ -32,7 +32,7 @@ export default function PortfolioHero({ data }: Props) {
     .join(' ');
   const areaD = `${pathD} L${svgWidth},${svgHeight} L0,${svgHeight} Z`;
 
-  const formattedAUM = formatCurrency(totalAUM).replace('$', '');
+  const formattedAUM = formatCurrency(totalAUM).replace('₹', '');
 
   return (
     <div
@@ -61,7 +61,7 @@ export default function PortfolioHero({ data }: Props) {
             color: '#000000',
           }}
         >
-          ${formattedAUM}
+          ₹{formattedAUM}
           <span
             className="font-medium"
             style={{ fontSize: '1.5rem', color: '#45464d' }}

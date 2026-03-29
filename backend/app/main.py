@@ -22,6 +22,7 @@ from app.services import reports_service as reports_svc
 from app.services import reports_pdf_service as reports_pdf_svc
 from app.services import investor_mindset_service as mindset_svc
 from app.services import learners_service as learners_svc
+from app.services import future_service as future_svc
 from app.services.mail_config import is_mail_configured
 from app.services.mail_service import send_report_email
 
@@ -334,6 +335,11 @@ async def get_rebalancing():
 
 
 # ============== INVESTMENTS PAGE ENDPOINTS ==============
+
+@app.get("/investments/future-predictions/{ticker}")
+async def get_future_prediction_chart(ticker: str):
+    """Generate and return a futuristic mplfinance chart for the ticker."""
+    return future_svc.generate_future_chart(ticker)
 
 @app.get("/investments/stats")
 async def get_investment_stats():

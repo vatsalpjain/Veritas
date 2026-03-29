@@ -7,6 +7,13 @@
   --color-brand-purple: #7c3aed;
   --font-bebas: var(--font-bebas-neue);
   --font-mono: var(--font-dm-mono);
+  --animate-shimmer: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
 }
 
 @font-face {
@@ -125,4 +132,12 @@ body {
 
 .ambient-cloud {
   box-shadow: 0 24px 40px rgba(11, 28, 48, 0.05);
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

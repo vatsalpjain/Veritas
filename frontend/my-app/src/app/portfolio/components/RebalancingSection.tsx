@@ -11,9 +11,9 @@ interface Props {
 }
 
 const actionConfig: Record<RebalanceAction, { icon: string; iconColor: string; iconBg: string; amountPrefix: string; amountColor: string }> = {
-  SELL:    { icon: 'arrow_downward', iconColor: '#ba1a1a', iconBg: '#ffdad6', amountPrefix: 'Sell $',    amountColor: '#ba1a1a' },
-  BUY:     { icon: 'arrow_upward',   iconColor: '#009668', iconBg: '#d7f4e8', amountPrefix: 'Buy $',     amountColor: '#009668' },
-  REALLOC: { icon: 'swap_horiz',     iconColor: '#006591', iconBg: '#eff4ff', amountPrefix: 'Re-alloc $', amountColor: '#006591' },
+  SELL:    { icon: 'arrow_downward', iconColor: '#ba1a1a', iconBg: '#ffdad6', amountPrefix: 'Sell ₹',    amountColor: '#ba1a1a' },
+  BUY:     { icon: 'arrow_upward',   iconColor: '#009668', iconBg: '#d7f4e8', amountPrefix: 'Buy ₹',     amountColor: '#009668' },
+  REALLOC: { icon: 'swap_horiz',     iconColor: '#006591', iconBg: '#eff4ff', amountPrefix: 'Re-alloc ₹', amountColor: '#006591' },
 };
 
 export default function RebalancingSection({ recommendations, advisor }: Props) {

@@ -122,7 +122,7 @@ export default function DemoSection() {
                 className="text-xl text-white leading-none mt-1"
                 style={{ fontFamily: 'var(--font-bebas-neue)' }}
               >
-                TSLA $175.66 <span className="text-xs" style={{ color: '#00e5cc' }}>+2.3%</span>
+                TSLA ₹175.66 <span className="text-xs" style={{ color: '#00e5cc' }}>+2.3%</span>
               </div>
             </div>
           </div>

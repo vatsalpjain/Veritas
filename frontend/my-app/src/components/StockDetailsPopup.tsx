@@ -232,7 +232,7 @@ export default function StockDetailsPopup({ ticker, onClose }: StockDetailsPopup
           <div>
             <p className="text-sm text-gray-500 mb-1" style={{ fontFamily: 'Inter, sans-serif' }}>Current Price</p>
             <p className="text-5xl font-bold" style={{ color: '#0f172a', fontFamily: 'Manrope, sans-serif' }}>
-              ${stockData.price.toFixed(2)}
+              ₹{stockData.price.toFixed(2)}
             </p>
             <p
               className="text-lg mt-2 font-semibold"
@@ -248,13 +248,13 @@ export default function StockDetailsPopup({ ticker, onClose }: StockDetailsPopup
             <div className="p-3 rounded-lg" style={{ backgroundColor: '#f8fafc' }}>
               <p className="text-xs text-gray-500 mb-1" style={{ fontFamily: 'Inter, sans-serif' }}>Day High</p>
               <p className="text-lg font-bold" style={{ color: '#0f172a', fontFamily: 'Inter, sans-serif' }}>
-                ${stockData.dayHigh > 0 ? stockData.dayHigh.toFixed(2) : 'N/A'}
+                ₹{stockData.dayHigh > 0 ? stockData.dayHigh.toFixed(2) : 'N/A'}
               </p>
             </div>
             <div className="p-3 rounded-lg" style={{ backgroundColor: '#f8fafc' }}>
               <p className="text-xs text-gray-500 mb-1" style={{ fontFamily: 'Inter, sans-serif' }}>Day Low</p>
               <p className="text-lg font-bold" style={{ color: '#0f172a', fontFamily: 'Inter, sans-serif' }}>
-                ${stockData.dayLow > 0 ? stockData.dayLow.toFixed(2) : 'N/A'}
+                ₹{stockData.dayLow > 0 ? stockData.dayLow.toFixed(2) : 'N/A'}
               </p>
             </div>
           </div>
@@ -312,13 +312,13 @@ export default function StockDetailsPopup({ ticker, onClose }: StockDetailsPopup
           <div className="p-4 rounded-lg" style={{ backgroundColor: '#f8fafc' }}>
             <p className="text-xs text-gray-500 mb-1" style={{ fontFamily: 'Inter, sans-serif' }}>52W High</p>
             <p className="text-lg font-bold" style={{ color: '#0f172a', fontFamily: 'Inter, sans-serif' }}>
-              ${stockData.high52w > 0 ? stockData.high52w.toFixed(2) : 'N/A'}
+              ₹{stockData.high52w > 0 ? stockData.high52w.toFixed(2) : 'N/A'}
             </p>
           </div>
           <div className="p-4 rounded-lg" style={{ backgroundColor: '#f8fafc' }}>
             <p className="text-xs text-gray-500 mb-1" style={{ fontFamily: 'Inter, sans-serif' }}>52W Low</p>
             <p className="text-lg font-bold" style={{ color: '#0f172a', fontFamily: 'Inter, sans-serif' }}>
-              ${stockData.low52w > 0 ? stockData.low52w.toFixed(2) : 'N/A'}
+              ₹{stockData.low52w > 0 ? stockData.low52w.toFixed(2) : 'N/A'}
             </p>
           </div>
           <div className="p-4 rounded-lg" style={{ backgroundColor: '#f8fafc' }}>

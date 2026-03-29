@@ -14,7 +14,7 @@ export default function TopNav() {
       {/* Left: Brand + Search */}
       <div className="flex items-center gap-8 flex-1">
         <span
-          className="text-xl font-bold tracking-tight"
+          className="text-2xl font-bold tracking-tight"
           style={{ color: '#0f172a', fontFamily: 'Manrope, sans-serif' }}
         >
           Veritas Ledger

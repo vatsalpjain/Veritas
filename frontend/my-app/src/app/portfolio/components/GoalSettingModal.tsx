@@ -181,7 +181,7 @@ export default function GoalSettingModal({ isOpen, onClose, onAddGoal }: Props) 
                   className="block text-xs font-bold uppercase tracking-widest mb-2"
                   style={{ color: '#64748b', fontFamily: 'Inter, sans-serif' }}
                 >
-                  Target Amount ($)
+                  Target Amount (₹)
                 </label>
                 <input
                   type="number"
@@ -256,7 +256,7 @@ export default function GoalSettingModal({ isOpen, onClose, onAddGoal }: Props) 
                     className="text-lg font-bold"
                     style={{ color: '#006591', fontFamily: 'Manrope, sans-serif' }}
                   >
-                    ${(rec.targetValue / 1000).toFixed(0)}K
+                    ₹{(rec.targetValue / 1000).toFixed(0)}K
                   </div>
                 </button>
               ))}

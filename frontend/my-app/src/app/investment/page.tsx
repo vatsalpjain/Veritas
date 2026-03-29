@@ -4,6 +4,7 @@ import PerformanceChart from './components/PerformanceChart';
 import AssetBreakdown from './components/AssetBreakdown';
 import ActiveHoldings from './components/ActiveHoldings';
 import Opportunities from './components/Opportunities';
+import FuturePredictionSection from './components/FuturePredictionSection';
 
 // React Server Component.
 // When backend is ready, getInvestmentData() in src/lib/data/mockInvestment.ts
@@ -23,7 +24,8 @@ export default async function InvestmentPage() {
         <div className="lg:col-span-8">
           <PerformanceChart data={data.history} />
         </div>
-        <div className="lg:col-span-4">
+        <div className="lg:col-span-4 flex flex-col gap-6">
+          <FuturePredictionSection holdings={data.holdings} />
           <AssetBreakdown data={data.breakdown} />
         </div>
       </section>

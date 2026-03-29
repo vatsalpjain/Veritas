@@ -136,7 +136,7 @@ export const mockMarketData: MarketData = {
       ticker: 'NVDA',
       signalType: 'ENTRY',
       status: 'CONFIRMED',
-      description: 'Support hit at $824. RSI indicates oversold condition. High buy volume detected.',
+  description: 'Support hit at ₹824. RSI indicates oversold condition. High buy volume detected.',
       icon: 'login',
     },
     {
@@ -144,7 +144,7 @@ export const mockMarketData: MarketData = {
       ticker: 'TSLA',
       signalType: 'EXIT',
       status: 'WARNING',
-      description: 'Resistance at $175. Breaking 50-day moving average to the downside.',
+  description: 'Resistance at ₹175. Breaking 50-day moving average to the downside.',
       icon: 'logout',
     },
     {
@@ -152,7 +152,7 @@ export const mockMarketData: MarketData = {
       ticker: 'BTC',
       signalType: 'ACCUMULATE',
       status: 'NEUTRAL',
-      description: 'Consolidation phase between $65k–$70k. Long-term trend remains bullish.',
+  description: 'Consolidation phase between ₹65k–₹70k. Long-term trend remains bullish.',
       icon: 'target',
     },
   ],

@@ -79,7 +79,7 @@ export const mockPortfolioData: PortfolioData = {
       id: 'reb-1',
       action: 'SELL',
       title: 'Reduce Information Technology',
-      subtitle: 'Current overweight by 7.2% ($14,500)',
+  subtitle: 'Current overweight by 7.2% (₹14,500)',
       amount: 5000,
       ctaLabel: 'VIEW POSITIONS',
     },

@@ -9,9 +9,9 @@ interface Props {
 }
 
 function formatValue(n: number): string {
-  if (n >= 1_000_000) return `$${(n / 1_000_000).toFixed(2)}M`;
-  if (n >= 1_000) return `$${(n / 1_000).toFixed(0)}K`;
-  return `$${n.toLocaleString()}`;
+  if (n >= 1_000_000) return `₹${(n / 1_000_000).toFixed(2)}M`;
+  if (n >= 1_000) return `₹${(n / 1_000).toFixed(0)}K`;
+  return `₹${n.toLocaleString('en-IN')}`;
 }
 
 export default function GoalTrackers({ data }: Props) {
@@ -110,7 +110,7 @@ export default function GoalTrackers({ data }: Props) {
               className="text-xs font-semibold"
               style={{ color: '#92400e', fontFamily: 'Inter, sans-serif' }}
             >
-              📌 These are example goals. Click "Set Your Goals" to create your own!
+              📌 These are example goals. Click &quot;Set Your Goals&quot; to create your own!
             </p>
           </div>
         )}

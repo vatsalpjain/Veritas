@@ -55,8 +55,8 @@ export interface RebalanceRecommendation {
   id: string;
   action: RebalanceAction;
   title: string;               // e.g. "Reduce Information Technology"
-  subtitle: string;            // e.g. "Current overweight by 7.2% ($14,500)"
-  amount: number;              // dollar amount
+  subtitle: string;            // e.g. "Current overweight by 7.2% (₹14,500)"
+  amount: number;              // currency amount (INR)
   ctaLabel: string;            // e.g. "VIEW POSITIONS"
 }
 

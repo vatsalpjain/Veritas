@@ -1,11 +1,20 @@
 {
   "user_id": "default",
+<<<<<<< Updated upstream
   "xp": 438,
   "streak_days": 21,
   "level": "Master",
   "lessons_completed": 6,
   "quizzes_taken": 21,
   "correct_answers": 18,
+=======
+  "xp": 436,
+  "streak_days": 22,
+  "level": "Master",
+  "lessons_completed": 6,
+  "quizzes_taken": 21,
+  "correct_answers": 17,
+>>>>>>> Stashed changes
   "completed_resource_ids": [
     "res_002",
     "res_001"
@@ -15,5 +24,9 @@
     "res_004",
     "res_006"
   ],
+<<<<<<< Updated upstream
   "last_active": "2026-03-28T22:57:05.641303+00:00"
+=======
+  "last_active": "2026-03-28T21:29:38.529220+00:00"
+>>>>>>> Stashed changes
 }

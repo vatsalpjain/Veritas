@@ -7,7 +7,7 @@ interface Props {
 }
 
 function fmt(n: number) {
-  return n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  return n.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 }
 
 export default function HeroStats({ data }: Props) {
@@ -38,15 +38,15 @@ export default function HeroStats({ data }: Props) {
               color: '#000000',
             }}
           >
-            ${fmt(data.totalValue)}
+            ₹{fmt(data.totalValue)}
           </h2>
         </div>
         <div className="flex items-center gap-4 mt-4">
           <span
             className="px-3 py-1 font-bold text-xs rounded-full flex items-center gap-1"
             style={{
-              backgroundColor: '#4edea3',
-              color: '#002113',
+              backgroundColor: data.allTimeProfitPercent >= 0 ? '#4edea3' : '#ffdad6',
+              color: data.allTimeProfitPercent >= 0 ? '#002113' : '#ba1a1a',
               fontFamily: 'Inter, sans-serif',
             }}
           >
@@ -54,9 +54,9 @@ export default function HeroStats({ data }: Props) {
               className="material-symbols-outlined"
               style={{ fontSize: '16px', fontVariationSettings: "'FILL' 1, 'wght' 400" }}
             >
-              arrow_drop_up
+              {data.allTimeProfitPercent >= 0 ? 'arrow_drop_up' : 'arrow_drop_down'}
             </span>
-            +{data.allTimeProfitPercent}%
+            {data.allTimeProfitPercent >= 0 ? '+' : ''}{data.allTimeProfitPercent}%
           </span>
           <span
             className="text-sm font-medium"
@@ -64,7 +64,7 @@ export default function HeroStats({ data }: Props) {
           >
             All-time profit:{' '}
             <span style={{ color: '#0b1c30', fontWeight: 600 }}>
-              +${data.allTimeProfitAbs.toLocaleString()}
+              {data.allTimeProfitAbs >= 0 ? '+' : '-'}₹{Math.abs(data.allTimeProfitAbs).toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
             </span>
           </span>
         </div>
@@ -84,15 +84,15 @@ export default function HeroStats({ data }: Props) {
         <div className="space-y-1">
           <div
             className="text-2xl font-bold"
-            style={{ color: '#009668', fontFamily: 'Manrope, sans-serif' }}
+            style={{ color: data.dayChangeAbs >= 0 ? '#009668' : '#ba1a1a', fontFamily: 'Manrope, sans-serif' }}
           >
-            +${fmt(data.dayChangeAbs)}
+            {data.dayChangeAbs >= 0 ? '+' : '-'}₹{fmt(Math.abs(data.dayChangeAbs))}
           </div>
           <div
             className="text-sm font-medium"
-            style={{ color: '#009668', fontFamily: 'Inter, sans-serif' }}
+            style={{ color: data.dayChangePercent >= 0 ? '#009668' : '#ba1a1a', fontFamily: 'Inter, sans-serif' }}
           >
-            +{data.dayChangePercent.toFixed(2)}%
+            {data.dayChangePercent >= 0 ? '+' : ''}{data.dayChangePercent.toFixed(2)}%
           </div>
         </div>
       </div>
@@ -113,7 +113,7 @@ export default function HeroStats({ data }: Props) {
             className="text-2xl font-bold"
             style={{ color: '#000000', fontFamily: 'Manrope, sans-serif' }}
           >
-            ${fmt(data.buyingPower)}
+            ₹{fmt(data.buyingPower)}
           </div>
           <div
             className="text-sm font-medium"

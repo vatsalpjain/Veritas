@@ -1,17 +1,18 @@
 // ─── Number & Date Formatting Utilities ──────────────────────────────────────
 
 export function formatCurrency(value: number, compact = false): string {
+  // Default to Indian Rupee formatting
   if (compact) {
-    return new Intl.NumberFormat('en-US', {
+    return new Intl.NumberFormat('en-IN', {
       style: 'currency',
-      currency: 'USD',
+      currency: 'INR',
       notation: 'compact',
       maximumFractionDigits: 1,
     }).format(value);
   }
-  return new Intl.NumberFormat('en-US', {
+  return new Intl.NumberFormat('en-IN', {
     style: 'currency',
-    currency: 'USD',
+    currency: 'INR',
     minimumFractionDigits: 0,
     maximumFractionDigits: 0,
   }).format(value);
